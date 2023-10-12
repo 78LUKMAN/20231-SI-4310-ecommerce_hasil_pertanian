@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+
     <title>Beats Store</title>
 </head>
 
@@ -29,7 +30,8 @@
             </button>
 
             <div class="newsletter-img">
-                <img src="<?php echo base_url() ?>assets/img/banner/newletter-img.png" alt="subscribe" width="300" height="300">
+                <img src="<?php echo base_url() ?>assets/img/banner/newletter-img.png" alt="subscribe" width="300"
+                    height="300">
             </div>
             <div class="newsletter">
                 <form action="#">
@@ -70,7 +72,8 @@
                     </div>
 
                     <div class="slider-item">
-                        <img src="<?php echo base_url() ?>assets/img/banner/banner-handphone.png" alt="" class="banner-img">
+                        <img src="<?php echo base_url() ?>assets/img/banner/banner-handphone.png" alt=""
+                            class="banner-img">
 
                         <div class="banner-content">
                             <p class="banner-subtitle">Trending Item</p>
@@ -86,7 +89,8 @@
                     </div>
 
                     <div class="slider-item">
-                        <img src="<?php echo base_url() ?>assets/img/banner/banner-headphone.png" alt="" class="banner-img">
+                        <img src="<?php echo base_url() ?>assets/img/banner/banner-headphone.png" alt=""
+                            class="banner-img">
 
                         <div class="banner-content">
                             <p class="banner-subtitle">Trending Item</p>
@@ -122,7 +126,8 @@
 
                     <div class="category-item">
                         <div class="category-img-box">
-                            <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt="" height="32" width="35">
+                            <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt="" height="32"
+                                width="35">
                         </div>
 
                         <div class="category-content-box">
@@ -150,7 +155,8 @@
 
                     <div class="category-item">
                         <div class="category-img-box">
-                            <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt="" height="32" width="35">
+                            <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt="" height="32"
+                                width="35">
                         </div>
 
                         <div class="category-content-box">
@@ -196,8 +202,8 @@
                             <li class="slidebar-menu-category">
                                 <button class="slidebar-accordion-menu" data-accordion-btn>
                                     <div class="menu-title-flex">
-                                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="20"
-                                            class="menu-title-img">
+                                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt=""
+                                            width="20" class="menu-title-img">
                                         <p class="menu-title">Handphone</p>
                                     </div>
 
@@ -233,8 +239,8 @@
                             <li class="slidebar-menu-category">
                                 <button class="slidebar-accordion-menu" data-accordion-btn>
                                     <div class="menu-title-flex">
-                                        <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt="" width="20" height="22"
-                                            class="menu-title-img">
+                                        <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt=""
+                                            width="20" height="22" class="menu-title-img">
                                         <p class="menu-title">Headphone</p>
                                     </div>
 
@@ -314,7 +320,8 @@
                             <div class="showcase-container">
                                 <div class="showcase">
                                     <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" class="showcase-img" width="75">
+                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                            class="showcase-img" width="75">
                                     </a>
                                     <div class="showcase-content">
                                         <a href="#">
@@ -337,7 +344,8 @@
                                 </div>
                                 <div class="showcase">
                                     <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" class="showcase-img" width="75">
+                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                            class="showcase-img" width="75">
                                     </a>
                                     <div class="showcase-content">
                                         <a href="#">
@@ -360,7 +368,8 @@
                                 </div>
                                 <div class="showcase">
                                     <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" class="showcase-img" width="75">
+                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                            class="showcase-img" width="75">
                                     </a>
                                     <div class="showcase-content">
                                         <a href="#">
@@ -394,8 +403,8 @@
                                 <div class="showcase-container">
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -410,8 +419,8 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -426,8 +435,8 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -442,8 +451,8 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -460,8 +469,8 @@
                                 <div class="showcase-container">
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -476,8 +485,8 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -492,8 +501,8 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -508,8 +517,8 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -531,8 +540,8 @@
                                 <div class="showcase-container">
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -547,8 +556,8 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -563,8 +572,8 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -579,8 +588,8 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -597,8 +606,8 @@
                                 <div class="showcase-container">
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -613,8 +622,8 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -629,8 +638,8 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -645,8 +654,8 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="70"
-                                                class="showcase-img">
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                                width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
                                             <a href="#">
@@ -670,7 +679,8 @@
                             <div class="showcase-container">
                                 <div class="showcase">
                                     <div class="showcase-banner">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="showcase-img">
+                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="
+                                            showcase-img">
                                     </div>
                                     <div class="showcase-content">
                                         <div class="showcase-rating">
@@ -735,7 +745,8 @@
                             <div class="showcase-container">
                                 <div class="showcase">
                                     <div class="showcase-banner">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="showcase-img">
+                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="
+                                            showcase-img">
                                     </div>
                                     <div class="showcase-content">
                                         <div class="showcase-rating">
@@ -800,7 +811,8 @@
                             <div class="showcase-container">
                                 <div class="showcase">
                                     <div class="showcase-banner">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="showcase-img">
+                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="
+                                            showcase-img">
                                     </div>
                                     <div class="showcase-content">
                                         <div class="showcase-rating">
@@ -961,9 +973,10 @@
                         <div class="product-grid-container">
                             <div class="showcase">
                                 <div class="showcase-banner">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="100"
-                                        class="product-img default">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="100" class="product-img hover">
+                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                        width="100" class="product-img default">
+                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                        width="100" class="product-img hover">
 
                                     <p class="showcase-bagde angle r-blue">25%</p>
                                     <div class="showcase-actions">
@@ -1001,9 +1014,10 @@
                             </div>
                             <div class="showcase">
                                 <div class="showcase-banner">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                        class="product-img default">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300" class="product-img hover">
+                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                        width="300" class="product-img default">
+                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                        width="300" class="product-img hover">
 
                                     <p class="showcase-bagde">31%</p>
                                     <div class="showcase-actions">
@@ -1041,9 +1055,10 @@
                             </div>
                             <div class="showcase">
                                 <div class="showcase-banner">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                        class="product-img default">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300" class="product-img hover">
+                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                        width="300" class="product-img default">
+                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                        width="300" class="product-img hover">
 
                                     <p class="showcase-bagde angle r-blue">25%</p>
                                     <div class="showcase-actions">
@@ -1081,9 +1096,10 @@
                             </div>
                             <div class="showcase">
                                 <div class="showcase-banner">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                        class="product-img default">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300" class="product-img hover">
+                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                        width="300" class="product-img default">
+                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
+                                        width="300" class="product-img hover">
 
                                     <p class="showcase-bagde">31%</p>
                                     <div class="showcase-actions">
@@ -1138,8 +1154,8 @@
                         <input type="radio" name="" class="btn-slide" id="btn-slide6">
                         <div class="testimonial-wrapper has-scrollbar">
                             <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/testimonial/billgates.jpg" alt="" class="testimonial-benner" width="80"
-                                    height="80">
+                                <img src="<?php echo base_url() ?>assets/img/testimonial/billgates.jpg" alt=""
+                                    class="testimonial-benner" width="80" height="80">
                                 <p class="customer-name">billgates</p>
                                 <p class="customer-title">CO-Founder of Microsoft</p>
                                 <p class="testimonial-description">
@@ -1150,8 +1166,8 @@
                                 </p>
                             </div>
                             <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/testimonial/daniel.jpg" alt="" class="testimonial-benner" width="80"
-                                    height="80">
+                                <img src="<?php echo base_url() ?>assets/img/testimonial/daniel.jpg" alt=""
+                                    class="testimonial-benner" width="80" height="80">
                                 <p class="customer-name">daniel</p>
                                 <p class="customer-title">CO-Founder of Microsoft</p>
                                 <p class="testimonial-description">
@@ -1163,8 +1179,8 @@
                                 </p>
                             </div>
                             <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/testimonial/elonmusk.jpg" alt="" class="testimonial-benner" width="80"
-                                    height="80">
+                                <img src="<?php echo base_url() ?>assets/img/testimonial/elonmusk.jpg" alt=""
+                                    class="testimonial-benner" width="80" height="80">
                                 <p class="customer-name">elon musk</p>
                                 <p class="customer-title">CO-Founder of Microsoft</p>
                                 <p class="testimonial-description">
@@ -1176,8 +1192,8 @@
                                 </p>
                             </div>
                             <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/testimonial/larrypage.jpg" alt="" class="testimonial-benner" width="80"
-                                    height="80">
+                                <img src="<?php echo base_url() ?>assets/img/testimonial/larrypage.jpg" alt=""
+                                    class="testimonial-benner" width="80" height="80">
                                 <p class="customer-name">larry page</p>
                                 <p class="customer-title">CO-Founder of Microsoft</p>
                                 <p class="testimonial-description">
@@ -1189,8 +1205,8 @@
                                 </p>
                             </div>
                             <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/testimonial/markzuck.jpg" alt="" class="testimonial-benner" width="80"
-                                    height="80">
+                                <img src="<?php echo base_url() ?>assets/img/testimonial/markzuck.jpg" alt=""
+                                    class="testimonial-benner" width="80" height="80">
                                 <p class="customer-name">mark zuckerburg</p>
                                 <p class="customer-title">CO-Founder of Microsoft</p>
                                 <p class="testimonial-description">
@@ -1202,8 +1218,8 @@
                                 </p>
                             </div>
                             <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/testimonial/patrick.jpg" alt="" class="testimonial-benner" width="80"
-                                    height="80">
+                                <img src="<?php echo base_url() ?>assets/img/testimonial/patrick.jpg" alt=""
+                                    class="testimonial-benner" width="80" height="80">
                                 <p class="customer-name">patrick</p>
                                 <p class="customer-title">CO-Founder of Microsoft</p>
                                 <p class="testimonial-description">
@@ -1214,11 +1230,12 @@
                                 </blockquote>
                                 </p>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="special-offer-container">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="special-offer-benner">
+                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"
+                            class="special-offer-benner">
                         <a href="#" class="special-offer-content">
                             <p class="special-offer-discount">25% Discount</p>
                             <h2 class="special-offer-title">Beats<sup>3</sup> Collection</h2>
@@ -1293,7 +1310,8 @@
                 <div class="blog-container has-scrollbar">
                     <div class="blog-card">
                         <a href="#">
-                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner" width="300">
+                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
+                                width="300">
                         </a>
                         <div class="blog-content">
                             <a href="#" class="blog-category">headphone</a>
@@ -1308,7 +1326,8 @@
                     </div>
                     <div class="blog-card">
                         <a href="#">
-                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner" width="300">
+                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
+                                width="300">
                         </a>
                         <div class="blog-content">
                             <a href="#" class="blog-category">headphone</a>
@@ -1323,7 +1342,8 @@
                     </div>
                     <div class="blog-card">
                         <a href="#">
-                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner" width="300">
+                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
+                                width="300">
                         </a>
                         <div class="blog-content">
                             <a href="#" class="blog-category">headphone</a>
@@ -1338,7 +1358,8 @@
                     </div>
                     <div class="blog-card">
                         <a href="#">
-                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="blog-benner" width="300">
+                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class=" blog-benner"
+                                width="300">
                         </a>
                         <div class="blog-content">
                             <a href="#" class="blog-category">headphone</a>
@@ -1353,7 +1374,8 @@
                     </div>
                     <div class="blog-card">
                         <a href="#">
-                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="blog-benner" width="300">
+                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class=" blog-benner"
+                                width="300">
                         </a>
                         <div class="blog-content">
                             <a href="#" class="blog-category">headphone</a>
@@ -1368,7 +1390,8 @@
                     </div>
                     <div class="blog-card">
                         <a href="#">
-                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner" width="300">
+                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
+                                width="300">
                         </a>
                         <div class="blog-content">
                             <a href="#" class="blog-category">headphone</a>
@@ -1383,7 +1406,8 @@
                     </div>
                     <div class="blog-card">
                         <a href="#">
-                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="blog-benner" width="300">
+                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class=" blog-benner"
+                                width="300">
                         </a>
                         <div class="blog-content">
                             <a href="#" class="blog-category">headphone</a>
@@ -1402,12 +1426,23 @@
     </main>
 
 
-   <!-- FOOTER -->
-   <?= $this->include('layout/components/footer') ?>
+    <!-- FOOTER -->
+    <?= $this->include('layout/components/footer') ?>
 
+
+    <script src="<?php echo base_url() ?>assets/third-assets/apexcharts/apexcharts.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/third-assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/third-assets/chart.js/chart.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/third-assets/echarts/echarts.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/third-assets/quill/quill.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/third-assets/simple-datatables/simple-datatables.js"></script>
+    <script src="<?php echo base_url() ?>assets/third-assets/tinymce/tinymce.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/third-assets/php-email-form/validate.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Template Main JS File -->
     <script src="<?php echo base_url() ?>assets/js/script.js"></script>
-   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

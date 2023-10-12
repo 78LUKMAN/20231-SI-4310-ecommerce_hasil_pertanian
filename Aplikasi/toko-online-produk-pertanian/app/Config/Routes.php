@@ -8,5 +8,13 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('signup', 'AuthController::signup');
 $routes->get('signin', 'AuthController::signin');
-$routes->get('cart', 'CartController::cart');
+
+$routes->group('activity', function($routes) {
+    $routes->get('cart', 'ActivityController::cart');
+    $routes->get('history', 'ActivityController::history');
+    $routes->get('transaction', 'ActivityController::transaction');
+});
+
+
+
 $routes->get('history', 'HistoryController::index');

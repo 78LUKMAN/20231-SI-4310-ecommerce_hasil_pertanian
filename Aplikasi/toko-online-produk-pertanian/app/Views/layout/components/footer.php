@@ -1,34 +1,18 @@
-<?php
-$current_url = $_SERVER['REQUEST_URI'];
-if (strpos($current_url, '/') !== false|| strpos($current_url, 'signup') !== false || strpos($current_url, 'signin') !== false) {
-    $class = "";
-    $id = "";
-}
-elseif (strpos($current_url, '/cart') !== false) {
-    $class = "footer";
-    $id = "footer";
-}
-else {
-    $class = "footer";
-    $id = "footer";
-}
-
-?>
-<footer class="<?php echo $class; ?>" id="<?php echo $id; ?>">
+<footer>
         <div class="footer-nav">
             <div class="container">
                 <ul class="nav-list">
-                    <li class="nav-item">
+                    <li class="nav-item flex">
                         <h2 class="nav-title">Popular Categories</h2>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="footer-nav-link">Headphone</a>
+                    <li class="nav-item flex">
+                        <a href="#" class="footer-nav-link nav-link">Headphone</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="footer-nav-link">Smartphone</a>
+                    <li class="nav-item flex">
+                        <a href="#" class="footer-nav-link nav-link">Smartphone</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="footer-nav-link">Watch</a>
+                    <li class="nav-item flex">
+                        <a href="#" class="footer-nav-link nav-link">Watch</a>
                     </li>
                 </ul>
                 <ul class="nav-list">

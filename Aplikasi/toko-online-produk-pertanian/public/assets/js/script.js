@@ -1,4 +1,16 @@
 'use strict';
+const header = document.getElementsByClassName('header-sticky')[0];
+
+function handleScroll() {
+    if (window.scrollY > 0) {
+        header.classList.add('active');
+    } else {
+        header.classList.remove('active');
+    }
+}
+window.addEventListener('scroll', handleScroll);
+
+
 
 const accordionBtn = document.querySelectorAll('[data-accordion-btn]');
 const accordion = document.querySelectorAll('[data-accordion]');
@@ -28,24 +40,6 @@ for (let i = 0; i < accordionBtn.length; i++) {
 }
 
 
-const modal = document.querySelector('[data-modal]'),
-  modalCloseBtn = document.querySelector('[data-modal-close]'),
-  modalCloseOverlay = document.querySelector('[data-modal-overlay]');
-
-const modalCloseFunction = () => {
-  modal.classList.add('closed')
-}
-
-modalCloseOverlay.addEventListener('click', modalCloseFunction);
-modalCloseBtn.addEventListener('click', modalCloseFunction);
-
-const notif = document.querySelector('[data-toast]'),
-  notifCloseBtn = document.querySelector('[data-toast-close]');
-
-notifCloseBtn.addEventListener('click', () => {
-  notif.classList.add('closed');
-});
-
 const mobileMenuOpenBtn = document.querySelectorAll('[data-mobile-menu-open-btn]'),
   mobileMenu = document.querySelectorAll('[data-mobile-menu]'),
   mobileMenuCloseBtn = document.querySelectorAll('[data-mobile-menu-close-btn]'),
@@ -67,6 +61,23 @@ for (let i = 0; i < mobileMenuOpenBtn.length; i++) {
 };
 
 
+const modal = document.querySelector('[data-modal]'),
+  modalCloseBtn = document.querySelector('[data-modal-close]'),
+  modalCloseOverlay = document.querySelector('[data-modal-overlay]');
+
+const modalCloseFunction = () => {
+  modal.classList.add('closed')
+}
+
+modalCloseOverlay.addEventListener('click', modalCloseFunction);
+modalCloseBtn.addEventListener('click', modalCloseFunction);
+
+const notif = document.querySelector('[data-toast]'),
+  notifCloseBtn = document.querySelector('[data-toast-close]');
+
+notifCloseBtn.addEventListener('click', () => {
+  notif.classList.add('closed');
+});
 
 const btnSlide = document.querySelectorAll(".btn-slide");
 const cardContent = document.querySelectorAll(".testimonial-card-content")
@@ -114,6 +125,8 @@ function closeEl () {
 
 popupClose.addEventListener('click', closeEl);
 overlayEl.addEventListener('click', closeEl);
+
+
 
 // let xhttp = new XMLHttpRequest();
 // xhttp.onreadystatechange = function () {
