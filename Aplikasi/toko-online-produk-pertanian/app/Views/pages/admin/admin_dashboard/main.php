@@ -31,29 +31,24 @@
     <!-- Template Main CSS File -->
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: NiceAdmin - v2.2.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <title>Beats Store</title>
 </head>
 
 <body>
-
     <div class="overlay" data-overlay></div>
-    <?= $this->include('layout/components/header') ?>
-    
-    <?php echo $this->renderSection('activity'); ?>
 
-    <!-- ======= Footer ======= -->
-    <?= $this->include('layout/components/footer'); ?>
+    <!-- HEADER -->
+    <?= $this->include('pages/admin/admin_dashboard/components/header') ?>
+    <?= $this->include('pages/admin/admin_dashboard/components/slidebar') ?>
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
-        <ion-icon name="arrow-up-outline" style="color: #fff;"></ion-icon>
-    </a>
 
-    <!-- Vendor JS Files -->
+    <!-- RENDER SECTION -->
+    <?= $this->renderSection('content') ?>
+
+    <!-- FOOTER -->
+    <?= $this->include('pages/admin/admin_dashboard/components/footer') ?>
+
+
     <script src="<?php echo base_url() ?>assets/third-assets/apexcharts/apexcharts.min.js"></script>
     <script src="<?php echo base_url() ?>assets/third-assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo base_url() ?>assets/third-assets/chart.js/chart.min.js"></script>
@@ -62,15 +57,12 @@
     <script src="<?php echo base_url() ?>assets/third-assets/simple-datatables/simple-datatables.js"></script>
     <script src="<?php echo base_url() ?>assets/third-assets/tinymce/tinymce.min.js"></script>
     <script src="<?php echo base_url() ?>assets/third-assets/php-email-form/validate.js"></script>
-    <script src="<?php echo base_url() ?>assets/third-assets/js/main.js"></script>
-	<script src="<?php echo base_url() ?>assets/third-assets/js/jquery-3.3.1.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <!-- Template Main JS File -->
     <script src="<?php echo base_url() ?>assets/js/main.js"></script>
-    <script src="<?php echo base_url() ?>assets/js/script.js"></script>
-
+    <script src="<?php echo base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
 </body>
 
 </html>

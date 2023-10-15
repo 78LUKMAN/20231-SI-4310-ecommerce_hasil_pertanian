@@ -10,6 +10,6 @@ class ActivityController extends BaseController
     }
     public function history(): string
     {
-        return view('pages/shopping_history/history');
+        return view('pages/history/history');
     }
 }

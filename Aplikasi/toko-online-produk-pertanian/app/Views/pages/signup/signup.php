@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="signin-offer">
-                        <p>Already have an account?&nbsp;<a href="/signin">Sign in</a></p>
+                        <p>Already have an account?&nbsp;<a href="<?php echo base_url()?>auth/signin">Sign in</a></p>
                     </div>
                 </form>
             </div>

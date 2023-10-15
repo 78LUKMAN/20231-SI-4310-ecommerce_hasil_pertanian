@@ -1,6 +1,6 @@
-<?= $this->extend('layout/components/dashboard_activity/dashboard_layout') ?>
+<?= $this->extend('layout/layout') ?>
 
-<?= $this->section('activity') ?>
+<?= $this->section('content') ?>
 <main class="container">
 
     <div class="pagetitle">
@@ -227,4 +227,4 @@
         </div>
     </section>
 </main>
-<?= $this->endSection('activity') ?>
+<?= $this->endSection('content') ?>

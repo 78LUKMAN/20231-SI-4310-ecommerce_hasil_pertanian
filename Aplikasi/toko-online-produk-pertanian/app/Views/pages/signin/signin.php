@@ -50,7 +50,7 @@
                 </div>
                 <div class="new-user-register">
                     <p>New User ?</p>
-                    <a href="/signup">
+                    <a href="<?php echo base_url()?>auth/signup">
                         <button class="user-register">Create your account</button>
                     </a>
                 </div>

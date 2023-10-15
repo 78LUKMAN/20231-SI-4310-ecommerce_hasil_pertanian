@@ -1,6 +1,6 @@
-<?= $this->extend('layout/components/dashboard_activity/dashboard_layout') ?>
+<?= $this->extend('layout/layout') ?>
 
-<?= $this->section('activity') ?>
+<?= $this->section('content') ?>
 <main class="container">
 
     <div class="pagetitle">
@@ -41,7 +41,7 @@
                                         <td><img src="<?php echo base_url() ?>/assets/img/products/sayurbuah.jpg"
                                                 style="width:100px" alt=""></td>
                                         <td>Rp. 30.000,00</td>
-                                        <td><input type="number" value="4" style="width:50px; text-align:center;"></td>
+                                        <td><input type="number" value="4" style="width:50px; text-align:center; border:unset;"></td>
                                         <td>Rp. 120.000,00</td>
                                         <td>
                                             <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
@@ -53,7 +53,7 @@
                                         <td><img src="<?php echo base_url() ?>/assets/img/products/sayurbuah.jpg"
                                                 style="width:100px" alt=""></td>
                                         <td>Rp. 30.000,00</td>
-                                        <td><input type="number" value="4" style="width:50px; text-align:center;"></td>
+                                        <td><input type="number" value="4" style="width:50px; text-align:center; border:unset;"></td>
                                         <td>Rp. 120.000,00</td>
                                         <td>
                                             <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
@@ -65,7 +65,7 @@
                                         <td><img src="<?php echo base_url() ?>/assets/img/products/sayurbuah.jpg"
                                                 style="width:100px" alt=""></td>
                                         <td>Rp. 30.000,00</td>
-                                        <td><input type="number" value="4" style="width:50px; text-align:center;"></td>
+                                        <td><input type="number" value="4" style="width:50px; text-align:center; border:unset;"></td>
                                         <td>Rp. 120.000,00</td>
                                         <td>
                                             <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
@@ -84,4 +84,4 @@
     </section>
 
 </main><!-- End #main -->
-<?= $this->endSection('activity') ?>
+<?= $this->endSection('content') ?>
