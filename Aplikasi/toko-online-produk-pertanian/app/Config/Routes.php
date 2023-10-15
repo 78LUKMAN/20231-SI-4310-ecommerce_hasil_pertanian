@@ -31,3 +31,11 @@ $routes->group('admin', function($routes) {
     $routes->get('/','AdminController::index');
     $routes->get('products','AdminController::products');
 });
+
+// Product
+$routes->group('product', function($routes) {
+    // product detail
+
+    // product search result
+});
+
