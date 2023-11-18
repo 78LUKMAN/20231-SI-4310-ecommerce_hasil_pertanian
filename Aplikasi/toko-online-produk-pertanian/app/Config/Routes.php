@@ -24,6 +24,8 @@ $routes->group('activity', function($routes) {
     $routes->get('cart', 'ActivityController::cart');
     $routes->get('history', 'ActivityController::history');
     $routes->get('transaction', 'ActivityController::transaction');
+    $routes->get('checkout','CheckoutController::checkout');
+
 });
 
 // Admin (product, account management, transaction management)
@@ -38,4 +40,6 @@ $routes->group('product', function($routes) {
 
     // product search result
 });
+
+// Checkout 
 
