@@ -16,10 +16,13 @@ $routes->get('/', 'Home::index');
 // Auth
 $routes->group('auth', function($routes) {
     $routes->get('signup', 'AuthController::signup');
+    $routes->post('signup', 'AuthController::signup');
     $routes->get('signin', 'AuthController::signin');
+    $routes->post('signin', 'AuthController::signin');
 });
 
 // User Activity (cart, history, transaction)
+
 $routes->group('activity', function($routes) {
     $routes->get('cart', 'ActivityController::cart');
     $routes->get('history', 'ActivityController::history');
