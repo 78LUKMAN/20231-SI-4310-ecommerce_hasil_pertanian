@@ -19,6 +19,7 @@ $routes->group('auth', function($routes) {
     $routes->post('signup', 'AuthController::signup');
     $routes->get('signin', 'AuthController::signin');
     $routes->post('signin', 'AuthController::signin');
+    $routes->get('logout', 'AuthController::logout');
 });
 
 // User Activity (cart, history, transaction)
@@ -27,6 +28,11 @@ $routes->group('activity', function($routes) {
     $routes->get('cart', 'ActivityController::cart');
     $routes->get('history', 'ActivityController::history');
     $routes->get('transaction', 'ActivityController::transaction');
+    $routes->get('profile', 'ProfileController::index');
+});
+
+$routes->group('profile', function($routes) {
+    $routes->post('edit','ProfileController::edit');
 });
 
 // Admin (product, account management, transaction management)

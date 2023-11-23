@@ -70,12 +70,23 @@
                 return '';
             }
             ?>
+
             <div class="header-user-actions">
-                <a href="<?php echo base_url() ?>auth/signup">
+                <?php if (session('isLoggin') == 1) { ?>
+                    <a href="<?php echo base_url() ?>activity/profile">
+                        <button class="action-btn">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </button>
+                    </a>
+                <?php } else {?>
+                <a href="<?php echo base_url() ?>auth/signin">
                     <button class="action-btn">
                         <ion-icon name="person-outline"></ion-icon>
                     </button>
                 </a>
+                <?php } ?>
+
+
                 <a href="<?php echo base_url() ?>activity/cart" id="cart-btn" <?php echo hideButton($cartUrl); ?>>
                     <button class="action-btn">
                         <ion-icon name="cart-outline"></ion-icon>
@@ -92,6 +103,14 @@
                         <ion-icon name="wallet-outline"></ion-icon>
                     </button>
                 </a>
+                
+                <?php if(session('role') == 'admin') {?>
+                <a href="<?php echo base_url() ?>activity/transaction" id="history-btn" <?php echo hideButton($transactionUrl); ?>>
+                    <button class="action-btn">
+                    <ion-icon name="people-outline"></ion-icon>
+                    </button>
+                </a>
+                <?php }?>
             </div>
         </div>
     </div>

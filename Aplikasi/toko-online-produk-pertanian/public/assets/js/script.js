@@ -1,4 +1,19 @@
 'use strict';
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  var removeFileBtn = document.getElementById('removeFile');
+  var inputFile = document.getElementById('image');
+  removeFileBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      inputFile.value = ''; 
+  });
+});
+
+
 const header = document.getElementsByClassName('header-sticky')[0];
 
 function handleScroll() {
@@ -125,6 +140,9 @@ function closeEl () {
 
 popupClose.addEventListener('click', closeEl);
 overlayEl.addEventListener('click', closeEl);
+
+
+
 
 
 

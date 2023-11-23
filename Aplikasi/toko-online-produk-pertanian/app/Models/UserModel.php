@@ -12,7 +12,7 @@ class UserModel extends Model
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
     protected $protectFields = true;
-    protected $allowedFields = ['name','username', 'password', 'role', 'address', 'phone', 'email'];
+    protected $allowedFields = ['name','username', 'password', 'role', 'img', 'address', 'phone', 'email'];
 
     // Dates
     protected $useTimestamps = true;
@@ -23,4 +23,10 @@ class UserModel extends Model
 
     // Validation
     protected $validationRules = [];
+
+
+    public function getUserByUsername($username)
+    {
+        return $this->where('username', $username)->first();
+    }
 }
