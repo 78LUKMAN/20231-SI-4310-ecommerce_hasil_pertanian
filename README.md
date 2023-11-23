@@ -4,8 +4,13 @@ Platform digital berbasis web yang dirancang khusus untuk memfasilitasi transaks
 
 ## Installation
 - Clone the repository
-- Config .env file
+- Config .env file (server, database name, port, username, password)
 - Install the dependencies (composer install)
 
 ## How To Run
 - Run project : php spark serve
+
+## Database Migration 
+- Create database
+- Run php spark migrate
+- Run php spark db:seed
