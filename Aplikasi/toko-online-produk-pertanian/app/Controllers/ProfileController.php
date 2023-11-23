@@ -87,6 +87,7 @@ class ProfileController extends BaseController
             $phone = $this->request->getPost('phone');
             $address = $this->request->getPost('address');
             $image = $this->request->getFile('image');
+            $randFileName = $userData['img'];
 
             if ($image->isValid()) {
                 if (!empty($userData['img']) && file_exists('assets/img/profile/' . $userData['img'])) {
@@ -100,19 +101,22 @@ class ProfileController extends BaseController
             if (!$userData) {
                 return redirect()->back()->with('pro-error', 'User data not found in session.');
             }
+            
 
             if (!$userData) {
                 return redirect()->back()->with('pro-error', 'User not found.');
             }
 
             // Update the user data
-            $userData['username'] = $username;
-            $userData['email'] = $email;
-            $userData['phone'] = $phone;
-            $userData['address'] = $address;
-            $userData['img'] = $randFileName;
+            $userData = [
+                'username' => $username,
+                'email' => $email,
+                'phone' => $phone,
+                'address' => $address,
+                'img' => $randFileName,
+            ];
 
-            $updated = $this->userModel->save($userData);
+            $updated = $this->userModel->update($userId, $userData);
 
             if ($updated) {
                 return redirect()->to('activity/profile')->with('pro-success', 'Profile data successfully updated.');
