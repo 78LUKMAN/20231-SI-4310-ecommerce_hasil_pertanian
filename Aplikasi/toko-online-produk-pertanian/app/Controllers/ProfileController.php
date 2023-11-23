@@ -7,7 +7,8 @@ use App\Models\UserModel;
 
 class ProfileController extends BaseController
 {
-    public function __construct() {
+    public function __construct()
+    {
         $this->validation = \Config\Services::validation();
         $this->userModel = new UserModel();
     }
@@ -69,6 +70,10 @@ class ProfileController extends BaseController
 
     public function edit()
     {
+
+        // Get the user ID from the user data in the session
+        $userId = session('id');
+        $userData = $this->userModel->find($userId);
         $validationRules = [
             'username' => 'required',
             'email' => 'required|valid_email',
@@ -84,21 +89,17 @@ class ProfileController extends BaseController
             $image = $this->request->getFile('image');
 
             if ($image->isValid()) {
+                if (!empty($userData['img']) && file_exists('assets/img/profile/' . $userData['img'])) {
+                    unlink('assets/img/profile/' . $userData['img']);
+                }
                 $randFileName = $image->getRandomName();
                 $image->move('assets/img/profile/', $randFileName);
-            };
+            }
+            ;
 
-            // Get the user ID from the user data in the session
-            $userId = session('id');
-            $userData = $this->userModel->find($userId);
             if (!$userData) {
                 return redirect()->back()->with('pro-error', 'User data not found in session.');
             }
-            // $userId = $userData['id'];
-
-            // // Get the user data from the database based on the ID
-            // $user = $this->userModel->find($userId);
-
 
             if (!$userData) {
                 return redirect()->back()->with('pro-error', 'User not found.');
