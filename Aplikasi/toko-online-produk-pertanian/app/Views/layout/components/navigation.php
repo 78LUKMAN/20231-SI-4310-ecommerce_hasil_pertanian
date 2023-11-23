@@ -1,45 +1,21 @@
 <nav>
-    <?php
-    $cartUrl = base_url() . 'activity/cart';
-    $historyUrl = base_url() . 'activity/history';
-    $transactionUrl = base_url() . 'actaivity/transaction';
-    $elmn = null;
-    ?>
     <div class="mobile-bottom-nav">
         <button class="action-btn" data-mobile-menu-open-btn>
             <ion-icon name="menu-outline"></ion-icon>
         </button>
-        <a href="<?php echo base_url() ?>activity/cart" id="cart-btn" <?php echo hideButton($cartUrl); ?>>
+        <a href="<?php echo base_url() ?>activity/cart">
             <button class="action-btn">
                 <ion-icon name="cart-outline"></ion-icon>
                 <span class="count">0</span>
             </button>
         </a>
-        <a href="<?php echo base_url() ?>activity/history" id="history-btn" <?php echo hideButton($historyUrl); ?>>
-            <button class="action-btn">
-                <ion-icon name="timer-outline"></ion-icon>
-            </button>
-        </a>
 
-        <a href="<?php echo base_url() ?>activity/transaction" id="history-btn" <?php echo hideButton($transactionUrl); ?>>
-            <button class="action-btn">
-                <ion-icon name="wallet-outline"></ion-icon>
-            </button>
-        </a>
+        <button class="action-btn">
+            <ion-icon name="home-outline"></ion-icon>
+        </button>
 
         <?php
-        if (current_url() !== base_url() . "index.php/") {
-            ?>
-            <a href="<?php base_url() ?>/">
-                <button class="action-btn">
-                    <ion-icon name="home-outline"></ion-icon>
-                </button>
-            </a>
-            <?php
-        } ?>
-
-        <?php
-        if (current_url() === base_url() . "index.php/") {
+        if (current_url() === base_url()."index.php/") {
             ?>
             <button class="action-btn" data-mobile-menu-open-btn>
                 <ion-icon name="grid-outline"></ion-icon>
@@ -155,7 +131,7 @@
                 <a href="#" class="menu-title">Hot Offers</a>
             </li>
             <li class="menu-category">
-                <a href="<?php base_url() ?>signin" class="menu-title">Login</a>
+                <a href="../pages/signin.html" class="menu-title">Login</a>
             </li>
         </ul>
         <div class="menu-bottom">
@@ -219,4 +195,207 @@
             </ul>
         </div>
     </div>
+
 </nav>
+<!-- <div class="slidebar has-scrollbar" data-mobile-menu>
+    <div class="slidebar-category">
+        <div class="slidebar-top">
+            <h2 class="slidebar-title">Category</h2>
+
+            <button class="slidebar-close-btn" data-mobile-menu-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+        </div>
+
+        <ul class="slidebar-menu-category-list">
+            <li class="slidebar-menu-category">
+                <button class="slidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                        <img src="../../src/img/logo/handphone.jpg" alt="" width="20" class="menu-title-img">
+                        <p class="menu-title">Handphone</p>
+                    </div>
+
+                    <div>
+                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                    </div>
+                </button>
+
+                <ul class="slidebar-submenu-category-list" data-accordion>
+                    <li class="slidebar-submenu-category">
+                        <a href="#" class="slidebar-submenu-title">
+                            <p class="product-name">Samsung</p>
+                            <data value="300" class="stock" title="available stock">58</data>
+                        </a>
+                    </li>
+
+                    <li class="slidebar-submenu-category">
+                        <a href="#" class="slidebar-submenu-title">
+                            <p class="product-name">Apple</p>
+                            <data value="300" class="stock" title="available stock">32</data>
+                        </a>
+                    </li>
+
+                    <li class="slidebar-submenu-category">
+                        <a href="#" class="slidebar-submenu-title">
+                            <p class="product-name">Asus</p>
+                            <data value="300" class="stock" title="available stock">60</data>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="slidebar-menu-category">
+                <button class="slidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                        <img src="../../src/img/logo/headphone.jpg" alt="" width="20" height="22"
+                            class="menu-title-img">
+                        <p class="menu-title">Headphone</p>
+                    </div>
+
+                    <div>
+                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                    </div>
+                </button>
+
+                <ul class="slidebar-submenu-category-list" data-accordion>
+                    <li class="slidebar-submenu-category">
+                        <a href="#" class="slidebar-submenu-title">
+                            <p class="product-name">Beats</p>
+                            <data value="300" class="stock" title="available stock">120</data>
+                        </a>
+                    </li>
+
+                    <li class="slidebar-submenu-category">
+                        <a href="#" class="slidebar-submenu-title">
+                            <p class="product-name">Sony</p>
+                            <data value="300" class="stock" title="available stock">200</data>
+                        </a>
+                    </li>
+
+                    <li class="slidebar-submenu-category">
+                        <a href="#" class="slidebar-submenu-title">
+                            <p class="product-name">Razer</p>
+                            <data value="300" class="stock" title="available stock">150</data>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="slidebar-menu-category">
+                <button class="slidebar-accordion-menu" data-accordion-btn>
+                    <div class="menu-title-flex">
+                        <img src="../../src/img/logo/watch.jpg" alt="" width="20" class="menu-title-img">
+                        <p class="menu-title">Watch</p>
+                    </div>
+
+                    <div>
+                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                    </div>
+                </button>
+
+                <ul class="slidebar-submenu-category-list" data-accordion>
+                    <li class="slidebar-submenu-category">
+                        <a href="#" class="slidebar-submenu-title">
+                            <p class="product-name">Casio</p>
+                            <data value="300" class="stock" title="available stock">80</data>
+                        </a>
+                    </li>
+
+                    <li class="slidebar-submenu-category">
+                        <a href="#" class="slidebar-submenu-title">
+                            <p class="product-name">Fossil</p>
+                            <data value="300" class="stock" title="available stock">96</data>
+                        </a>
+                    </li>
+
+                    <li class="slidebar-submenu-category">
+                        <a href="#" class="slidebar-submenu-title">
+                            <p class="product-name">Orient</p>
+                            <data value="300" class="stock" title="available stock">84</data>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="product-showcase">
+        <h3 class="showcase-heading">Best Seller</h3>
+        <div class="showcase-wrapper">
+            <div class="showcase-container">
+                <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                        <img src="../../src/img/products/product1.png" alt="" class="showcase-img" width="75">
+                    </a>
+                    <div class="showcase-content">
+                        <a href="#">
+                            <h4 class="showcase-title">Product-1</h4>
+                        </a>
+
+                        <div class="showcase-rating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                        </div>
+
+                        <div class="price-box">
+                            <del>&dollar;360.70</del>
+                            <p class="price">&dollar;246.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                        <img src="../../src/img/products/product2.png" alt="" class="showcase-img" width="75">
+                    </a>
+                    <div class="showcase-content">
+                        <a href="#">
+                            <h4 class="showcase-title">Product-2</h4>
+                        </a>
+
+                        <div class="showcase-rating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                        </div>
+
+                        <div class="price-box">
+                            <del>&dollar;379.70</del>
+                            <p class="price">&dollar;200.15</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase">
+                    <a href="#" class="showcase-img-box">
+                        <img src="../../src/img/products/product3.png" alt="" class="showcase-img" width="75">
+                    </a>
+                    <div class="showcase-content">
+                        <a href="#">
+                            <h4 class="showcase-title">Product-3</h4>
+                        </a>
+
+                        <div class="showcase-rating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                        </div>
+
+                        <div class="price-box">
+                            <del>&dollar;360.99</del>
+                            <p class="price">&dollar;206.20</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> -->

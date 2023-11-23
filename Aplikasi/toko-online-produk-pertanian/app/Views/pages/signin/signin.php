@@ -33,33 +33,27 @@
         <div class="user-signin-container">
             <div class="user-signin-content">
                 <h1>Sign In</h1>
-                <?php if(session()->getFlashdata('feedback')):?>
-                    <div class="alert alert-warning">
-                       <?= session()->getFlashdata('feedback') ?>
+                <div class="signin-form">
+                    <div class="form-content">
+                        <label for="emailusername">Email or username</label>
+                        <input type="text" id="emailusername" placeholder="email or username" required>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="password" required>
                     </div>
-                <?php endif;?>
-                <form class="signup-form" method="post" action="<?php echo base_url() ?>auth/signin">
-                    <div class="signin-form">
-                        <div class="form-content">
-                            <label for="emailusername">Email or username</label>
-                            <input type="text" id="username" name="username" placeholder="email or username" required>
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password" placeholder="password" required>
-                        </div>
-                        <div class="form-btn-action">
-                            <button type="submit">continue</button>
-                        </div>
-                        <div class="form-desc">
-                            <p>By continuing, you agree to our store's Condition of Use and Privacy notice</p>
-                        </div>
+                    <div class="form-btn-action">
+                        <button type="submit">continue</button>
                     </div>
-                    <div class="new-user-register">
-                        <p>New User ?</p>
-                        <a href="<?php echo base_url() ?>auth/signup">
-                            <button class="user-register">Create your account</button>
-                        </a>
+                    <div class="form-desc">
+                        <p>By continuing, you agree to our store's Condition of Use and Privacy notice</p>
                     </div>
-                </form>
+                    </form>
+                </div>
+                <div class="new-user-register">
+                    <p>New User ?</p>
+                    <a href="/signup">
+                        <button class="user-register">Create your account</button>
+                    </a>
+                </div>
             </div>
     </section>
 

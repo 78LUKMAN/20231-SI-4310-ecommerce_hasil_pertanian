@@ -1,90 +1,74 @@
-<?= $this->extend('layout/layout_clear') ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<?= $this->section('auth_content') ?>
-<header>
-    <div class="header-main">
-        <div class="container" style="justify-content:center !important;">
-            <a href="/" class="header-logo">
-                <img src="<?php echo base_url() ?>assets/img/logo/manlogo.PNG" alt="logo" width="120">
-            </a>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Beats Store">
+    <meta name="author" content="Lukmanul Hakim">
+    <meta name="keywords" content="ecommers">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo base_url() ?>assets/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-main">
+            <div class="container" style="justify-content:center !important;">
+                <a href="/" class="header-logo">
+                    <img src="<?php echo base_url() ?>assets/img/logo/manlogo.PNG" alt="logo" width="120">
+                </a>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<section class="user-signup">
-    <div class="user-signup-container">
-        <div class="user-signup-content">
-            <h1 class>Create Account</h1>
-            <form class="signup-form" method="post" action="<?php echo base_url() ?>auth/signup">
-                <div class="form-content gap-3">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="name" value="<?= set_value('name') ?>"
-                            class="form-control <?= ($validation->hasError('name')) ? 'is-invalid' : (($validation->getRules('name')) ? 'is-valid' : '') ?>">
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('name') ?>
-                        </div>
-                    </div>
-
-              
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder="password"
-                            class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : (($validation->getRules('password')) ? 'is-valid' : '') ?>">
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('password') ?>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
+    <section class="user-signup">
+        <div class="user-signup-container">
+            <div class="user-signup-content">
+                <h1>Create Account</h1>
+                <form class="signup-form" method="post">
+                    <div class="form-content">
+                        <label for="firstname">First name</label>
+                        <input type="text" id="firstname" placeholder="first name" required>
+                        <label for="lastname">Last name</label>
+                        <input type="text" id="lastname" placeholder="last name" required>
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder="email"
-                            value="<?= set_value('email') ?>"
-                            class="form-control <?= ($validation->hasError('email')) ? 'is-invalid' : (($validation->getRules('email')) ? 'is-valid' : '') ?>">
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('email') ?>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="repassword">Re-Password</label>
-                        <input type="password" name="confirm_password" id="confirm_password"
-                            placeholder="Re-enter your password"
-                            class="form-control <?= ($validation->hasError('confirm_password')) ? 'is-invalid' : (($validation->getRules('confirm_password')) ? 'is-valid' : '') ?>">
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('confirm_password') ?>
-                        </div>
-                    </div>
-
-                    
-                    <div class="form-group">
+                        <input type="email" id="email" placeholder="email" required>
                         <label for="username">Username</label>
-                        <input type="text" name="username" id="username" placeholder="username"
-                            value="<?= set_value('username') ?>"
-                            class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : (($validation->getRules('username')) ? 'is-valid' : '') ?>">
-                        <div class="invalid-feedback">
-                            <?= $validation->getError('username') ?>
-                        </div>
+                        <input type="text" id="username" placeholder="username" required>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="password" required>
+                        <label for="repassword">Re-Password</label>
+                        <input type="password" id="repassword" placeholder="Re-enter your password" required>
+                    </div>
+                    <div class="form-btn-action">
+                        <button type="submit">continue</button>
+                    </div>
+                    <div class="form-desc">
+                        <p>By continuing, you agree to our store's Condition of Use and Privacy notice</p>
                     </div>
 
-                    
-
-
-
-                </div>
-                <div class="form-btn-action">
-                    <button type="submit">continue</button>
-                </div>
-                <div class="form-desc">
-                    <p>By continuing, you agree to our store's Condition of Use and Privacy notice</p>
-                </div>
-
-                <div class="signin-offer">
-                    <p>Already have an account?&nbsp;<a href="<?php echo base_url() ?>auth/signin">Sign in</a></p>
-                </div>
-            </form>
+                    <div class="signin-offer">
+                        <p>Already have an account?&nbsp;<a href="/signin">Sign in</a></p>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
-<?= $this->endSection('auth_content') ?>
+    </section>
+
+   <!-- footer -->
+    <?= $this->include('layout/components/footer');?>
+
+    <script src="<?php echo base_url() ?>assets/js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/ionicons/ionicons.js"></script>
+</body>
+
+</html>
