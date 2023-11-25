@@ -62,8 +62,9 @@ class AuthController extends BaseController
                         'name' => $user['name'],
                         'role' => $user['role'],
                         'img' => $user['img'],
-                        'isLoggin' => TRUE
+                        'isLoggIn' => TRUE
                     ];
+                    
                     $session->set($session_data);
                     return redirect()->to('/');
                 } else {

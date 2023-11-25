@@ -95,8 +95,7 @@ class ProfileController extends BaseController
                 }
                 $randFileName = $image->getRandomName();
                 $image->move('assets/img/profile/', $randFileName);
-            }
-            ;
+            };
 
             if (!$userData) {
                 return redirect()->back()->with('pro-error', 'User data not found in session.');

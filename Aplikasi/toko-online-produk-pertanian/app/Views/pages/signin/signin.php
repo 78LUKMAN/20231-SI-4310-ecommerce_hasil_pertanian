@@ -18,7 +18,7 @@
         <div class="user-signin-container">
             <div class="user-signin-content">
                 <h1>Sign In</h1>
-                <form class="signup-form" method="post" action="<?php echo base_url() ?>auth/signin">
+                <?= form_open('auth/signin', ['class' => 'signup-form'])?>
                     <div class="signin-form">
                         <div class="form-content">
                             <label for="emailusername">Email or username</label>
@@ -38,7 +38,7 @@
                             <p>By continuing, you agree to our store's Condition of Use and Privacy notice</p>
                         </div>
                     </div>
-                </form>
+                    <?= form_close()?>
                 <div class="new-user-register">
                     <p>New User ?</p>
                     <a href="<?php echo base_url() ?>auth/signup">

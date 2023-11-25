@@ -72,7 +72,7 @@
             ?>
 
             <div class="header-user-actions">
-                <?php if (session('isLoggin') == 1) { ?>
+                <?php if (session('isLoggIn') == 1) { ?>
                     <a href="<?php echo base_url() ?>activity/profile">
                         <button class="action-btn">
                             <ion-icon name="person-outline"></ion-icon>
