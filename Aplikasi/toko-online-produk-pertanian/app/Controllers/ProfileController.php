@@ -23,6 +23,7 @@ class ProfileController extends BaseController
 
     public function updatePassword()
     {
+        $userId = session('id');
         $validationRules = [
             'currentPassword' => 'required',
             'newPassword' => 'required|min_length[6]',
@@ -34,36 +35,33 @@ class ProfileController extends BaseController
             $newPassword = $this->request->getPost('newPassword');
 
             // Mendapatkan ID pengguna dari data pengguna
-            $userData = session('userData');
-            if (!$userData) {
-                return redirect()->back()->with('pwd-error', 'User data not found in session.');
+            if (!$userId) {
+                return redirect()->to('activity/profile')->with('pro-errors', 'User data not found in session.');
             }
-
-            $userId = $userData['id'];
-
 
             // Mendapatkan data pengguna dari database berdasarkan ID
             $user = $this->userModel->find($userId);
 
             if (!$user) {
-                return redirect()->back()->with('pwd-error', 'User not found.');
+                return redirect()->to('activity/profile')->with('pro-errors', 'User not found.');
             }
 
             // Memverifikasi password saat ini
-            if (md5($currentPassword) != $user['password']) {
-                return redirect()->back()->with('pwd-error', 'Incorrect current password.');
+            if (!password_verify($currentPassword, $user['password'])) {
+                return redirect()->to('activity/profile')->with('pro-errors', 'Incorrect current password.');
             }
 
             // Mengubah password baru
             $data = [
-                'password' => md5($newPassword)
+                'password' => password_hash($newPassword, PASSWORD_BCRYPT)
             ];
+
             $upPwd = $this->userModel->update($userId, $data);
             if ($upPwd) {
-                return redirect()->to('profile')->with('pwd-success', 'Password successfully updated.');
+                return redirect()->to('activity/profile')->with('pro-success', 'Password successfully updated.');
             }
         } else {
-            return redirect()->back()->withInput()->with('pwd-errors', $this->validator->getErrors());
+            return redirect()->to('activity/profile')->with('pro-errors', $this->validator->getErrors());
         }
     }
 
@@ -98,12 +96,12 @@ class ProfileController extends BaseController
             };
 
             if (!$userData) {
-                return redirect()->back()->with('pro-error', 'User data not found in session.');
+                return redirect()->back()->with('pro-errors', 'User data not found in session.');
             }
             
 
             if (!$userData) {
-                return redirect()->back()->with('pro-error', 'User not found.');
+                return redirect()->back()->with('pro-errors', 'User not found.');
             }
 
             // Update the user data
@@ -120,7 +118,7 @@ class ProfileController extends BaseController
             if ($updated) {
                 return redirect()->to('activity/profile')->with('pro-success', 'Profile data successfully updated.');
             } else {
-                return redirect()->to('profile')->with('pro-failed', 'Failed to update profile data.');
+                return redirect()->to('activity/profile')->with('pro-failed', 'Failed to update profile data.');
             }
         } else {
             return redirect()->back()->withInput()->with('pro-errors', $this->validator->getErrors());

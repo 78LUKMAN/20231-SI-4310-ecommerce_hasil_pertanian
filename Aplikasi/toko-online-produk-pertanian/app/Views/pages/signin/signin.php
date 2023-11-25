@@ -18,7 +18,7 @@
         <div class="user-signin-container">
             <div class="user-signin-content">
                 <h1>Sign In</h1>
-                <?= form_open('auth/signin', ['class' => 'signup-form'])?>
+                <?= form_open('auth/signin', ['class' => 'signin-form'])?>
                     <div class="signin-form">
                         <div class="form-content">
                             <label for="emailusername">Email or username</label>

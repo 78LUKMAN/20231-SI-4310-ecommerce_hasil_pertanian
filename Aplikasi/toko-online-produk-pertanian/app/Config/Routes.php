@@ -32,7 +32,9 @@ $routes->group('activity', function($routes) {
 });
 
 $routes->group('profile', function($routes) {
-    $routes->post('edit','ProfileController::edit');
+
+    $routes->post('update','ProfileController::updatePassword'); // update user password
+    $routes->post('edit','ProfileController::edit'); // edit profile info
 });
 
 // Admin (product, account management, transaction management)
