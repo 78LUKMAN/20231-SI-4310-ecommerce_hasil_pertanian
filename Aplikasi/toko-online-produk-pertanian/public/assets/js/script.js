@@ -1,8 +1,5 @@
 'use strict';
 
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
 
   var removeFileBtn = document.getElementById('removeFile');
