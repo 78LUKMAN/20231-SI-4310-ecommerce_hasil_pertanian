@@ -55,26 +55,26 @@
             </div>
 
             <?php
-            $cartUrl = base_url() . 'activity/cart';
-            $historyUrl = base_url() . 'activity/history';
-            $transactionUrl = base_url() . 'admin/actaivity/transactions';
-            $addProductUrl = base_url() . 'admin/actaivity/products';
-            $elmn = null;
-            $currentUrl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-
-            function hideButton($url)
-            {
-                global $currentUrl;
-                if ($currentUrl === $url) {
-                    return 'style="display:none;"';
-                }
-                return '';
-            }
+          $cartUrl = base_url() . 'activity/cart';
+          $historyUrl = base_url() . 'activity/history';
+          $profileUrl = base_url() . 'activity/profile';
+          $transactionUrl = base_url() . 'admin/activity/transactions'; 
+          $addProductUrl = base_url() . 'admin/activity/products'; 
+          
+          function hideButton($url)
+          {
+              $currentUrl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+              if ($currentUrl == $url) {
+                  return "style='display:none;'";
+              }
+              return '';
+          }
+          
             ?>
 
             <div class="header-user-actions">
                 <?php if (session('isLoggIn') == 1) { ?>
-                    <a href="<?php echo base_url() ?>activity/profile">
+                    <a href="<?php echo base_url() ?>activity/profile" <?php echo hideButton($profileUrl)?>>
                         <button class="action-btn">
                             <ion-icon name="person-outline"></ion-icon>
                         </button>
@@ -105,12 +105,12 @@
                 </a>
 
                 <?php if (session('role') == 'admin') { ?>
-                    <a href="<?php echo base_url() ?>admin/activity/transaction" id="history-btn" <?php echo hideButton($transactionUrl); ?>>
+                    <a href="<?php echo base_url() ?>admin/activity/transaction" <?php echo hideButton($transactionUrl); ?>>
                         <button class="action-btn">
                             <ion-icon name="people-outline"></ion-icon>
                         </button>
                     </a>
-                    <a href="<?php echo base_url() ?>admin/activity/products" id="history-btn" <?php echo hideButton($addProductUrl); ?>>
+                    <a href="<?php echo base_url() ?>admin/activity/products" <?php echo hideButton($addProductUrl); ?>>
                         <button class="action-btn">
                             <ion-icon name="logo-dropbox"></ion-icon>
                         </button>
