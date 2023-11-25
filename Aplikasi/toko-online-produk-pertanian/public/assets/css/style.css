@@ -38,6 +38,10 @@
     --transition-timing: 0.2s ease;
 }
 
+body {
+    background-color: #fff !important;
+}
+
 *,
 *::before,
 *::after {
