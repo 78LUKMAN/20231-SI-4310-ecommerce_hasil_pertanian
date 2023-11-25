@@ -87,7 +87,6 @@
                     </a>
                 <?php } ?>
 
-
                 <a href="<?php echo base_url() ?>activity/cart" id="cart-btn" <?php echo hideButton($cartUrl); ?>>
                     <button class="action-btn">
                         <ion-icon name="cart-outline"></ion-icon>
