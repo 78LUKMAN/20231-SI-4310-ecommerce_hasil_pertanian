@@ -23,7 +23,7 @@
                         <!-- Table with stripped rows -->
                         <?php form_open() ?>
                         <div class="table-responsive">
-                            <table class="table datatable">
+                            <table class="table datatable" id="example">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
@@ -106,4 +106,5 @@
     </section>
 
 </main><!-- End #main -->
+
 <?= $this->endSection('content') ?>

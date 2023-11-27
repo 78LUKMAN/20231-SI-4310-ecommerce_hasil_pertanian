@@ -41,6 +41,7 @@ $routes->group('profile', function($routes) {
 $routes->group('admin', function($routes) {
     $routes->get('/','AdminController::index');
     $routes->get('products','AdminController::products');
+    $routes->get('accounts','AdminController::accounts');
 });
 
 // Product

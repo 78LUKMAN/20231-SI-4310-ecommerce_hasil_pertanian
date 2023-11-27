@@ -80,3 +80,4 @@
     </div>
 </section>
 <?= $this->endSection('auth_content') ?>
+<?php $this->setVar('title', 'Sign Up'); ?>

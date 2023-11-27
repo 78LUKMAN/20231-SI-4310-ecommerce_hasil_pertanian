@@ -10,11 +10,11 @@ class AuthController extends BaseController
     function __construct()
     {
         helper(['form']);
+        $this->validation = \Config\Services::validation();
     }
     public function signup()
     {
-        helper(['form']);
-        $validation = \Config\Services::validation();
+        $validator = $this->validation;
         if ($this->request->is('post')) {
             $rules = [
                 'name' => 'required|min_length[4]|max_length[50]',
@@ -33,13 +33,14 @@ class AuthController extends BaseController
                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
                     'role' => "guest"
                 ];
+
                 $userModel->save($data);
                 return redirect("auth/signin")->with("success", "horeeee");
             } else {
-                return view('pages/signup/signup', ['validation' => $validation]);
+                return view('pages/signup/signup', ['validation' => $validator]);
             }
         }
-        return view('pages/signup/signup', ['validation' => $validation]);
+        return view('pages/signup/signup', ['validation' => $validator]);
 
     }
     public function signin()
@@ -62,9 +63,11 @@ class AuthController extends BaseController
                         'name' => $user['name'],
                         'role' => $user['role'],
                         'img' => $user['img'],
-                        'isLoggIn' => TRUE
+                        'isLoggIn' => TRUE,
+                        'created_at' => date('Y-m-d H:i:s')
+
                     ];
-                    
+
                     $session->set($session_data);
                     return redirect()->to('/');
                 } else {
@@ -81,9 +84,9 @@ class AuthController extends BaseController
     }
 
     public function logout()
-	{
-		session()->destroy();
-		return redirect()->to('/');
-	}
+    {
+        session()->destroy();
+        return redirect()->to('/');
+    }
 }
 
