@@ -105,14 +105,9 @@
                 </a>
 
                 <?php if (session('role') == 'admin') { ?>
-                    <a href="<?php echo base_url() ?>admin/accounts" <?php echo hideButton($transactionUrl); ?>>
+                    <a href="<?php echo base_url() ?>admin/accounts" <?php echo hideButton($addProductUrl); ?>>
                         <button class="action-btn">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </button>
-                    </a>
-                    <a href="<?php echo base_url() ?>admin/activity/products" <?php echo hideButton($addProductUrl); ?>>
-                        <button class="action-btn">
-                            <ion-icon name="logo-dropbox"></ion-icon>
+                        <ion-icon name="grid-outline"></ion-icon>
                         </button>
                     </a>
                 <?php } ?>

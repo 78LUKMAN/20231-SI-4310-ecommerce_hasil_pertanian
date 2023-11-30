@@ -158,7 +158,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="form-group">
-                                    <label for="confirm_password" class="form-label">confirm_Password</label>
+                                    <label for="confirm_password" class="form-label">Confirm Password</label>
                                     <input type="text"
                                         class="form-control <?php echo session('error.confirm_password') ? 'is-invalid' : (session('error') ? 'is-valid' : ''); ?>"
                                         id="confirm_password" name="confirm_password" placeholder="confirm_password"
