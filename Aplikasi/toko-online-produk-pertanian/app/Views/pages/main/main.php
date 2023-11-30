@@ -1,10 +1,10 @@
 <?= $this->extend('layout/layout'); ?>
 <?= $this->section('content') ?>
 
-<div class="modal" data-modal>
-    <div class="modal-close-overlay" data-modal-overlay></div>
-    <div class="modal-content">
-        <button class="modal-close-btn" data-modal-close>
+<div class="main-modal" data-modal>
+    <div class="main-modal-close-overlay" data-modal-overlay></div>
+    <div class="main-modal-content">
+        <button class="main-modal-close-btn" data-modal-close>
             <ion-icon name="close-outline"></ion-icon>
         </button>
 
@@ -849,7 +849,7 @@
 
                     <div class="display-details has-scrollbar">
                         <div class="product-details-content">
-                            <button class="modal-close-btn" details-popup-close>
+                            <button class="main-modal-close-btn" details-popup-close>
                                 <ion-icon name="close-outline"></ion-icon>
                             </button>
                             <div class="product-content">

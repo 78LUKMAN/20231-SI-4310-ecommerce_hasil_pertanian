@@ -105,7 +105,7 @@
                 </a>
 
                 <?php if (session('role') == 'admin') { ?>
-                    <a href="<?php echo base_url() ?>admin/activity/transaction" <?php echo hideButton($transactionUrl); ?>>
+                    <a href="<?php echo base_url() ?>admin/accounts" <?php echo hideButton($transactionUrl); ?>>
                         <button class="action-btn">
                             <ion-icon name="people-outline"></ion-icon>
                         </button>

@@ -35,7 +35,6 @@
 </head>
 
 <body>
-    <div class="overlay" data-overlay></div>
 
     <!-- HEADER -->
     <?= $this->include('pages/admin/admin_dashboard/components/header') ?>
@@ -43,7 +42,14 @@
 
 
     <!-- RENDER SECTION -->
-    <?= $this->renderSection('content') ?>
+    <main id="main" class="main">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title"><h5>Account Management</h5></div>
+                <?= $this->renderSection('admin_content') ?>
+            </div>
+        </div>
+    </main>
 
     <!-- FOOTER -->
     <?= $this->include('pages/admin/admin_dashboard/components/footer') ?>
