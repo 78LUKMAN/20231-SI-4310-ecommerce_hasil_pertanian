@@ -76,4 +76,11 @@ class AdminController extends BaseController
 
         }
     }
+
+    public function deleteuser($id) {
+        $delete = $this->userModel->delete($id);
+        if ($delete) {
+            return redirect('admin/accounts')->with('success', 'Akun berhasil dihapus');
+        }
+    }
 }

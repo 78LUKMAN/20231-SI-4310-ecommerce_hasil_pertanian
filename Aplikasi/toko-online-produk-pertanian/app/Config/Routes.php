@@ -43,9 +43,8 @@ $routes->group('admin', function($routes) {
     $routes->get('products','AdminController::products');
     $routes->get('accounts','AdminController::accounts');
     $routes->post('account/add','AdminController::adduser');
-    $routes->get('account/add','AdminController::adduser');
     $routes->post('account/edit/(:num)','AdminController::edituser/$1');
-    $routes->post('account/delete','AdminController::deleteuser');
+    $routes->post('account/delete/(:num)','AdminController::deleteuser/$1');
 });
 
 // Product
