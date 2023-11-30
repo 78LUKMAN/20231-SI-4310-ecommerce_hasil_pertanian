@@ -6,17 +6,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php endif; ?>
-
-<?php if (session()->getFlashData('failed')): ?>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <?= session()->getFlashData('failed') ?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-<?php endif; ?>
-
-<?php if (session()->getFlashdata('error')): ?>
-
-<?php endif; ?>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newUser">
     &nbsp;<i class="bi bi-plus-square"></i>&nbsp;Tambah User&nbsp;
 </button>
@@ -74,21 +63,41 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Edit Data</h5>
+                                <h5 class="modal-title">Edit Password</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <?= form_open('admin/account/edit' . $user['id'], ['method' => 'post']) ?>
+                                <?= form_open('admin/account/edit/' . $user['id'], ['method' => 'post']) ?>
                                 <?= csrf_field() ?>
                                 <div class="mb-3">
+                                    <label for="text" class="form-label">username</label>
+                                    <input type="username" class="form-control <?php echo session()->getFlashdata('failed') ? 'is-invalid' : (session()->getFlashdata()  ? 'is-valid' : ''); ?>" id="username" name="username"
+                                        placeholder="username" value="<?php echo session('input_data.username'); ?>" required>
+                                    <?php if (session()->getFlashData('failed')): ?>
+                                        <div class="text-danger">
+                                            <?= session()->getFlashData('failed') ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="mb-3">
                                     <label for="password" class="form-label">New Password</label>
-                                    <input type="password" class="form-control" id="password" name="password"
-                                        placeholder="password" required>
+                                    <input type="password" class="form-control <?php echo session('error.password')? 'is-invalid' : (session('error') ? 'is-valid' : ''); ?>" id="password" name="password"
+                                        placeholder="password" value="<?php echo session('input_data.password'); ?>" required>
+                                    <?php if (session()->getFlashdata('error') && session('error.password')): ?>
+                                        <div class="text-danger">
+                                            <?= session('error.password') ?>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="mb-3">
                                     <label for="confirm_password" class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control" id="confirm_password"
-                                        name="confirm_password" placeholder="confirm password" required>
+                                    <input type="password" class="form-control <?php echo session('error.confirm_password')? 'is-invalid' : (session('error') ? 'is-valid' : ''); ?>" id="confirm_password" name="confirm_password"
+                                        placeholder="confirm password" value="<?php echo session('input_data.confirm_password'); ?>" required>
+                                        <?php if (session()->getFlashdata('error') && session('error.confirm_password')): ?>
+                                        <div class="text-danger">
+                                            <?= session('error.confirm_password') ?>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-primary">Change Password</button>

@@ -44,7 +44,7 @@ $routes->group('admin', function($routes) {
     $routes->get('accounts','AdminController::accounts');
     $routes->post('account/add','AdminController::adduser');
     $routes->get('account/add','AdminController::adduser');
-    $routes->post('account/edit','AdminController::edituserpassword');
+    $routes->post('account/edit/(:num)','AdminController::edituser/$1');
     $routes->post('account/delete','AdminController::deleteuser');
 });
 

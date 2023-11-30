@@ -28,7 +28,7 @@ class AdminController extends BaseController
                 'password' => 'required|min_length[4]|max_length[50]',
                 'confirm_password' => 'required|matches[password]',
             ];
-    
+
             if ($this->validate($rules)) {
                 $data = [
                     'name' => $this->request->getVar('name'),
@@ -36,7 +36,7 @@ class AdminController extends BaseController
                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
                     'role' => "guest",
                 ];
-    
+
                 $this->userModel->insert($data);
                 return redirect("admin/accounts")->with("success", "Berhasil menambahkan user baru");
             } else {
@@ -44,5 +44,36 @@ class AdminController extends BaseController
                 return redirect("admin/accounts")->withInput()->with("error", $validator->getErrors());
             }
         }
-    }    
+    }
+
+    public function edituser($id)
+    {
+        $user = $this->userModel->find($id);
+        if ($this->request->is("post")) {
+
+            $username = $this->request->getVar("username");
+            $rules = [
+                "username" => 'required',
+                "password" => 'required|min_length[4]',
+                "confirm_password" => 'required|matches[password]',
+            ];
+
+            $data = [
+                'password' => password_hash($this->request->getPath('password'), PASSWORD_DEFAULT),
+            ];
+
+            if ($username === $user['username']) {
+                session()->setFlashdata('input_data', $this->request->getPost());
+                if ($this->validate($rules)) {
+                    $this->userModel->update($id, $data);
+                    return redirect('admin/accounts')->with('success', 'Password berhasil di perbarui');
+                } else {
+                    return redirect('admin/accounts')->with('error', $this->validator->getErrors());
+                }
+            } else {
+                return redirect('admin/accounts')->with('failed', 'Pengguna tidak ditemukan');
+            }
+
+        }
+    }
 }
