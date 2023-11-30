@@ -690,30 +690,7 @@
 
                                             <div class="showcase-status-bar"></div>
                                         </div>
-                                        <div class="countdown-box">
-                                            <p class="countdown-desc">
-                                                Only 10 left in stock - order soon.
-                                            </p>
-
-                                            <div class="countdown">
-                                                <div class="countdown-content">
-                                                    <p class="display-number">5</p>
-                                                    <p class="display-text">days</p>
-                                                </div>
-                                                <div class="countdown-content">
-                                                    <p class="display-number">10</p>
-                                                    <p class="display-text">hours</p>
-                                                </div>
-                                                <div class="countdown-content">
-                                                    <p class="display-number">26</p>
-                                                    <p class="display-text">min</p>
-                                                </div>
-                                                <div class="countdown-content">
-                                                    <p class="display-number">45</p>
-                                                    <p class="display-text">sec</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                   
                                     </div>
                                 </div>
                             </div>
@@ -754,25 +731,7 @@
                                                 Only 10 left in stock - order soon.
                                             </p>
 
-                                            <div class="countdown">
-                                                <div class="countdown-content">
-                                                    <p class="display-number">3</p>
-                                                    <p class="display-text">days</p>
-                                                </div>
-                                                <div class="countdown-content">
-                                                    <p class="display-number">1</p>
-                                                    <p class="display-text">hours</p>
-                                                </div>
-                                                <div class="countdown-content">
-                                                    <p class="display-number">12</p>
-                                                    <p class="display-text">min</p>
-                                                </div>
-                                                <div class="countdown-content">
-                                                    <p class="display-number">5</p>
-                                                    <p class="display-text">sec</p>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>

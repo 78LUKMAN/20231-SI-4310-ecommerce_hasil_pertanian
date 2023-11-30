@@ -5,23 +5,9 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-
-
-// Routes 
-
-
-// HOME
 $routes->get('/', 'Home::index');
-
-// Auth
-$routes->group('auth', function($routes) {
-    $routes->get('signup', 'AuthController::signup');
-    $routes->post('signup', 'AuthController::signup');
-    $routes->get('signin', 'AuthController::signin');
-    $routes->post('signin', 'AuthController::signin');
-});
-
-// User Activity (cart, history, transaction)
+$routes->get('signup', 'AuthController::signup');
+$routes->get('signin', 'AuthController::signin');
 
 $routes->group('activity', function($routes) {
     $routes->get('cart', 'ActivityController::cart');
@@ -29,16 +15,6 @@ $routes->group('activity', function($routes) {
     $routes->get('transaction', 'ActivityController::transaction');
 });
 
-// Admin (product, account management, transaction management)
-$routes->group('admin', function($routes) {
-    $routes->get('/','AdminController::index');
-    $routes->get('products','AdminController::products');
-});
 
-// Product
-$routes->group('product', function($routes) {
-    // product detail
 
-    // product search result
-});
-
+$routes->get('history', 'HistoryController::index');
