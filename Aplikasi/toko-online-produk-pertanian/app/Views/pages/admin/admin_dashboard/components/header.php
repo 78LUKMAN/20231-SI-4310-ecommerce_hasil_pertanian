@@ -2,7 +2,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
 <div class="d-flex align-items-center justify-content-between">
-  <a href="index.html" class="logo d-flex align-items-center">
+  <a href="/" class="logo d-flex align-items-center">
     <img src="<?php echo base_url()?>public/NiceAdmin/assets/img/logo.png" alt="">
     <span class="d-none d-lg-block">Toko Kita</span>
   </a>
@@ -34,24 +34,17 @@
       <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
         <li class="dropdown-header">
           <h6><?= session()->get('username'); ?></h6>
-          <span>Web Designer</span>
+          <span><?= (session()->get('role') == "admin") ? "admin toko" : ""; ?></span>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
         </li>
         <li>
           <hr class="dropdown-divider">
         </li>
 
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="<?=site_url('profile')?>">
-            <i class="bi bi-person"></i>
-            <span>My Profile</span>
-          </a>
-        </li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-
-        <li>
-          <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+          <a class="dropdown-item d-flex align-items-center" href="<?= base_url()?>activity/profile">
             <i class="bi bi-gear"></i>
             <span>Account Settings</span>
           </a>
@@ -60,7 +53,7 @@
           <hr class="dropdown-divider">
         </li>
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="<?php echo base_url() ?>logout">
+          <a class="dropdown-item d-flex align-items-center" href="<?= base_url()?>auth/logout">
             <i class="bi bi-box-arrow-right"></i>
             <span>Sign Out</span>
           </a>

@@ -31,7 +31,8 @@ class AuthController extends BaseController
                     'username' => $this->request->getVar('username'),
                     'email' => $this->request->getVar('email'),
                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
-                    'role' => "guest"
+                    'role' => "guest",
+                    'created_at' => date('Y-m-d H:i:s')
                 ];
 
                 $userModel->save($data);
@@ -64,8 +65,6 @@ class AuthController extends BaseController
                         'role' => $user['role'],
                         'img' => $user['img'],
                         'isLoggIn' => TRUE,
-                        'created_at' => date('Y-m-d H:i:s')
-
                     ];
 
                     $session->set($session_data);

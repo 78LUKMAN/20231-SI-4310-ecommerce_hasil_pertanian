@@ -59,7 +59,7 @@ class AdminController extends BaseController
             ];
 
             $data = [
-                'password' => password_hash($this->request->getPath('password'), PASSWORD_DEFAULT),
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
             ];
 
             if ($username === $user['username']) {
