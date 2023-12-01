@@ -1099,14 +1099,15 @@ body::-webkit-scrollbar-thumb:hover {
     white-space: nowrap;
     text-overflow: ellipsis;
     text-transform: uppercase;
-    margin-bottom: 3px;
+    margin-bottom: 4rem;
 }
 
 .product-featured .showcase-desc {
     color: var(--sonic-silver);
     font-size: var(--fs-7);
     font-weight: var(--weight-300);
-    margin-bottom: 10px;
+    margin-bottom: 3rem;
+    padding-bottom: 10px;
 }
 
 .product-featured .price-box {
