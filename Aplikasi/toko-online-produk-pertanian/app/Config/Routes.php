@@ -29,6 +29,7 @@ $routes->group('activity', function($routes) {
     $routes->get('history', 'ActivityController::history');
     $routes->get('transaction', 'ActivityController::transaction');
     $routes->get('profile', 'ProfileController::index');
+    $routes->get('checkout','CheckoutController::checkout');
 });
 
 $routes->group('profile', function($routes) {
@@ -54,7 +55,8 @@ $routes->group('admin', function($routes) {
 // Product
 $routes->group('product', function($routes) {
     // product detail
-
+    $routes->get('detail','ProductdetailController::productdetail');
     // product search result
 });
 
+// C
