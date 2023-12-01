@@ -6,13 +6,13 @@
                         <h2 class="nav-title">Popular Categories</h2>
                     </li>
                     <li class="nav-item flex">
-                        <a href="#" class="footer-nav-link nav-link">Headphone</a>
+                        <a href="#" class="footer-nav-link nav-link">Buah</a>
                     </li>
                     <li class="nav-item flex">
-                        <a href="#" class="footer-nav-link nav-link">Smartphone</a>
+                        <a href="#" class="footer-nav-link nav-link">Pupuk</a>
                     </li>
                     <li class="nav-item flex">
-                        <a href="#" class="footer-nav-link nav-link">Watch</a>
+                        <a href="#" class="footer-nav-link nav-link">Bibit</a>
                     </li>
                 </ul>
                 <ul class="nav-list">

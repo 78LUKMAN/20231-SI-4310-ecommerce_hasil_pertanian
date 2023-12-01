@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/logo/favicon.png" type="image/x-icon">
     <link rel="icon" href="<?php echo base_url() ?>assets/img/logo/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
@@ -121,6 +122,7 @@
                                 <p class="category-item-amount">(23)</p>
                             </div>
                             <a href="#" class="category-btn">Show All</a>
+                        
                         </div>
                     </div>
 
@@ -314,67 +316,7 @@
                         </ul>
                     </div>
 
-                    <div class="product-showcase">
-                        <h3 class="showcase-heading">Promo!!</h3>
-                        <div class="showcase-wrapper">
-                            <div class="showcase-container">
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            class="showcase-img" width="75">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Product-1</h4>
-                                        </a>
 
-                                    
-
-                                        <div class="price-box">
-                                            <del>&dollar;360.70</del>
-                                            <p class="price">&dollar;246.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            class="showcase-img" width="75">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Product-2</h4>
-                                        </a>
-
-                                     
-
-                                        <div class="price-box">
-                                            <del>&dollar;379.70</del>
-                                            <p class="price">&dollar;200.15</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            class="showcase-img" width="75">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Product-3</h4>
-                                        </a>
-
-                                       
-
-                                        <div class="price-box">
-                                            <del>&dollar;360.99</del>
-                                            <p class="price">&dollar;206.20</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="product-box">
@@ -451,7 +393,7 @@
                                 <div class="showcase-container">
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/Anggur.jpg" alt=""
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
                                                 width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
@@ -499,7 +441,7 @@
                                     </div>
                                     <div class="showcase">
                                         <a href="#" class="showcase-img-box">
-                                            <img src="<?php echo base_url() ?>assets/img/products/Mangga.jpg" alt=""
+                                            <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
                                                 width="70" class="showcase-img">
                                         </a>
                                         <div class="showcase-content">
@@ -668,12 +610,12 @@
                                        
                                         <a href="#">
                                             <h3 class="showcase-title">Pupuk 10KG<sup></sup> Organik 
-                                                </h3>
+                                                
+                                        </h3>
                                         </a>
 
                                         <p class="showcase-desc">
-                                        Pupuk 10kg adalah solusi yang praktis dan efektif untuk meningkatkan produktivitas tanaman Anda. 
-                                        Dirancang khusus untuk pemilik kebun, petani, dan pecinta tanaman, pupuk ini hadir dalam kemasan 10 kilogram yang cukup untuk jangka waktu yang cukup lama. 
+                                        Pupuk 10kg adalah solusi yang praktis dan efektif untuk meningkatkan produktivitas tanaman Anda. Pupuk 10kg adalah solusi yang praktis dan efektif untuk meningkatkan produktivitas tanaman Anda. Pupuk 10kg adalah solusi yang praktis dan efektif untuk meningkatkan produktivitas tanaman Anda. 
                                         </p>
 
                                         <div class="price-box">
@@ -682,61 +624,15 @@
                                         </div>
 
                                         <button class="details-btn">details</button>
-                                        <div class="showcase-status">
-                                            <div class="wrapper">
-                                                <p>Sold : <b><i>35</i></b></p>
-                                                <p>Stock : <b><i>10</i></b></p>
-                                            </div>
-
-                                            <div class="showcase-status-bar"></div>
-                                        </div>
+                    
                                    
                                     </div>
+
+                                    
                                 </div>
                             </div>
                             <div class="showcase-container">
-                                <div class="showcase">
-                                    <div class="showcase-banner">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="
-                                            showcase-img">
-                                    </div>
-                                    <div class="showcase-content">
-                                      
-                                        <a href="#">
-                                            <h3 class="showcase-title">Tomat 5KG<sup></sup> GMO
-                                                </h3>
-                                        </a>
-
-                                        <p class="showcase-desc">
-                                        Tomat 5kg GMO adalah varietas tomat yang telah dimodifikasi secara genetik untuk menghasilkan buah-buahan yang lebih besar dan tahan terhadap hama. 
-                                        Kemasan 5 kilogram ini ideal untuk penggemar tomat yang ingin menikmati hasil panen yang melimpah. 
-                                        </p>
-
-                                        <div class="price-box">
-                                            <p class="price">$263</p>
-                                            <del>$349.95</del>
-                                        </div>
-
-                                        <button class="details-btn">details</button>
-                                        <div class="showcase-status">
-                                            <div class="wrapper">
-                                                <p>Sold : <b><i>35</i></b></p>
-                                                <p>Stock : <b><i>10</i></b></p>
-                                            </div>
-
-                                            <div class="showcase-status-bar"></div>
-                                        </div>
-                                        <div class="countdown-box">
-                                            <p class="countdown-desc">
-                                                Only 10 left in stock - order soon.
-                                            </p>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="showcase-container">
-                                <div class="showcase">
+                                <div class="showcase">  
                                     <div class="showcase-banner">
                                         <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="
                                             showcase-img">
@@ -744,58 +640,55 @@
                                     <div class="showcase-content">
                                        
                                         <a href="#">
-                                            <h3 class="showcase-title">Multitonik Pupuk Organik Cair<sup></sup> 
+                                            <h3 class="showcase-title">Pupuk 20KG<sup></sup> Organik 
                                                 </h3>
                                         </a>
 
                                         <p class="showcase-desc">
-                                        Multitonik Pupuk Organik Cair adalah solusi unggul bagi pertumbuhan tanaman Anda. 
-                                        Merupakan pupuk organik cair yang kaya akan nutrisi alami, Multitonik membantu tanaman Anda berkembang subur, dengan akar yang kuat dan dedaunan yang hijau. 
-                                        Formula khususnya dirancang untuk memberikan nutrisi seimbang, memaksimalkan hasil panen, dan menjaga tanaman Anda tetap sehat. 
-                                        Cobalah Multitonik sekarang untuk melihat perbedaannya dalam kebun atau pertanian Anda.
+                                        Pupuk 10kg adalah solusi yang praktis dan efektif untuk meningkatkan produktivitas tanaman Anda. 
                                         </p>
 
                                         <div class="price-box">
                                             <p class="price">$263</p>
-                                            <del>$300.95</del>
+                                            <del>$389.99</del>
                                         </div>
 
                                         <button class="details-btn">details</button>
-                                        <div class="showcase-status">
-                                            <div class="wrapper">
-                                                <p>Sold : <b><i>35</i></b></p>
-                                                <p>Stock : <b><i>10</i></b></p>
-                                            </div>
-
-                                            <div class="showcase-status-bar"></div>
-                                        </div>
-                                        <div class="countdown-box">
-                                            <p class="countdown-desc">
-                                                Only 10 left in stock - order soon.
-                                            </p>
-
-                                            <div class="countdown">
-                                                <div class="countdown-content">
-                                                    <p class="display-number">4</p>
-                                                    <p class="display-text">days</p>
-                                                </div>
-                                                <div class="countdown-content">
-                                                    <p class="display-number">4</p>
-                                                    <p class="display-text">hours</p>
-                                                </div>
-                                                <div class="countdown-content">
-                                                    <p class="display-number">6</p>
-                                                    <p class="display-text">min</p>
-                                                </div>
-                                                <div class="countdown-content">
-                                                    <p class="display-number">15</p>
-                                                    <p class="display-text">sec</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                   
+                                   
                                     </div>
-                                </div>
                             </div>
+                
+                        </div>
+
+                            <div class="showcase-container">
+                                <div class="showcase">  
+                                    <div class="showcase-banner">
+                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="
+                                            showcase-img">
+                                    </div>
+                                    <div class="showcase-content">
+                                       
+                                        <a href="#">
+                                            <h3 class="showcase-title">Pupuk 30KG<sup></sup> Organik 
+                                                </h3>
+                                        </a>
+
+                                        <p class="showcase-desc">
+                                        Pupuk 10kg adalah solusi yang praktis dan efektif untuk meningkatkan produktivitas tanaman Anda. 
+                                        </p>
+
+                                        <div class="price-box">
+                                            <p class="price">$263</p>
+                                            <del>$389.99</del>
+                                        </div>
+
+                                        <button class="details-btn">details</button>
+                                   
+                                   
+                                    </div>
+                            </div>
+                
                         </div>
 
                         <div class="display-details has-scrollbar">
@@ -1030,169 +923,7 @@
             </div>
         </section>
 
-        <section class="testimonials">
-            <div class="container">
-                <div class="customers-testimonials-box">
-                    <div class="testimonials-content">
-                        <h2 class="title">Customers Testimonial</h2>
-                        <input type="radio" name="" class="btn-slide" id="btn-slide1">
-                        <input type="radio" name="" class="btn-slide" id="btn-slide2">
-                        <input type="radio" name="" class="btn-slide" id="btn-slide3">
-                        <input type="radio" name="" class="btn-slide" id="btn-slide4">
-                        <input type="radio" name="" class="btn-slide" id="btn-slide5">
-                        <input type="radio" name="" class="btn-slide" id="btn-slide6">
-                        <div class="testimonial-wrapper has-scrollbar">
-                            <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/testimonial/billgates.jpg" alt=""
-                                    class="testimonial-benner" width="80" height="80">
-                                <p class="customer-name">billgates</p>
-                                <p class="customer-title">CO-Founder of Microsoft</p>
-                                <p class="testimonial-description">
-                                <blockquote>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                    . Iusto, accusantium autem!
-                                </blockquote>
-                                </p>
-                            </div>
-                            <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/testimonial/daniel.jpg" alt=""
-                                    class="testimonial-benner" width="80" height="80">
-                                <p class="customer-name">daniel</p>
-                                <p class="customer-title">CO-Founder of Microsoft</p>
-                                <p class="testimonial-description">
-                                <blockquote>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                    sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                    praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                                </blockquote>
-                                </p>
-                            </div>
-                            <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/testimonial/elonmusk.jpg" alt=""
-                                    class="testimonial-benner" width="80" height="80">
-                                <p class="customer-name">elon musk</p>
-                                <p class="customer-title">CO-Founder of Microsoft</p>
-                                <p class="testimonial-description">
-                                <blockquote>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                    sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                    praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                                </blockquote>
-                                </p>
-                            </div>
-                            <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/testimonial/larrypage.jpg" alt=""
-                                    class="testimonial-benner" width="80" height="80">
-                                <p class="customer-name">larry page</p>
-                                <p class="customer-title">CO-Founder of Microsoft</p>
-                                <p class="testimonial-description">
-                                <blockquote>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                    sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                    praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                                </blockquote>
-                                </p>
-                            </div>
-                            <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/testimonial/markzuck.jpg" alt=""
-                                    class="testimonial-benner" width="80" height="80">
-                                <p class="customer-name">mark zuckerburg</p>
-                                <p class="customer-title">CO-Founder of Microsoft</p>
-                                <p class="testimonial-description">
-                                <blockquote>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                    sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                    praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                                </blockquote>
-                                </p>
-                            </div>
-                            <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/testimonial/patrick.jpg" alt=""
-                                    class="testimonial-benner" width="80" height="80">
-                                <p class="customer-name">patrick</p>
-                                <p class="customer-title">CO-Founder of Microsoft</p>
-                                <p class="testimonial-description">
-                                <blockquote>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                    sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                    praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                                </blockquote>
-                                </p>
-                            </div>
 
-                        </div>
-                    </div>
-                    <div class="special-offer-container">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"
-                            class="special-offer-benner">
-                        <a href="#" class="special-offer-content">
-                            <p class="special-offer-discount">15% Discount</p>
-                            <h2 class="special-offer-title">Pupuk<sup></sup> 10KG</h2>
-                            <p class="special-offer-text">starting at $230.95</p>
-                            <button class="special-offer-button">Get it Now</button>
-                        </a>
-
-                    </div>
-                    <!-- <div class="service">
-                        <h2 class="title">Our Services</h2>
-                        <div class="service-container">
-                            <article class="service-item-container">
-                                <a href="#" class="service-item">
-                                    <div class="service-icon">
-                                        <ion-icon name="boat-outline"></ion-icon>
-                                    </div>
-
-                                    <div class="service-item-content">
-                                        <h3 class="service-item-title">World Delivery</h3>
-                                        <p class="sevice-item-desc">For Order Over $250</p>
-                                    </div>
-                                </a>
-                                <a href="#" class="service-item">
-                                    <div class="service-icon">
-                                        <ion-icon name="rocket-outline"></ion-icon>
-                                    </div>
-
-                                    <div class="service-item-content">
-                                        <h3 class="service-item-title">Next Day Delivery</h3>
-                                        <p class="sevice-item-desc">USA Only</p>
-                                    </div>
-                                </a>
-                                <a href="#" class="service-item">
-                                    <div class="service-icon">
-                                        <ion-icon name="call-outline"></ion-icon>
-                                    </div>
-
-                                    <div class="service-item-content">
-                                        <h3 class="service-item-title">Non Stop Online Support</h3>
-                                        <p class="sevice-item-desc">getsupport.ourstore.com</p>
-                                    </div>
-                                </a>
-                                <a href="#" class="service-item">
-                                    <div class="service-icon">
-                                        <ion-icon name="ticket-outline"></ion-icon>
-                                    </div>
-
-                                    <div class="service-item-content">
-                                        <h3 class="service-item-title">30% Money Back</h3>
-                                        <p class="sevice-item-desc">For Order Over $850</p>
-                                    </div>
-                                </a>
-                                <a href="#" class="service-item">
-                                    <div class="service-icon">
-                                        <ion-icon name="arrow-undo-outline"></ion-icon>
-                                    </div>
-
-                                    <div class="service-item-content">
-                                        <h3 class="service-item-title">Return Policy</h3>
-                                        <p class="sevice-item-desc">Easy and Free for Return</p>
-                                    </div>
-                                </a>
-                            </article>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-        </section>
 
         <section class="blog">
             <div class="container">
@@ -1329,6 +1060,7 @@
     <script src="<?php echo base_url() ?>assets/third-assets/php-email-form/validate.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/fontawesome.min.js" integrity="sha512-ywaT8M9b+VnJ+jNG14UgRaKg+gf8yVBisU2ce+YJrlWwZa9BaZAE5GK5Yd7CBcP6UXoAnziRQl40/u/qwVZi4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Template Main JS File -->
     <script src="<?php echo base_url() ?>assets/js/script.js"></script>
