@@ -25,8 +25,8 @@ class UserModel extends Model
     protected $validationRules = [];
 
 
-    public function getUserByUsername($username)
+    public function getUserByUsername($id)
     {
-        return $this->where('username', $username)->first();
+        return $this->where('id', $id)->first();
     }
 }

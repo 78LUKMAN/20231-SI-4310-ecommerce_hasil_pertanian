@@ -7,7 +7,7 @@
         <div class="col-xl-4">
             <div class="card">
                 <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                    <img src="<?php echo base_url() ?>assets/img/profile/<?= $userData['img']?>" alt="Profile"
+                    <img src="<?php echo base_url() ?>assets/img/profile/<?= $userData['img'] ?>" alt="Profile"
                         class="rounded-circle">
                     <h2>
                         <?= session()->get('name') ?>
@@ -52,23 +52,30 @@
                     <div class="tab-content pt-2">
                         <div class="tab-pane fade show active profile-overview" id="profile-overview">
                             <?php if (session()->has('pro-success')): ?>
-                                <div class="alert alert-success" role="alert">
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     <?= session()->getFlashdata('pro-success') ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
                                 </div>
                             <?php endif; ?>
 
                             <?php if (session()->has('pro-error')): ?>
-                                <div class="alert alert-danger" role="alert">
+                                <div class="alert alert-danger  alert-dismissible fade show" role="alert">
                                     <?= session()->getFlashdata('pro-error') ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+
                                 </div>
                             <?php endif; ?>
 
                             <?php if (session()->has('pro-errors')): ?>
-                                <div class="alert alert-danger" role="alert">
+                                <div class="alert alert-danger  alert-dismissible fade show" role="alert">
                                     <?php foreach (session()->getFlashdata('pro-errors') as $error): ?>
                                         <p>
                                             <?= $error ?>
                                         </p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
                                     <?php endforeach; ?>
                                 </div>
                             <?php endif; ?>
@@ -117,15 +124,14 @@
                                         class="col-md-4 col-lg-3 col-form-label profile-data-title">Profile
                                         Image</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <img src="<?php echo base_url() ?>assets/img/profile/<?= $userData['img']?>"
+                                        <img src="<?php echo base_url() ?>assets/img/profile/<?= $userData['img'] ?>"
                                             alt="Profile">
                                         <div class="pt-2 input-group custom-file-button">
-                                            <label class="input-group-text" for="image"><i
-                                                    class="bi bi-upload">
+                                            <label class="input-group-text" for="image"><i class="bi bi-upload">
                                                 </i></label>
                                             <input type="file" class="form-control" id="image" name="image">
-                                            <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image" id="removeFile"><i
-                                                    class="bi bi-trash"></i></a>
+                                            <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"
+                                                id="removeFile"><i class="bi bi-trash"></i></a>
                                         </div>
                                     </div>
                                 </div>
