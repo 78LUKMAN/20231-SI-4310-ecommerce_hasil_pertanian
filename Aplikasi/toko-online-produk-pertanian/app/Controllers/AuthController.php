@@ -10,15 +10,15 @@ class AuthController extends BaseController
     function __construct()
     {
         helper(['form']);
+        $this->validation = \Config\Services::validation();
     }
     public function signup()
     {
-        helper(['form']);
-        $validation = \Config\Services::validation();
+        $validator = $this->validation;
         if ($this->request->is('post')) {
             $rules = [
                 'name' => 'required|min_length[4]|max_length[50]',
-                'username' => 'required|min_length[6]|max_length[10]',
+                'username' => 'required|min_length[6]|max_length[10]|is_unique[users.username]',
                 'email' => 'required|min_length[4]|max_length[100]|valid_email',
                 'password' => 'required|min_length[4]|max_length[50]',
                 'confirm_password' => 'required|matches[password]',
@@ -31,15 +31,17 @@ class AuthController extends BaseController
                     'username' => $this->request->getVar('username'),
                     'email' => $this->request->getVar('email'),
                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
-                    'role' => "guest"
+                    'role' => "guest",
+                    'created_at' => date('Y-m-d H:i:s')
                 ];
+
                 $userModel->save($data);
                 return redirect("auth/signin")->with("success", "horeeee");
             } else {
-                return view('pages/signup/signup', ['validation' => $validation]);
+                return view('pages/signup/signup', ['validation' => $validator]);
             }
         }
-        return view('pages/signup/signup', ['validation' => $validation]);
+        return view('pages/signup/signup', ['validation' => $validator]);
 
     }
     public function signin()
@@ -58,13 +60,17 @@ class AuthController extends BaseController
                 if ($authUserPassword) {
                     $session_data = [
                         'username' => $user['username'],
+                        'id' => $user['id'],
                         'name' => $user['name'],
-                        'isLoggin' => TRUE
+                        'role' => $user['role'],
+                        'img' => $user['img'],
+                        'isLoggIn' => TRUE,
                     ];
-                    $session->set('userData', $session_data);
+
+                    $session->set($session_data);
                     return redirect()->to('/');
                 } else {
-                    $session->setFlashdata('feedback', 'Password is incorrect.');
+                    $session->setFlashdata('feedback', 'Username or Password is incorrect.');
                     return redirect()->to('auth/signin');
                 }
             } else {
@@ -72,7 +78,14 @@ class AuthController extends BaseController
                 return redirect()->to('auth/signin');
             }
         }
-        return view('pages/signin/signin');
+        $data['title'] = "sign in";
+        return view('pages/signin/signin', $data);
+    }
+
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/');
     }
 }
 

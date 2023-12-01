@@ -40,7 +40,11 @@ class UserTable extends Migration
             ],
             "role" => [
                 "type"=> "varchar",
-                "constraint"=> 6
+                "constraint"=> 6,
+            ],
+            "img" => [
+                "type"=> "varchar",
+                "constraint"=> 255,
             ],
             "created_at" => [
                 "type"=> "datetime",

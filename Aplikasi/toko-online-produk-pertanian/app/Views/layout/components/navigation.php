@@ -154,9 +154,15 @@
             <li class="menu-category">
                 <a href="#" class="menu-title">Hot Offers</a>
             </li>
+            <?php if(session('isLoggIn') == 1) {?>
             <li class="menu-category">
-                <a href="<?php base_url() ?>signin" class="menu-title">Login</a>
+                <a href="  <?php echo base_url()?>activity/profile" class="menu-title">Profile</a> 
             </li>
+            <?php } else { ?>
+                <li class="menu-category">
+                    <a href="auth/signin" class="menu-title">Login</a>
+                </li>
+            <?php }?>
         </ul>
         <div class="menu-bottom">
             <ul class="menu-category-list">
