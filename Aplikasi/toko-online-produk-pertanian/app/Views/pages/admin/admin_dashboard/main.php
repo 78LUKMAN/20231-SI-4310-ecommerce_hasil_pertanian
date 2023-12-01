@@ -45,7 +45,7 @@
     <main id="main" class="main">
         <div class="card">
             <div class="card-body">
-                <div class="card-title"><h5>Account Management</h5></div>
+                <div class="card-title"><h5><?= $page_title?></h5></div>
                 <?= $this->renderSection('admin_content') ?>
             </div>
         </div>

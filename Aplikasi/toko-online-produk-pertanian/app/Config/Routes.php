@@ -40,7 +40,11 @@ $routes->group('profile', function($routes) {
 // Admin (product, account management, transaction management)
 $routes->group('admin', function($routes) {
     $routes->get('/','AdminController::index');
-    $routes->get('products','AdminController::products');
+    $routes->get('products','ProductController::products');
+    $routes->post('product/add','ProductController::addproduct');
+    $routes->post('product/delete/(:any)','ProductController::deleteproduct/$1');
+    $routes->get('product/delete/(:any)','ProductController::deleteproduct/$1');
+    $routes->post('product/edit/(:any)','ProductController::editproduct/$1');
     $routes->get('accounts','AdminController::accounts');
     $routes->post('account/add','AdminController::adduser');
     $routes->post('account/edit/(:num)','AdminController::edituser/$1');

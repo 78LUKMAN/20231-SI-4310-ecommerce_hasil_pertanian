@@ -14,7 +14,11 @@ class AdminController extends BaseController
     }
     public function accounts()
     {
-        $data['users'] = $this->userModel->findAll();
+        $data = [
+            'users' => $this->userModel->findAll(),
+            'page_title' => "Account Management"
+        ];
+
         return view('pages/admin/account_management/accounts', $data);
     }
 
@@ -77,7 +81,8 @@ class AdminController extends BaseController
         }
     }
 
-    public function deleteuser($id) {
+    public function deleteuser($id)
+    {
         $delete = $this->userModel->delete($id);
         if ($delete) {
             return redirect('admin/accounts')->with('success', 'Akun berhasil dihapus');
