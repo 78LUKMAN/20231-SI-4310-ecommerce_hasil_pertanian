@@ -1,5 +1,22 @@
 <?= $this->extend('layout/layout') ?>
-		<?= $this->section('content') ?>
+
+<?= $this->section('content') ?>
+<main class="container">
+
+    <div class="pagetitle">
+        <h1>Checkout</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Tables</li>
+                <li class="breadcrumb-item active">Data</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+		<div class="card">
+		<div class="card-body">
 		<div class="row">
 			<div class="col-lg-6">
 				<!-- Vertical Form --> 
@@ -52,20 +69,20 @@
 							<tbody>
 							
 							<tr> 
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
+								<td>1</td>
 							</tr> 
 							<tr>
 								<td colspan="2"></td>
 								<td>Subtotal</td>
-								<td></td>
+								<td>1</td>
 							</tr>
 							<tr>
 								<td colspan="2"></td>
 								<td>Total</td>
-								<td><span id="total"></span></td>
+								<td>1<span id="total"></span></td>
 							</tr>
 							</tbody>
 						</table>
@@ -77,8 +94,14 @@
 				</form><!-- Vertical Form -->
 			</div>
 		</div>
-		<?= $this->endSection() ?>
-		<?= $this->section('script') ?>
+		</div>
+		</div>
+    </section>
+
+</main><!-- End #main -->
+<?= $this->endSection('content') ?>
+
+<?= $this->section('script') ?>
 		<script>
 			$('document').ready(function(){ 
 				var ongkir = 0;
@@ -147,3 +170,9 @@
 			});
 		</script>
 		<?= $this->endSection() ?>
+
+
+
+
+
+	

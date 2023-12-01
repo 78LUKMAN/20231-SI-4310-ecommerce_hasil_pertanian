@@ -40,9 +40,8 @@ $routes->group('admin', function($routes) {
 // Product
 $routes->group('product', function($routes) {
     // product detail
-
+    $routes->get('detail','ProductdetailController::productdetail');
     // product search result
 });
 
-// Checkout 
-
+// C
