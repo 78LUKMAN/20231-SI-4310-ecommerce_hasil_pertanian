@@ -3,6 +3,7 @@
 <?= $this->section('content') ?>
 <main class="container">
 
+<?= dd($provinsi)?>
     <div class="pagetitle">
         <h1>Checkout</h1>
         <nav>

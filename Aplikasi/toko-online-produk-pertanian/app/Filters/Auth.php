@@ -6,7 +6,7 @@ use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 
-class Filters implements FilterInterface
+class Auth implements FilterInterface
 {
     /**
      * Do whatever processing this filter needs to do.
@@ -27,8 +27,8 @@ class Filters implements FilterInterface
     {
         $auth = service("auth");
 
-        if(!$auth->isLoggedIn()) {
-            return redirect()->to(site_url("auth/sigin"));
+        if (!session()->has('isLoggedIn')) {
+            return redirect()->to(site_url('auth/signin'));
         }
     }
 
