@@ -23,6 +23,11 @@ class ProductController extends BaseController
         return view('pages/admin/product_management/products', $data);
     }
 
+    public function detailproduct($id) {
+        $data['product'] = $this->productModel->find($id);
+        return view('pages/product/detail', $data);
+
+    }
     public function addproduct()
     {
         $validator = $this->validation;

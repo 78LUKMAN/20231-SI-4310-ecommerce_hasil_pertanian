@@ -1,4 +1,24 @@
 'use strict';
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select all quantity input fields
+        var quantityInputs = document.querySelectorAll('.quantity-input');
+
+        // Add event listener to each quantity input field
+        quantityInputs.forEach(function (input) {
+            input.addEventListener('input', function () {
+                // Get the parent row of the input field
+                var parentRow = input.closest('tr');
+
+                // Get the price, quantity, and update the subtotal
+                var price = parseFloat(parentRow.querySelector('.price-cell').innerText.replace('IDR', '').replace(',', '').trim());
+                var quantity = parseFloat(input.value);
+                var subtotal = price * quantity;
+
+                // Update the subtotal cell
+                parentRow.querySelector('.subtotal-cell').innerText = 'IDR ' + subtotal.toLocaleString(undefined, { minimumFractionDigits: 2 });
+            });
+        });
+    });
 
 document.addEventListener('DOMContentLoaded', function () {
 

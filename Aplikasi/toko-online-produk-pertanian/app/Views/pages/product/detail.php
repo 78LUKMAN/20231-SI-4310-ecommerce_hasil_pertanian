@@ -1,6 +1,16 @@
 <?= $this->extend('layout/layout') ?>
 
 <?= $this->section('content') ?>
+<?php
+if (session()->getFlashData('success')) {
+    ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= session()->getFlashData('success') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php
+}
+?>
 <main class="container">
 
     <div class="pagetitle">
@@ -24,29 +34,44 @@
                             <div class="container">
                                 <div class="row gx-5">
                                     <aside class="col-lg-6">
-                                        <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/detail1/big.webp">
-                                            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="<?php echo base_url() ?>/assets/img/products/sayurbuah.jpg" />
-                                        </a>
+                                        <img style="max-width: 100%; max-height: 100vh; margin: auto;"
+                                            class="rounded-4 fit"
+                                            src="<?= base_url() . "assets/img/products/" . $product['image'] ?>" />
                                     </aside>
                                     <main class="col-lg-6">
                                         <div class="ps-lg-3">
-                                            <h4 class="text-dark"> Vegetable <br/> </h4>
+                                            <h4 class="text-dark">
+                                                <?= $product['name'] ?><br />
+                                            </h4>
 
-                                        <div class="mb-3">
-                                            <span class="h5">$75.00</span>
-                                        </div>
+                                            <div class="mb-3">
+                                                <span class="h5">
+                                                    <?= "Rp." . number_format($product['price']) ?>
+                                                </span>
+                                            </div>
 
-                                        <div class="mb-3">
-                                            <span class="text-muted">Stock : </span>
-                                            <span class="text-muted">100</span>
-                                        </div>
+                                            <div class="mb-3">
+                                                <span class="text-muted">Stock : </span>
+                                                <span class="text-muted">
+                                                    <?= $product['stock'] ?>
+                                                </span>
+                                            </div>
 
-                                        <p> Modern look and quality demo item is a streetwear-inspired collection that continues to break away from the conventions of mainstream fashion. Made in Italy, these black and brown clothing low-top shirts formen. </p>
-
-                                        <div class="row mb-4">
-                                        </div>
-
-                                        <a href="#" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </a>
+                                            <p>
+                                                <?= $product['description'] ?>
+                                            </p>
+                                            <form action="<?= base_url('cart/add') ?>" method="post">
+                                                <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                                                <?php
+                                                echo form_hidden('id', $product['id']);
+                                                echo form_hidden('name', $product['name']);
+                                                echo form_hidden('price', $product['price']);
+                                                echo form_hidden('image', $product['image']);
+                                                ?>
+                                                <button type="submit" class="btn btn-primary shadow-0 mt-3">
+                                                    Add to cart
+                                                </button>
+                                            </form>
                                         </div>
                                     </main>
                                 </div>

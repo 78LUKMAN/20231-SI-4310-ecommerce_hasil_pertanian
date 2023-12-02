@@ -14,7 +14,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 // Auth
-$routes->group('auth', function($routes) {
+$routes->group('auth', function ($routes) {
     $routes->get('signup', 'AuthController::signup');
     $routes->post('signup', 'AuthController::signup');
     $routes->get('signin', 'AuthController::signin');
@@ -24,39 +24,44 @@ $routes->group('auth', function($routes) {
 
 // User Activity (cart, history, transaction)
 
-$routes->group('activity', function($routes) {
-    $routes->get('cart', 'ActivityController::cart');
-    $routes->get('history', 'ActivityController::history');
-    $routes->get('transaction', 'ActivityController::transaction');
+$routes->group('activity', function ($routes) {
+    $routes->get('cart', 'CartController::cart');
     $routes->get('profile', 'ProfileController::index');
-    $routes->get('checkout','CheckoutController::checkout');
+    $routes->get('history', 'ActivityController::history');
+    $routes->get('checkout', 'CheckoutController::checkout');
+    $routes->get('transaction', 'ActivityController::transaction');
 });
 
-$routes->group('profile', function($routes) {
+$routes->group('profile', function ($routes) {
 
-    $routes->post('update','ProfileController::updatePassword'); // update user password
-    $routes->post('edit','ProfileController::edit'); // edit profile info
+    $routes->post('update', 'ProfileController::updatePassword'); // update user password
+    $routes->post('edit', 'ProfileController::edit'); // edit profile info
 });
 
 // Admin (product, account management, transaction management)
-$routes->group('admin', function($routes) {
-    $routes->get('/','AdminController::index');
-    $routes->get('products','ProductController::products');
-    $routes->post('product/add','ProductController::addproduct');
-    $routes->post('product/delete/(:any)','ProductController::deleteproduct/$1');
-    $routes->get('product/delete/(:any)','ProductController::deleteproduct/$1');
-    $routes->post('product/edit/(:any)','ProductController::editproduct/$1');
-    $routes->get('accounts','AdminController::accounts');
-    $routes->post('account/add','AdminController::adduser');
-    $routes->post('account/edit/(:num)','AdminController::edituser/$1');
-    $routes->post('account/delete/(:num)','AdminController::deleteuser/$1');
+$routes->group('admin', function ($routes) {
+    $routes->get('/', 'AdminController::index');
+    $routes->get('products', 'ProductController::products');
+    $routes->post('product/add', 'ProductController::addproduct');
+    $routes->post('product/delete/(:any)', 'ProductController::deleteproduct/$1');
+    $routes->get('product/delete/(:any)', 'ProductController::deleteproduct/$1');
+    $routes->post('product/edit/(:any)', 'ProductController::editproduct/$1');
+    $routes->get('accounts', 'AdminController::accounts');
+    $routes->post('account/add', 'AdminController::adduser');
+    $routes->post('account/edit/(:num)', 'AdminController::edituser/$1');
+    $routes->post('account/delete/(:num)', 'AdminController::deleteuser/$1');
 });
 
 // Product
-$routes->group('product', function($routes) {
-    // product detail
-    $routes->get('detail','ProductdetailController::productdetail');
-    // product search result
+$routes->group('product', function ($routes) {
+    $routes->get('detail/(:num)', 'ProductController::detailproduct/$1');
 });
 
-// C
+
+// cart
+$routes->group('cart', function ($routes) {
+    $routes->post('add', 'CartController::add');
+    $routes->get('delete/(:any)', 'CartController::delete/$1');
+    $routes->add('edit', 'CartController::edit');
+    $routes->add('clear', 'CartController::clear');
+});

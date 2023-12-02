@@ -17,6 +17,6 @@ class Home extends BaseController
         $products = $productModel->findAll();
         $data['products'] = $products;
         
-        return view('pages/main/main');
+        return view('pages/main/main', $data);
     }
 }
