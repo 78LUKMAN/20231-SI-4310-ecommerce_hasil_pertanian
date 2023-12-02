@@ -337,7 +337,7 @@
                                             <a href="#" class="showcase-category">Buah</a>
                                             <div class="price-box">
                                                 <p class="price">$200.29</p>
-                                                <del>$330.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -353,7 +353,7 @@
                                             <a href="#" class="showcase-category">16 packs</a>
                                             <div class="price-box">
                                                 <p class="price">$283.99</p>
-                                                <del>$389.99</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -369,7 +369,7 @@
                                             <a href="#" class="showcase-category">8 Can</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -385,7 +385,7 @@
                                             <a href="#" class="showcase-category">8 Pack</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -403,7 +403,7 @@
                                             <a href="#" class="showcase-category">Buah-Buahan</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -419,7 +419,7 @@
                                             <a href="#" class="showcase-category">Alat Pertanian</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -435,7 +435,7 @@
                                             <a href="#" class="showcase-category">Alat Pertanian</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -451,7 +451,7 @@
                                             <a href="#" class="showcase-category">Buah-Buahan</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -474,7 +474,7 @@
                                             <a href="#" class="showcase-category">Sayuran</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -490,7 +490,7 @@
                                             <a href="#" class="showcase-category">Sayuran</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -506,7 +506,7 @@
                                             <a href="#" class="showcase-category">Buah-Buahan</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -522,7 +522,7 @@
                                             <a href="#" class="showcase-category">Bibit</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -540,7 +540,7 @@
                                             <a href="#" class="showcase-category">Pupuk</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -556,7 +556,7 @@
                                             <a href="#" class="showcase-category">Pupuk</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -572,7 +572,7 @@
                                             <a href="#" class="showcase-category">Bibit</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -588,7 +588,7 @@
                                             <a href="#" class="showcase-category">Buah</a>
                                             <div class="price-box">
                                                 <p class="price">$263.99</p>
-                                                <del>$349.95</del>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -809,7 +809,7 @@
                                  
                                     <div class="price-box">
                                         <p class="price">$262.46</p>
-                                        <del>$349.95</del>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -843,7 +843,7 @@
                                   
                                     <div class="price-box">
                                         <p class="price">$241.47</p>
-                                        <del>$349.95</del>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -878,7 +878,7 @@
 
                                     <div class="price-box">
                                         <p class="price">$262.46</p>
-                                        <del>$349.95</del>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -913,7 +913,7 @@
 
                                     <div class="price-box">
                                         <p class="price">$241.47</p>
-                                        <del>$349.95</del>
+                                        
                                     </div>
                                 </div>
                             </div>
