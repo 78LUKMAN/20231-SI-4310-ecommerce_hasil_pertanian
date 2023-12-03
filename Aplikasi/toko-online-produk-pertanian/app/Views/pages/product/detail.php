@@ -1,17 +1,17 @@
 <?= $this->extend('layout/layout') ?>
 
 <?= $this->section('content') ?>
-<?php
-if (session()->getFlashData('success')) {
-    ?>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <?= session()->getFlashData('success') ?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    <?php
-}
-?>
 <main class="container">
+    <?php
+    if (session()->getFlashData('success')) {
+        ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= session()->getFlashData('success') ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <?php
+    }
+    ?>
 
     <div class="pagetitle">
         <h1>Product Detail</h1>
@@ -33,13 +33,12 @@ if (session()->getFlashData('success')) {
                         <div class="py-4">
                             <div class="container">
                                 <div class="row gx-5">
-                                    <aside class="col-lg-6">
-                                        <img style="max-width: 100%; max-height: 100vh; margin: auto;"
-                                            class="rounded-4 fit"
+                                    <aside class="col-lg-6 d-flex justify-content-center">
+                                        <img class="rounded-4 w-75 fit" style="border-radius: 5px"
                                             src="<?= base_url() . "assets/img/products/" . $product['image'] ?>" />
                                     </aside>
                                     <main class="col-lg-6">
-                                        <div class="ps-lg-3">
+                                        <div class="ps-lg-3 mt-5 mt-lg-0">
                                             <h4 class="text-dark">
                                                 <?= $product['name'] ?><br />
                                             </h4>
@@ -57,9 +56,15 @@ if (session()->getFlashData('success')) {
                                                 </span>
                                             </div>
 
-                                            <p>
-                                                <?= $product['description'] ?>
-                                            </p>
+                                            <div class="mb-3">
+                                                <span class="text-muted">
+                                                    Deskripsi :
+                                                </span>
+                                                <br>
+                                                <span>
+                                                    <?= $product['description'] ?>
+                                                </span>
+                                            </div>
                                             <form action="<?= base_url('cart/add') ?>" method="post">
                                                 <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                                                 <?php

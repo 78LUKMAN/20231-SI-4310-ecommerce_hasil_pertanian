@@ -44,7 +44,7 @@
                                 Password</button>
                         </li>
                         <li class="nav-item">
-                            <a href="/auth/logout">
+                            <a href="<?= base_url()?>/auth/logout">
                                 <button class="nav-link logout-button">Logout</button>
                             </a>
                         </li>

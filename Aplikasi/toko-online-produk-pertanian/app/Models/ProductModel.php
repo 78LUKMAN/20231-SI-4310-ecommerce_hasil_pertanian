@@ -13,7 +13,7 @@ class ProductModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name', 'description', 'price', 'stock', 'image'];
+    protected $allowedFields    = ['name', 'description', 'price', 'stock', 'label', 'image'];
 
     // Dates
     protected $useTimestamps = false;
@@ -37,5 +37,15 @@ class ProductModel extends Model
     public function getProductById($id)
     {
         return $this->where('id', $id)->first();
+    }
+
+    public function search($keyword)
+    {
+        return $this->like('name', $keyword)->findAll();
+    }
+
+    public function getByLabel($label)
+    {
+        return $this->like('label', $label)->findAll();
     }
 }

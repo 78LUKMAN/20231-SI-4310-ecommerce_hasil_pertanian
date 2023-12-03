@@ -8,11 +8,12 @@ class CartController extends BaseController
 {
     protected $cart;
     private $url = "https://api.rajaongkir.com/starter/";
-    private $apiKey = "a3c309446b489dc246c5693a2536b822";
+    private $apiKey = "36aa713f2cdcb444d9a8c92737923518";
 
     public function __construct()
     {
-        helper(['number', 'form']);
+        helper('number');
+        helper('form');
         $this->cart = Services::cart();
     }
 
@@ -68,7 +69,6 @@ class CartController extends BaseController
         return redirect()->to(base_url('activity/cart'));
     }
 
-
     public function checkout()
     {
         $data['items'] = $this->cart->contents();
@@ -116,7 +116,7 @@ class CartController extends BaseController
             CURLOPT_POSTFIELDS => "origin=" . $origin . "&destination=" . $destination . "&weight=" . $weight . "&courier=" . $courier,
             CURLOPT_HTTPHEADER => array(
                 "content-type: application/x-www-form-urlencoded",
-                "key: ". $this->apiKey,
+                "key: " . $this->apiKey,
             ),
         )
         );
@@ -167,14 +167,15 @@ class CartController extends BaseController
         if ($this->request->getPost()) {
             $data = $this->request->getPost();
 
-            $transaksiModel = new \App\Models\TransaksiModel();
-            $transaksiDetailModel = new \App\Models\TransaksiDetailModel();
+            $transaksiModel = new \App\Models\TransactionModel();
+            $transaksiDetailModel = new \App\Models\DetailTransactionModel();
+            
 
             $dataForm = [
                 'username' => $this->request->getPost('username'),
-                'total_harga' => $this->request->getPost('total_harga'),
-                'alamat' => $this->request->getPost('alamat'),
-                'ongkir' => $this->request->getPost('ongkir'),
+                'total' => $this->request->getPost('price_total'),
+                'address' => $this->request->getPost('address'),
+                'fare' => $this->request->getPost('fare'),
                 'status' => 0,
                 'created_by' => $this->request->getPost('username'),
                 'created_date' => date("Y-m-d H:i:s")
@@ -186,11 +187,11 @@ class CartController extends BaseController
 
             foreach ($this->cart->contents() as $value) {
                 $dataFormDetail = [
-                    'id_transaksi' => $last_insert_id,
-                    'id_barang' => $value['id'],
-                    'jumlah' => $value['qty'],
-                    'diskon' => 0,
-                    'subtotal_harga' => $value['qty'] * $value['price'],
+                    'transaction_id' => $last_insert_id,
+                    'product_id' => $value['id'],
+                    'quantity' => $value['qty'],
+                    'discount' => 0,
+                    'subtotal' => $value['qty'] * $value['price'],
                     'created_by' => $this->request->getPost('username'),
                     'created_date' => date("Y-m-d H:i:s")
                 ];
@@ -201,7 +202,7 @@ class CartController extends BaseController
             $this->cart->destroy();
 
             session()->setflashdata('success', 'Pesanan berhasil dibuat');
-            return redirect()->to(base_url('keranjang'));
+            return redirect()->to(base_url('activity/cart'));
         }
     }
 }

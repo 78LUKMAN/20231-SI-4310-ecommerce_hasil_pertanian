@@ -90,55 +90,11 @@
 
                     <div class="category-content-box">
                         <div class="category-content-flex">
-                            <h3 class="category-item-title">watch</h3>
-                            <p class="category-item-amount">(23)</p>
+                            <h3 class="category-item-title">Buah</h3>
                         </div>
-                        <a href="#" class="category-btn">Show All</a>
+                        <a href="<?= base_url('product/showall/barang') ?>" class="category-btn">Show All</a>
                     </div>
                 </div>
-
-                <div class="category-item">
-                    <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt="" height="32" width="35">
-                    </div>
-
-                    <div class="category-content-box">
-                        <div class="category-content-flex">
-                            <h3 class="category-item-title">watch</h3>
-                            <p class="category-item-amount">(23)</p>
-                        </div>
-                        <a href="#" class="category-btn">Show All</a>
-                    </div>
-                </div>
-
-                <div class="category-item">
-                    <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/watch.jpg" alt="" width="30">
-                    </div>
-
-                    <div class="category-content-box">
-                        <div class="category-content-flex">
-                            <h3 class="category-item-title">watch</h3>
-                            <p class="category-item-amount">(23)</p>
-                        </div>
-                        <a href="#" class="category-btn">Show All</a>
-                    </div>
-                </div>
-
-                <div class="category-item">
-                    <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt="" height="32" width="35">
-                    </div>
-
-                    <div class="category-content-box">
-                        <div class="category-content-flex">
-                            <h3 class="category-item-title">watch</h3>
-                            <p class="category-item-amount">(23)</p>
-                        </div>
-                        <a href="#" class="category-btn">Show All</a>
-                    </div>
-                </div>
-
                 <div class="category-item">
                     <div class="category-img-box">
                         <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
@@ -146,10 +102,57 @@
 
                     <div class="category-content-box">
                         <div class="category-content-flex">
-                            <h3 class="category-item-title">watch</h3>
-                            <p class="category-item-amount">(23)</p>
+                            <h3 class="category-item-title">Sayur</h3>
                         </div>
-                        <a href="#" class="category-btn">Show All</a>
+                        <a href="<?= base_url('product/showall/sayur') ?>" class="category-btn">Show All</a>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <div class="category-img-box">
+                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
+                    </div>
+
+                    <div class="category-content-box">
+                        <div class="category-content-flex">
+                            <h3 class="category-item-title">Kacang</h3>
+                        </div>
+                        <a href="<?= base_url('product/showall/kacang') ?>" class="category-btn">Show All</a>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <div class="category-img-box">
+                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
+                    </div>
+
+                    <div class="category-content-box">
+                        <div class="category-content-flex">
+                            <h3 class="category-item-title">Rempah</h3>
+                        </div>
+                        <a href="<?= base_url('product/showall/rempah') ?>" class="category-btn">Show All</a>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <div class="category-img-box">
+                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
+                    </div>
+
+                    <div class="category-content-box">
+                        <div class="category-content-flex">
+                            <h3 class="category-item-title">Susu</h3>
+                        </div>
+                        <a href="<?= base_url('product/showall/susu') ?>" class="category-btn">Show All</a>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <div class="category-img-box">
+                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
+                    </div>
+
+                    <div class="category-content-box">
+                        <div class="category-content-flex">
+                            <h3 class="category-item-title">Produk Ternak</h3>
+                        </div>
+                        <a href="<?= base_url('product/showall/ternak') ?>" class="category-btn">Show All</a>
                     </div>
                 </div>
             </div>
@@ -281,88 +284,7 @@
                                 </li>
                             </ul>
                         </li>
-
                     </ul>
-                </div>
-
-                <div class="product-showcase">
-                    <h3 class="showcase-heading">Best Seller</h3>
-                    <div class="showcase-wrapper">
-                        <div class="showcase-container">
-                            <div class="showcase">
-                                <a href="#" class="showcase-img-box">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                        class="showcase-img" width="75">
-                                </a>
-                                <div class="showcase-content">
-                                    <a href="#">
-                                        <h4 class="showcase-title">Product-1</h4>
-                                    </a>
-
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-                                    <div class="price-box">
-                                        <del>&dollar;360.70</del>
-                                        <p class="price">&dollar;246.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="showcase">
-                                <a href="#" class="showcase-img-box">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                        class="showcase-img" width="75">
-                                </a>
-                                <div class="showcase-content">
-                                    <a href="#">
-                                        <h4 class="showcase-title">Product-2</h4>
-                                    </a>
-
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-                                    <div class="price-box">
-                                        <del>&dollar;379.70</del>
-                                        <p class="price">&dollar;200.15</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="showcase">
-                                <a href="#" class="showcase-img-box">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                        class="showcase-img" width="75">
-                                </a>
-                                <div class="showcase-content">
-                                    <a href="#">
-                                        <h4 class="showcase-title">Product-3</h4>
-                                    </a>
-
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-                                    <div class="price-box">
-                                        <del>&dollar;360.99</del>
-                                        <p class="price">&dollar;206.20</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -372,70 +294,29 @@
                         <h2 class="title">New Products</h2>
                         <div class="showcase-wrapper has-scrollbar">
                             <div class="showcase-container">
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Matte Black</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$200.29</p>
-                                            <del>$330.95</del>
+                                <?php foreach ($products as $product): ?>
+                                    <a href=<?= base_url('product/detail/') . $product['id'] ?> class="showcase-img-box">
+                                        <div class="showcase">
+                                            <img src="<?= base_url() . "assets/img/products/" . $product['image'] ?>" alt=""
+                                                width="70" class="showcase-img">
+                                            <div class="showcase-content">
+                                                <span>
+                                                    <h4 class="showcase-title">
+                                                        <?= $product['name'] ?>
+                                                    </h4>
+                                                </span>
+                                                <span class="product-description">
+                                                    <?= character_limiter($product['description'], 10) ?>
+                                                </span>
+                                                <div class="price-box">
+                                                    <p class="price">
+                                                        <?= number_format($product['price']) ?>
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
                                     </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Defiant Black Red</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$283.99</p>
-                                            <del>$389.99</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Midnight Black</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Blue</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endforeach ?>
                             </div>
                             <div class="showcase-container">
                                 <div class="showcase">
@@ -647,295 +528,76 @@
                 <div class="product-featured">
                     <h2 class="title">Limited Offer</h2>
                     <div class="showcase-wrapper has-scrollbar">
-                        <div class="showcase-container">
-                            <div class="showcase">
-                                <div class="showcase-banner">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="
-                                        showcase-img">
-                                </div>
-                                <div class="showcase-content">
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-                                    <a href="#">
-                                        <h3 class="showcase-title">Beats Studio<sup>3</sup> Wireless Noise
-                                            Cancelling</h3>
-                                    </a>
 
-                                    <p class="showcase-desc">
-                                        Beats Studio 3 wireless over-ear headphones delivers premium sound while
-                                        blocking external naoise with active noise calcelling.
-                                    </p>
-
-                                    <div class="price-box">
-                                        <p class="price">$263</p>
-                                        <del>$389.99</del>
-                                    </div>
-
-                                    <button class="details-btn">details</button>
-                                    <div class="showcase-status">
-                                        <div class="wrapper">
-                                            <p>Sold : <b><i>35</i></b></p>
-                                            <p>Stock : <b><i>10</i></b></p>
+                    <?php foreach ($products as $product): ?>
+                            <?php if (strpos($product['label'], 'lmited') !== false): ?>
+                                <div class="showcase-container">
+                                    <div class="showcase">
+                                        <div class="showcase-banner">
+                                            <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" class="
+                                                showcase-img">
                                         </div>
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h3 class="showcase-title">
+                                                    <?= $product['name'] ?>
+                                                </h3>
+                                            </a>
 
-                                        <div class="showcase-status-bar"></div>
-                                    </div>
-                                    <div class="countdown-box">
-                                        <p class="countdown-desc">
-                                            Only 10 left in stock - order soon.
-                                        </p>
+                                            <p class="showcase-desc">
+                                                <?= character_limiter($product['description'],100) ?>
+                                            </p>
 
-                                        <div class="countdown">
-                                            <div class="countdown-content">
-                                                <p class="display-number">5</p>
-                                                <p class="display-text">days</p>
+                                            <div class="price-box">
+                                                <p class="price">
+                                                    <?= 'Rp' . number_format($product['price']) ?>
+                                                </p>
                                             </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">10</p>
-                                                <p class="display-text">hours</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">26</p>
-                                                <p class="display-text">min</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">45</p>
-                                                <p class="display-text">sec</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="showcase-container">
-                            <div class="showcase">
-                                <div class="showcase-banner">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="
-                                        showcase-img">
-                                </div>
-                                <div class="showcase-content">
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-                                    <a href="#">
-                                        <h3 class="showcase-title">Beats Studio<sup>3</sup> Wireless Noise
-                                            Cancelling</h3>
-                                    </a>
+                                            <a href="<?= base_url('product/detail/') . $product['id'] ?>">
+                                                <button class="details-btn">details</button>
+                                            </a>
+                                            <div class="showcase-status">
+                                                <div class="wrapper">
+                                                    <p>Sold : <b><i>35</i></b></p>
+                                                    <p>Stock : <b><i>
+                                                                <?= $product['stock'] ?>
+                                                            </i></b></p>
+                                                </div>
 
-                                    <p class="showcase-desc">
-                                        Beats Studio 3 wireless over-ear headphones delivers premium sound while
-                                        blocking external naoise with active noise calcelling.
-                                    </p>
-
-                                    <div class="price-box">
-                                        <p class="price">$263</p>
-                                        <del>$349.95</del>
-                                    </div>
-
-                                    <button class="details-btn">details</button>
-                                    <div class="showcase-status">
-                                        <div class="wrapper">
-                                            <p>Sold : <b><i>35</i></b></p>
-                                            <p>Stock : <b><i>10</i></b></p>
-                                        </div>
-
-                                        <div class="showcase-status-bar"></div>
-                                    </div>
-                                    <div class="countdown-box">
-                                        <p class="countdown-desc">
-                                            Only 10 left in stock - order soon.
-                                        </p>
-
-                                        <div class="countdown">
-                                            <div class="countdown-content">
-                                                <p class="display-number">3</p>
-                                                <p class="display-text">days</p>
+                                                <div class="showcase-status-bar"></div>
                                             </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">1</p>
-                                                <p class="display-text">hours</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">12</p>
-                                                <p class="display-text">min</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">5</p>
-                                                <p class="display-text">sec</p>
+                                            <div class="countdown-box">
+                                                <p class="countdown-desc">
+                                                    Only 10 left in stock - order soon.
+                                                </p>
+
+                                                <div class="countdown">
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">5</p>
+                                                        <p class="display-text">days</p>
+                                                    </div>
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">10</p>
+                                                        <p class="display-text">hours</p>
+                                                    </div>
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">26</p>
+                                                        <p class="display-text">min</p>
+                                                    </div>
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">45</p>
+                                                        <p class="display-text">sec</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="showcase-container">
-                            <div class="showcase">
-                                <div class="showcase-banner">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="
-                                        showcase-img">
-                                </div>
-                                <div class="showcase-content">
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-                                    <a href="#">
-                                        <h3 class="showcase-title">Beats Studio<sup>3</sup> Wireless Noise
-                                            Cancelling</h3>
-                                    </a>
-
-                                    <p class="showcase-desc">
-                                        Beats Studio 3 wireless over-ear headphones delivers premium sound while
-                                        blocking external naoise with active noise calcelling.
-                                    </p>
-
-                                    <div class="price-box">
-                                        <p class="price">$263</p>
-                                        <del>$300.95</del>
-                                    </div>
-
-                                    <button class="details-btn">details</button>
-                                    <div class="showcase-status">
-                                        <div class="wrapper">
-                                            <p>Sold : <b><i>35</i></b></p>
-                                            <p>Stock : <b><i>10</i></b></p>
-                                        </div>
-
-                                        <div class="showcase-status-bar"></div>
-                                    </div>
-                                    <div class="countdown-box">
-                                        <p class="countdown-desc">
-                                            Only 10 left in stock - order soon.
-                                        </p>
-
-                                        <div class="countdown">
-                                            <div class="countdown-content">
-                                                <p class="display-number">4</p>
-                                                <p class="display-text">days</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">4</p>
-                                                <p class="display-text">hours</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">6</p>
-                                                <p class="display-text">min</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">15</p>
-                                                <p class="display-text">sec</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     </div>
 
-                    <div class="display-details has-scrollbar">
-                        <div class="product-details-content">
-                            <button class="main-modal-close-btn" details-popup-close>
-                                <ion-icon name="close-outline"></ion-icon>
-                            </button>
-                            <div class="product-content">
-                                <div>
-                                    <img width="200" class="detail-product-img" alt="">
-                                    <div class="detail-btn-actions">
-                                        <div class="item-btn">Add to Cart</div>
-                                        <div class="item-btn">Favorite</div>
-                                    </div>
-                                </div>
-                                <div class="product-desc has-scrollbar">
-
-                                    <div class="product-title"></div>
-                                    <p class="item-desc">Beats Studio 3 wireless over-ear headphones delivers
-                                        premium sound while
-                                        blocking external naoise with active noise calcelling.</p>
-                                    <h3>Price</h3>
-                                    <div class="price-box">
-                                        <p class="price price-now"></p>
-                                        <del class="del-price"></del>
-                                    </div>
-                                    <h3>Rating</h3>
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-
-                                    <table>
-                                        <tr>
-                                            <td>Brand</td>
-                                            <td>Beats</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Model Name</td>
-                                            <td>Beats Studio<sup>3</sup></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Color</td>
-                                            <td id="item-color"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Form Factor</td>
-                                            <td>Over Ear</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Connectivity</td>
-                                            <td>Wireless, Wires, NFC</td>
-                                        </tr>
-                                    </table>
-
-                                    <div class="desc-title">About this item :</div>
-                                    <div class="desc-content">
-                                        <ul>
-                                            <li>High-performance wireless noise cancelling headphones</li>
-                                            <li>Compatible with iOS and Android devices.</li>
-                                            <li>Pure adaptive noise canceling (pure ANC) actively blocks external
-                                                noise
-                                            </li>
-                                            <li>Real-time Audio calibration preserves a Premium listening experience
-                                            </li>
-                                            <li>Up to 22 hours of battery life enables full-featured all-day
-                                                wireless
-                                                playback</li>
-                                            <li>Apple's W1 chip and industry-leading Bluetooth technology keep you
-                                                connected farther with fewer drop-outs</li>
-                                            <li>With fast Fuel, a 10-minute charge gives 3 hours of play when
-                                                battery is
-                                                low. Rechargeable lithium ion battery</li>
-                                            <li>Take calls, control your music, and activate Siri with the
-                                                multifunction
-                                                on-ear controls and microphone</li>
-                                            <li>What's in the box: Beats Studio3 Wireless headphones, Carrying case,
-                                                3.5mm RemoteTalk cable, Universal USB charging cable, Quick Start
-                                                Guide,
-                                                Warranty Card</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                 </div>
 

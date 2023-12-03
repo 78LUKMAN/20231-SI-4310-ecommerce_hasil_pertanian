@@ -64,6 +64,7 @@
     <script src="<?php echo base_url() ?>assets/js/script.js"></script>
 	<script src="<?php echo base_url() ?>assets/js/main.js"></script>
 	<script src="<?php echo base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
+    <?= $this->renderSection('script') ?>
 </body>
 
 </html>

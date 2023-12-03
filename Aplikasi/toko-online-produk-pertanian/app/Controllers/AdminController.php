@@ -3,7 +3,9 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
-
+use App\Models\DetailTransactionModel;
+use App\Models\TransactionModel;
+use App\Models\ProductModel;
 class AdminController extends BaseController
 {
     public function __construct()
@@ -11,6 +13,9 @@ class AdminController extends BaseController
         helper('form');
         $this->userModel = new UserModel();
         $this->validation = \Config\Services::validation();
+        $this->transactionModel = new TransactionModel();
+        $this->productModel = new ProductModel();
+        $this->detailTransactionModel = new DetailTransactionModel();
     }
     public function accounts()
     {
@@ -87,5 +92,43 @@ class AdminController extends BaseController
         if ($delete) {
             return redirect('admin/accounts')->with('success', 'Akun berhasil dihapus');
         }
+    }
+
+
+    public function showAllUsersHistory()
+    {
+        // Mendapatkan ID user dari data user saat ini (sesuaikan dengan implementasi Anda)
+        $getTransaksi = $this->transactionModel->findAll();
+        $getDetailTransaksi = $this->detailTransactionModel->findAll();
+        $getDetailPoduk = $this->productModel->findAll();
+        
+        $data = [
+            'transaksi' => $getTransaksi,
+            'detailTransaksiData' => $getDetailTransaksi,
+            'detailProduk' => $getDetailPoduk,
+            'page_title' => "Transaction Management"
+
+        ];
+
+        return view('pages/admin/transaction_management/transactions', $data);
+    }
+
+
+
+    public function editStatus($id)
+    {
+
+        if ($this->request->getMethod() === 'post') {
+            $newStatus = $this->request->getPost('new_status');
+
+            // update pwd user didb
+            $this->transactionModel->update($id, ['status' => ($newStatus)]);
+            // menampilkan pesan 
+            session()->setFlashData('success', 'Status transaksi berhasil diubah.');
+        } else {
+            session()->setFlashData('failed', 'Gagal mengubah status transaksi.');
+        }
+
+        return redirect()->to('admin/transaction');
     }
 }

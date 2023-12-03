@@ -13,7 +13,6 @@ class TransactionTable extends Migration
             "id" => [
                 "type" => "INT",
                 "auto_increment" => true,
-                "unsigned" => true,
             ],
             "username" => [
                 "type" => "VARCHAR",

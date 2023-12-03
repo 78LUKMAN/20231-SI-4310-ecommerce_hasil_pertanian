@@ -29,6 +29,7 @@ if (session()->getFlashData('failed')) {
             <th scope="col">Nama</th>
             <th scope="col">Harga</th>
             <th scope="col">Jumlah</th>
+            <th scope="col">Label</th>
             <th scope="col">Keterangan</th>
             <th scope="col">Foto</th>
             <th scope="col"></th>
@@ -48,6 +49,9 @@ if (session()->getFlashData('failed')) {
                 </td>
                 <td>
                     <?php echo $product['stock'] ?>
+                </td>
+                <td>
+                    <?php echo $product['label'] ?>
                 </td>
                 <td>
                     <?php echo $product['description'] ?>
@@ -114,6 +118,11 @@ if (session()->getFlashData('failed')) {
                                         value="<?= $product['stock'] ?>" placeholder="Jumlah Barang" required>
                                 </div>
                                 <div class="form-group">
+                                    <label for="name">label</label>
+                                    <input type="text" name="label" class="form-control" id="stock"
+                                        value="<?= $product['label'] ?>" placeholder="label barang" required>
+                                </div>
+                                <div class="form-group">
                                     <label for="name">Keterangan</label>
                                     <input type="text" name="description" class="form-control" id="description"
                                         value="<?= $product['description'] ?>" placeholder="Keterangan Barang" required>
@@ -122,9 +131,6 @@ if (session()->getFlashData('failed')) {
                                     width="100px" class="mt-1">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="check" name="check" value="1">
-                                    <label class="form-check-label" for="check">
-                                        Ceklis jika ingin mengganti foto
-                                    </label>
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Foto</label>
@@ -167,6 +173,11 @@ if (session()->getFlashData('failed')) {
                 <div class="form-group">
                     <label for="name">Jumlah</label>
                     <input type="text" name="stock" class="form-control" id="stock" placeholder="Jumlah Barang"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="label">Label</label>
+                    <input type="text" name="label" class="form-control" id="label" placeholder="label barang"
                         required>
                 </div>
                 <div class="form-group">

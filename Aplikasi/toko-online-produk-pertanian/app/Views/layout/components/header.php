@@ -48,33 +48,34 @@
                 <img src="<?php echo base_url() ?>assets/img/logo/manlogo.PNG" alt="logo" width="80">
             </a>
             <div class="header-search-container">
-                <input type="search" name="search" class="search-field" placeholder="search by product name">
-                <button class="search-btn">
+                <?= form_open(base_url('activity/search'), ['method' => 'post']); ?>
+                <input type="search" name="keyword" class="search-field" placeholder="search by product name" required>
+                <button class="search-btn" type="submit">
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
             </div>
-
+            <?= form_close() ?>
             <?php
-          $cartUrl = base_url() . 'activity/cart';
-          $historyUrl = base_url() . 'activity/history';
-          $profileUrl = base_url() . 'activity/profile';
-          $transactionUrl = base_url() . 'admin/activity/transactions'; 
-          $addProductUrl = base_url() . 'admin/activity/products'; 
-          
-          function hideButton($url)
-          {
-              $currentUrl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-              if ($currentUrl == $url) {
-                  return "style='display:none;'";
-              }
-              return '';
-          }
-          
+            $cartUrl = base_url() . 'activity/cart';
+            $historyUrl = base_url() . 'activity/history';
+            $profileUrl = base_url() . 'activity/profile';
+            $transactionUrl = base_url() . 'admin/activity/transactions';
+            $addProductUrl = base_url() . 'admin/activity/products';
+
+            function hideButton($url)
+            {
+                $currentUrl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                if ($currentUrl == $url) {
+                    return "style='display:none;'";
+                }
+                return '';
+            }
+
             ?>
 
             <div class="header-user-actions">
                 <?php if (session('isLoggIn') == 1) { ?>
-                    <a href="<?php echo base_url() ?>activity/profile" <?php echo hideButton($profileUrl)?>>
+                    <a href="<?php echo base_url() ?>activity/profile" <?php echo hideButton($profileUrl) ?>>
                         <button class="action-btn">
                             <ion-icon name="person-outline"></ion-icon>
                         </button>
@@ -107,7 +108,7 @@
                 <?php if (session('role') == 'admin') { ?>
                     <a href="<?php echo base_url() ?>admin/accounts" <?php echo hideButton($addProductUrl); ?>>
                         <button class="action-btn">
-                        <ion-icon name="grid-outline"></ion-icon>
+                            <ion-icon name="grid-outline"></ion-icon>
                         </button>
                     </a>
                 <?php } ?>

@@ -11,6 +11,7 @@ class ProfileController extends BaseController
     {
         $this->validation = \Config\Services::validation();
         $this->userModel = new UserModel();
+        helper("form");
     }
     public function index()
     {
