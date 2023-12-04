@@ -658,7 +658,7 @@
                 </div>
 
                 <div class="product-main">
-                    <h2 class="title">January Special Price</h2>
+                    <h2 class="title">End-Year Special Price</h2>
                     <div class="product-grid-container">
                         <?php foreach ($products as $product): ?>
                             <?php
@@ -667,6 +667,9 @@
 
                             // Mengambil kata pertama dari array
                             $firstLabel = trim($labelsArray[0]);
+
+                            // Mengambil kata kedua dari array
+                            $secondLabel = trim($labelsArray[1]);
                             ?>
 
                             <div class="showcase">
@@ -675,16 +678,20 @@
                                         class="product-img default">
                                     <img src="<?php echo base_url('assets/img/products/').$product['image'] ?>" alt="" width="100"
                                         class="product-img hover">
+                                        <?php if ($secondLabel == 25): ?>
                                         <p class="showcase-bagde angle r-blue">25%</p>
+                                        <?php elseif ($secondLabel == 30):?>
+                                        <p class="showcase-bagde">30%</p>
+                                        <?php endif?>
                                 </div>
 
                                 <div class="showcase-content">
                                     <a href="<?= base_url('product/showall/').$firstLabel ?>" class="showcase-category"><?= $firstLabel?></a>
-                                    <a href="#">
+                                    <a href="<?= base_url('product/detail/') . $product['id'] ?>">
                                         <h3 class="showcase-title"><?= $product['name']?></h3>
                                     </a>
                                     <div class="price-box">
-                                        <p class="price"><?= "Rp.".number_format($product['price']-(25/100)*$product['price'])?></p>
+                                        <p class="price"><?= "Rp.".number_format($product['price']-($secondLabel/100)*$product['price'])?></p>
                                         <del><?= "Rp.".number_format($product['price'])?></del>
                                     </div>
                                 </div>
