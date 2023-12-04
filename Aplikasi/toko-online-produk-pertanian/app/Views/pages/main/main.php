@@ -348,237 +348,124 @@
                 <div class="product-minimal">
                     <div class="product-showcase">
                         <h2 class="title">New Products</h2>
+
                         <div class="showcase-wrapper has-scrollbar">
-                            <div class="showcase-container">
-                                <?php foreach ($products as $product): ?>
-                                    <a href=<?= base_url('product/detail/') . $product['id'] ?> class="showcase-img-box">
-                                        <div class="showcase">
-                                            <img src="<?= base_url() . "assets/img/products/" . $product['image'] ?>" alt=""
-                                                width="70" class="showcase-img">
-                                            <div class="showcase-content">
-                                                <span>
-                                                    <h4 class="showcase-title">
-                                                        <?= $product['name'] ?>
-                                                    </h4>
-                                                </span>
-                                                <span class="product-description text-dark">
-                                                    <?= character_limiter($product['description'], 10) ?>
-                                                </span>
-                                                <div class="price-box">
-                                                    <p class="price text-dark">
-                                                        <?= "Rp." . number_format($product['price']) ?>
-                                                    </p>
+                            <?php
+                            $targetKeywords = ['buah', 'sayur'];
+                            $targetIndexes = [];
+
+                            foreach ($products as $index => $product) {
+                                $containsKeyword = false;
+                                foreach ($targetKeywords as $keyword) {
+                                    if (stripos($product['name'], $keyword) !== false) {
+                                        $containsKeyword = true;
+                                        break;
+                                    }
+                                }
+                                if ($containsKeyword) {
+                                    $targetIndexes[] = $index;
+                                }
+                            }
+                            ?>
+
+                            <?php $productsPerContainer = 4; ?>
+                            <?php $containerCount = ceil(count($targetIndexes) / $productsPerContainer); ?>
+
+                            <?php for ($i = 0; $i < $containerCount; $i++): ?>
+                                <div class="showcase-container">
+                                    <?php for ($j = 0; $j < $productsPerContainer; $j++): ?>
+                                        <?php $index = $i * $productsPerContainer + $j; ?>
+                                        <?php if ($index < count($targetIndexes)): ?>
+                                            <?php $productIndex = $targetIndexes[$index]; ?>
+                                            <?php $product = $products[$productIndex]; ?>
+                                            <div class="showcase">
+                                                <a href="<?= base_url('product/detail/') . $product['id'] ?>"
+                                                    class="showcase-img-box">
+                                                    <img src="<?= base_url() . "assets/img/products/" . $product['image'] ?>" alt=""
+                                                        width="70" class="showcase-img">
+                                                </a>
+                                                <div class="showcase-content">
+                                                    <span>
+                                                        <h4 class="showcase-title">
+                                                            <?= $product['name'] ?>
+                                                        </h4>
+                                                    </span>
+                                                    <span class="product-description text-dark">
+                                                        <?= character_limiter($product['description'], 10) ?>
+                                                    </span>
+                                                    <div class="price-box">
+                                                        <p class="price text-dark">
+                                                            <?= "Rp." . number_format($product['price']) ?>
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                <?php endforeach ?>
-                            </div>
-                            <div class="showcase-container">
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Defiant Black Red</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
+                                        <?php endif; ?>
+                                    <?php endfor; ?>
                                 </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Shadow Gray</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Midnight Black</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Blue</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endfor; ?>
                         </div>
                     </div>
                     <div class="product-showcase">
                         <h2 class="title">New Products</h2>
+
                         <div class="showcase-wrapper has-scrollbar">
-                            <div class="showcase-container">
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Matte Black</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
+                            <?php
+                            $targetKeywords = ['kacang', 'rempah'];
+                            $targetIndexes = [];
+
+                            foreach ($products as $index => $product) {
+                                $containsKeyword = false;
+                                foreach ($targetKeywords as $keyword) {
+                                    if (stripos($product['name'], $keyword) !== false) {
+                                        $containsKeyword = true;
+                                        break;
+                                    }
+                                }
+                                if ($containsKeyword) {
+                                    $targetIndexes[] = $index;
+                                }
+                            }
+                            ?>
+
+                            <?php $productsPerContainer = 4; ?>
+                            <?php $containerCount = ceil(count($targetIndexes) / $productsPerContainer); ?>
+
+                            <?php for ($i = 0; $i < $containerCount; $i++): ?>
+                                <div class="showcase-container">
+                                    <?php for ($j = 0; $j < $productsPerContainer; $j++): ?>
+                                        <?php $index = $i * $productsPerContainer + $j; ?>
+                                        <?php if ($index < count($targetIndexes)): ?>
+                                            <?php $productIndex = $targetIndexes[$index]; ?>
+                                            <?php $product = $products[$productIndex]; ?>
+                                            <div class="showcase">
+                                                <a href="<?= base_url('product/detail/') . $product['id'] ?>"
+                                                    class="showcase-img-box">
+                                                    <img src="<?= base_url() . "assets/img/products/" . $product['image'] ?>" alt=""
+                                                        width="70" class="showcase-img">
+                                                </a>
+                                                <div class="showcase-content">
+                                                    <span>
+                                                        <h4 class="showcase-title">
+                                                            <?= $product['name'] ?>
+                                                        </h4>
+                                                    </span>
+                                                    <span class="product-description text-dark">
+                                                        <?= character_limiter($product['description'], 10) ?>
+                                                    </span>
+                                                    <div class="price-box">
+                                                        <p class="price text-dark">
+                                                            <?= "Rp." . number_format($product['price']) ?>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endfor; ?>
                                 </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Defiant Black Red</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Midnight Black</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Blue</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="showcase-container">
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Defiant Black Red</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Shadow Gray</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Midnight Black</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Blue</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endfor; ?>
                         </div>
-                    </div>
+                    </div>                  
                 </div>
 
                 <div class="product-featured">
@@ -586,7 +473,7 @@
                     <div class="showcase-wrapper has-scrollbar">
 
                         <?php foreach ($products as $product): ?>
-                            <?php if (strpos($product['label'], 'lmited') !== false): ?>
+                            <?php if (strpos($product['label'], 'limited') !== false): ?>
                                 <div class="showcase-container">
                                     <div class="showcase">
                                         <div class="showcase-banner">
@@ -674,25 +561,42 @@
 
                             <div class="showcase">
                                 <div class="showcase-banner">
-                                    <img src="<?php echo base_url('assets/img/products/').$product['image'] ?>" alt="" width="100"
-                                        class="product-img default">
-                                    <img src="<?php echo base_url('assets/img/products/').$product['image'] ?>" alt="" width="100"
-                                        class="product-img hover">
-                                        <?php if ($secondLabel == 25): ?>
+                                    <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" alt=""
+                                        width="100" class="product-img default">
+                                    <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" alt=""
+                                        width="100" class="product-img hover">
+                                    <?php if ($secondLabel == 25): ?>
                                         <p class="showcase-bagde angle r-blue">25%</p>
-                                        <?php elseif ($secondLabel == 30):?>
+                                    <?php elseif ($secondLabel == 30): ?>
                                         <p class="showcase-bagde">30%</p>
-                                        <?php endif?>
+                                    <?php endif ?>
                                 </div>
 
                                 <div class="showcase-content">
-                                    <a href="<?= base_url('product/showall/').$firstLabel ?>" class="showcase-category"><?= $firstLabel?></a>
+                                    <a href="<?= base_url('product/showall/') . $firstLabel ?>" class="showcase-category">
+                                        <?= $firstLabel ?>
+                                    </a>
                                     <a href="<?= base_url('product/detail/') . $product['id'] ?>">
-                                        <h3 class="showcase-title"><?= $product['name']?></h3>
+                                        <h3 class="showcase-title">
+                                            <?= $product['name'] ?>
+                                        </h3>
                                     </a>
                                     <div class="price-box">
-                                        <p class="price"><?= "Rp.".number_format($product['price']-($secondLabel/100)*$product['price'])?></p>
-                                        <del><?= "Rp.".number_format($product['price'])?></del>
+                                        <p class="price">
+                                            <?php if (is_numeric($secondLabel)) {
+                                                echo "Rp." . number_format($product['price'] - ($secondLabel / 100) * $product['price']);
+                                            } else {
+                                                echo "Rp." . number_format($product['price']);
+
+                                            }
+                                            ; ?>
+
+                                        </p>
+                                        <?php if (is_numeric($secondLabel)): ?>
+                                            <del>
+                                                <?= "Rp." . number_format($product['price']) ?>
+                                            </del>
+                                        <?php endif ?>
                                     </div>
                                 </div>
                             </div>

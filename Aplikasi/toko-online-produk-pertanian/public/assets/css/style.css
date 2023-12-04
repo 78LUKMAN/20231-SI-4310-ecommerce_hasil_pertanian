@@ -1001,7 +1001,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .product-minimal .showcase-wrapper {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline;
@@ -1467,8 +1467,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .product-grid-container .price-box {
-    display: flex;
-    gap: 10px;
     font-size: var(--fs-7);
     color: var(--eerie-black);
     margin-bottom: 10px;
