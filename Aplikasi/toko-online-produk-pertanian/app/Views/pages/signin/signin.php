@@ -22,12 +22,12 @@
                     <div class="signin-form">
                         <div class="form-content">
                             <label for="emailusername">Email or username</label>
-                            <input type="text" id="username" name="username" placeholder="email or username" required>
+                            <input type="text" id="username" name="username" placeholder="email or username" class="form-control <?php echo session()->getFlashdata('feedback') ? 'is-invalid' : ''?>" required>
                             <label for="password">Password</label>
-                            <input type="password" id="password" name="password" placeholder="password" required>
+                            <input type="password" id="password" name="password" placeholder="password" class="form-control <?php echo session()->getFlashdata('feedback') ? 'is-invalid' : ''?>" required>
                         </div>
                         <?php if (session()->getFlashdata('feedback')): ?>
-                            <div class="alert alert-danger fs-6 ml-5">
+                            <div class="text-danger fs-6 ml-5">
                                 <?= session()->getFlashdata('feedback') ?>
                             </div>
                         <?php endif; ?>

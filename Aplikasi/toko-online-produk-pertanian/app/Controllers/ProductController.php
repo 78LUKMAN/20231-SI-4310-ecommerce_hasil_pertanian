@@ -36,11 +36,11 @@ class ProductController extends BaseController
         if ($this->request->is('post')) {
             $rules = [
                 'name' => 'required',
-                'price' => 'required|max_length[10]',
-                'stock' => 'required|max_length[3]',
+                'price' => 'required|max_length[10]|numeric',
+                'stock' => 'required|max_length[3]|numeric',
                 'description' => 'required',
                 'image' => 'uploaded[image]|max_size[image,1024]|is_image[image]',
-                'label' => 'required|max_length[30]',
+                'label' => 'required|max_length[30]|min_length[10]',
             ];
             if ($this->validate($rules)) {
 
@@ -68,7 +68,7 @@ class ProductController extends BaseController
                 return redirect('admin/products')->with('success', 'Berhasil menambahkan produk');
 
             } else {
-                return redirect('admin/products')->with('failed', $validator->getErrors());
+                return redirect('admin/products')->withInput()->with('failed', $validator->getErrors());
 
             }
         }
@@ -83,10 +83,11 @@ class ProductController extends BaseController
         if ($this->request->is('post')) {
             $rules = [
                 'name' => 'required',
-                'price' => 'required|max_length[10]',
-                'stock' => 'required|max_length[3]',
+                'price' => 'required|max_length[10]|numeric',
+                'stock' => 'required|max_length[3]|numeric',
                 'description' => 'required',
-                'image' => 'max_size[image,1024]|is_image[image]',
+                'image' => 'uploaded[image]|max_size[image,1024]|is_image[image]',
+                'label' => 'required|max_length[30]|min_length[10]',
             ];
 
             if ($this->validate($rules)) {
@@ -122,7 +123,10 @@ class ProductController extends BaseController
     public function deleteproduct($id)
     {
         $dataProduk = $this->productModel->find($id);
-        unlink("assets/img/products/" . $dataProduk['image']);
+        $imgPath = "assets/img/products/" . $dataProduk['image'];
+        if (file_exists($imgPath)) {
+            unlink($imgPath);
+        }
 
         $this->productModel->delete($id);
 

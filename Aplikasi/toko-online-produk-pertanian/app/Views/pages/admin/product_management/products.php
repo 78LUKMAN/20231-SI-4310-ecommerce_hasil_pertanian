@@ -10,14 +10,12 @@ if (session()->getFlashData('success')) {
     <?php
 }
 ?>
-<?php
-if (session()->getFlashData('failed')) {
-    ?>
+<?php if(session()->has('failed')): ?>
+    <div class="alert alert-danger">
+        <?php echo implode('<br>', session('failed')); ?>
+    </div>
+<?php endif; ?>
 
-    <?= dd(session()->getFlashData('failed')) ?>
-    <?php
-}
-?>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
     <i class="bi bi-plus-square"></i>&nbsp;Tambah Data
 </button>
@@ -187,7 +185,7 @@ if (session()->getFlashData('failed')) {
                 </div>
                 <div class="form-group">
                     <label for="image">Foto</label>
-                    <input type="file" class="form-control" id="image" name="image">
+                    <input type="file" class="form-control" id="image" name="image" required>
                 </div>
             </div>
             <div class="modal-footer">
