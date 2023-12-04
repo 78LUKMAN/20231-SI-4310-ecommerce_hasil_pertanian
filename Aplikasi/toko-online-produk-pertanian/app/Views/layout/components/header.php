@@ -99,12 +99,7 @@
                         <ion-icon name="timer-outline"></ion-icon>
                     </button>
                 </a>
-                <a href="<?php echo base_url() ?>activity/transaction" id="history-btn" <?php echo hideButton($transactionUrl); ?>>
-                    <button class="action-btn">
-                        <ion-icon name="wallet-outline"></ion-icon>
-                    </button>
-                </a>
-
+                
                 <?php if (session('role') == 'admin') { ?>
                     <a href="<?php echo base_url() ?>admin/accounts" <?php echo hideButton($addProductUrl); ?>>
                         <button class="action-btn">

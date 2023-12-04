@@ -178,7 +178,7 @@
                                 <div class="menu-title-flex">
                                     <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="20"
                                         class="menu-title-img">
-                                    <p class="menu-title">Handphone</p>
+                                    <p class="menu-title">Kacang</p>
                                 </div>
 
                                 <div>
@@ -189,22 +189,46 @@
 
                             <ul class="slidebar-submenu-category-list" data-accordion>
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Samsung</p>
+                                    <a href="<?= base_url('product/showall/kacang tanah') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kacang Tanah</p>
                                         <data value="300" class="stock" title="available stock">58</data>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Apple</p>
+                                    <a href="<?= base_url('product/showall/kacang polong') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kacang Polong</p>
                                         <data value="300" class="stock" title="available stock">32</data>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Asus</p>
+                                    <a href="<?= base_url('product/showall/kacang mede') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kacang Mede</p>
+                                        <data value="300" class="stock" title="available stock">60</data>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/kacang arab') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kacang Arab</p>
+                                        <data value="300" class="stock" title="available stock">60</data>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/kacang panjang') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kacang Panjang</p>
+                                        <data value="300" class="stock" title="available stock">60</data>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/kacang almond') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kacang Almond</p>
                                         <data value="300" class="stock" title="available stock">60</data>
                                     </a>
                                 </li>
@@ -215,7 +239,7 @@
                                 <div class="menu-title-flex">
                                     <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt="" width="20"
                                         height="22" class="menu-title-img">
-                                    <p class="menu-title">Headphone</p>
+                                    <p class="menu-title">Sayur dan Buah</p>
                                 </div>
 
                                 <div>
@@ -226,22 +250,35 @@
 
                             <ul class="slidebar-submenu-category-list" data-accordion>
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Beats</p>
+                                    <a href="<?= base_url('product/showall/terong') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">Terong</p>
                                         <data value="300" class="stock" title="available stock">120</data>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Sony</p>
+                                    <a href="<?= base_url('product/showall/bayam') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">Bayam</p>
                                         <data value="300" class="stock" title="available stock">200</data>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Razer</p>
+                                    <a href="<?= base_url('product/showall/kangkung') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kangkung</p>
+                                        <data value="300" class="stock" title="available stock">150</data>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/tomat') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">Tomat</p>
+                                        <data value="300" class="stock" title="available stock">150</data>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/wortel') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">Wortel</p>
                                         <data value="300" class="stock" title="available stock">150</data>
                                     </a>
                                 </li>
@@ -252,7 +289,7 @@
                                 <div class="menu-title-flex">
                                     <img src="<?php echo base_url() ?>assets/img/logo/watch.jpg" alt="" width="20"
                                         class="menu-title-img">
-                                    <p class="menu-title">Watch</p>
+                                    <p class="menu-title">Rempah</p>
                                 </div>
 
                                 <div>
@@ -263,22 +300,41 @@
 
                             <ul class="slidebar-submenu-category-list" data-accordion>
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Casio</p>
+                                    <a href="<?= base_url('product/showall/lengkuas') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Lengkuah</p>
                                         <data value="300" class="stock" title="available stock">80</data>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Fossil</p>
+                                    <a href="<?= base_url('product/showall/cengkeh') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">Cengkeh</p>
                                         <data value="300" class="stock" title="available stock">96</data>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Orient</p>
+                                    <a href="<?= base_url('product/showall/bawang') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">bawang</p>
+                                        <data value="300" class="stock" title="available stock">84</data>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/jahe') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">jahe</p>
+                                        <data value="300" class="stock" title="available stock">84</data>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/kemiri') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">kemiri</p>
+                                        <data value="300" class="stock" title="available stock">84</data>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/kunyit') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">kunyit</p>
                                         <data value="300" class="stock" title="available stock">84</data>
                                     </a>
                                 </li>
@@ -305,12 +361,12 @@
                                                         <?= $product['name'] ?>
                                                     </h4>
                                                 </span>
-                                                <span class="product-description">
+                                                <span class="product-description text-dark">
                                                     <?= character_limiter($product['description'], 10) ?>
                                                 </span>
                                                 <div class="price-box">
-                                                    <p class="price">
-                                                        <?= number_format($product['price']) ?>
+                                                    <p class="price text-dark">
+                                                        <?= "Rp." . number_format($product['price']) ?>
                                                     </p>
                                                 </div>
                                             </div>
@@ -529,7 +585,7 @@
                     <h2 class="title">Limited Offer</h2>
                     <div class="showcase-wrapper has-scrollbar">
 
-                    <?php foreach ($products as $product): ?>
+                        <?php foreach ($products as $product): ?>
                             <?php if (strpos($product['label'], 'lmited') !== false): ?>
                                 <div class="showcase-container">
                                     <div class="showcase">
@@ -545,7 +601,7 @@
                                             </a>
 
                                             <p class="showcase-desc">
-                                                <?= character_limiter($product['description'],100) ?>
+                                                <?= character_limiter($product['description'], 100) ?>
                                             </p>
 
                                             <div class="price-box">
@@ -597,177 +653,45 @@
                         <?php endforeach; ?>
                     </div>
 
-                    
+
 
                 </div>
 
                 <div class="product-main">
                     <h2 class="title">January Special Price</h2>
                     <div class="product-grid-container">
-                        <div class="showcase">
-                            <div class="showcase-banner">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="100"
-                                    class="product-img default">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="100"
-                                    class="product-img hover">
+                        <?php foreach ($products as $product): ?>
+                            <?php
+                            // Memisahkan string label menjadi array
+                            $labelsArray = explode(',', $product['label']);
 
-                                <p class="showcase-bagde angle r-blue">25%</p>
-                                <div class="showcase-actions">
-                                    <button class="btn-action">
-                                        <ion-icon name="heart-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="repeat-outline"></ion-icon>
-                                    </button>
+                            // Mengambil kata pertama dari array
+                            $firstLabel = trim($labelsArray[0]);
+                            ?>
+
+                            <div class="showcase">
+                                <div class="showcase-banner">
+                                    <img src="<?php echo base_url('assets/img/products/').$product['image'] ?>" alt="" width="100"
+                                        class="product-img default">
+                                    <img src="<?php echo base_url('assets/img/products/').$product['image'] ?>" alt="" width="100"
+                                        class="product-img hover">
+                                        <p class="showcase-bagde angle r-blue">25%</p>
+                                </div>
+
+                                <div class="showcase-content">
+                                    <a href="<?= base_url('product/showall/').$firstLabel ?>" class="showcase-category"><?= $firstLabel?></a>
+                                    <a href="#">
+                                        <h3 class="showcase-title"><?= $product['name']?></h3>
+                                    </a>
+                                    <div class="price-box">
+                                        <p class="price"><?= "Rp.".number_format($product['price']-(25/100)*$product['price'])?></p>
+                                        <del><?= "Rp.".number_format($product['price'])?></del>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="showcase-content">
-                                <a href="#" class="showcase-category">Headphone</a>
-                                <a href="#">
-                                    <h3 class="showcase-title">Beats Studio<sup>3</sup></h3>
-                                </a>
+                        <?php endforeach ?>
 
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                </div>
-
-                                <div class="price-box">
-                                    <p class="price">$262.46</p>
-                                    <del>$349.95</del>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="showcase">
-                            <div class="showcase-banner">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                    class="product-img default">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                    class="product-img hover">
-
-                                <p class="showcase-bagde">31%</p>
-                                <div class="showcase-actions">
-                                    <button class="btn-action">
-                                        <ion-icon name="heart-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="repeat-outline"></ion-icon>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="showcase-content">
-                                <a href="#" class="showcase-category">Headphone</a>
-                                <a href="#">
-                                    <h3 class="showcase-title">Beats Studio<sup>3</sup></h3>
-                                </a>
-
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                </div>
-
-                                <div class="price-box">
-                                    <p class="price">$241.47</p>
-                                    <del>$349.95</del>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="showcase">
-                            <div class="showcase-banner">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                    class="product-img default">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                    class="product-img hover">
-
-                                <p class="showcase-bagde angle r-blue">25%</p>
-                                <div class="showcase-actions">
-                                    <button class="btn-action">
-                                        <ion-icon name="heart-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="repeat-outline"></ion-icon>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="showcase-content">
-                                <a href="#" class="showcase-category">Headphone</a>
-                                <a href="#">
-                                    <h3 class="showcase-title">Beats Studio<sup>3</sup></h3>
-                                </a>
-
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                </div>
-
-                                <div class="price-box">
-                                    <p class="price">$262.46</p>
-                                    <del>$349.95</del>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="showcase">
-                            <div class="showcase-banner">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                    class="product-img default">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                    class="product-img hover">
-
-                                <p class="showcase-bagde">31%</p>
-                                <div class="showcase-actions">
-                                    <button class="btn-action">
-                                        <ion-icon name="heart-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="repeat-outline"></ion-icon>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="showcase-content">
-                                <a href="#" class="showcase-category">Headphone</a>
-                                <a href="#">
-                                    <h3 class="showcase-title">Beats Studio<sup>3</sup></h3>
-                                </a>
-
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                </div>
-
-                                <div class="price-box">
-                                    <p class="price">$241.47</p>
-                                    <del>$349.95</del>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

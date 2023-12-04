@@ -133,7 +133,7 @@ class ProductController extends BaseController
     {
         $data = [
             'products' => $this->productModel->getByLabel($label),
-            'title' => 'Produk Serupa',
+            'title' => 'Produk Serupa "' . $label . '"',
             'null' => 'Produk Serupa Tidak Ditemukan' 
         ];
         return view('pages/product/product', $data);
