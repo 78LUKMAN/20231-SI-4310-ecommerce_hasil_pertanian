@@ -17,7 +17,6 @@ class DetailTransactionModel extends Model
         'transaction_id',
         'product_id',
         'quantity',
-        'discount',
         'subtotal',
         'created_by',
         'created_date'

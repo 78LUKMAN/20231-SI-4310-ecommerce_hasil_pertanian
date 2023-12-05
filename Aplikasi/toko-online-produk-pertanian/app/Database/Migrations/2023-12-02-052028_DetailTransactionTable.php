@@ -23,9 +23,6 @@ class DetailTransactionTable extends Migration
             "quantity" => [
                 "type" => "DOUBLE",
             ],
-            "discount" => [
-                "type" => "DOUBLE",
-            ],
             "subtotal" => [
                 "type" => "DOUBLE",
             ],

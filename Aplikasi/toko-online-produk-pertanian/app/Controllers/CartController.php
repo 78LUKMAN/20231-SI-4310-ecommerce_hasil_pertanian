@@ -191,7 +191,6 @@ class CartController extends BaseController
                     'transaction_id' => $last_insert_id,
                     'product_id' => $value['id'],
                     'quantity' => $value['qty'],
-                    'discount' => 0,
                     'subtotal' => $value['qty'] * $value['disprice'],
                     'created_by' => $this->request->getPost('username'),
                     'created_date' => date("Y-m-d H:i:s")
