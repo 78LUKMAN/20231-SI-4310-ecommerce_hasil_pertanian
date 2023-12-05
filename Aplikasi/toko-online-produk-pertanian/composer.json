@@ -12,6 +12,7 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "codeigniter4/framework": "^4.0",
+        "midtrans/midtrans-php": "^2.5",
         "nyholm/psr7": "^1.8",
         "php-http/curl-client": "^2.3"
     },

@@ -32,6 +32,10 @@ class TransactionTable extends Migration
                 "type" => "INT",
                 "default" => 1,
             ],
+            "token" => [
+                "type" => "VARCHAR",
+                'constraint' => 100
+            ],
             "created_by" => [
                 "type" => "VARCHAR",
                 "constraint" => 100,

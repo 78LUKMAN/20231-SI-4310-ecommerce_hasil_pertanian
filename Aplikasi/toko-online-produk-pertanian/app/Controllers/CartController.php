@@ -3,6 +3,8 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use Config\Services;
+use \App\Models\TransactionModel;
+use \App\Models\DetailTransactionModel;
 
 class CartController extends BaseController
 {
@@ -106,20 +108,22 @@ class CartController extends BaseController
 
         $curl = curl_init();
 
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.rajaongkir.com/starter/cost",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => "origin=" . $origin . "&destination=" . $destination . "&weight=" . $weight . "&courier=" . $courier,
-            CURLOPT_HTTPHEADER => array(
-                "content-type: application/x-www-form-urlencoded",
-                "key: " . $this->apiKey,
-            ),
-        )
+        curl_setopt_array(
+            $curl,
+            array(
+                CURLOPT_URL => "https://api.rajaongkir.com/starter/cost",
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_POSTFIELDS => "origin=" . $origin . "&destination=" . $destination . "&weight=" . $weight . "&courier=" . $courier,
+                CURLOPT_HTTPHEADER => array(
+                    "content-type: application/x-www-form-urlencoded",
+                    "key: " . $this->apiKey,
+                ),
+            )
         );
 
         $response = curl_exec($curl);
@@ -141,18 +145,20 @@ class CartController extends BaseController
 
         $curl = curl_init();
 
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => $endPoint,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => array(
-                "key: " . $this->apiKey
-            ),
-        )
+        curl_setopt_array(
+            $curl,
+            array(
+                CURLOPT_URL => $endPoint,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                    "key: " . $this->apiKey
+                ),
+            )
         );
 
         $response = curl_exec($curl);
@@ -168,11 +174,13 @@ class CartController extends BaseController
         if ($this->request->getPost()) {
             $data = $this->request->getPost();
 
-            $transaksiModel = new \App\Models\TransactionModel();
-            $transaksiDetailModel = new \App\Models\DetailTransactionModel();
-            
+            $transaksiModel = new TransactionModel();
+            $transaksiDetailModel = new DetailTransactionModel();
 
+
+            $id_order = time();
             $dataForm = [
+                'order_id' => $id_order,
                 'username' => $this->request->getPost('username'),
                 'total' => $this->request->getPost('price_total'),
                 'address' => $this->request->getPost('address'),
@@ -181,6 +189,30 @@ class CartController extends BaseController
                 'created_by' => $this->request->getPost('username'),
                 'created_date' => date("Y-m-d H:i:s")
             ];
+
+
+            // Set your Merchant Server Key
+            \Midtrans\Config::$serverKey = 'SB-Mid-server-Z9WdyW2r3BEM_yboYz4vZzBz';
+            // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+            \Midtrans\Config::$isProduction = false;
+            // Set sanitization on (default)
+            \Midtrans\Config::$isSanitized = true;
+            // Set 3DS transaction for credit card to true
+            \Midtrans\Config::$is3ds = true;
+
+            $params = array(
+                'transaction_details' => array(
+                    'order_id' => $id_order,
+                    'gross_amount' => $dataForm['total'],
+                ),
+                'customer_details' => array(
+                    'first_name' => $dataForm['username'],
+                ),
+            );
+
+            $snapToken = \Midtrans\Snap::getSnapToken($params);
+            $dataForm['token'] = $snapToken;
+
 
             $transaksiModel->insert($dataForm);
 
@@ -191,18 +223,18 @@ class CartController extends BaseController
                     'transaction_id' => $last_insert_id,
                     'product_id' => $value['id'],
                     'quantity' => $value['qty'],
-                    'subtotal' => $value['qty'] * $value['disprice'],
+                    'discount' => 0,
+                    'subtotal' => $value['qty'] * $value['price'],
                     'created_by' => $this->request->getPost('username'),
-                    'created_date' => date("Y-m-d H:i:s")
+                    'created_date' => date("Y-m-d H:i:s"),
                 ];
 
                 $transaksiDetailModel->insert($dataFormDetail);
             }
-
             $this->cart->destroy();
 
             session()->setflashdata('success', 'Pesanan berhasil dibuat');
-            return redirect()->to(base_url('activity/cart'));
+            return redirect()->to(base_url('activity/history'));
         }
     }
 }

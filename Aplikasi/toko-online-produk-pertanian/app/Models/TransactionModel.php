@@ -14,11 +14,13 @@ class TransactionModel extends Model
     protected $useSoftDeletes = false;
     protected $protectFields = true;
     protected $allowedFields = [
+        'order_id',
         'username',
         'total',
         'address',
         'fare',
         'status',
+        'token',
         'created_by',
         'created_date'
     ];
