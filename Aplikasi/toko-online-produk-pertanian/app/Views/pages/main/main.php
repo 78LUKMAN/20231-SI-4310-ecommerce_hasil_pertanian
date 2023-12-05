@@ -395,7 +395,7 @@
                                                     </span>
                                                     <div class="price-box">
                                                         <p class="price text-dark">
-                                                            <?= "Rp." . number_format($product['price']) ?>
+                                                            <?= "Rp." . number_format($product['disprice']) ?>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -493,7 +493,7 @@
 
                                             <div class="price-box">
                                                 <p class="price">
-                                                    <?= 'Rp' . number_format($product['price']) ?>
+                                                    <?= 'Rp' . number_format($product['disprice']) ?>
                                                 </p>
                                             </div>
                                             <a href="<?= base_url('product/detail/') . $product['id'] ?>">
@@ -557,10 +557,15 @@
                                     <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" alt=""
                                         width="100" class="product-img hover">
                                     <?php if ($product['discount'] != 0): ?>
-
-                                        <p class="showcase-bagde angle r-blue">
-                                            <?php echo $product['discount'] ?>%
-                                        </p>
+                                        <?php if ($product['discount'] < 50): ?>
+                                            <p class="showcase-bagde angle r-blue">
+                                                <?php echo $product['discount'] ?>%
+                                            </p>
+                                        <?php else: ?>
+                                            <p class="showcase-bagde">
+                                                <?php echo $product['discount'] ?>%
+                                            </p>
+                                        <?php endif ?>
                                     <?php endif ?>
                                 </div>
 
