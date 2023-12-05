@@ -27,9 +27,17 @@ class ProductTable extends Migration
                     "type" => "varchar",
                     "constraint" => 10,
                 ],
+                "discount" => [
+                    "type" => "INT",
+                    "constraint" => "2"
+                ],
                 "stock" => [
                     "type" => "INT",
                     "constraint" => 3,
+                ],
+                "label" => [
+                    "type"=> "varchar",
+                    "constraint"=> "30",
                 ],
                 "image" => [
                     "type" => "varchar",

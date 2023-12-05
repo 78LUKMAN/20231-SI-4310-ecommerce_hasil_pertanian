@@ -37,6 +37,7 @@ class ProductController extends BaseController
             $rules = [
                 'name' => 'required',
                 'price' => 'required|max_length[10]|numeric',
+                'discount' => 'required|max_length[2]|numeric',
                 'stock' => 'required|max_length[3]|numeric',
                 'description' => 'required',
                 'image' => 'uploaded[image]|max_size[image,1024]|is_image[image]',
@@ -44,9 +45,13 @@ class ProductController extends BaseController
             ];
             if ($this->validate($rules)) {
 
+                $price = $this->request->getPost('price');
+                $discount = $this->request->getPost('discount');
                 $data = [
                     'name' => $this->request->getPost('name'),
-                    'price' => $this->request->getPost('price'),
+                    'price' => $price,
+                    'discount' => $discount,
+                    'disprice' => $price - ($price * ($discount/100)),
                     'stock' => $this->request->getPost('stock'),
                     'description' => $this->request->getPost('description'),
                     'label' => $this->request->getPost('label'),
@@ -84,16 +89,21 @@ class ProductController extends BaseController
             $rules = [
                 'name' => 'required',
                 'price' => 'required|max_length[10]|numeric',
+                'discount' => 'required|max_length[2]|numeric',
                 'stock' => 'required|max_length[3]|numeric',
                 'description' => 'required',
-                'image' => 'uploaded[image]|max_size[image,1024]|is_image[image]',
+                'image' => 'max_size[image,1024]|is_image[image]',
                 'label' => 'required|max_length[30]|min_length[10]',
             ];
 
             if ($this->validate($rules)) {
+                $price = $this->request->getPost('price');
+                $discount = $this->request->getPost('discount');
                 $data = [
                     'name' => $this->request->getPost('name'),
-                    'price' => $this->request->getPost('price'),
+                    'price' => $price,
+                    'discount' => $discount,
+                    'disprice' => $price - ($price * ($discount/100)),
                     'stock' => $this->request->getPost('stock'),
                     'description' => $this->request->getPost('description'),
                     'label' => $this->request->getPost('label'),
@@ -138,7 +148,7 @@ class ProductController extends BaseController
         $data = [
             'products' => $this->productModel->getByLabel($label),
             'title' => 'Produk Serupa "' . $label . '"',
-            'null' => 'Produk Serupa Tidak Ditemukan' 
+            'null' => 'Produk Serupa Tidak Ditemukan'
         ];
         return view('pages/product/product', $data);
     }

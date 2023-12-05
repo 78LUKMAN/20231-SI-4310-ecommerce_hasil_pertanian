@@ -317,9 +317,9 @@
                     continue;
                 }
 
-                $this->cartContents[ 'cart_total' ] += ( $val[ 'price' ] * $val[ 'qty' ] );
+                $this->cartContents[ 'cart_total' ] += ( $val[ 'disprice' ] * $val[ 'qty' ] );
                 $this->cartContents[ 'total_items' ] += $val[ 'qty' ];
-                $this->cartContents[ $key ][ 'subtotal' ] = ( $this->cartContents[ $key ][ 'price' ] * $this->cartContents[ $key ][ 'qty' ] );
+                $this->cartContents[ $key ][ 'subtotal' ] = ( $this->cartContents[ $key ][ 'disprice' ] * $this->cartContents[ $key ][ 'qty' ] );
             }
 
             // Is our cart empty? If so we delete it from the session

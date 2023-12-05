@@ -45,7 +45,7 @@
 
                                             <div class="mb-3">
                                                 <span class="h5">
-                                                    <?= "Rp." . number_format($product['price']) ?>
+                                                    <?= "Rp." . number_format($product['disprice']) ?>
                                                 </span>
                                             </div>
 
@@ -67,6 +67,7 @@
                                             </div>
                                             <form action="<?= base_url('cart/add') ?>" method="post">
                                                 <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                                                <input type="hidden" name="disprice" value="<?= $product['disprice'] ?>">
                                                 <?php
                                                 echo form_hidden('id', $product['id']);
                                                 echo form_hidden('name', $product['name']);

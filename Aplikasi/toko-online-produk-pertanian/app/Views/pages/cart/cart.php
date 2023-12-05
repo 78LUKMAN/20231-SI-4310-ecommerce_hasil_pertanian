@@ -53,12 +53,12 @@ if (session()->getFlashData('success')) {
                                                 <td><img src="<?php echo base_url() . "assets/img/products/" . $item['options']['image'] ?>"
                                                         width="100px"></td>
                                                 <td>
-                                                    <?php echo number_to_currency($item['price'], 'IDR') ?>
+                                                    <?php echo "Rp.".number_format ($item['disprice']) ?>
                                                 </td>
                                                 <td><input type="number" min="1" name="qty<?php echo $i++ ?>"
                                                         class="form-control" value="<?php echo $item['qty'] ?>"></td>
                                                 <td>
-                                                    <?php echo number_to_currency($item['subtotal'], 'IDR') ?>
+                                                    <?php echo "Rp.".number_format($item['subtotal']) ?>
                                                 </td>
                                                 <td>
                                                     <a href="<?php echo base_url('cart/delete/' . $item['rowid'] . '') ?>"
@@ -73,7 +73,7 @@ if (session()->getFlashData('success')) {
                             </table>
                         </div>
                         <div class="alert alert-info">
-                            <?php echo "Total = " . number_to_currency($total, 'IDR') ?>
+                            <?php echo "Total = " . "Rp.".number_format($total) ?>
                         </div>
                         <button type="submit" class="btn btn-primary">Perbarui Keranjang</button>
                         <a class="btn btn-warning" href="<?php echo base_url() ?>cart/clear">Kosongkan

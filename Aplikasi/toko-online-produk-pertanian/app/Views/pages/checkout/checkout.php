@@ -85,13 +85,13 @@
 													<?php echo $item['name'] ?>
 												</td>
 												<td>
-													<?php echo number_to_currency($item['price'], 'IDR') ?>
+													<?php echo number_to_currency($item['disprice'], 'IDR') ?>
 												</td>
 												<td>
 													<?php echo $item['qty'] ?>
 												</td>
 												<td>
-													<?php echo number_to_currency($item['price'] * $item['qty'], 'IDR') ?>
+													<?php echo number_to_currency($item['disprice'] * $item['qty'], 'IDR') ?>
 												</td>
 											</tr>
 											<?php

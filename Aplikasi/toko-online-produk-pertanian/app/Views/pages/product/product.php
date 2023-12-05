@@ -33,7 +33,7 @@
                                 <?= character_limiter($product['description'], 15) ?><br>
                             </p>
                             <h4 class="mt-3 fw-bold fs-6">
-                                <?= number_to_currency($product['price'], 'IDR') ?>
+                                <?= number_to_currency($product['disprice'], 'IDR') ?>
                             </h4>
                         </div>
                     </div>

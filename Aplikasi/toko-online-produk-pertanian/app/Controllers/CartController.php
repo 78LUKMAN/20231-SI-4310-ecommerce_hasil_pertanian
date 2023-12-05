@@ -30,6 +30,7 @@ class CartController extends BaseController
             'id' => $this->request->getPost('id'),
             'qty' => 1,
             'price' => $this->request->getPost('price'),
+            'disprice' => $this->request->getPost('disprice'),
             'name' => $this->request->getPost('name'),
             'options' => ['image' => $this->request->getPost('image')],
         ];
@@ -191,7 +192,7 @@ class CartController extends BaseController
                     'product_id' => $value['id'],
                     'quantity' => $value['qty'],
                     'discount' => 0,
-                    'subtotal' => $value['qty'] * $value['price'],
+                    'subtotal' => $value['qty'] * $value['disprice'],
                     'created_by' => $this->request->getPost('username'),
                     'created_date' => date("Y-m-d H:i:s")
                 ];

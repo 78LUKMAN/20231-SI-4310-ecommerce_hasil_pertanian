@@ -465,7 +465,7 @@
                                 </div>
                             <?php endfor; ?>
                         </div>
-                    </div>                  
+                    </div>
                 </div>
 
                 <div class="product-featured">
@@ -539,25 +539,16 @@
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
-
-
-
                 </div>
-
                 <div class="product-main">
-                    <h2 class="title">End-Year Special Price</h2>
+                    <h2 class="title">End-Year Special Product</h2>
                     <div class="product-grid-container">
                         <?php foreach ($products as $product): ?>
                             <?php
-                            // Memisahkan string label menjadi array
                             $labelsArray = explode(',', $product['label']);
-
-                            // Mengambil kata pertama dari array
                             $firstLabel = trim($labelsArray[0]);
-
-                            // Mengambil kata kedua dari array
-                            $secondLabel = trim($labelsArray[1]);
                             ?>
+
 
                             <div class="showcase">
                                 <div class="showcase-banner">
@@ -565,10 +556,11 @@
                                         width="100" class="product-img default">
                                     <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" alt=""
                                         width="100" class="product-img hover">
-                                    <?php if ($secondLabel == 25): ?>
-                                        <p class="showcase-bagde angle r-blue">25%</p>
-                                    <?php elseif ($secondLabel == 30): ?>
-                                        <p class="showcase-bagde">30%</p>
+                                    <?php if ($product['discount'] != 0): ?>
+
+                                        <p class="showcase-bagde angle r-blue">
+                                            <?php echo $product['discount'] ?>%
+                                        </p>
                                     <?php endif ?>
                                 </div>
 
@@ -582,21 +574,18 @@
                                         </h3>
                                     </a>
                                     <div class="price-box">
-                                        <p class="price">
-                                            <?php if (is_numeric($secondLabel)) {
-                                                echo "Rp." . number_format($product['price'] - ($secondLabel / 100) * $product['price']);
-                                            } else {
-                                                echo "Rp." . number_format($product['price']);
-
-                                            }
-                                            ; ?>
-
-                                        </p>
-                                        <?php if (is_numeric($secondLabel)): ?>
+                                        <?php if ($product['discount'] != 0) { ?>
+                                            <p>
+                                                <?php echo "Rp." . number_format($product['disprice']) ?>
+                                            </p>
                                             <del>
-                                                <?= "Rp." . number_format($product['price']) ?>
+                                                <?php echo "Rp." . number_format($product['price']) ?>
                                             </del>
-                                        <?php endif ?>
+                                        <?php } else { ?>
+                                            <p>
+                                                <?php echo "Rp." . number_format($product['disprice']) ?>
+                                            </p>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
