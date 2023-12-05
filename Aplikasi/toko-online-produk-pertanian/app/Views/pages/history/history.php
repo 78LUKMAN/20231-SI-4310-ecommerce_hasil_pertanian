@@ -77,7 +77,7 @@
                                                     <?= $finalRes['status_code'] ?>
                                                 <?php } ?>
                                             </td>
-                                            <td style="display: flex; gap: 5px;">
+                                            <td style="display: flex; gap: 2px;">
                                                 <button type="button" class="btn btn-primary" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseOne<?= $transaksiData['id'] ?>">
                                                     <i class="bi bi-view-list"></i>

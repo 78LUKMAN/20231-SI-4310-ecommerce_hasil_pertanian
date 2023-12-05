@@ -13,7 +13,31 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($transaksi as $transaksiData): ?>
+            <?php foreach ($transaksi as $transaksiData):
+
+                $id = $transaksiData['order_id'];
+                $key = base64_encode("SB-Mid-server-Z9WdyW2r3BEM_yboYz4vZzBz:");
+                $endpoint = "https://api.sandbox.midtrans.com/v2/" . $id . "/status";
+                $header = array(
+                    'Accept: application/json',
+                    'Authorization: Basic ' . $key,
+                    'Content-Type: application/json'
+                );
+
+                $method = 'GET';
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $endpoint);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, false);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+
+                $result = curl_exec($ch);
+                $finalRes = json_decode($result, true);
+
+                ?>
+
                 <tr>
                     <td>
                         <?= $transaksiData['username'] ?>
@@ -25,7 +49,12 @@
                         <?= "Rp." . number_format($transaksiData['fare']) ?>
                     </td>
                     <td>
-                        <?= ($transaksiData['status'] == 0) ? 'Belum Selesai' : 'Selesai' ?>
+                        <?php if ($finalRes['status_code'] == 200 || $finalRes['status_code'] == 201 || $finalRes['status_code'] == 202) {
+                            echo $finalRes['transaction_status'];
+                        } else {
+                            ?>
+                            <?= $finalRes['status_code'] ?>
+                        <?php } ?>
                     </td>
                     <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -57,22 +86,22 @@
                                                 <?= $detailData['transaction_id'] ?>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="row">
-                                        <?php
-                                        foreach ($detailProduk as $dataDetailProduk) {
-                                            if ($detailData['product_id'] == $dataDetailProduk['id']) {
-                                                ?>
+                                            <?php
+                                            foreach ($detailProduk as $dataDetailProduk) {
+                                                if ($detailData['product_id'] == $dataDetailProduk['id']) {
+                                                    ?>
                                                     <div class="col-4">Nama Barang</div>
                                                     <div class="col-1">:</div>
                                                     <div class="col-3 fw-normal">
-                                                        <?php echo $dataDetailProduk['name'];?>
+                                                        <?php echo $dataDetailProduk['name']; ?>
                                                     </div>
                                                     <?php
-                                                    }
                                                 }
+                                            }
                                             ?>
-    
+
                                         </div>
                                         <div class="row " id="heading">
                                             <div class="col-4">Jumlah Barang</div>
@@ -104,8 +133,8 @@
                         </div>
                     </div>
                 </div>
-    
-    
+
+
                 <div class="modal fade" id="editStatus<?= $transaksiData['id'] ?>" tabindex="-1"
                     aria-labelledby="modalTitle<?= $transaksiData['id'] ?>" aria-hidden="true">
                     <div class="modal-dialog">
@@ -132,15 +161,16 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary">Ubah Status</button>
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-    
-    
+
+
             <?php endforeach; ?>
         </tbody>
     </table>
