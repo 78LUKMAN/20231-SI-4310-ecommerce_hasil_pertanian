@@ -88,9 +88,22 @@ class AdminController extends BaseController
 
     public function deleteuser($id)
     {
-        $delete = $this->userModel->delete($id);
+
+        $user = $this->userModel->find($id);
+        if (!$user) {
+            return redirect('admin/accounts')->with('unknown', 'Akun tidak ditemukan');
+        }
+        $imgPath = "assets/img/profile/" . $user['img'];
+        if (file_exists($imgPath)) {
+            unlink($imgPath);
+        }
+       
+        $delete =  $this->userModel->delete($id);
+
         if ($delete) {
-            return redirect('admin/accounts')->with('success', 'Akun berhasil dihapus');
+            return redirect('admin/accounts')->with('success', 'Data Berhasil Dihapus');
+        }  else {
+            return redirect('admin/accounts')->with('unsuccess', 'Gagal menghapus akun');
         }
     }
 

@@ -72,7 +72,7 @@ class ProfileController extends BaseController
             'email' => 'required|valid_email',
             'phone' => 'required|numeric',
             'address' => 'required',
-            'img' => 'max_size[image,1024]|is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]'
+            'img' => 'max_size[image,1024]|mime_in[image,image/jpg,image/jpeg,image/png]'
         ];
 
         if ($this->validate($validationRules)) {
