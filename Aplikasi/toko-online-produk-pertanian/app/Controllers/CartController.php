@@ -185,33 +185,38 @@ class CartController extends BaseController
                 'total' => $this->request->getPost('price_total'),
                 'address' => $this->request->getPost('address'),
                 'fare' => $this->request->getPost('fare'),
-                'status' => 0,
                 'created_by' => $this->request->getPost('username'),
                 'created_date' => date("Y-m-d H:i:s")
             ];
 
 
-            // Set your Merchant Server Key
-            \Midtrans\Config::$serverKey = 'SB-Mid-server-Z9WdyW2r3BEM_yboYz4vZzBz';
-            // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-            \Midtrans\Config::$isProduction = false;
-            // Set sanitization on (default)
-            \Midtrans\Config::$isSanitized = true;
-            // Set 3DS transaction for credit card to true
-            \Midtrans\Config::$is3ds = true;
+            // // Set your Merchant Server Key
+            // \Midtrans\Config::$serverKey = 'SB-Mid-server-Z9WdyW2r3BEM_yboYz4vZzBz';
+            // // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+            // \Midtrans\Config::$isProduction = false;
+            // // Set sanitization on (default)
+            // \Midtrans\Config::$isSanitized = true;
+            // // Set 3DS transaction for credit card to true
+            // \Midtrans\Config::$is3ds = true;
 
-            $params = array(
-                'transaction_details' => array(
-                    'order_id' => $id_order,
-                    'gross_amount' => $dataForm['total'],
-                ),
-                'customer_details' => array(
-                    'first_name' => $dataForm['username'],
-                ),
-            );
+            // $params = array(
+            //     'transaction_details' => array(
+            //         'order_id' => $id_order,
+            //         'gross_amount' => $dataForm['total'],
+            //     ),
+            //     'customer_details' => array(
+            //         'first_name' => $dataForm['username'],
+            //     ),
+            // );
 
-            $snapToken = \Midtrans\Snap::getSnapToken($params);
-            $dataForm['token'] = $snapToken;
+            // $snapToken = \Midtrans\Snap::getSnapToken($params);
+            // $dataForm['token'] = $snapToken;
+
+            $paymentController = new PaymentController();
+            $getToken = $paymentController->snapToken($id_order, $dataForm['total'], $dataForm['username']);
+            $initialStatus = $paymentController->checkStatus($id_order);
+            $dataForm ['token'] = $getToken;
+            $dataForm ['status'] = $initialStatus;
 
 
             $transaksiModel->insert($dataForm);
@@ -220,7 +225,7 @@ class CartController extends BaseController
 
             foreach ($this->cart->contents() as $value) {
                 $dataFormDetail = [
-                    'transaction_id' => $last_insert_id,
+                    'transaction_id' => $id_order,
                     'product_id' => $value['id'],
                     'quantity' => $value['qty'],
                     'discount' => 0,

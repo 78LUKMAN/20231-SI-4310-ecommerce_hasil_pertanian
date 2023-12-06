@@ -22,6 +22,9 @@ $routes->group('auth', function ($routes) {
     $routes->get('logout', 'AuthController::logout');
 });
 
+
+$routes->post('updatestatuscontroller/update_status_batch', 'PaymentController::update_status_batch');
+
 // User Activity (cart, history, transaction)
 
 $routes->group('activity', function ($routes) {
@@ -52,7 +55,7 @@ $routes->group('admin', function ($routes) {
     $routes->post('account/edit/(:num)', 'AdminController::edituser/$1', ['filter' => 'auth']);
     $routes->post('account/delete/(:num)', 'AdminController::deleteuser/$1', ['filter' => 'auth']);
     $routes->get('transaction', 'AdminController::showAllUsersHistory');
-    $routes->post('transaction/editStatus/(:num)', 'AdminController::editStatus/$1');
+    $routes->post('transaction/delete/(:any)', 'AdminController::deleteTransaction/$1');
 });
 
 // Product

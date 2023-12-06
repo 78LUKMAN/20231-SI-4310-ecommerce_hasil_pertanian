@@ -9,14 +9,14 @@
 
         <li class="nav-item">
             <a class="nav-link <?php echo (uri_string() == 'cart') ? "" : "collapsed" ?>"
-                href="<?php echo base_url() ?>admin/cart">
+                href="<?php echo base_url() ?>activity/cart">
                 <ion-icon name="cart-outline"></ion-icon>
                 <span>Cart</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link <?php echo (uri_string() == 'history') ? "" : "collapsed" ?>"
-                href="<?php echo base_url() ?>admin/history">
+                href="<?php echo base_url() ?>activity/history">
                 <ion-icon name="timer-outline"></ion-icon>
                 <span>History</span>
             </a>

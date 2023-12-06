@@ -1,5 +1,11 @@
 <?= $this->extend('pages/admin/admin_dashboard/main') ?>
 <?= $this->section('admin_content') ?>
+<?php if (session()->getFlashData('success')): ?>
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <?= session()->getFlashData('success') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
 
 <div class="table-responsive">
     <table class="table datatable">
@@ -13,30 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($transaksi as $transaksiData):
-
-                $id = $transaksiData['order_id'];
-                $key = base64_encode("SB-Mid-server-Z9WdyW2r3BEM_yboYz4vZzBz:");
-                $endpoint = "https://api.sandbox.midtrans.com/v2/" . $id . "/status";
-                $header = array(
-                    'Accept: application/json',
-                    'Authorization: Basic ' . $key,
-                    'Content-Type: application/json'
-                );
-
-                $method = 'GET';
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, $endpoint);
-                curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, false);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-
-                $result = curl_exec($ch);
-                $finalRes = json_decode($result, true);
-
-                ?>
+            <?php foreach ($transaksi as $transaksiData): ?>
 
                 <tr>
                     <td>
@@ -49,36 +32,64 @@
                         <?= "Rp." . number_format($transaksiData['fare']) ?>
                     </td>
                     <td>
-                        <?php if ($finalRes['status_code'] == 200 || $finalRes['status_code'] == 201 || $finalRes['status_code'] == 202) {
-                            echo $finalRes['transaction_status'];
-                        } else {
-                            ?>
-                            <?= $finalRes['status_code'] ?>
-                        <?php } ?>
+                        <?php
+                        $statusClass = '';
+
+                        switch ($transaksiData['status']) {
+                            case "200":
+                                $statusClass = 'text-white bg-success';
+                                $statusText = 'Lunas';
+                                break;
+                            case "201":
+                                $statusClass = 'bg-warning';
+                                $statusText = 'Menunggu';
+                                break;
+                            case "404":
+                                $statusClass = 'text-white bg-danger';
+                                $statusText = 'Belum Bayar';
+                                break;
+                            case "407":
+                                $statusClass = 'text-white bg-danger';
+                                $statusText = 'Expired';
+                                break;
+                            case "500":
+                                $statusClass = 'text-white bg-danger';
+                                $statusText = 'Error, klik "Update"';
+                                break;
+                            default:
+                                $statusText = 'text-white Error';
+                                $statusClass = 'bg-danger';
+                                break;
+                        }
+                        ?>
+                        <div class="rounded w-50 p-2 text-center<?= $statusClass ?>">
+                            <?= $transaksiData['status'] ?>
+                        </div>
                     </td>
                     <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#modal<?= $transaksiData['id'] ?>">
+                            data-bs-target="#modal<?= $transaksiData['order_id'] ?>">
                             <i class="bi bi-view-list"></i>
                         </button>
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#editStatus<?= $transaksiData['id'] ?>">
-                            <i class="bi bi-pencil-square"></i>
-                        </button>
+
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal-<?= $transaksiData['order_id'] ?>"><i
+                                class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <!-- Modal Detail Transaksi -->
-                <div class="modal fade" id="modal<?= $transaksiData['id'] ?>" tabindex="-1"
-                    aria-labelledby="modalTitle<?= $transaksiData['id'] ?>" aria-hidden="true">
+                <div class="modal fade" id="modal<?= $transaksiData['order_id'] ?>" tabindex="-1"
+                    aria-labelledby="modalTitle<?= $transaksiData['order_id'] ?>" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="modalTitle<?= $transaksiData['id'] ?>">Detail Transaksi</h5>
+                                <h5 class="modal-title" id="modalTitle<?= $transaksiData['order_id'] ?>">Detail Transaksi
+                                </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body modal-lg">
                                 <?php foreach ($detailTransaksiData as $detailData) { ?>
-                                    <?php if ($detailData['transaction_id'] == $transaksiData['id']) { ?>
+                                    <?php if ($detailData['transaction_id'] == $transaksiData['order_id']) { ?>
                                         <div class="row">
                                             <div class="col-4">ID Transaksi</div>
                                             <div class="col-1">:</div>
@@ -134,41 +145,30 @@
                     </div>
                 </div>
 
-
-                <div class="modal fade" id="editStatus<?= $transaksiData['id'] ?>" tabindex="-1"
-                    aria-labelledby="modalTitle<?= $transaksiData['id'] ?>" aria-hidden="true">
-                    <div class="modal-dialog">
+                <div class="modal fade" id="deleteModal-<?= $transaksiData['order_id'] ?>" tabindex="-1"
+                    aria-labelledby="modalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalTitle<?= $transaksiData['id'] ?>">Detail Transaksi</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="<?= site_url('admin/transaction/editStatus/' . $transaksiData['id']) ?>"
-                                    method="post">
-                                    <?= csrf_field() ?>
-                                    <div class="mb-3">
-                                        <label for="current_status" class="form-label">Status Saat Ini</label>
-                                        <input type="text" class="form-control" id="current_status" name="tatus"
-                                            value="<?= ($transaksiData['status'] == 0) ? 'Belum Selesai' : 'Selesai' ?>"
-                                            readonly>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="new_status" class="form-label">Ubah ke (0 : Belum Selesai, 1 :
-                                            Selesai)</label>
-                                        <input type="text" class="form-control" id="new_status" name="new_status"
-                                            placeholder="New Status" required>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Ubah Status</button>
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                    </div>
-                                </form>
-                            </div>
+                            <form action="<?= site_url('admin/transaction/delete/' . $transaksiData['order_id']) ?>"
+                                method="post">
+                                <?= csrf_field() ?>
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-danger" id="modalLabel">Delete transaction</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete this data?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
+
 
 
             <?php endforeach; ?>

@@ -113,22 +113,11 @@ class AdminController extends BaseController
         return view('pages/admin/transaction_management/transactions', $data);
     }
 
-
-
-    public function editStatus($id)
+    public function deleteTransaction($id)
     {
-
-        if ($this->request->getMethod() === 'post') {
-            $newStatus = $this->request->getPost('new_status');
-
-            // update pwd user didb
-            $this->transactionModel->update($id, ['status' => ($newStatus)]);
-            // menampilkan pesan 
-            session()->setFlashData('success', 'Status transaksi berhasil diubah.');
-        } else {
-            session()->setFlashData('failed', 'Gagal mengubah status transaksi.');
+        $delete =$this->transactionModel->delete($id);
+        if ($delete) {
+            return redirect('admin/transaction')->with('success', 'Data berhasil dihapus');
         }
-
-        return redirect()->to('admin/transaction');
     }
 }

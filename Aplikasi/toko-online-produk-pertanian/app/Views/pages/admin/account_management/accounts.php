@@ -51,12 +51,12 @@
 
                             <form action="<?= site_url('admin/account/delete/' . $user['id']) ?>" method="post">
                                 <?= csrf_field() ?>
-                                <div class="modal fade" id="deleteModal-<?= $user['id']?>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                <div class="modal fade" id="deleteModal-<?= $user['id']?>" tabindex="-1" aria-labelledby="modalLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel text-danger">Delete User</h5>
+                                                <h5 class="modal-title" id="modalLabel text-danger">Delete User</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
@@ -67,7 +67,6 @@
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
                                                 <button type="submit" class="btn btn-danger">Delete</button>
-                                                <?= $user['id']?>
                                             </div>
                                         </div>
                                     </div>

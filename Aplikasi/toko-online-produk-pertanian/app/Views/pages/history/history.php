@@ -3,15 +3,22 @@
 <?= $this->section('content') ?>
 <main class="container">
 
-    <div class="pagetitle">
+    <div class="pagetitle" id="pagetitle">
         <h1>Shopping History</h1>
-        <nav>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item">Tables</li>
-                <li class="breadcrumb-item active">Data</li>
-            </ol>
-        </nav>
+        <?php
+        $hasPending = false;
+        $pendingOrders = [];
+
+        ?>
+        <?php if (!empty($pendingOrders)): ?>
+            <div class="pagetitle">
+                <h1>Shopping History</h1>
+                <form action="<?= base_url('updatestatuscontroller/update_status_batch') ?>" method="post">
+                    <input type="hidden" name="order_ids" value="<?= implode(',', $pendingOrders) ?>">
+                    <button type="submit" class="btn btn-primary">Update Status</button>
+                </form>
+            </div><!-- End Page Title -->
+        <?php endif; ?>
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -30,35 +37,13 @@
                                         <th scope="col">Postage</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action</th>
+                                        <th>
+                                            <form action="update/status"></form>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($transaction as $transaksiData):
-                                        $id = $transaksiData['order_id'];
-                                        $key = base64_encode("SB-Mid-server-Z9WdyW2r3BEM_yboYz4vZzBz:");
-                                        $endpoint = "https://api.sandbox.midtrans.com/v2/" . $id . "/status";
-                                        $header = array(
-                                            'Accept: application/json',
-                                            'Authorization: Basic ' . $key,
-                                            'Content-Type: application/json'
-                                        );
-
-                                        $method = 'GET';
-                                        $ch = curl_init();
-                                        curl_setopt($ch, CURLOPT_URL, $endpoint);
-                                        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-                                        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
-                                        curl_setopt($ch, CURLOPT_POSTFIELDS, false);
-                                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                                        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-
-                                        $result = curl_exec($ch);
-                                        $finalRes = json_decode($result, true);
-
-                                        // dd($finalRes);
-                                        // var_dump($result);
-                                    
-                                        ?>
+                                    <?php foreach ($transaction as $transaksiData): ?>
                                         <tr>
                                             <td>
                                                 <?= $transaksiData['username'] ?>
@@ -69,38 +54,74 @@
                                             <td>
                                                 <?= "Rp." . number_format($transaksiData['fare']) ?>
                                             </td>
-                                            <td>
-                                                <?php if ($finalRes['status_code'] == 200 || $finalRes['status_code'] == 201 || $finalRes['status_code'] == 202) {
-                                                    echo $finalRes['transaction_status'];
-                                                } else {
-                                                    ?>
-                                                    <?= $finalRes['status_code'] ?>
-                                                <?php } ?>
+                                            <td class="text-center">
+                                                <?php
+                                                $statusClass = '';
+
+                                                switch ($transaksiData['status']) {
+                                                    case "200":
+                                                        $statusClass = 'bg-success text-white';
+                                                        $statusText = 'Lunas';
+                                                        break;
+                                                    case "201":
+                                                        $statusClass = 'bg-warning';
+                                                        $statusText = 'Menunggu';
+                                                        break;
+                                                    case "404":
+                                                        $statusClass = 'bg-danger text-white';
+                                                        $statusText = 'Belum Bayar';
+                                                        break;
+                                                    case "407":
+                                                        $statusClass = 'bg-danger text-white';
+                                                        $statusText = 'Expired';
+                                                        break;
+                                                    case "500":
+                                                        $statusClass = 'bg-danger text-white';
+                                                        $statusText = 'Error, klik "Update"';
+                                                        break;
+                                                    default:
+                                                        $statusText = 'Error text-white';
+                                                        $statusClass = 'bg-danger';
+                                                        break;
+                                                }
+
+                                                if (($transaksiData['status']) != 200) {
+                                                    $pendingOrders[] = $transaksiData['order_id'];
+                                                }
+                                                ?>
+
+
+                                                <div class="rounded p-2 <?= $statusClass ?>" style="min-width: 120px; max-width:fit-content;">
+                                                    <?= $statusText ?>
+                                                </div>
+
                                             </td>
                                             <td style="display: flex; gap: 2px;">
                                                 <button type="button" class="btn btn-primary" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseOne<?= $transaksiData['id'] ?>">
+                                                    data-bs-target="#collapseOne<?= $transaksiData['order_id'] ?>">
                                                     <i class="bi bi-view-list"></i>
                                                 </button>
-                                                <a
-                                                    href="https://app.sandbox.midtrans.com/snap/v2/vtweb/<?php echo $transaksiData['token'] ?>">
-                                                    <button type="button" class="btn btn-primary" data-bs-toggle="collapse">
-                                                        Bayar
-                                                    </button>
-                                                </a>
+                                                <?php if ($transaksiData['status'] != 200): ?>
+                                                    <a
+                                                        href="https://app.sandbox.midtrans.com/snap/v2/vtweb/<?php echo $transaksiData['token'] ?>">
+                                                        <button type="button" class="btn btn-warning" data-bs-toggle="collapse">
+                                                            Bayar
+                                                        </button>
+                                                    </a>
+                                                <?php endif ?>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td colspan="5">
                                                 <div class="accordion accordion-collapse" id="accordionDetailTransaksi">
                                                     <div class="accordion-item">
-                                                        <div id="collapseOne<?= $transaksiData['id'] ?>"
+                                                        <div id="collapseOne<?= $transaksiData['order_id'] ?>"
                                                             class="accordion-collapse collapse" aria-labelledby="headingOne"
                                                             data-bs-parent="#accordionDetailTransaksi">
                                                             <div class="accordion-body">
                                                                 <p class="fs-5 fw-bold">Detail Transaksi</p>
                                                                 <?php foreach ($detailTransactionData as $detailData) { ?>
-                                                                    <?php if ($detailData['transaction_id'] == $transaksiData['id']) { ?>
+                                                                    <?php if ($detailData['transaction_id'] == $transaksiData['order_id']) { ?>
                                                                         <div class="row">
                                                                             <div class="col-4">ID Transaksi</div>
                                                                             <div class="col-1">:</div>
@@ -155,17 +176,15 @@
                                             </td>
                                         </tr>
 
-
-
-
                                         <!-- Modal Detail Transaksi -->
-                                        <div class="modal fade" id="modal<?= $transaksiData['id'] ?>" tabindex="-1"
-                                            aria-labelledby="modalTitle<?= $transaksiData['id'] ?>" aria-hidden="true">
+                                        <div class="modal fade" id="modal<?= $transaksiData['order_id'] ?>" tabindex="-1"
+                                            aria-labelledby="modalTitle<?= $transaksiData['order_id'] ?>"
+                                            aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header" style="background-color:#006193">
                                                         <h5 class="modal-title fw-6 text-light"
-                                                            id="modalTitle<?= $transaksiData['id'] ?>">
+                                                            id="modalTitle<?= $transaksiData['order_id'] ?>">
                                                             Detail Transaksi</h5>
                                                     </div>
                                                     <div class="modal-body modal-lg">
@@ -191,4 +210,35 @@
         </div>
     </section>
 </main>
+<div id="idku">
+
+</div>
+
+<?php if (!empty($pendingOrders)): ?>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const parent = document.getElementById('pagetitle')
+            const form = document.createElement('form');
+            form.action = '<?= base_url('updatestatuscontroller/update_status_batch') ?>';
+            form.method = 'post';
+
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'order_ids';
+            input.value = '<?= implode(',', $pendingOrders) ?>';
+
+            const button = document.createElement('button');
+            button.type = 'submit';
+            button.className = 'btn btn-primary';
+            button.textContent = 'Update Status';
+
+            form.appendChild(input);
+            form.appendChild(button);
+
+            parent.appendChild(form);
+        });
+    </script>
+<?php endif ?>
 <?= $this->endSection('content') ?>
