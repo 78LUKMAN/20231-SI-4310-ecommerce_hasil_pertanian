@@ -17,6 +17,12 @@ class ProfileController extends BaseController
     {
         $userId = session('id');
         $userData = $this->userModel->find($userId);
+        
+
+        if (empty($userData)) {
+            return redirect()->to('auth/logout');
+            session()->destroy();
+        }
 
         $data['userData'] = $userData;
         return view("pages/profile/profile", $data);

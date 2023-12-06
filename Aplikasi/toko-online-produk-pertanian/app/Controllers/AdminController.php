@@ -94,8 +94,10 @@ class AdminController extends BaseController
             return redirect('admin/accounts')->with('unknown', 'Akun tidak ditemukan');
         }
         $imgPath = "assets/img/profile/" . $user['img'];
-        if (file_exists($imgPath)) {
-            unlink($imgPath);
+        if ($user['img'] != "") {
+            if (file_exists($imgPath)) {
+                unlink($imgPath);
+            }
         }
        
         $delete =  $this->userModel->delete($id);
