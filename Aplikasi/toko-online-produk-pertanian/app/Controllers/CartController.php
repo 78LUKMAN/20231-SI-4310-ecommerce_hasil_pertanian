@@ -189,29 +189,6 @@ class CartController extends BaseController
                 'created_date' => date("Y-m-d H:i:s")
             ];
 
-
-            // // Set your Merchant Server Key
-            // \Midtrans\Config::$serverKey = 'SB-Mid-server-Z9WdyW2r3BEM_yboYz4vZzBz';
-            // // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-            // \Midtrans\Config::$isProduction = false;
-            // // Set sanitization on (default)
-            // \Midtrans\Config::$isSanitized = true;
-            // // Set 3DS transaction for credit card to true
-            // \Midtrans\Config::$is3ds = true;
-
-            // $params = array(
-            //     'transaction_details' => array(
-            //         'order_id' => $id_order,
-            //         'gross_amount' => $dataForm['total'],
-            //     ),
-            //     'customer_details' => array(
-            //         'first_name' => $dataForm['username'],
-            //     ),
-            // );
-
-            // $snapToken = \Midtrans\Snap::getSnapToken($params);
-            // $dataForm['token'] = $snapToken;
-
             $paymentController = new PaymentController();
             $getToken = $paymentController->snapToken($id_order, $dataForm['total'], $dataForm['username']);
             $initialStatus = $paymentController->checkStatus($id_order);

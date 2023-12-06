@@ -43,22 +43,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($transaction as $transaksiData): ?>
+                                    <?php foreach ($transaction as $transactionData): ?>
                                         <tr>
                                             <td>
-                                                <?= $transaksiData['username'] ?>
+                                                <?= $transactionData['username'] ?>
                                             </td>
                                             <td>
-                                                <?= "Rp." . number_format($transaksiData['total']) ?>
+                                                <?= "Rp." . number_format($transactionData['total']) ?>
                                             </td>
                                             <td>
-                                                <?= "Rp." . number_format($transaksiData['fare']) ?>
+                                                <?= "Rp." . number_format($transactionData['fare']) ?>
                                             </td>
                                             <td class="text-center">
                                                 <?php
                                                 $statusClass = '';
 
-                                                switch ($transaksiData['status']) {
+                                                switch ($transactionData['status']) {
                                                     case "200":
                                                         $statusClass = 'bg-success text-white';
                                                         $statusText = 'Lunas';
@@ -85,8 +85,8 @@
                                                         break;
                                                 }
 
-                                                if (($transaksiData['status']) != 200) {
-                                                    $pendingOrders[] = $transaksiData['order_id'];
+                                                if (($transactionData['status']) != 200) {
+                                                    $pendingOrders[] = $transactionData['order_id'];
                                                 }
                                                 ?>
 
@@ -98,12 +98,12 @@
                                             </td>
                                             <td style="display: flex; gap: 2px;">
                                                 <button type="button" class="btn btn-primary" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseOne<?= $transaksiData['order_id'] ?>">
+                                                    data-bs-target="#collapseOne<?= $transactionData['order_id'] ?>">
                                                     <i class="bi bi-view-list"></i>
                                                 </button>
-                                                <?php if ($transaksiData['status'] != 200): ?>
+                                                <?php if ($transactionData['status'] != 200): ?>
                                                     <a
-                                                        href="https://app.sandbox.midtrans.com/snap/v2/vtweb/<?php echo $transaksiData['token'] ?>">
+                                                        href="https://app.sandbox.midtrans.com/snap/v2/vtweb/<?php echo $transactionData['token'] ?>">
                                                         <button type="button" class="btn btn-warning" data-bs-toggle="collapse">
                                                             Bayar
                                                         </button>
@@ -115,13 +115,13 @@
                                             <td colspan="5">
                                                 <div class="accordion accordion-collapse" id="accordionDetailTransaksi">
                                                     <div class="accordion-item">
-                                                        <div id="collapseOne<?= $transaksiData['order_id'] ?>"
+                                                        <div id="collapseOne<?= $transactionData['order_id'] ?>"
                                                             class="accordion-collapse collapse" aria-labelledby="headingOne"
                                                             data-bs-parent="#accordionDetailTransaksi">
                                                             <div class="accordion-body">
                                                                 <p class="fs-5 fw-bold">Detail Transaksi</p>
                                                                 <?php foreach ($detailTransactionData as $detailData) { ?>
-                                                                    <?php if ($detailData['transaction_id'] == $transaksiData['order_id']) { ?>
+                                                                    <?php if ($detailData['transaction_id'] == $transactionData['order_id']) { ?>
                                                                         <div class="row">
                                                                             <div class="col-4">ID Transaksi</div>
                                                                             <div class="col-1">:</div>
@@ -177,14 +177,14 @@
                                         </tr>
 
                                         <!-- Modal Detail Transaksi -->
-                                        <div class="modal fade" id="modal<?= $transaksiData['order_id'] ?>" tabindex="-1"
-                                            aria-labelledby="modalTitle<?= $transaksiData['order_id'] ?>"
+                                        <div class="modal fade" id="modal<?= $transactionData['order_id'] ?>" tabindex="-1"
+                                            aria-labelledby="modalTitle<?= $transactionData['order_id'] ?>"
                                             aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header" style="background-color:#006193">
                                                         <h5 class="modal-title fw-6 text-light"
-                                                            id="modalTitle<?= $transaksiData['order_id'] ?>">
+                                                            id="modalTitle<?= $transactionData['order_id'] ?>">
                                                             Detail Transaksi</h5>
                                                     </div>
                                                     <div class="modal-body modal-lg">
@@ -221,7 +221,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             const parent = document.getElementById('pagetitle')
             const form = document.createElement('form');
-            form.action = '<?= base_url('updatestatuscontroller/update_status_batch') ?>';
+            form.action = '<?= base_url('activity/statusupdate') ?>';
             form.method = 'post';
 
             const input = document.createElement('input');
@@ -231,7 +231,7 @@
 
             const button = document.createElement('button');
             button.type = 'submit';
-            button.className = 'btn btn-primary';
+            button.className = 'btn btn-primary mt-3';
             button.textContent = 'Update Status';
 
             form.appendChild(input);

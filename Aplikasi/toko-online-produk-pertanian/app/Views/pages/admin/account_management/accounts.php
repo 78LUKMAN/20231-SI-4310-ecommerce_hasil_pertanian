@@ -178,7 +178,7 @@
                             <div class="mb-3">
                                 <div class="form-group">
                                     <label for="password" class="form-label">Password</label>
-                                    <input type="text"
+                                    <input type="password"
                                         class="form-control <?php echo session('error.password') ? 'is-invalid' : (session('error') ? 'is-valid' : ''); ?>"
                                         id="password" name="password" placeholder="password"
                                         value="<?php echo session('input_data.password'); ?>" required>
@@ -192,7 +192,7 @@
                             <div class="mb-3">
                                 <div class="form-group">
                                     <label for="confirm_password" class="form-label">Confirm Password</label>
-                                    <input type="text"
+                                    <input type="password"
                                         class="form-control <?php echo session('error.confirm_password') ? 'is-invalid' : (session('error') ? 'is-valid' : ''); ?>"
                                         id="confirm_password" name="confirm_password" placeholder="confirm_password"
                                         value="<?php echo session('input_data.confirm_password'); ?>" required>

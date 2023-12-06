@@ -8,8 +8,14 @@
     </div><!-- End Page Title -->
 
     <section class="section">
+    <?php if ($products == null) {
+            ?>
+            <div class="fs-4 fw-bold mb-5 d-flex align-items-center justify-content-center" style="height:50vh">
+                <?= $null ?>
+            </div>
+        <?php } ?>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4">
-            <?php foreach ($result as $product): ?>
+            <?php foreach ($products as $product): ?>
                 <div class="col mb-5">
                     <div class="card h-100">
                         <a href="<?= base_url('product/detail/') . $product['id'] ?>">

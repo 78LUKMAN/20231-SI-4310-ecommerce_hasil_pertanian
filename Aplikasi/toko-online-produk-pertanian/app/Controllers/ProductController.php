@@ -40,7 +40,7 @@ class ProductController extends BaseController
                 'discount' => 'required|max_length[2]|numeric',
                 'stock' => 'required|max_length[3]|numeric',
                 'description' => 'required',
-                'image' => 'uploaded[image]|max_size[image,1024]|is_image[image]',
+                'image' => 'uploaded[image]|max_size[image,1024]|is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
                 'label' => 'required|max_length[30]|min_length[10]',
             ];
             if ($this->validate($rules)) {
@@ -79,8 +79,6 @@ class ProductController extends BaseController
         }
     }
 
-
-
     public function editproduct($id)
     {
         $validator = $this->validation;
@@ -92,7 +90,7 @@ class ProductController extends BaseController
                 'discount' => 'required|max_length[2]|numeric',
                 'stock' => 'required|max_length[3]|numeric',
                 'description' => 'required',
-                'image' => 'max_size[image,1024]|is_image[image]',
+                'image' => 'max_size[image,1024]|is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
                 'label' => 'required|max_length[30]|min_length[10]',
             ];
 
@@ -151,6 +149,24 @@ class ProductController extends BaseController
             'null' => 'Produk Serupa Tidak Ditemukan'
         ];
         return view('pages/product/product', $data);
+    }
+
+    public function search()
+    {
+        $keyword = $this->request->getPost('keyword');
+
+        if (empty($keyword)) {
+            $data = ['result'] == null;
+            return redirect()->back()->with('error','Kolom pencarian tidak boleh kosong');
+        }
+
+        $produkModel = new ProductModel();
+        $data['products'] = $produkModel->search($keyword);
+
+         $data['null'] = empty($data['result']) ? 'Produk tidak ditemukan.' : '';
+         $data['title'] = "hasil pencarian '" . $keyword . "'";
+
+        return view('pages/product/search_result', $data);
     }
 
 }

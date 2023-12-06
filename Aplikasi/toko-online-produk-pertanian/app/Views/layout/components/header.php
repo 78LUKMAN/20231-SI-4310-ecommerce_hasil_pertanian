@@ -48,7 +48,7 @@
                 <img src="<?php echo base_url() ?>assets/img/logo/manlogo.PNG" alt="logo" width="80">
             </a>
             <div class="header-search-container">
-                <?= form_open(base_url('activity/search'), ['method' => 'post']); ?>
+                <?= form_open(base_url('product/search'), ['method' => 'post']); ?>
                 <input type="search" name="keyword" class="search-field" placeholder="search by product name" required>
                 <button class="search-btn" type="submit">
                     <ion-icon name="search-outline"></ion-icon>

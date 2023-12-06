@@ -38,7 +38,7 @@ class PaymentController extends BaseController
         return $snapToken;
     }
     
-    public function update_status_batch()
+    public function updateStatus()
     {
         $orderIds = explode(',', $this->request->getPost('order_ids'));
 
