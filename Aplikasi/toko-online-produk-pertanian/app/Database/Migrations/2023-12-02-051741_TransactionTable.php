@@ -10,9 +10,9 @@ class TransactionTable extends Migration
     public function up()
     {
         $this->forge->addField([
-            "id" => [
+            "order_id" => [
                 "type" => "INT",
-                "auto_increment" => true,
+                "constraint"=> 20,
             ],
             "username" => [
                 "type" => "VARCHAR",
@@ -45,7 +45,7 @@ class TransactionTable extends Migration
             ],
         ]);
 
-        $this->forge->addPrimaryKey("id");
+        $this->forge->addPrimaryKey("order_id");
         $this->forge->createTable("transactions");
     }
 

@@ -31,6 +31,10 @@ class ProductTable extends Migration
                     "type" => "INT",
                     "constraint" => "2"
                 ],
+                "disprice" => [
+                    "type" => "INT",
+                    "constraint" => 10,
+                ],
                 "stock" => [
                     "type" => "INT",
                     "constraint" => 3,
