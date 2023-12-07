@@ -33,14 +33,14 @@
             <a class="nav-link <?php echo (uri_string() == 'accounts') ? "" : "collapsed" ?>"
                 href="<?php echo base_url() ?>admin/accounts">
                 <ion-icon name="people-outline"></ion-icon>
-                <span>Management Users</span>
+                <span>Accounts</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link <?php echo (uri_string() == 'transaction') ? "" : "collapsed" ?>"
                 href="<?php echo base_url() ?>admin/transaction">
                 <ion-icon name="wallet-outline"></ion-icon>
-                <span>Transaction</span>
+                <span>Transactions</span>
             </a>
         </li>
 

@@ -101,22 +101,22 @@ body {
     /* margin-bottom: 50px; */
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 15px;
 }
 
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background-color: var(--white);
     border-left: 1px solid var(--cultured);
 }
 
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: var(--white-2);
     border: 3px solid var(--white);
     border-radius: 10px;
 }
 
-body::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: var(--white-3);
 }
 
@@ -886,6 +886,7 @@ body::-webkit-scrollbar-thumb:hover {
     padding: 13px 0 8px;
     max-height: 125px;
     visibility: visible;
+    overflow: auto;
 }
 
 .slidebar-submenu-title {
@@ -3478,7 +3479,7 @@ h6 {
 .sidebar-nav .nav-link ion-icon {
     font-size: 20px;
     margin-right: 10px;
-    color: var(--sandy-brown);
+    color: var(--royal-blue);
 }
 
 .sidebar-nav .nav-link.collapsed {

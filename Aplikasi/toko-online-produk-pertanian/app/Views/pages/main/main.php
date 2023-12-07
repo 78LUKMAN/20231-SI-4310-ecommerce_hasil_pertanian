@@ -26,6 +26,27 @@
         </div>
     </div>
 </div>
+<div class="notification-toast" data-toast="">
+    <button class="toast-close-btn" data-toast-close="">
+        <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+    <div class="toast-banner">
+        <img src="../../src/img/products/b1.jpg" alt="" width="80" height="70">
+    </div>
+
+    <div class="toast-detail">
+        <p class="toast-message">
+            Someone in new just bought
+        </p>
+        <p class="toast-title">
+            Beats's Product
+        </p>
+        <p class="toast-meta">
+            <time datetime="PT2M">2 Minutes</time> ago
+        </p>
+    </div>
+</div>
 <main>
     <div class="banner">
         <div class="container">
@@ -192,7 +213,7 @@
                                     <a href="<?= base_url('product/showall/kacang tanah') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Tanah</p>
-                                        <data value="300" class="stock" title="available stock">58</data>
+                                        <!-- <data value="300" class="stock" title="available stock">58</data> -->
                                     </a>
                                 </li>
 
@@ -200,7 +221,7 @@
                                     <a href="<?= base_url('product/showall/kacang polong') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Polong</p>
-                                        <data value="300" class="stock" title="available stock">32</data>
+                                        <!-- <data value="300" class="stock" title="available stock">32</data> -->
                                     </a>
                                 </li>
 
@@ -208,28 +229,28 @@
                                     <a href="<?= base_url('product/showall/kacang mede') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Mede</p>
-                                        <data value="300" class="stock" title="available stock">60</data>
+                                        <!-- <data value="300" class="stock" title="available stock">60</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/kacang arab') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Arab</p>
-                                        <data value="300" class="stock" title="available stock">60</data>
+                                        <!-- <data value="300" class="stock" title="available stock">60</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/kacang panjang') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Panjang</p>
-                                        <data value="300" class="stock" title="available stock">60</data>
+                                        <!-- <data value="300" class="stock" title="available stock">60</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/kacang almond') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Almond</p>
-                                        <data value="300" class="stock" title="available stock">60</data>
+                                        <!-- <data value="300" class="stock" title="available stock">60</data> -->
                                     </a>
                                 </li>
                             </ul>
@@ -252,14 +273,14 @@
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/terong') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">Terong</p>
-                                        <data value="300" class="stock" title="available stock">120</data>
+                                        <!-- <data value="300" class="stock" title="available stock">120</data> -->
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/bayam') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">Bayam</p>
-                                        <data value="300" class="stock" title="available stock">200</data>
+                                        <!-- <data value="300" class="stock" title="available stock">200</data> -->
                                     </a>
                                 </li>
 
@@ -267,19 +288,19 @@
                                     <a href="<?= base_url('product/showall/kangkung') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kangkung</p>
-                                        <data value="300" class="stock" title="available stock">150</data>
+                                        <!-- <data value="300" class="stock" title="available stock">150</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/tomat') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">Tomat</p>
-                                        <data value="300" class="stock" title="available stock">150</data>
+                                        <!-- <data value="300" class="stock" title="available stock">150</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/wortel') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">Wortel</p>
-                                        <data value="300" class="stock" title="available stock">150</data>
+                                        <!-- <data value="300" class="stock" title="available stock">150</data> -->
                                     </a>
                                 </li>
                             </ul>
@@ -303,39 +324,39 @@
                                     <a href="<?= base_url('product/showall/lengkuas') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Lengkuah</p>
-                                        <data value="300" class="stock" title="available stock">80</data>
+                                        <!-- <data value="300" class="stock" title="available stock">80</data> -->
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/cengkeh') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">Cengkeh</p>
-                                        <data value="300" class="stock" title="available stock">96</data>
+                                        <!-- <data value="300" class="stock" title="available stock">96</data> -->
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/bawang') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">bawang</p>
-                                        <data value="300" class="stock" title="available stock">84</data>
+                                        <!-- <data value="300" class="stock" title="available stock">84</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/jahe') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">jahe</p>
-                                        <data value="300" class="stock" title="available stock">84</data>
+                                        <!-- <data value="300" class="stock" title="available stock">84</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/kemiri') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">kemiri</p>
-                                        <data value="300" class="stock" title="available stock">84</data>
+                                        <!-- <data value="300" class="stock" title="available stock">84</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/kunyit') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">kunyit</p>
-                                        <data value="300" class="stock" title="available stock">84</data>
+                                        <!-- <data value="300" class="stock" title="available stock">84</data> -->
                                     </a>
                                 </li>
                             </ul>
@@ -615,84 +636,21 @@
                     <input type="radio" name="" class="btn-slide" id="btn-slide5">
                     <input type="radio" name="" class="btn-slide" id="btn-slide6">
                     <div class="testimonial-wrapper has-scrollbar">
-                        <div class="testimonial-card-content">
-                            <img src="<?php echo base_url() ?>assets/img/testimonial/billgates.jpg" alt=""
-                                class="testimonial-benner" width="80" height="80">
-                            <p class="customer-name">billgates</p>
-                            <p class="customer-title">CO-Founder of Microsoft</p>
-                            <p class="testimonial-description">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                . Iusto, accusantium autem!
-                            </blockquote>
-                            </p>
-                        </div>
-                        <div class="testimonial-card-content">
-                            <img src="<?php echo base_url() ?>assets/img/testimonial/daniel.jpg" alt=""
-                                class="testimonial-benner" width="80" height="80">
-                            <p class="customer-name">daniel</p>
-                            <p class="customer-title">CO-Founder of Microsoft</p>
-                            <p class="testimonial-description">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                            </blockquote>
-                            </p>
-                        </div>
-                        <div class="testimonial-card-content">
-                            <img src="<?php echo base_url() ?>assets/img/testimonial/elonmusk.jpg" alt=""
-                                class="testimonial-benner" width="80" height="80">
-                            <p class="customer-name">elon musk</p>
-                            <p class="customer-title">CO-Founder of Microsoft</p>
-                            <p class="testimonial-description">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                            </blockquote>
-                            </p>
-                        </div>
-                        <div class="testimonial-card-content">
-                            <img src="<?php echo base_url() ?>assets/img/testimonial/larrypage.jpg" alt=""
-                                class="testimonial-benner" width="80" height="80">
-                            <p class="customer-name">larry page</p>
-                            <p class="customer-title">CO-Founder of Microsoft</p>
-                            <p class="testimonial-description">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                            </blockquote>
-                            </p>
-                        </div>
-                        <div class="testimonial-card-content">
-                            <img src="<?php echo base_url() ?>assets/img/testimonial/markzuck.jpg" alt=""
-                                class="testimonial-benner" width="80" height="80">
-                            <p class="customer-name">mark zuckerburg</p>
-                            <p class="customer-title">CO-Founder of Microsoft</p>
-                            <p class="testimonial-description">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                            </blockquote>
-                            </p>
-                        </div>
-                        <div class="testimonial-card-content">
-                            <img src="<?php echo base_url() ?>assets/img/testimonial/patrick.jpg" alt=""
-                                class="testimonial-benner" width="80" height="80">
-                            <p class="customer-name">patrick</p>
-                            <p class="customer-title">CO-Founder of Microsoft</p>
-                            <p class="testimonial-description">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                            </blockquote>
-                            </p>
-                        </div>
-
+                        <?php foreach ($feedbacks as $feedback): ?>
+                            <div class="testimonial-card-content">
+                                <p class="customer-name">
+                                    <?= $feedback['name'] ?>
+                                </p>
+                                <p class="customer-title">
+                                    <?= $feedback['username'] ?>
+                                </p>
+                                <p class="testimonial-description">
+                                <blockquote>
+                                    <?= $feedback['message'] ?>
+                                </blockquote>
+                                </p>
+                            </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
                 <div class="special-offer-container">

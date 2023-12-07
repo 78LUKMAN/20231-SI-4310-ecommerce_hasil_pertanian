@@ -30,6 +30,9 @@ $routes->group('activity', function ($routes) {
     $routes->get('cart', 'CartController::cart', ['filter' => 'auth']);
     $routes->get('profile', 'ProfileController::index', ['filter' => 'auth']);
     $routes->get('history', 'HistoryController::history', ['filter' => 'auth']);
+    $routes->get('feedback', 'FeedbackController::index');
+    $routes->post('feedback/send', 'FeedbackController::send');
+
 });
 
 $routes->group('profile', function ($routes) {

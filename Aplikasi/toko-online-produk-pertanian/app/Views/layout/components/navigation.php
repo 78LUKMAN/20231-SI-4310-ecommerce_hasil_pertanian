@@ -2,7 +2,6 @@
     <?php
     $cartUrl = base_url() . 'activity/cart';
     $historyUrl = base_url() . 'activity/history';
-    $transactionUrl = base_url() . 'actaivity/transaction';
     $elmn = null;
     ?>
     <div class="mobile-bottom-nav">
@@ -20,13 +19,6 @@
                 <ion-icon name="timer-outline"></ion-icon>
             </button>
         </a>
-
-        <a href="<?php echo base_url() ?>activity/transaction" id="history-btn" <?php echo hideButton($transactionUrl); ?>>
-            <button class="action-btn">
-                <ion-icon name="wallet-outline"></ion-icon>
-            </button>
-        </a>
-
         <?php
         if (current_url() !== base_url() . "index.php/") {
             ?>
@@ -41,10 +33,15 @@
         <?php
         if (current_url() === base_url() . "index.php/") {
             ?>
-            <button class="action-btn" data-mobile-menu-open-btn>
-                <ion-icon name="grid-outline"></ion-icon>
-            </button>
-            <?php
+            <?php if (session('role') == 'admin') { ?>
+                <!-- <button class="action-btn" data-mobile-menu-open-btn> -->
+                    <a href="<?php base_url()?>admin/accounts">
+                        <button class="action-btn">
+                            <ion-icon name="grid-outline"></ion-icon>
+                        </button>
+                    </a>
+                <?php
+            }
         }
         ?>
 
@@ -154,15 +151,15 @@
             <li class="menu-category">
                 <a href="#" class="menu-title">Hot Offers</a>
             </li>
-            <?php if(session('isLoggIn') == 1) {?>
-            <li class="menu-category">
-                <a href="  <?php echo base_url()?>activity/profile" class="menu-title">Profile</a> 
-            </li>
+            <?php if (session('isLoggIn') == 1) { ?>
+                <li class="menu-category">
+                    <a href="  <?php echo base_url() ?>activity/profile" class="menu-title">Profile</a>
+                </li>
             <?php } else { ?>
                 <li class="menu-category">
                     <a href="auth/signin" class="menu-title">Login</a>
                 </li>
-            <?php }?>
+            <?php } ?>
         </ul>
         <div class="menu-bottom">
             <ul class="menu-category-list">

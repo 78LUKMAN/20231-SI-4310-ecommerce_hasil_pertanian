@@ -65,11 +65,11 @@ if (session()->getFlashData('success')) {
                     </td>
                     <td><img src="<?php echo base_url() . "assets/img/products/" . $product['image'] ?>" width="100px"></td>
                     <td>
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-warning mb-1" data-bs-toggle="modal"
                             data-bs-target="#editModal-<?= $product['id'] ?>">
                             <i class="bi bi-pencil-square"></i>
                         </button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-danger mb-1" data-bs-toggle="modal"
                             data-bs-target="#deleteModal-<?= $product['id'] ?>"><i class="bi bi-trash"></i></button>
 
                     </td>
@@ -167,7 +167,7 @@ if (session()->getFlashData('success')) {
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Data</h5>
+                <h5 class="modal-title">Tambah Barang</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <?= form_open('admin/product/add', ['method' => 'post', 'enctype' => 'multipart/form-data']) ?>
@@ -183,7 +183,7 @@ if (session()->getFlashData('success')) {
                 </div>
                 <div class="form-group">
                     <label for="name">Diskon</label>
-                    <input type="text" name="discount" class="form-control" id="discount" placeholder="Harga Barang"
+                    <input type="text" name="discount" class="form-control" id="discount" placeholder="ketik angka 0 jika tidak ada diskon"
                         required>
                 </div>
                 <div class="form-group">
@@ -193,7 +193,7 @@ if (session()->getFlashData('success')) {
                 </div>
                 <div class="form-group">
                     <label for="label">Label</label>
-                    <input type="text" name="label" class="form-control" id="label" placeholder="label barang" required>
+                    <input type="text" name="label" class="form-control" id="label" placeholder="format => jenis,nama,...[optional]" required>
                 </div>
                 <div class="form-group">
                     <label for="name">Keterangan</label>
