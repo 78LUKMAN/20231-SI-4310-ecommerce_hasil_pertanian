@@ -109,7 +109,8 @@
                                                             Bayar
                                                         </button>
                                                     </a> -->
-                                                    <button type="button" class="btn btn-warning" id="pay-button">Bayar</button>
+                                                    <button type="button" class="btn btn-warning" id="snap-pay"
+                                                        data-token="<?= $transactionData['token'] ?>">Bayar</button>
 
                                                 <?php endif ?>
                                             </td>
@@ -213,15 +214,19 @@
         </div>
     </section>
 </main>
-<div id="idku">
-
 </div>
 <?= $this->section('script') ?>
-<script type="text/javascript">
-    let payButton = document.getElementById('pay-button');
-    payButton.addEventListener('click', function () {
-        window.snap.pay('<?= $transactionData['token'] ?>');
-    });
+<script type="text/javascript">        
+        document.addEventListener('DOMContentLoaded', function () {
+            let payButtons = document.querySelectorAll('#snap-pay');
+            payButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    let token = this.getAttribute('data-token');
+                        window.snap.pay(token);
+            })
+        })
+    })
+
 </script>
 <?= $this->endSection() ?>
 <?php if (!empty($pendingOrders)): ?>

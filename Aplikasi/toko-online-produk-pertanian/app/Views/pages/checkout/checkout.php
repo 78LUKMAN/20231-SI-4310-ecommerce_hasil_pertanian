@@ -25,17 +25,21 @@
 						<input type="hidden" name="username" value="<?= ($session->get('username')) ?>">
 						<input type="hidden" name="price_total" id="price_total" value="">
 						<div class="col-12">
-							<label for="nama" class="form-label">Nama</label>
-							<input type="text" class="form-control" id="nama"
-								value="<?php echo $session->get('username') ?>">
+							<label for="name" class="form-label">Nama</label>
+							<input type="text" class="form-control" name="name" id="name"
+								value="<?php echo $session->get('username') ?>" required>
 						</div>
 						<div class="col-12">
-							<label for="alamat" class="form-label">Alamat</label>
-							<input type="text" class="form-control" id="address" name="address">
+							<label for="address" class="form-label">Alamat</label>
+							<input type="text" class="form-control" id="address" name="address" required>
+						</div>
+						<div class="col-12">
+							<label for="email" class="form-label">Email</label>
+							<input type="email" class="form-control" id="email" name="email" required>
 						</div>
 						<div class="col-12">
 							<label for="provinsi" class="form-label">Provinsi</label>
-							<select class="form-select" id="provinsi">
+							<select class="form-select" id="provinsi" required>
 								<option>Silakan pilih provinsi</option>
 								<?php foreach ($provinsi as $p): ?>
 									<option value="<?= $p->province_id ?>">
@@ -46,13 +50,13 @@
 						</div>
 						<div class="col-12">
 							<label for="kabkota" class="form-label">Kab/Kota</label>
-							<select class="form-select" id="kabupaten">
+							<select class="form-select" id="kabupaten" required>
 								<option>Silakan pilih Kab/Kota</option>
 							</select>
 						</div>
 						<div class="col-12">
 							<label for="layanan" class="form-label">Layanan</label>
-							<select class="form-select" id="service">
+							<select class="form-select" id="service" required>
 								<option>Silakan pilih Layanan</option>
 							</select>
 						</div>

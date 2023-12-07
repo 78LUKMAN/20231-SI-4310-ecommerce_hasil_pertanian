@@ -25,7 +25,7 @@ class HistoryController extends BaseController
         $userId = session()->get('username');
 
         // Mendapatkan transaksi berdasarkan ID user
-        $transaksi = $this->transaksiModel->where('username', $userId)->findAll();
+        $transaksi = $this->transaksiModel->where('created_by', $userId)->findAll();
 
         $getDetailPoduk = $this->dataProdukModel->findAll();
 
