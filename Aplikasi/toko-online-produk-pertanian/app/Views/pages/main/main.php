@@ -19,7 +19,6 @@
                     <p class="newsletter-desc">Subscribe the <b>Beats Store</b> to get latest product and discount
                         update</p>
                 </div>
-
                 <input type="email" name="email" class="email-field" id="" placeholder="type your email" required>
                 <button type="submit" class="btn-newsletter">Subscribe</button>
             </form>
@@ -32,7 +31,7 @@
     </button>
 
     <div class="toast-banner">
-        <img src="<?= base_url()?>assets/img/logo/toast-icon.png" alt="" width="80" height="70">
+        <img src="<?= base_url() ?>assets/img/logo/toast-icon.png" alt="" width="80" height="70">
     </div>
 
     <div class="toast-detail">
@@ -212,47 +211,41 @@
 
                             <ul class="slidebar-submenu-category-list" data-accordion>
                                 <li class="slidebar-submenu-category">
-                                    <a href="<?= base_url('product/showall/kacang tanah') ?>"
+                                    <a href="<?= base_url('product/showall/kacang-tanah') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Tanah</p>
-                                        <!-- <data value="300" class="stock" title="available stock">58</data> -->
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="<?= base_url('product/showall/kacang polong') ?>"
+                                    <a href="<?= base_url('product/showall/kacang-polong') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Polong</p>
-                                        <!-- <data value="300" class="stock" title="available stock">32</data> -->
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="<?= base_url('product/showall/kacang mede') ?>"
+                                    <a href="<?= base_url('product/showall/kacang-mede') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Mede</p>
-                                        <!-- <data value="300" class="stock" title="available stock">60</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
-                                    <a href="<?= base_url('product/showall/kacang arab') ?>"
+                                    <a href="<?= base_url('product/showall/kacang-arab') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Arab</p>
-                                        <!-- <data value="300" class="stock" title="available stock">60</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
-                                    <a href="<?= base_url('product/showall/kacang panjang') ?>"
+                                    <a href="<?= base_url('product/showall/kacang-panjang') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Panjang</p>
-                                        <!-- <data value="300" class="stock" title="available stock">60</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
-                                    <a href="<?= base_url('product/showall/kacang almond') ?>"
+                                    <a href="<?= base_url('product/showall/kacang-almond') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Almond</p>
-                                        <!-- <data value="300" class="stock" title="available stock">60</data> -->
                                     </a>
                                 </li>
                             </ul>
@@ -275,14 +268,12 @@
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/terong') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">Terong</p>
-                                        <!-- <data value="300" class="stock" title="available stock">120</data> -->
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/bayam') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">Bayam</p>
-                                        <!-- <data value="300" class="stock" title="available stock">200</data> -->
                                     </a>
                                 </li>
 
@@ -290,19 +281,16 @@
                                     <a href="<?= base_url('product/showall/kangkung') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kangkung</p>
-                                        <!-- <data value="300" class="stock" title="available stock">150</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/tomat') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">Tomat</p>
-                                        <!-- <data value="300" class="stock" title="available stock">150</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/wortel') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">Wortel</p>
-                                        <!-- <data value="300" class="stock" title="available stock">150</data> -->
                                     </a>
                                 </li>
                             </ul>
@@ -325,40 +313,34 @@
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/lengkuas') ?>"
                                         class="slidebar-submenu-title">
-                                        <p class="product-name">Lengkuah</p>
-                                        <!-- <data value="300" class="stock" title="available stock">80</data> -->
+                                        <p class="product-name">Lengkuas</p>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/cengkeh') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">Cengkeh</p>
-                                        <!-- <data value="300" class="stock" title="available stock">96</data> -->
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/bawang') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">bawang</p>
-                                        <!-- <data value="300" class="stock" title="available stock">84</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/jahe') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">jahe</p>
-                                        <!-- <data value="300" class="stock" title="available stock">84</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/kemiri') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">kemiri</p>
-                                        <!-- <data value="300" class="stock" title="available stock">84</data> -->
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
                                     <a href="<?= base_url('product/showall/kunyit') ?>" class="slidebar-submenu-title">
                                         <p class="product-name">kunyit</p>
-                                        <!-- <data value="300" class="stock" title="available stock">84</data> -->
                                     </a>
                                 </li>
                             </ul>
@@ -733,12 +715,12 @@
                             width="300">
                     </a>
                     <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
+                        <a href="#" class="blog-category">Sayur</a>
                         <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
+                            <h3 class="blog-title">Lihat Semua</h3>
 
                             <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
                             </p>
                         </a>
                     </div>
@@ -749,12 +731,12 @@
                             width="300">
                     </a>
                     <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
+                        <a href="#" class="blog-category">Sayur</a>
                         <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
+                            <h3 class="blog-title">Lihat Semua</h3>
 
                             <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
                             </p>
                         </a>
                     </div>
@@ -765,44 +747,12 @@
                             width="300">
                     </a>
                     <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
+                        <a href="#" class="blog-category">Sayur</a>
                         <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
+                            <h3 class="blog-title">Lihat Semua</h3>
 
                             <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class=" blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
-                        <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
-
-                            <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class=" blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
-                        <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
-
-                            <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
                             </p>
                         </a>
                     </div>
@@ -813,28 +763,76 @@
                             width="300">
                     </a>
                     <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
+                        <a href="#" class="blog-category">Sayur</a>
                         <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
+                            <h3 class="blog-title">Lihat Semua</h3>
 
                             <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
                             </p>
                         </a>
                     </div>
                 </div>
                 <div class="blog-card">
                     <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class=" blog-benner"
+                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
                             width="300">
                     </a>
                     <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
+                        <a href="#" class="blog-category">Sayur</a>
                         <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
+                            <h3 class="blog-title">Lihat Semua</h3>
 
                             <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <a href="#">
+                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
+                            width="300">
+                    </a>
+                    <div class="blog-content">
+                        <a href="#" class="blog-category">Sayur</a>
+                        <a href="#">
+                            <h3 class="blog-title">Lihat Semua</h3>
+
+                            <p class="blog-meta">
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <a href="#">
+                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
+                            width="300">
+                    </a>
+                    <div class="blog-content">
+                        <a href="#" class="blog-category">Sayur</a>
+                        <a href="#">
+                            <h3 class="blog-title">Lihat Semua</h3>
+
+                            <p class="blog-meta">
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <a href="#">
+                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
+                            width="300">
+                    </a>
+                    <div class="blog-content">
+                        <a href="#" class="blog-category">Sayur</a>
+                        <a href="#">
+                            <h3 class="blog-title">Lihat Semua</h3>
+
+                            <p class="blog-meta">
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
                             </p>
                         </a>
                     </div>
