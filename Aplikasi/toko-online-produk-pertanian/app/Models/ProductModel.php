@@ -41,7 +41,7 @@ class ProductModel extends Model
 
     public function search($keyword)
     {
-        return $this->like('name', $keyword)->findAll();
+        return $this->like('label', $keyword)->findAll();
     }
 
     public function getByLabel($label)

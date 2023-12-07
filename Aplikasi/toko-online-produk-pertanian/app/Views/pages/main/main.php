@@ -32,19 +32,21 @@
     </button>
 
     <div class="toast-banner">
-        <img src="../../src/img/products/b1.jpg" alt="" width="80" height="70">
+        <img src="<?= base_url()?>assets/img/logo/toast-icon.png" alt="" width="80" height="70">
     </div>
 
     <div class="toast-detail">
-        <p class="toast-message">
-            Someone in new just bought
-        </p>
-        <p class="toast-title">
-            Beats's Product
-        </p>
-        <p class="toast-meta">
-            <time datetime="PT2M">2 Minutes</time> ago
-        </p>
+        <a href="activity/feedback">
+            <p class="toast-message">
+                Hai, kawan
+            </p>
+            <p class="toast-title">
+                Ayo tulis pesanmu
+            </p>
+            <p class="toast-meta">
+                disini
+            </p>
+        </a>
     </div>
 </div>
 <main>
@@ -113,7 +115,7 @@
                         <div class="category-content-flex">
                             <h3 class="category-item-title">Buah</h3>
                         </div>
-                        <a href="<?= base_url('product/showall/barang') ?>" class="category-btn">Show All</a>
+                        <a href="<?= base_url('product/showall/buah') ?>" class="category-btn">Show All</a>
                     </div>
                 </div>
                 <div class="category-item">
@@ -368,7 +370,7 @@
             <div class="product-box">
                 <div class="product-minimal">
                     <div class="product-showcase">
-                        <h2 class="title">New Products</h2>
+                        <h2 class="title">Fruits and Vegetables</h2>
 
                         <div class="showcase-wrapper has-scrollbar">
                             <?php
@@ -378,7 +380,7 @@
                             foreach ($products as $index => $product) {
                                 $containsKeyword = false;
                                 foreach ($targetKeywords as $keyword) {
-                                    if (stripos($product['name'], $keyword) !== false) {
+                                    if (stripos($product['label'], $keyword) !== false) {
                                         $containsKeyword = true;
                                         break;
                                     }
@@ -428,7 +430,7 @@
                         </div>
                     </div>
                     <div class="product-showcase">
-                        <h2 class="title">New Products</h2>
+                        <h2 class="title">Nuts and Spices</h2>
 
                         <div class="showcase-wrapper has-scrollbar">
                             <?php
@@ -438,7 +440,7 @@
                             foreach ($products as $index => $product) {
                                 $containsKeyword = false;
                                 foreach ($targetKeywords as $keyword) {
-                                    if (stripos($product['name'], $keyword) !== false) {
+                                    if (stripos($product['label'], $keyword) !== false) {
                                         $containsKeyword = true;
                                         break;
                                     }
@@ -562,60 +564,58 @@
                     </div>
                 </div>
                 <div class="product-main">
-                    <h2 class="title">End-Year Special Product</h2>
+                    <h2 class="title">Discount</h2>
                     <div class="product-grid-container">
                         <?php foreach ($products as $product): ?>
                             <?php
                             $labelsArray = explode(',', $product['label']);
                             $firstLabel = trim($labelsArray[0]);
-                            ?>
-
-
-                            <div class="showcase">
-                                <div class="showcase-banner">
-                                    <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" alt=""
-                                        width="100" class="product-img default">
-                                    <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" alt=""
-                                        width="100" class="product-img hover">
-                                    <?php if ($product['discount'] != 0): ?>
-                                        <?php if ($product['discount'] < 50): ?>
-                                            <p class="showcase-bagde angle r-blue">
-                                                <?php echo $product['discount'] ?>%
-                                            </p>
-                                        <?php else: ?>
-                                            <p class="showcase-bagde">
-                                                <?php echo $product['discount'] ?>%
-                                            </p>
+                            if ($product['discount'] != 0): ?>
+                                <div class="showcase">
+                                    <div class="showcase-banner">
+                                        <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" alt=""
+                                            width="100" class="product-img default">
+                                        <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" alt=""
+                                            width="100" class="product-img hover">
+                                        <?php if ($product['discount'] != 0): ?>
+                                            <?php if ($product['discount'] < 50): ?>
+                                                <p class="showcase-bagde angle r-blue">
+                                                    <?php echo $product['discount'] ?>%
+                                                </p>
+                                            <?php else: ?>
+                                                <p class="showcase-bagde">
+                                                    <?php echo $product['discount'] ?>%
+                                                </p>
+                                            <?php endif ?>
                                         <?php endif ?>
-                                    <?php endif ?>
-                                </div>
+                                    </div>
 
-                                <div class="showcase-content">
-                                    <a href="<?= base_url('product/showall/') . $firstLabel ?>" class="showcase-category">
-                                        <?= $firstLabel ?>
-                                    </a>
-                                    <a href="<?= base_url('product/detail/') . $product['id'] ?>">
-                                        <h3 class="showcase-title">
-                                            <?= $product['name'] ?>
-                                        </h3>
-                                    </a>
-                                    <div class="price-box">
-                                        <?php if ($product['discount'] != 0) { ?>
-                                            <p>
-                                                <?php echo "Rp." . number_format($product['disprice']) ?>
-                                            </p>
-                                            <del>
-                                                <?php echo "Rp." . number_format($product['price']) ?>
-                                            </del>
-                                        <?php } else { ?>
-                                            <p>
-                                                <?php echo "Rp." . number_format($product['disprice']) ?>
-                                            </p>
-                                        <?php } ?>
+                                    <div class="showcase-content">
+                                        <a href="<?= base_url('product/showall/') . $firstLabel ?>" class="showcase-category">
+                                            <?= $firstLabel ?>
+                                        </a>
+                                        <a href="<?= base_url('product/detail/') . $product['id'] ?>">
+                                            <h3 class="showcase-title">
+                                                <?= $product['name'] ?>
+                                            </h3>
+                                        </a>
+                                        <div class="price-box">
+                                            <?php if ($product['discount'] != 0) { ?>
+                                                <p>
+                                                    <?php echo "Rp." . number_format($product['disprice']) ?>
+                                                </p>
+                                                <del>
+                                                    <?php echo "Rp." . number_format($product['price']) ?>
+                                                </del>
+                                            <?php } else { ?>
+                                                <p>
+                                                    <?php echo "Rp." . number_format($product['disprice']) ?>
+                                                </p>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
+                            <?php endif ?>
                         <?php endforeach ?>
 
                     </div>

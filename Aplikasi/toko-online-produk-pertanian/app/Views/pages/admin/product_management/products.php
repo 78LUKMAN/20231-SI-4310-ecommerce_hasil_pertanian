@@ -52,7 +52,7 @@ if (session()->getFlashData('success')) {
                         <?php echo $product['discount'] ?>
                     </td>
                     <td>
-                        <?php echo $product['disprice'] ?>
+                        <?php echo "Rp." . number_format($product['disprice']) ?>
                     </td>
                     <td>
                         <?php echo $product['stock'] ?>

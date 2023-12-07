@@ -39,7 +39,7 @@
                                     </aside>
                                     <main class="col-lg-6">
                                         <div class="ps-lg-3 mt-5 mt-lg-0">
-                                            <h4 class="text-dark">
+                                            <h4 class="text-dark" style="text-transform: capitalize;">
                                                 <?= $product['name'] ?><br />
                                             </h4>
 

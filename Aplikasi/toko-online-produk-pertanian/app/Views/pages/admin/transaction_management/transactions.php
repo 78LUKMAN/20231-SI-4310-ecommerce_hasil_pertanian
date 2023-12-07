@@ -80,17 +80,17 @@
                 <!-- Modal Detail Transaksi -->
                 <div class="modal fade" id="modal<?= $transaksiData['order_id'] ?>" tabindex="-1"
                     aria-labelledby="modalTitle<?= $transaksiData['order_id'] ?>" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="modalTitle<?= $transaksiData['order_id'] ?>">Detail Transaksi
                                 </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body modal-lg">
+                            <div class="modal-body">
                                 <?php foreach ($detailTransaksiData as $detailData) { ?>
                                     <?php if ($detailData['transaction_id'] == $transaksiData['order_id']) { ?>
-                                        <div class="row">
+                                        <div class="row mt-3">
                                             <div class="col-4">ID Transaksi</div>
                                             <div class="col-1">:</div>
                                             <div class="col-3 fw-normal">

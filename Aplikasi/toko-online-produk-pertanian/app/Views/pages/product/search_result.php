@@ -23,7 +23,7 @@
                                 alt="<?= ucfirst(strtolower($product['name']) )?>" />
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">
+                            <h5 class="card-title" style="text-transform: capitalize;">
                                 <?= $product['name'] ?>
                             </h5>
                             <p class="card-text">
