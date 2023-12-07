@@ -49,7 +49,7 @@
             </a>
             <div class="header-search-container">
                 <?= form_open(base_url('product/search'), ['method' => 'post']); ?>
-                <input type="search" name="keyword" class="search-field" placeholder="cari produk . . ." required>
+                <input type="search" name="keyword" class="search-field" placeholder="search product . . ." required>
                 <button class="search-btn" type="submit">
                     <ion-icon name="search-outline"></ion-icon>
                 </button>

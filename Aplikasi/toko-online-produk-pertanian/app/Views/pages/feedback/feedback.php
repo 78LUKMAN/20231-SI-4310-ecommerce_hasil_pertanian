@@ -47,24 +47,26 @@
                 <div class="col-lg-7 mb-5 mb-lg-0">
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
+                            <h4>Kirim Komentar Anda</h4>
                             <form action="<?= base_url() ?>activity/feedback/send" method="post">
 
                                 <input type="hidden" name="username" value="<?= $session->get('username') ?>">
                                 <div class="row">
                                     <div class="form-outline">
-                                        <label class="form-label" for="name">Full Name</label>
+                                        <label class="form-label" for="name">Nama</label>
                                         <input type="text" id="name" name="name" class="form-control" />
                                     </div>
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="email">Email address</label>
+                                    <label class="form-label" for="email">Email</label>
                                     <input type="email" id="email" name="email" class="form-control" />
                                 </div>
-
+                                
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="tulis pesan anda" name="message"
-                                        id="message"></textarea>
+                                    id="message"></textarea>
+                                    <label class="form-label" for="message">Pesan</label>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary btn-block mb-4 mt-4">

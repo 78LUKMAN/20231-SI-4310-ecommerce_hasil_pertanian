@@ -107,7 +107,7 @@
             <div class="category-item-container has-scrollbar">
                 <div class="category-item">
                     <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
+                        <img src="<?php echo base_url() ?>assets/img/logo/fruits.png" alt="" width="30">
                     </div>
 
                     <div class="category-content-box">
@@ -119,7 +119,7 @@
                 </div>
                 <div class="category-item">
                     <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
+                        <img src="<?php echo base_url() ?>assets/img/logo/vegetable.png" alt="" width="30">
                     </div>
 
                     <div class="category-content-box">
@@ -131,7 +131,7 @@
                 </div>
                 <div class="category-item">
                     <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
+                        <img src="<?php echo base_url() ?>assets/img/logo/nuts.png" alt="" width="30">
                     </div>
 
                     <div class="category-content-box">
@@ -143,7 +143,7 @@
                 </div>
                 <div class="category-item">
                     <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
+                        <img src="<?php echo base_url() ?>assets/img/logo/spices.png" alt="" width="30">
                     </div>
 
                     <div class="category-content-box">
@@ -155,19 +155,7 @@
                 </div>
                 <div class="category-item">
                     <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
-                    </div>
-
-                    <div class="category-content-box">
-                        <div class="category-content-flex">
-                            <h3 class="category-item-title">Susu</h3>
-                        </div>
-                        <a href="<?= base_url('product/showall/susu') ?>" class="category-btn">Show All</a>
-                    </div>
-                </div>
-                <div class="category-item">
-                    <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
+                        <img src="<?php echo base_url() ?>assets/img/logo/livestock.png" alt="" width="30">
                     </div>
 
                     <div class="category-content-box">
