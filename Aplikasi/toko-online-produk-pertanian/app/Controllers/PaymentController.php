@@ -12,7 +12,7 @@ class PaymentController extends BaseController
         $this->transaction = new TransactionModel();
     }
 
-    public function snapToken($id_order, $total, $username)
+    public function snapToken($id_order, $total, $username, $email)
     {
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = 'SB-Mid-server-Z9WdyW2r3BEM_yboYz4vZzBz';
@@ -30,6 +30,7 @@ class PaymentController extends BaseController
             ),
             'customer_details' => array(
                 'first_name' => $username,
+                'email' => $email,
             ),
         );
 

@@ -46,7 +46,7 @@
                                     <?php foreach ($transaction as $transactionData): ?>
                                         <tr>
                                             <td>
-                                                <?= $transactionData['username'] ?>
+                                                <?= $transactionData['name'] ?>
                                             </td>
                                             <td>
                                                 <?= "Rp." . number_format($transactionData['total']) ?>

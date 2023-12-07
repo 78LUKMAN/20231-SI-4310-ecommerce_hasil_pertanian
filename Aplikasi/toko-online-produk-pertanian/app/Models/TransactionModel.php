@@ -15,7 +15,8 @@ class TransactionModel extends Model
     protected $protectFields = true;
     protected $allowedFields = [
         'order_id',
-        'username',
+        'name',
+        'email',
         'total',
         'address',
         'fare',

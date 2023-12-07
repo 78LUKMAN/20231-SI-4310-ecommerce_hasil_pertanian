@@ -23,7 +23,7 @@
 
                 <tr>
                     <td>
-                        <?= $transaksiData['username'] ?>
+                        <?= $transaksiData['name'] ?>
                     </td>
                     <td>
                         <?= "Rp." . number_format($transaksiData['total']) ?>

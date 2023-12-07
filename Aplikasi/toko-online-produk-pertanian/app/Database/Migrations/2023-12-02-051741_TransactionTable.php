@@ -14,9 +14,13 @@ class TransactionTable extends Migration
                 "type" => "INT",
                 "constraint"=> 20,
             ],
-            "username" => [
+            "name" => [
                 "type" => "VARCHAR",
                 "constraint" => 100,
+            ],
+            "email" => [
+                "type" => "VARCHAR",
+                "constraint" => 255,
             ],
             "total" => [
                 "type" => "DOUBLE",
