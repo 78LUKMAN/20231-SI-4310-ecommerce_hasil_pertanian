@@ -821,22 +821,6 @@
                         </a>
                     </div>
                 </div>
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">Sayur</a>
-                        <a href="#">
-                            <h3 class="blog-title">Lihat Semua</h3>
-
-                            <p class="blog-meta">
-                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
