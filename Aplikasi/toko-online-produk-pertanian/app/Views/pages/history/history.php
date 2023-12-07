@@ -91,7 +91,8 @@
                                                 ?>
 
 
-                                                <div class="rounded p-2 <?= $statusClass ?>" style="min-width: 120px; max-width:fit-content;">
+                                                <div class="rounded p-2 <?= $statusClass ?>"
+                                                    style="min-width: 120px; max-width:fit-content;">
                                                     <?= $statusText ?>
                                                 </div>
 
@@ -102,12 +103,14 @@
                                                     <i class="bi bi-view-list"></i>
                                                 </button>
                                                 <?php if ($transactionData['status'] != 200): ?>
-                                                    <a
+                                                    <!-- <a
                                                         href="https://app.sandbox.midtrans.com/snap/v2/vtweb/<?php echo $transactionData['token'] ?>">
                                                         <button type="button" class="btn btn-warning" data-bs-toggle="collapse">
                                                             Bayar
                                                         </button>
-                                                    </a>
+                                                    </a> -->
+                                                    <button type="button" class="btn btn-warning" id="pay-button">Bayar</button>
+
                                                 <?php endif ?>
                                             </td>
                                         </tr>
@@ -213,7 +216,14 @@
 <div id="idku">
 
 </div>
-
+<?= $this->section('script') ?>
+<script type="text/javascript">
+    let payButton = document.getElementById('pay-button');
+    payButton.addEventListener('click', function () {
+        window.snap.pay('<?= $transactionData['token'] ?>');
+    });
+</script>
+<?= $this->endSection() ?>
 <?php if (!empty($pendingOrders)): ?>
 
     <script>

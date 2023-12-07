@@ -62,8 +62,8 @@
                                 break;
                         }
                         ?>
-                        <div class="rounded w-50 p-2 text-center<?= $statusClass ?>">
-                            <?= $transaksiData['status'] ?>
+                        <div class="rounded w-50 p-2 text-center <?= $statusClass ?>" style="min-width: 120px; max-width:fit-content;">
+                            <?= $statusText ?>
                         </div>
                     </td>
                     <td>
