@@ -53,49 +53,49 @@
         <div class="container">
             <div class="slider-container has-scrollbar">
                 <div class="slider-item">
-                    <img src="<?php echo base_url() ?>assets/img/banner/banner-jam.png" alt="" class="banner-img">
+                    <img src="<?php echo base_url() ?>assets/img/banner/grocery-banner.jpg" alt="" class="banner-img">
 
                     <div class="banner-content">
-                        <p class="banner-subtitle">Trending Item</p>
+                        <p class="banner-subtitle">Sayur Segar</p>
 
-                        <h2 class="banner-title">Tranding Item</h2>
+                        <h2 class="banner-title">Penuhi Nutrisi Tubuh Anda</h2>
 
                         <p class="banner-text">
-                            starting at $ <b>332</b>.80
+                            mulai dari Rp.<b>10.000</b>,00
                         </p>
-                        <a href="#" class="banner-btn">Shop Now</a>
+                        <a href="#" class="banner-btn">Belanja Sekarang</a>
 
                     </div>
                 </div>
 
                 <div class="slider-item">
-                    <img src="<?php echo base_url() ?>assets/img/banner/banner-handphone.png" alt="" class="banner-img">
+                    <img src="<?php echo base_url() ?>assets/img/banner/fruit-banner.jpg" alt="" class="banner-img">
 
                     <div class="banner-content">
-                        <p class="banner-subtitle">Trending Item</p>
+                        <p class="banner-subtitle">Buah - Buahan</p>
 
-                        <h2 class="banner-title">Limited Edition</h2>
+                        <h2 class="banner-title">Vitamin dan Nutrisi Tubuh</h2>
 
                         <p class="banner-text">
-                            starting at $ <b>928</b>.00
+                            mulai dari Rp.<b>35.000</b>,00
                         </p>
-                        <a href="#" class="banner-btn">Shop Now</a>
+                        <a href="#" class="banner-btn">Belanja Sekarang</a>
 
                     </div>
                 </div>
 
                 <div class="slider-item">
-                    <img src="<?php echo base_url() ?>assets/img/banner/banner-headphone.png" alt="" class="banner-img">
+                    <img src="<?php echo base_url() ?>assets/img/banner/spices-banner.jpg" alt="" class="banner-img">
 
                     <div class="banner-content">
-                        <p class="banner-subtitle">Trending Item</p>
+                        <p class="banner-subtitle">Rempah - Rempah</p>
 
-                        <h2 class="banner-title">Special Offer</h2>
+                        <h2 class="banner-title">Promo Akhir Tahun</h2>
 
                         <p class="banner-text">
-                            starting at $ <b>249</b>.60
+                           mulai dari Rp.<b>12.000</b>,00
                         </p>
-                        <a href="#" class="banner-btn">Shop Now</a>
+                        <a href="#" class="banner-btn">Belanja Sekarang</a>
 
                     </div>
                 </div>
@@ -198,7 +198,7 @@
                         <li class="slidebar-menu-category">
                             <button class="slidebar-accordion-menu" data-accordion-btn>
                                 <div class="menu-title-flex">
-                                    <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="20"
+                                    <img src="<?php echo base_url() ?>assets/img/logo/nuts.png" alt="" width="20"
                                         class="menu-title-img">
                                     <p class="menu-title">Kacang</p>
                                 </div>
@@ -253,7 +253,7 @@
                         <li class="slidebar-menu-category">
                             <button class="slidebar-accordion-menu" data-accordion-btn>
                                 <div class="menu-title-flex">
-                                    <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt="" width="20"
+                                    <img src="<?php echo base_url() ?>assets/img/logo/fruits.png" alt="" width="20"
                                         height="22" class="menu-title-img">
                                     <p class="menu-title">Sayur dan Buah</p>
                                 </div>
@@ -298,7 +298,7 @@
                         <li class="slidebar-menu-category">
                             <button class="slidebar-accordion-menu" data-accordion-btn>
                                 <div class="menu-title-flex">
-                                    <img src="<?php echo base_url() ?>assets/img/logo/watch.jpg" alt="" width="20"
+                                    <img src="<?php echo base_url() ?>assets/img/logo/spices.png" alt="" width="20"
                                         class="menu-title-img">
                                     <p class="menu-title">Rempah</p>
                                 </div>
@@ -709,6 +709,22 @@
     <section class="blog">
         <div class="container">
             <div class="blog-container has-scrollbar">
+                <div class="blog-card">
+                    <a href="#">
+                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
+                            width="300">
+                    </a>
+                    <div class="blog-content">
+                        <a href="#" class="blog-category">Sayur</a>
+                        <a href="#">
+                            <h3 class="blog-title">Lihat Semua</h3>
+
+                            <p class="blog-meta">
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                            </p>
+                        </a>
+                    </div>
+                </div>
                 <div class="blog-card">
                     <a href="#">
                         <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
