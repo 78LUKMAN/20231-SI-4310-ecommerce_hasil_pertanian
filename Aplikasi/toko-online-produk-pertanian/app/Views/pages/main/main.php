@@ -37,10 +37,10 @@
     <div class="toast-detail">
         <a href="activity/feedback">
             <p class="toast-message">
-                Hai, kawan
+                Hai, Flexitarian
             </p>
             <p class="toast-title">
-                Ayo tulis pesanmu
+                <b>Ayo tulis pesanmu</b>
             </p>
             <p class="toast-meta">
                 disini
@@ -93,7 +93,7 @@
                         <h2 class="banner-title">Promo Akhir Tahun</h2>
 
                         <p class="banner-text">
-                           mulai dari Rp.<b>12.000</b>,00
+                            mulai dari Rp.<b>12.000</b>,00
                         </p>
                         <a href="#" class="banner-btn">Belanja Sekarang</a>
 
@@ -624,14 +624,24 @@
                     </div>
                 </div>
                 <div class="special-offer-container">
-                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="special-offer-benner">
-                    <a href="#" class="special-offer-content">
-                        <p class="special-offer-discount">25% Discount</p>
-                        <h2 class="special-offer-title">Beats<sup>3</sup> Collection</h2>
-                        <p class="special-offer-text">starting at $230.95</p>
-                        <button class="special-offer-button">Get it Now</button>
-                    </a>
-
+                    <?php if ($special_offer): ?>
+                        <img src="<?php echo base_url() ?>assets/img/products/<?php echo $special_offer['image']; ?>"
+                            class="special-offer-benner">
+                        <a href="<?= base_url('product/detail/').$special_offer['id']?>" class="special-offer-content">
+                            <p class="special-offer-discount">
+                                <?php echo "Diskon  ". $special_offer['discount']; ?>%
+                            </p>
+                            <h2 class="special-offer-title">
+                                <?php echo $special_offer['name']; ?>
+                            </h2>
+                            <p class="special-offer-text">hanya
+                                <?php echo "Rp.".number_format($special_offer['disprice']); ?>
+                            </p>
+                            <button class="special-offer-button">Dapatkan Sekarang</button>
+                        </a>
+                    <?php else: ?>
+                        <p>No special offer available.</p>
+                    <?php endif; ?>
                 </div>
                 <!-- <div class="service">
                         <h2 class="title">Our Services</h2>
@@ -694,7 +704,7 @@
         </div>
     </section>
 
-    <section class="blog">
+    <!-- <section class="blog">
         <div class="container">
             <div class="blog-container has-scrollbar">
                 <div class="blog-card">
@@ -827,6 +837,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </main>
 <?= $this->endSection('content') ?>

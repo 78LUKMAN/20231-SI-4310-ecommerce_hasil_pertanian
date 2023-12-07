@@ -18,7 +18,9 @@ class Home extends BaseController
         $feedbackModel = new FeedbackModel();
         $products = $productModel->findAll();
         $feedback = $feedbackModel->findAll();
+        $specialOfferProduct = $productModel->orderBy('discount', 'DESC')->first();
         $data = [
+            'special_offer'=> $specialOfferProduct,
             'products' => $products,
             'feedbacks' => $feedback,
         ];

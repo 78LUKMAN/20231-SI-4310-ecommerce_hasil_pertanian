@@ -1589,8 +1589,9 @@ blockquote:after {
 .special-offer-title {
     color: var(--onyx);
     font-size: var(--fs-5);
-    /* text-transform: capitalize; */
+    text-transform: capitalize;
     margin-bottom: 5px;
+    margin-top: 10px;
 }
 
 .special-offer-text {
