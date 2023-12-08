@@ -9,14 +9,14 @@
         </button>
 
         <div class="newsletter-img">
-            <img src="<?php echo base_url() ?>assets/img/banner/newletter-img.png" alt="subscribe" width="300"
+            <img src="<?php echo base_url() ?>assets/img/logo/logo.png" alt="subscribe" width="300"
                 height="300">
         </div>
         <div class="newsletter">
             <form action="#">
                 <div class="newsletter-header">
                     <h3 class="newsletter-title">Subscribe</h3>
-                    <p class="newsletter-desc">Subscribe the <b>Local Farms</b> to get latest product and discount
+                    <p class="newsletter-desc">Subscribe the <b>Pekalongan Groceria</b> to get latest product and discount
                         update</p>
                 </div>
                 <input type="email" name="email" class="email-field" id="" placeholder="type your email" required>

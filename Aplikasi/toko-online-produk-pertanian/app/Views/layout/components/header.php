@@ -27,7 +27,7 @@
                 <p>Ingin produk berkualitas hanya dengan ujung jari? Pekalongan Groceria solusinya!! Pekalongan Groceria - sentuhan kesegaran untuk hidup lebih ceria</p>
             </marquee></div>
             <div class="header-alert-news">
-                <p><b>Pekalongan</b> Groceria</p>
+                <p><b>- Pekalongan</b> Groceria -</p>
             </div>
         </div>
     </div>
