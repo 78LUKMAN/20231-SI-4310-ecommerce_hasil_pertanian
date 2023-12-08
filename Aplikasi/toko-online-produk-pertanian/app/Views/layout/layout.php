@@ -64,6 +64,11 @@
     <script src="<?php echo base_url() ?>assets/js/script.js"></script>
 	<script src="<?php echo base_url() ?>assets/js/main.js"></script>
 	<script src="<?php echo base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
+    <?= $this->renderSection('script') ?>
+
+    <!-- Midtrans Snap-->
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
+    data-client-key="SB-Mid-client-WJGQ2dCcv0z_BGBB"></script>
 </body>
 
 </html>

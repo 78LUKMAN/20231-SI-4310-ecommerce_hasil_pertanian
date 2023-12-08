@@ -2,7 +2,6 @@
     <?php
     $cartUrl = base_url() . 'activity/cart';
     $historyUrl = base_url() . 'activity/history';
-    $transactionUrl = base_url() . 'actaivity/transaction';
     $elmn = null;
     ?>
     <div class="mobile-bottom-nav">
@@ -20,13 +19,6 @@
                 <ion-icon name="timer-outline"></ion-icon>
             </button>
         </a>
-
-        <a href="<?php echo base_url() ?>activity/transaction" id="history-btn" <?php echo hideButton($transactionUrl); ?>>
-            <button class="action-btn">
-                <ion-icon name="wallet-outline"></ion-icon>
-            </button>
-        </a>
-
         <?php
         if (current_url() !== base_url() . "index.php/") {
             ?>
@@ -41,10 +33,15 @@
         <?php
         if (current_url() === base_url() . "index.php/") {
             ?>
-            <button class="action-btn" data-mobile-menu-open-btn>
-                <ion-icon name="grid-outline"></ion-icon>
-            </button>
-            <?php
+            <?php if (session('role') == 'admin') { ?>
+                <!-- <button class="action-btn" data-mobile-menu-open-btn> -->
+                    <a href="<?php base_url()?>admin/accounts">
+                        <button class="action-btn">
+                            <ion-icon name="grid-outline"></ion-icon>
+                        </button>
+                    </a>
+                <?php
+            }
         }
         ?>
 
@@ -66,7 +63,7 @@
             </li>
             <li class="menu-category">
                 <button class="accordion-menu" data-accordion-btn>
-                    <p class="menu-title">Headphone</p>
+                    <p class="menu-title">Sayur dan Buah</p>
 
                     <div>
                         <ion-icon name="add-outline" class="add-icon"></ion-icon>
@@ -76,25 +73,25 @@
 
                 <ul class="submenu-category-list" data-accordion>
                     <li class="submenu-category">
-                        <a href="#" class="submenu-title">product-A</a>
+                        <a href="<?= base_url('product/showall/terong') ?>" class="submenu-title">Terong</a>
                     </li>
 
                     <li class="submenu-category">
-                        <a href="#" class="submenu-title">product-B</a>
+                        <a href="<?= base_url('product/showall/wortel') ?>" class="submenu-title">Wortel</a>
                     </li>
 
                     <li class="submenu-category">
-                        <a href="#" class="submenu-title">product-C</a>
+                        <a href="<?= base_url('product/showall/tomat') ?>" class="submenu-title">Tomat</a>
                     </li>
 
                     <li class="submenu-category">
-                        <a href="#" class="submenu-title">product-D</a>
+                        <a href="<?= base_url('product/showall/bayam') ?>" class="submenu-title">Bayam</a>
                     </li>
                 </ul>
             </li>
             <li class="menu-category">
                 <button class="accordion-menu" data-accordion-btn>
-                    <p class="menu-title">Watch</p>
+                    <p class="menu-title">Rempah</p>
 
                     <div>
                         <ion-icon name="add-outline" class="add-icon"></ion-icon>
@@ -104,25 +101,25 @@
 
                 <ul class="submenu-category-list" data-accordion>
                     <li class="submenu-category">
-                        <a href="#" class="submenu-title">product-A</a>
+                        <a href="<?= base_url('product/showall/lengkuas') ?>" class="submenu-title">Lengkuas</a>
                     </li>
 
                     <li class="submenu-category">
-                        <a href="#" class="submenu-title">product-B</a>
+                        <a href="<?= base_url('product/showall/bawang') ?>" class="submenu-title">Bawang</a>
                     </li>
 
                     <li class="submenu-category">
-                        <a href="#" class="submenu-title">product-C</a>
+                        <a href="<?= base_url('product/showall/ketumbar') ?>" class="submenu-title">Ketumbar</a>
                     </li>
 
                     <li class="submenu-category">
-                        <a href="#" class="submenu-title">product-D</a>
+                        <a href="<?= base_url('product/showall/kunyit') ?>" class="submenu-title">Kunyit</a>
                     </li>
                 </ul>
             </li>
             <li class="menu-category">
                 <button class="accordion-menu" data-accordion-btn>
-                    <p class="menu-title">Smartphone</p>
+                    <p class="menu-title">Kacang</p>
 
                     <div>
                         <ion-icon name="add-outline" class="add-icon"></ion-icon>
@@ -132,37 +129,37 @@
 
                 <ul class="submenu-category-list" data-accordion>
                     <li class="submenu-category">
-                        <a href="#" class="submenu-title">product-A</a>
+                        <a href="<?= base_url('product/showall/kacang-tanah') ?>" class="submenu-title">Kacang Tanah</a>
                     </li>
 
                     <li class="submenu-category">
-                        <a href="#" class="submenu-title">product-B</a>
+                        <a href="<?= base_url('product/showall/kacang-mede') ?>" class="submenu-title">Kacang Mede</a>
                     </li>
 
                     <li class="submenu-category">
-                        <a href="#" class="submenu-title">product-C</a>
+                        <a href="<?= base_url('product/showall/kacang-almond') ?>" class="submenu-title">Kacang Almond</a>
                     </li>
 
                     <li class="submenu-category">
-                        <a href="#" class="submenu-title">product-D</a>
+                        <a href="<?= base_url('product/showall/kacang-arab') ?>" class="submenu-title">Kacang Arab</a>
                     </li>
                 </ul>
             </li>
             <li class="menu-category">
-                <a href="#" class="menu-title">Blog</a>
+                <a href="<?= base_url('product/showall/terong') ?>" class="menu-title">Blog</a>
             </li>
             <li class="menu-category">
                 <a href="#" class="menu-title">Hot Offers</a>
             </li>
-            <?php if(session('isLoggIn') == 1) {?>
-            <li class="menu-category">
-                <a href="  <?php echo base_url()?>activity/profile" class="menu-title">Profile</a> 
-            </li>
+            <?php if (session('isLoggIn') == 1) { ?>
+                <li class="menu-category">
+                    <a href="  <?php echo base_url() ?>activity/profile" class="menu-title">Profile</a>
+                </li>
             <?php } else { ?>
                 <li class="menu-category">
                     <a href="auth/signin" class="menu-title">Login</a>
                 </li>
-            <?php }?>
+            <?php } ?>
         </ul>
         <div class="menu-bottom">
             <ul class="menu-category-list">

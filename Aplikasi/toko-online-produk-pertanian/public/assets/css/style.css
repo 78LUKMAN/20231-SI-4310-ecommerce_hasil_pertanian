@@ -101,22 +101,22 @@ body {
     /* margin-bottom: 50px; */
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 15px;
 }
 
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background-color: var(--white);
     border-left: 1px solid var(--cultured);
 }
 
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: var(--white-2);
     border: 3px solid var(--white);
     border-radius: 10px;
 }
 
-body::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: var(--white-3);
 }
 
@@ -886,6 +886,7 @@ body::-webkit-scrollbar-thumb:hover {
     padding: 13px 0 8px;
     max-height: 125px;
     visibility: visible;
+    overflow: auto;
 }
 
 .slidebar-submenu-title {
@@ -1001,7 +1002,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .product-minimal .showcase-wrapper {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline;
@@ -1467,8 +1468,6 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .product-grid-container .price-box {
-    display: flex;
-    gap: 10px;
     font-size: var(--fs-7);
     color: var(--eerie-black);
     margin-bottom: 10px;
@@ -1590,8 +1589,9 @@ blockquote:after {
 .special-offer-title {
     color: var(--onyx);
     font-size: var(--fs-5);
-    /* text-transform: capitalize; */
+    text-transform: capitalize;
     margin-bottom: 5px;
+    margin-top: 10px;
 }
 
 .special-offer-text {
@@ -1936,9 +1936,10 @@ ul {
 .user-signin-content input {
     max-width: 400px;
     width: 300px;
+    border: 2px solid #000;
     margin-bottom: 10px;
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 5px !important;
+    padding: 5px !important;
 }
 
 .signup-form .form-desc,
@@ -2034,6 +2035,9 @@ ul {
         color: var(--sonic-silver);
         font-size: var(--fs-9);
         text-transform: uppercase;
+    }
+    .header-tagline {
+        text-transform: capitalize;
     }
 
     .header-alert-news b {
@@ -3479,7 +3483,7 @@ h6 {
 .sidebar-nav .nav-link ion-icon {
     font-size: 20px;
     margin-right: 10px;
-    color: var(--sandy-brown);
+    color: var(--royal-blue);
 }
 
 .sidebar-nav .nav-link.collapsed {

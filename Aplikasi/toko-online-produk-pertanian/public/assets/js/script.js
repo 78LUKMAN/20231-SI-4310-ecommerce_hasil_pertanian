@@ -1,4 +1,24 @@
 'use strict';
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select all quantity input fields
+        var quantityInputs = document.querySelectorAll('.quantity-input');
+
+        // Add event listener to each quantity input field
+        quantityInputs.forEach(function (input) {
+            input.addEventListener('input', function () {
+                // Get the parent row of the input field
+                var parentRow = input.closest('tr');
+
+                // Get the price, quantity, and update the subtotal
+                var price = parseFloat(parentRow.querySelector('.price-cell').innerText.replace('IDR', '').replace(',', '').trim());
+                var quantity = parseFloat(input.value);
+                var subtotal = price * quantity;
+
+                // Update the subtotal cell
+                parentRow.querySelector('.subtotal-cell').innerText = 'IDR ' + subtotal.toLocaleString(undefined, { minimumFractionDigits: 2 });
+            });
+        });
+    });
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -91,33 +111,33 @@ notifCloseBtn.addEventListener('click', () => {
   notif.classList.add('closed');
 });
 
-const btnSlide = document.querySelectorAll(".btn-slide");
-const cardContent = document.querySelectorAll(".testimonial-card-content")
-const slideContainer = document.querySelector(".testimonial-wrapper")
+// const btnSlide = document.querySelectorAll(".btn-slide");
+// const cardContent = document.querySelectorAll(".testimonial-card-content")
+// const slideContainer = document.querySelector(".testimonial-wrapper")
 
-for (let i = 0; i < btnSlide.length; i++) {
-  btnSlide[i].addEventListener("click", () => {
-    console.log("checked")
-    alert("button" + i)
-  })
-}
+// for (let i = 0; i < btnSlide.length; i++) {
+//   btnSlide[i].addEventListener("click", () => {
+//     console.log("checked")
+//     alert("button" + i)
+//   })
+// }
 
-let btnIndex = 1;
-setInterval(() => {
-    document.getElementById('btn-slide' + btnIndex).checked = true;
-    btnIndex++
+// let btnIndex = 1;
+// setInterval(() => {
+//     document.getElementById('btn-slide' + btnIndex).checked = true;
+//     btnIndex++
 
-    for (let y = 0; y < cardContent.length; y++) {
-      let elWidth = cardContent[y].clientWidth
-      slideContainer.scrollLeft += elWidth;
-    }
+//     for (let y = 0; y < cardContent.length; y++) {
+//       let elWidth = cardContent[y].clientWidth
+//       slideContainer.scrollLeft += elWidth;
+//     }
 
-    if (btnIndex>6) {
-      btnIndex = 1;
-      slideContainer.scrollLeft = 0;
-    }
+//     if (btnIndex>6) {
+//       btnIndex = 1;
+//       slideContainer.scrollLeft = 0;
+//     }
 
-}, 5000);
+// }, 5000);
 
 
 const detailBtn = document.querySelectorAll('.details-btn'),

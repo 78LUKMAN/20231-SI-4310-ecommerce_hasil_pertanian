@@ -12,13 +12,13 @@ class Users extends Seeder
             [
                 'name' => 'admin toko',
                 'username' => 'adminsemprul',
-                'password' => password_hash('middlefinger', PASSWORD_DEFAULT),
+                'password' => password_hash('yabegitulah', PASSWORD_DEFAULT),
                 'role' => 'admin'
             ],
             [
-                'name' => 'indra',
-                'username' => 'siindra',
-                'password' => password_hash('indra123', PASSWORD_DEFAULT),
+                'name' => 'lukman',
+                'username' => 'lukmanhh',
+                'password' => password_hash('lukman78', PASSWORD_DEFAULT),
                 'role' => 'guest'
             ],
         ];

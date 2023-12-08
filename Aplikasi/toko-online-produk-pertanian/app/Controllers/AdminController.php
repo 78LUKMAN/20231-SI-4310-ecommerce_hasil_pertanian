@@ -3,7 +3,9 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
-
+use App\Models\DetailTransactionModel;
+use App\Models\TransactionModel;
+use App\Models\ProductModel;
 class AdminController extends BaseController
 {
     public function __construct()
@@ -11,6 +13,9 @@ class AdminController extends BaseController
         helper('form');
         $this->userModel = new UserModel();
         $this->validation = \Config\Services::validation();
+        $this->transactionModel = new TransactionModel();
+        $this->productModel = new ProductModel();
+        $this->detailTransactionModel = new DetailTransactionModel();
     }
     public function accounts()
     {
@@ -83,9 +88,51 @@ class AdminController extends BaseController
 
     public function deleteuser($id)
     {
-        $delete = $this->userModel->delete($id);
+
+        $user = $this->userModel->find($id);
+        if (!$user) {
+            return redirect('admin/accounts')->with('unknown', 'Akun tidak ditemukan');
+        }
+        $imgPath = "assets/img/profile/" . $user['img'];
+        if ($user['img'] != "") {
+            if (file_exists($imgPath)) {
+                unlink($imgPath);
+            }
+        }
+       
+        $delete =  $this->userModel->delete($id);
+
         if ($delete) {
-            return redirect('admin/accounts')->with('success', 'Akun berhasil dihapus');
+            return redirect('admin/accounts')->with('success', 'Data Berhasil Dihapus');
+        }  else {
+            return redirect('admin/accounts')->with('unsuccess', 'Gagal menghapus akun');
+        }
+    }
+
+
+    public function showAllUsersHistory()
+    {
+        // Mendapatkan ID user dari data user saat ini (sesuaikan dengan implementasi Anda)
+        $getTransaksi = $this->transactionModel->findAll();
+        $getDetailTransaksi = $this->detailTransactionModel->findAll();
+        $getDetailPoduk = $this->productModel->findAll();
+        
+        $data = [
+            'transaksi' => $getTransaksi,
+            'detailTransaksiData' => $getDetailTransaksi,
+            'detailProduk' => $getDetailPoduk,
+            'page_title' => "Transaction Management"
+
+        ];
+
+        return view('pages/admin/transaction_management/transactions', $data);
+    }
+
+    public function deleteTransaction($id)
+    {
+        $delete =$this->transactionModel->delete($id);
+        if ($delete) {
+            return redirect('admin/transaction')->with('success', 'Data berhasil dihapus');
         }
     }
 }

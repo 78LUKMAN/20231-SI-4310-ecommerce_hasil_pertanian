@@ -27,8 +27,8 @@ class Filters implements FilterInterface
     {
         $auth = service("auth");
 
-        if(!$auth->isLoggedIn()) {
-            return redirect()->to(site_url("auth/sigin"));
+        if (!session()->has('isLoggIn')) {
+            return redirect()->to(site_url("auth/signin"));
         }
     }
 

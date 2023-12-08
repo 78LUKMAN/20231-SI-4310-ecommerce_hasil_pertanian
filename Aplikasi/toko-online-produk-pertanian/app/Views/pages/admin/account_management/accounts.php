@@ -6,6 +6,24 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php endif; ?>
+<?php if (session()->getFlashData('unsuccess')): ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <?= session()->getFlashData('unsuccess') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
+<?php if (session()->getFlashData('unknown')): ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <?= session()->getFlashData('unknown') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
+<?php if (session()->getFlashData('error')): ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <?php echo("Gagal menambahkan akun baru, silahkan coba lagi")?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newUser">
     &nbsp;<i class="bi bi-plus-square"></i>&nbsp;Tambah User&nbsp;
 </button>
@@ -51,12 +69,12 @@
 
                             <form action="<?= site_url('admin/account/delete/' . $user['id']) ?>" method="post">
                                 <?= csrf_field() ?>
-                                <div class="modal fade" id="deleteModal-<?= $user['id']?>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                <div class="modal fade" id="deleteModal-<?= $user['id']?>" tabindex="-1" aria-labelledby="modalLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel text-danger">Delete User</h5>
+                                                <h5 class="modal-title" id="modalLabel text-danger">Delete User</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
@@ -67,7 +85,6 @@
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
                                                 <button type="submit" class="btn btn-danger">Delete</button>
-                                                <?= $user['id']?>
                                             </div>
                                         </div>
                                     </div>
@@ -179,7 +196,7 @@
                             <div class="mb-3">
                                 <div class="form-group">
                                     <label for="password" class="form-label">Password</label>
-                                    <input type="text"
+                                    <input type="password"
                                         class="form-control <?php echo session('error.password') ? 'is-invalid' : (session('error') ? 'is-valid' : ''); ?>"
                                         id="password" name="password" placeholder="password"
                                         value="<?php echo session('input_data.password'); ?>" required>
@@ -193,7 +210,7 @@
                             <div class="mb-3">
                                 <div class="form-group">
                                     <label for="confirm_password" class="form-label">Confirm Password</label>
-                                    <input type="text"
+                                    <input type="password"
                                         class="form-control <?php echo session('error.confirm_password') ? 'is-invalid' : (session('error') ? 'is-valid' : ''); ?>"
                                         id="confirm_password" name="confirm_password" placeholder="confirm_password"
                                         value="<?php echo session('input_data.confirm_password'); ?>" required>

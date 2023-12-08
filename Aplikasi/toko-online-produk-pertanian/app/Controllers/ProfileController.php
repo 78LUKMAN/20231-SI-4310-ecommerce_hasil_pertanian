@@ -11,11 +11,18 @@ class ProfileController extends BaseController
     {
         $this->validation = \Config\Services::validation();
         $this->userModel = new UserModel();
+        helper("form");
     }
     public function index()
     {
         $userId = session('id');
         $userData = $this->userModel->find($userId);
+        
+
+        if (empty($userData)) {
+            return redirect()->to('auth/logout');
+            session()->destroy();
+        }
 
         $data['userData'] = $userData;
         return view("pages/profile/profile", $data);
@@ -34,24 +41,20 @@ class ProfileController extends BaseController
             $currentPassword = $this->request->getPost('currentPassword');
             $newPassword = $this->request->getPost('newPassword');
 
-            // Mendapatkan ID pengguna dari data pengguna
             if (!$userId) {
                 return redirect()->to('activity/profile')->with('pro-errors', 'User data not found in session.');
             }
 
-            // Mendapatkan data pengguna dari database berdasarkan ID
             $user = $this->userModel->find($userId);
 
             if (!$user) {
                 return redirect()->to('activity/profile')->with('pro-errors', 'User not found.');
             }
 
-            // Memverifikasi password saat ini
             if (!password_verify($currentPassword, $user['password'])) {
                 return redirect()->to('activity/profile')->with('pro-errors', 'Incorrect current password.');
             }
 
-            // Mengubah password baru
             $data = [
                 'password' => password_hash($newPassword, PASSWORD_BCRYPT)
             ];
@@ -68,8 +71,6 @@ class ProfileController extends BaseController
 
     public function edit()
     {
-
-        // Get the user ID from the user data in the session
         $userId = session('id');
         $userData = $this->userModel->find($userId);
         $validationRules = [
@@ -77,6 +78,7 @@ class ProfileController extends BaseController
             'email' => 'required|valid_email',
             'phone' => 'required|numeric',
             'address' => 'required',
+            'img' => 'max_size[image,1024]|mime_in[image,image/jpg,image/jpeg,image/png]'
         ];
 
         if ($this->validate($validationRules)) {
@@ -104,7 +106,6 @@ class ProfileController extends BaseController
                 return redirect()->back()->with('pro-errors', 'User not found.');
             }
 
-            // Update the user data
             $userData = [
                 'username' => $username,
                 'email' => $email,

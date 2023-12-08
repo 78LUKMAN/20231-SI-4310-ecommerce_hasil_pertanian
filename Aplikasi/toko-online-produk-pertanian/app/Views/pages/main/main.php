@@ -16,14 +16,36 @@
             <form action="#">
                 <div class="newsletter-header">
                     <h3 class="newsletter-title">Subscribe</h3>
-                    <p class="newsletter-desc">Subscribe the <b>Beats Store</b> to get latest product and discount
+                    <p class="newsletter-desc">Subscribe the <b>Local Farms</b> to get latest product and discount
                         update</p>
                 </div>
-
                 <input type="email" name="email" class="email-field" id="" placeholder="type your email" required>
                 <button type="submit" class="btn-newsletter">Subscribe</button>
             </form>
         </div>
+    </div>
+</div>
+<div class="notification-toast" data-toast="">
+    <button class="toast-close-btn" data-toast-close="">
+        <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+    <div class="toast-banner">
+        <img src="<?= base_url() ?>assets/img/logo/toast-icon.png" alt="" width="80" height="70">
+    </div>
+
+    <div class="toast-detail">
+        <a href="activity/feedback">
+            <p class="toast-message">
+                Hai, Flexitarian
+            </p>
+            <p class="toast-title">
+                <b>Ayo tulis pesanmu</b>
+            </p>
+            <p class="toast-meta">
+                disini
+            </p>
+        </a>
     </div>
 </div>
 <main>
@@ -31,49 +53,49 @@
         <div class="container">
             <div class="slider-container has-scrollbar">
                 <div class="slider-item">
-                    <img src="<?php echo base_url() ?>assets/img/banner/banner-jam.png" alt="" class="banner-img">
+                    <img src="<?php echo base_url() ?>assets/img/banner/grocery-banner.jpg" alt="" class="banner-img">
 
                     <div class="banner-content">
-                        <p class="banner-subtitle">Trending Item</p>
+                        <p class="banner-subtitle">Sayur Segar</p>
 
-                        <h2 class="banner-title">Tranding Item</h2>
+                        <h2 class="banner-title">Penuhi Nutrisi Tubuh Anda</h2>
 
                         <p class="banner-text">
-                            starting at $ <b>332</b>.80
+                            mulai dari Rp.<b>10.000</b>,00
                         </p>
-                        <a href="#" class="banner-btn">Shop Now</a>
+                        <a href="#" class="banner-btn">Belanja Sekarang</a>
 
                     </div>
                 </div>
 
                 <div class="slider-item">
-                    <img src="<?php echo base_url() ?>assets/img/banner/banner-handphone.png" alt="" class="banner-img">
+                    <img src="<?php echo base_url() ?>assets/img/banner/fruit-banner.jpg" alt="" class="banner-img">
 
                     <div class="banner-content">
-                        <p class="banner-subtitle">Trending Item</p>
+                        <p class="banner-subtitle">Buah - Buahan</p>
 
-                        <h2 class="banner-title">Limited Edition</h2>
+                        <h2 class="banner-title">Vitamin dan Nutrisi Tubuh</h2>
 
                         <p class="banner-text">
-                            starting at $ <b>928</b>.00
+                            mulai dari Rp.<b>35.000</b>,00
                         </p>
-                        <a href="#" class="banner-btn">Shop Now</a>
+                        <a href="#" class="banner-btn">Belanja Sekarang</a>
 
                     </div>
                 </div>
 
                 <div class="slider-item">
-                    <img src="<?php echo base_url() ?>assets/img/banner/banner-headphone.png" alt="" class="banner-img">
+                    <img src="<?php echo base_url() ?>assets/img/banner/spices-banner.jpg" alt="" class="banner-img">
 
                     <div class="banner-content">
-                        <p class="banner-subtitle">Trending Item</p>
+                        <p class="banner-subtitle">Rempah - Rempah</p>
 
-                        <h2 class="banner-title">Special Offer</h2>
+                        <h2 class="banner-title">Promo Akhir Tahun</h2>
 
                         <p class="banner-text">
-                            starting at $ <b>249</b>.60
+                            mulai dari Rp.<b>12.000</b>,00
                         </p>
-                        <a href="#" class="banner-btn">Shop Now</a>
+                        <a href="#" class="banner-btn">Belanja Sekarang</a>
 
                     </div>
                 </div>
@@ -85,71 +107,62 @@
             <div class="category-item-container has-scrollbar">
                 <div class="category-item">
                     <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
+                        <img src="<?php echo base_url() ?>assets/img/logo/fruits.png" alt="" width="30">
                     </div>
 
                     <div class="category-content-box">
                         <div class="category-content-flex">
-                            <h3 class="category-item-title">watch</h3>
-                            <p class="category-item-amount">(23)</p>
+                            <h3 class="category-item-title">Buah</h3>
                         </div>
-                        <a href="#" class="category-btn">Show All</a>
+                        <a href="<?= base_url('product/showall/buah') ?>" class="category-btn">Show All</a>
                     </div>
                 </div>
-
                 <div class="category-item">
                     <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt="" height="32" width="35">
+                        <img src="<?php echo base_url() ?>assets/img/logo/vegetable.png" alt="" width="30">
                     </div>
 
                     <div class="category-content-box">
                         <div class="category-content-flex">
-                            <h3 class="category-item-title">watch</h3>
-                            <p class="category-item-amount">(23)</p>
+                            <h3 class="category-item-title">Sayur</h3>
                         </div>
-                        <a href="#" class="category-btn">Show All</a>
+                        <a href="<?= base_url('product/showall/sayur') ?>" class="category-btn">Show All</a>
                     </div>
                 </div>
-
                 <div class="category-item">
                     <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/watch.jpg" alt="" width="30">
+                        <img src="<?php echo base_url() ?>assets/img/logo/nuts.png" alt="" width="30">
                     </div>
 
                     <div class="category-content-box">
                         <div class="category-content-flex">
-                            <h3 class="category-item-title">watch</h3>
-                            <p class="category-item-amount">(23)</p>
+                            <h3 class="category-item-title">Kacang</h3>
                         </div>
-                        <a href="#" class="category-btn">Show All</a>
+                        <a href="<?= base_url('product/showall/kacang') ?>" class="category-btn">Show All</a>
                     </div>
                 </div>
-
                 <div class="category-item">
                     <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt="" height="32" width="35">
+                        <img src="<?php echo base_url() ?>assets/img/logo/spices.png" alt="" width="30">
                     </div>
 
                     <div class="category-content-box">
                         <div class="category-content-flex">
-                            <h3 class="category-item-title">watch</h3>
-                            <p class="category-item-amount">(23)</p>
+                            <h3 class="category-item-title">Rempah</h3>
                         </div>
-                        <a href="#" class="category-btn">Show All</a>
+                        <a href="<?= base_url('product/showall/rempah') ?>" class="category-btn">Show All</a>
                     </div>
                 </div>
-
                 <div class="category-item">
                     <div class="category-img-box">
-                        <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="30">
+                        <img src="<?php echo base_url() ?>assets/img/logo/livestock.png" alt="" width="30">
                     </div>
 
                     <div class="category-content-box">
                         <div class="category-content-flex">
-                            <h3 class="category-item-title">watch</h3>
-                            <p class="category-item-amount">(23)</p>
+                            <h3 class="category-item-title">Produk Ternak</h3>
                         </div>
-                        <a href="#" class="category-btn">Show All</a>
+                        <a href="<?= base_url('product/showall/ternak') ?>" class="category-btn">Show All</a>
                     </div>
                 </div>
             </div>
@@ -173,9 +186,9 @@
                         <li class="slidebar-menu-category">
                             <button class="slidebar-accordion-menu" data-accordion-btn>
                                 <div class="menu-title-flex">
-                                    <img src="<?php echo base_url() ?>assets/img/logo/handphone.jpg" alt="" width="20"
+                                    <img src="<?php echo base_url() ?>assets/img/logo/nuts.png" alt="" width="20"
                                         class="menu-title-img">
-                                    <p class="menu-title">Handphone</p>
+                                    <p class="menu-title">Kacang</p>
                                 </div>
 
                                 <div>
@@ -186,23 +199,41 @@
 
                             <ul class="slidebar-submenu-category-list" data-accordion>
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Samsung</p>
-                                        <data value="300" class="stock" title="available stock">58</data>
+                                    <a href="<?= base_url('product/showall/kacangtanah') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kacang Tanah</p>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Apple</p>
-                                        <data value="300" class="stock" title="available stock">32</data>
+                                    <a href="<?= base_url('product/showall/kacangpolong') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kacang Polong</p>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Asus</p>
-                                        <data value="300" class="stock" title="available stock">60</data>
+                                    <a href="<?= base_url('product/showall/kacangmete') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kacang Mete</p>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/kacangarab') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kacang Arab</p>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/kacangpanjang') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kacang Panjang</p>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/kacangalmond') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kacang Almond</p>
                                     </a>
                                 </li>
                             </ul>
@@ -210,9 +241,9 @@
                         <li class="slidebar-menu-category">
                             <button class="slidebar-accordion-menu" data-accordion-btn>
                                 <div class="menu-title-flex">
-                                    <img src="<?php echo base_url() ?>assets/img/logo/headphone.jpg" alt="" width="20"
+                                    <img src="<?php echo base_url() ?>assets/img/logo/fruits.png" alt="" width="20"
                                         height="22" class="menu-title-img">
-                                    <p class="menu-title">Headphone</p>
+                                    <p class="menu-title">Sayur dan Buah</p>
                                 </div>
 
                                 <div>
@@ -223,23 +254,31 @@
 
                             <ul class="slidebar-submenu-category-list" data-accordion>
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Beats</p>
-                                        <data value="300" class="stock" title="available stock">120</data>
+                                    <a href="<?= base_url('product/showall/terong') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">Terong</p>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Sony</p>
-                                        <data value="300" class="stock" title="available stock">200</data>
+                                    <a href="<?= base_url('product/showall/bayam') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">Bayam</p>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Razer</p>
-                                        <data value="300" class="stock" title="available stock">150</data>
+                                    <a href="<?= base_url('product/showall/kangkung') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Kangkung</p>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/tomat') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">Tomat</p>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/wortel') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">Wortel</p>
                                     </a>
                                 </li>
                             </ul>
@@ -247,9 +286,9 @@
                         <li class="slidebar-menu-category">
                             <button class="slidebar-accordion-menu" data-accordion-btn>
                                 <div class="menu-title-flex">
-                                    <img src="<?php echo base_url() ?>assets/img/logo/watch.jpg" alt="" width="20"
+                                    <img src="<?php echo base_url() ?>assets/img/logo/spices.png" alt="" width="20"
                                         class="menu-title-img">
-                                    <p class="menu-title">Watch</p>
+                                    <p class="menu-title">Rempah</p>
                                 </div>
 
                                 <div>
@@ -260,386 +299,164 @@
 
                             <ul class="slidebar-submenu-category-list" data-accordion>
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Casio</p>
-                                        <data value="300" class="stock" title="available stock">80</data>
+                                    <a href="<?= base_url('product/showall/lengkuas') ?>"
+                                        class="slidebar-submenu-title">
+                                        <p class="product-name">Lengkuas</p>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Fossil</p>
-                                        <data value="300" class="stock" title="available stock">96</data>
+                                    <a href="<?= base_url('product/showall/cengkeh') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">Cengkeh</p>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="#" class="slidebar-submenu-title">
-                                        <p class="product-name">Orient</p>
-                                        <data value="300" class="stock" title="available stock">84</data>
+                                    <a href="<?= base_url('product/showall/bawang') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">bawang</p>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/jahe') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">jahe</p>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/kemiri') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">kemiri</p>
+                                    </a>
+                                </li>
+                                <li class="slidebar-submenu-category">
+                                    <a href="<?= base_url('product/showall/kunyit') ?>" class="slidebar-submenu-title">
+                                        <p class="product-name">kunyit</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-
                     </ul>
-                </div>
-
-                <div class="product-showcase">
-                    <h3 class="showcase-heading">Best Seller</h3>
-                    <div class="showcase-wrapper">
-                        <div class="showcase-container">
-                            <div class="showcase">
-                                <a href="#" class="showcase-img-box">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                        class="showcase-img" width="75">
-                                </a>
-                                <div class="showcase-content">
-                                    <a href="#">
-                                        <h4 class="showcase-title">Product-1</h4>
-                                    </a>
-
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-                                    <div class="price-box">
-                                        <del>&dollar;360.70</del>
-                                        <p class="price">&dollar;246.00</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="showcase">
-                                <a href="#" class="showcase-img-box">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                        class="showcase-img" width="75">
-                                </a>
-                                <div class="showcase-content">
-                                    <a href="#">
-                                        <h4 class="showcase-title">Product-2</h4>
-                                    </a>
-
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-                                    <div class="price-box">
-                                        <del>&dollar;379.70</del>
-                                        <p class="price">&dollar;200.15</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="showcase">
-                                <a href="#" class="showcase-img-box">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                        class="showcase-img" width="75">
-                                </a>
-                                <div class="showcase-content">
-                                    <a href="#">
-                                        <h4 class="showcase-title">Product-3</h4>
-                                    </a>
-
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-                                    <div class="price-box">
-                                        <del>&dollar;360.99</del>
-                                        <p class="price">&dollar;206.20</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
             <div class="product-box">
                 <div class="product-minimal">
                     <div class="product-showcase">
-                        <h2 class="title">New Products</h2>
+                        <h2 class="title">Fruits and Vegetables</h2>
+
                         <div class="showcase-wrapper has-scrollbar">
-                            <div class="showcase-container">
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Matte Black</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$200.29</p>
-                                            <del>$330.95</del>
-                                        </div>
-                                    </div>
+                            <?php
+                            $targetKeywords = ['buah', 'sayur'];
+                            $targetIndexes = [];
+
+                            foreach ($products as $index => $product) {
+                                $containsKeyword = false;
+                                foreach ($targetKeywords as $keyword) {
+                                    if (stripos($product['label'], $keyword) !== false) {
+                                        $containsKeyword = true;
+                                        break;
+                                    }
+                                }
+                                if ($containsKeyword) {
+                                    $targetIndexes[] = $index;
+                                }
+                            }
+                            ?>
+
+                            <?php $productsPerContainer = 4; ?>
+                            <?php $containerCount = ceil(count($targetIndexes) / $productsPerContainer); ?>
+
+                            <?php for ($i = 0; $i < $containerCount; $i++): ?>
+                                <div class="showcase-container">
+                                    <?php for ($j = 0; $j < $productsPerContainer; $j++): ?>
+                                        <?php $index = $i * $productsPerContainer + $j; ?>
+                                        <?php if ($index < count($targetIndexes)): ?>
+                                            <?php $productIndex = $targetIndexes[$index]; ?>
+                                            <?php $product = $products[$productIndex]; ?>
+                                            <div class="showcase">
+                                                <a href="<?= base_url('product/detail/') . $product['id'] ?>"
+                                                    class="showcase-img-box">
+                                                    <img src="<?= base_url() . "assets/img/products/" . $product['image'] ?>" alt=""
+                                                        width="70" class="showcase-img">
+                                                </a>
+                                                <div class="showcase-content">
+                                                    <span>
+                                                        <h4 class="showcase-title">
+                                                            <?= $product['name'] ?>
+                                                        </h4>
+                                                    </span>
+                                                    <span class="product-description text-dark">
+                                                        <?= character_limiter($product['description'], 10) ?>
+                                                    </span>
+                                                    <div class="price-box">
+                                                        <p class="price text-dark">
+                                                            <?= "Rp." . number_format($product['disprice']) ?>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endfor; ?>
                                 </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Defiant Black Red</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$283.99</p>
-                                            <del>$389.99</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Midnight Black</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Blue</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="showcase-container">
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Defiant Black Red</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Shadow Gray</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Midnight Black</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Blue</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endfor; ?>
                         </div>
                     </div>
                     <div class="product-showcase">
-                        <h2 class="title">New Products</h2>
+                        <h2 class="title">Nuts and Spices</h2>
+
                         <div class="showcase-wrapper has-scrollbar">
-                            <div class="showcase-container">
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Matte Black</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
+                            <?php
+                            $targetKeywords = ['kacang', 'rempah'];
+                            $targetIndexes = [];
+
+                            foreach ($products as $index => $product) {
+                                $containsKeyword = false;
+                                foreach ($targetKeywords as $keyword) {
+                                    if (stripos($product['label'], $keyword) !== false) {
+                                        $containsKeyword = true;
+                                        break;
+                                    }
+                                }
+                                if ($containsKeyword) {
+                                    $targetIndexes[] = $index;
+                                }
+                            }
+                            ?>
+
+                            <?php $productsPerContainer = 4; ?>
+                            <?php $containerCount = ceil(count($targetIndexes) / $productsPerContainer); ?>
+
+                            <?php for ($i = 0; $i < $containerCount; $i++): ?>
+                                <div class="showcase-container">
+                                    <?php for ($j = 0; $j < $productsPerContainer; $j++): ?>
+                                        <?php $index = $i * $productsPerContainer + $j; ?>
+                                        <?php if ($index < count($targetIndexes)): ?>
+                                            <?php $productIndex = $targetIndexes[$index]; ?>
+                                            <?php $product = $products[$productIndex]; ?>
+                                            <div class="showcase">
+                                                <a href="<?= base_url('product/detail/') . $product['id'] ?>"
+                                                    class="showcase-img-box">
+                                                    <img src="<?= base_url() . "assets/img/products/" . $product['image'] ?>" alt=""
+                                                        width="70" class="showcase-img">
+                                                </a>
+                                                <div class="showcase-content">
+                                                    <span>
+                                                        <h4 class="showcase-title">
+                                                            <?= $product['name'] ?>
+                                                        </h4>
+                                                    </span>
+                                                    <span class="product-description text-dark">
+                                                        <?= character_limiter($product['description'], 10) ?>
+                                                    </span>
+                                                    <div class="price-box">
+                                                        <p class="price text-dark">
+                                                            <?= "Rp." . number_format($product['price']) ?>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endfor; ?>
                                 </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Defiant Black Red</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Midnight Black</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Blue</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="showcase-container">
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Defiant Black Red</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Shadow Gray</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Midnight Black</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="showcase">
-                                    <a href="#" class="showcase-img-box">
-                                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt=""
-                                            width="70" class="showcase-img">
-                                    </a>
-                                    <div class="showcase-content">
-                                        <a href="#">
-                                            <h4 class="showcase-title">Blue</h4>
-                                        </a>
-                                        <a href="#" class="showcase-category">Headphone</a>
-                                        <div class="price-box">
-                                            <p class="price">$263.99</p>
-                                            <del>$349.95</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endfor; ?>
                         </div>
                     </div>
                 </div>
@@ -647,465 +464,130 @@
                 <div class="product-featured">
                     <h2 class="title">Limited Offer</h2>
                     <div class="showcase-wrapper has-scrollbar">
-                        <div class="showcase-container">
-                            <div class="showcase">
-                                <div class="showcase-banner">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="
-                                        showcase-img">
-                                </div>
-                                <div class="showcase-content">
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-                                    <a href="#">
-                                        <h3 class="showcase-title">Beats Studio<sup>3</sup> Wireless Noise
-                                            Cancelling</h3>
-                                    </a>
 
-                                    <p class="showcase-desc">
-                                        Beats Studio 3 wireless over-ear headphones delivers premium sound while
-                                        blocking external naoise with active noise calcelling.
-                                    </p>
-
-                                    <div class="price-box">
-                                        <p class="price">$263</p>
-                                        <del>$389.99</del>
-                                    </div>
-
-                                    <button class="details-btn">details</button>
-                                    <div class="showcase-status">
-                                        <div class="wrapper">
-                                            <p>Sold : <b><i>35</i></b></p>
-                                            <p>Stock : <b><i>10</i></b></p>
+                        <?php foreach ($products as $product): ?>
+                            <?php if (strpos($product['label'], 'limited') !== false): ?>
+                                <div class="showcase-container">
+                                    <div class="showcase">
+                                        <div class="showcase-banner">
+                                            <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" class="
+                                                showcase-img">
                                         </div>
+                                        <div class="showcase-content">
+                                            <a href="#">
+                                                <h3 class="showcase-title">
+                                                    <?= $product['name'] ?>
+                                                </h3>
+                                            </a>
 
-                                        <div class="showcase-status-bar"></div>
-                                    </div>
-                                    <div class="countdown-box">
-                                        <p class="countdown-desc">
-                                            Only 10 left in stock - order soon.
-                                        </p>
+                                            <p class="showcase-desc">
+                                                <?= character_limiter($product['description'], 100) ?>
+                                            </p>
 
-                                        <div class="countdown">
-                                            <div class="countdown-content">
-                                                <p class="display-number">5</p>
-                                                <p class="display-text">days</p>
+                                            <div class="price-box">
+                                                <p class="price">
+                                                    <?= 'Rp' . number_format($product['disprice']) ?>
+                                                </p>
                                             </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">10</p>
-                                                <p class="display-text">hours</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">26</p>
-                                                <p class="display-text">min</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">45</p>
-                                                <p class="display-text">sec</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="showcase-container">
-                            <div class="showcase">
-                                <div class="showcase-banner">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="
-                                        showcase-img">
-                                </div>
-                                <div class="showcase-content">
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-                                    <a href="#">
-                                        <h3 class="showcase-title">Beats Studio<sup>3</sup> Wireless Noise
-                                            Cancelling</h3>
-                                    </a>
+                                            <a href="<?= base_url('product/detail/') . $product['id'] ?>">
+                                                <button class="details-btn">details</button>
+                                            </a>
+                                            <div class="showcase-status">
+                                                <div class="wrapper">
+                                                    <p>Sold : <b><i>35</i></b></p>
+                                                    <p>Stock : <b><i>
+                                                                <?= $product['stock'] ?>
+                                                            </i></b></p>
+                                                </div>
 
-                                    <p class="showcase-desc">
-                                        Beats Studio 3 wireless over-ear headphones delivers premium sound while
-                                        blocking external naoise with active noise calcelling.
-                                    </p>
-
-                                    <div class="price-box">
-                                        <p class="price">$263</p>
-                                        <del>$349.95</del>
-                                    </div>
-
-                                    <button class="details-btn">details</button>
-                                    <div class="showcase-status">
-                                        <div class="wrapper">
-                                            <p>Sold : <b><i>35</i></b></p>
-                                            <p>Stock : <b><i>10</i></b></p>
-                                        </div>
-
-                                        <div class="showcase-status-bar"></div>
-                                    </div>
-                                    <div class="countdown-box">
-                                        <p class="countdown-desc">
-                                            Only 10 left in stock - order soon.
-                                        </p>
-
-                                        <div class="countdown">
-                                            <div class="countdown-content">
-                                                <p class="display-number">3</p>
-                                                <p class="display-text">days</p>
+                                                <div class="showcase-status-bar"></div>
                                             </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">1</p>
-                                                <p class="display-text">hours</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">12</p>
-                                                <p class="display-text">min</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">5</p>
-                                                <p class="display-text">sec</p>
+                                            <div class="countdown-box">
+                                                <p class="countdown-desc">
+                                                    Only 10 left in stock - order soon.
+                                                </p>
+
+                                                <div class="countdown">
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">5</p>
+                                                        <p class="display-text">days</p>
+                                                    </div>
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">10</p>
+                                                        <p class="display-text">hours</p>
+                                                    </div>
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">26</p>
+                                                        <p class="display-text">min</p>
+                                                    </div>
+                                                    <div class="countdown-content">
+                                                        <p class="display-number">45</p>
+                                                        <p class="display-text">sec</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="showcase-container">
-                            <div class="showcase">
-                                <div class="showcase-banner">
-                                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg"" class="
-                                        showcase-img">
-                                </div>
-                                <div class="showcase-content">
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-                                    <a href="#">
-                                        <h3 class="showcase-title">Beats Studio<sup>3</sup> Wireless Noise
-                                            Cancelling</h3>
-                                    </a>
-
-                                    <p class="showcase-desc">
-                                        Beats Studio 3 wireless over-ear headphones delivers premium sound while
-                                        blocking external naoise with active noise calcelling.
-                                    </p>
-
-                                    <div class="price-box">
-                                        <p class="price">$263</p>
-                                        <del>$300.95</del>
-                                    </div>
-
-                                    <button class="details-btn">details</button>
-                                    <div class="showcase-status">
-                                        <div class="wrapper">
-                                            <p>Sold : <b><i>35</i></b></p>
-                                            <p>Stock : <b><i>10</i></b></p>
-                                        </div>
-
-                                        <div class="showcase-status-bar"></div>
-                                    </div>
-                                    <div class="countdown-box">
-                                        <p class="countdown-desc">
-                                            Only 10 left in stock - order soon.
-                                        </p>
-
-                                        <div class="countdown">
-                                            <div class="countdown-content">
-                                                <p class="display-number">4</p>
-                                                <p class="display-text">days</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">4</p>
-                                                <p class="display-text">hours</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">6</p>
-                                                <p class="display-text">min</p>
-                                            </div>
-                                            <div class="countdown-content">
-                                                <p class="display-number">15</p>
-                                                <p class="display-text">sec</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
                     </div>
-
-                    <div class="display-details has-scrollbar">
-                        <div class="product-details-content">
-                            <button class="main-modal-close-btn" details-popup-close>
-                                <ion-icon name="close-outline"></ion-icon>
-                            </button>
-                            <div class="product-content">
-                                <div>
-                                    <img width="200" class="detail-product-img" alt="">
-                                    <div class="detail-btn-actions">
-                                        <div class="item-btn">Add to Cart</div>
-                                        <div class="item-btn">Favorite</div>
-                                    </div>
-                                </div>
-                                <div class="product-desc has-scrollbar">
-
-                                    <div class="product-title"></div>
-                                    <p class="item-desc">Beats Studio 3 wireless over-ear headphones delivers
-                                        premium sound while
-                                        blocking external naoise with active noise calcelling.</p>
-                                    <h3>Price</h3>
-                                    <div class="price-box">
-                                        <p class="price price-now"></p>
-                                        <del class="del-price"></del>
-                                    </div>
-                                    <h3>Rating</h3>
-                                    <div class="showcase-rating">
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                        <ion-icon name="star"></ion-icon>
-                                    </div>
-
-
-                                    <table>
-                                        <tr>
-                                            <td>Brand</td>
-                                            <td>Beats</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Model Name</td>
-                                            <td>Beats Studio<sup>3</sup></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Color</td>
-                                            <td id="item-color"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Form Factor</td>
-                                            <td>Over Ear</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Connectivity</td>
-                                            <td>Wireless, Wires, NFC</td>
-                                        </tr>
-                                    </table>
-
-                                    <div class="desc-title">About this item :</div>
-                                    <div class="desc-content">
-                                        <ul>
-                                            <li>High-performance wireless noise cancelling headphones</li>
-                                            <li>Compatible with iOS and Android devices.</li>
-                                            <li>Pure adaptive noise canceling (pure ANC) actively blocks external
-                                                noise
-                                            </li>
-                                            <li>Real-time Audio calibration preserves a Premium listening experience
-                                            </li>
-                                            <li>Up to 22 hours of battery life enables full-featured all-day
-                                                wireless
-                                                playback</li>
-                                            <li>Apple's W1 chip and industry-leading Bluetooth technology keep you
-                                                connected farther with fewer drop-outs</li>
-                                            <li>With fast Fuel, a 10-minute charge gives 3 hours of play when
-                                                battery is
-                                                low. Rechargeable lithium ion battery</li>
-                                            <li>Take calls, control your music, and activate Siri with the
-                                                multifunction
-                                                on-ear controls and microphone</li>
-                                            <li>What's in the box: Beats Studio3 Wireless headphones, Carrying case,
-                                                3.5mm RemoteTalk cable, Universal USB charging cable, Quick Start
-                                                Guide,
-                                                Warranty Card</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-
                 <div class="product-main">
-                    <h2 class="title">January Special Price</h2>
+                    <h2 class="title">Discount</h2>
                     <div class="product-grid-container">
-                        <div class="showcase">
-                            <div class="showcase-banner">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="100"
-                                    class="product-img default">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="100"
-                                    class="product-img hover">
+                        <?php foreach ($products as $product): ?>
+                            <?php
+                            $labelsArray = explode(',', $product['label']);
+                            $firstLabel = trim($labelsArray[0]);
+                            if ($product['discount'] != 0): ?>
+                                <div class="showcase">
+                                    <div class="showcase-banner">
+                                        <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" alt=""
+                                            width="100" class="product-img default">
+                                        <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" alt=""
+                                            width="100" class="product-img hover">
+                                        <?php if ($product['discount'] != 0): ?>
+                                            <?php if ($product['discount'] < 50): ?>
+                                                <p class="showcase-bagde angle r-blue">
+                                                    <?php echo $product['discount'] ?>%
+                                                </p>
+                                            <?php else: ?>
+                                                <p class="showcase-bagde">
+                                                    <?php echo $product['discount'] ?>%
+                                                </p>
+                                            <?php endif ?>
+                                        <?php endif ?>
+                                    </div>
 
-                                <p class="showcase-bagde angle r-blue">25%</p>
-                                <div class="showcase-actions">
-                                    <button class="btn-action">
-                                        <ion-icon name="heart-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="repeat-outline"></ion-icon>
-                                    </button>
+                                    <div class="showcase-content">
+                                        <a href="<?= base_url('product/showall/') . $firstLabel ?>" class="showcase-category">
+                                            <?= $firstLabel ?>
+                                        </a>
+                                        <a href="<?= base_url('product/detail/') . $product['id'] ?>">
+                                            <h3 class="showcase-title">
+                                                <?= $product['name'] ?>
+                                            </h3>
+                                        </a>
+                                        <div class="price-box">
+                                            <?php if ($product['discount'] != 0) { ?>
+                                                <p>
+                                                    <?php echo "Rp." . number_format($product['disprice']) ?>
+                                                </p>
+                                                <del>
+                                                    <?php echo "Rp." . number_format($product['price']) ?>
+                                                </del>
+                                            <?php } else { ?>
+                                                <p>
+                                                    <?php echo "Rp." . number_format($product['disprice']) ?>
+                                                </p>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php endif ?>
+                        <?php endforeach ?>
 
-                            <div class="showcase-content">
-                                <a href="#" class="showcase-category">Headphone</a>
-                                <a href="#">
-                                    <h3 class="showcase-title">Beats Studio<sup>3</sup></h3>
-                                </a>
-
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                </div>
-
-                                <div class="price-box">
-                                    <p class="price">$262.46</p>
-                                    <del>$349.95</del>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="showcase">
-                            <div class="showcase-banner">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                    class="product-img default">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                    class="product-img hover">
-
-                                <p class="showcase-bagde">31%</p>
-                                <div class="showcase-actions">
-                                    <button class="btn-action">
-                                        <ion-icon name="heart-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="repeat-outline"></ion-icon>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="showcase-content">
-                                <a href="#" class="showcase-category">Headphone</a>
-                                <a href="#">
-                                    <h3 class="showcase-title">Beats Studio<sup>3</sup></h3>
-                                </a>
-
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                </div>
-
-                                <div class="price-box">
-                                    <p class="price">$241.47</p>
-                                    <del>$349.95</del>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="showcase">
-                            <div class="showcase-banner">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                    class="product-img default">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                    class="product-img hover">
-
-                                <p class="showcase-bagde angle r-blue">25%</p>
-                                <div class="showcase-actions">
-                                    <button class="btn-action">
-                                        <ion-icon name="heart-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="repeat-outline"></ion-icon>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="showcase-content">
-                                <a href="#" class="showcase-category">Headphone</a>
-                                <a href="#">
-                                    <h3 class="showcase-title">Beats Studio<sup>3</sup></h3>
-                                </a>
-
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                </div>
-
-                                <div class="price-box">
-                                    <p class="price">$262.46</p>
-                                    <del>$349.95</del>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="showcase">
-                            <div class="showcase-banner">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                    class="product-img default">
-                                <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" alt="" width="300"
-                                    class="product-img hover">
-
-                                <p class="showcase-bagde">31%</p>
-                                <div class="showcase-actions">
-                                    <button class="btn-action">
-                                        <ion-icon name="heart-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </button>
-                                    <button class="btn-action">
-                                        <ion-icon name="repeat-outline"></ion-icon>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="showcase-content">
-                                <a href="#" class="showcase-category">Headphone</a>
-                                <a href="#">
-                                    <h3 class="showcase-title">Beats Studio<sup>3</sup></h3>
-                                </a>
-
-                                <div class="showcase-rating">
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                    <ion-icon name="star"></ion-icon>
-                                </div>
-
-                                <div class="price-box">
-                                    <p class="price">$241.47</p>
-                                    <del>$349.95</del>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1124,95 +606,50 @@
                     <input type="radio" name="" class="btn-slide" id="btn-slide5">
                     <input type="radio" name="" class="btn-slide" id="btn-slide6">
                     <div class="testimonial-wrapper has-scrollbar">
-                        <div class="testimonial-card-content">
-                            <img src="<?php echo base_url() ?>assets/img/testimonial/billgates.jpg" alt=""
-                                class="testimonial-benner" width="80" height="80">
-                            <p class="customer-name">billgates</p>
-                            <p class="customer-title">CO-Founder of Microsoft</p>
-                            <p class="testimonial-description">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                . Iusto, accusantium autem!
-                            </blockquote>
-                            </p>
-                        </div>
-                        <div class="testimonial-card-content">
-                            <img src="<?php echo base_url() ?>assets/img/testimonial/daniel.jpg" alt=""
-                                class="testimonial-benner" width="80" height="80">
-                            <p class="customer-name">daniel</p>
-                            <p class="customer-title">CO-Founder of Microsoft</p>
-                            <p class="testimonial-description">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                            </blockquote>
-                            </p>
-                        </div>
-                        <div class="testimonial-card-content">
-                            <img src="<?php echo base_url() ?>assets/img/testimonial/elonmusk.jpg" alt=""
-                                class="testimonial-benner" width="80" height="80">
-                            <p class="customer-name">elon musk</p>
-                            <p class="customer-title">CO-Founder of Microsoft</p>
-                            <p class="testimonial-description">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                            </blockquote>
-                            </p>
-                        </div>
-                        <div class="testimonial-card-content">
-                            <img src="<?php echo base_url() ?>assets/img/testimonial/larrypage.jpg" alt=""
-                                class="testimonial-benner" width="80" height="80">
-                            <p class="customer-name">larry page</p>
-                            <p class="customer-title">CO-Founder of Microsoft</p>
-                            <p class="testimonial-description">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                            </blockquote>
-                            </p>
-                        </div>
-                        <div class="testimonial-card-content">
-                            <img src="<?php echo base_url() ?>assets/img/testimonial/markzuck.jpg" alt=""
-                                class="testimonial-benner" width="80" height="80">
-                            <p class="customer-name">mark zuckerburg</p>
-                            <p class="customer-title">CO-Founder of Microsoft</p>
-                            <p class="testimonial-description">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                            </blockquote>
-                            </p>
-                        </div>
-                        <div class="testimonial-card-content">
-                            <img src="<?php echo base_url() ?>assets/img/testimonial/patrick.jpg" alt=""
-                                class="testimonial-benner" width="80" height="80">
-                            <p class="customer-name">patrick</p>
-                            <p class="customer-title">CO-Founder of Microsoft</p>
-                            <p class="testimonial-description">
-                            <blockquote>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. At illo, dicta, aspernatur
-                                sequi, voluptas quaerat assumenda ad atque rerum eius mollitia voluptatem incidunt
-                                praesentium debitis quisquam aliquid. Iusto, accusantium autem!
-                            </blockquote>
-                            </p>
-                        </div>
-
+                        <?php foreach ($feedbacks as $feedback): ?>
+                            <div class="testimonial-card-content">
+                                <?php $session = session();
+                                if (!empty($feedback['img'])): ?>
+                                    <img src="<?php echo base_url() ?>assets/img/profile/<?= $feedback['img'] ?>" alt=""
+                                        class="testimonial-benner" width="80" height="80">
+                                <?php else: ?>
+                                    <img src="<?php echo base_url() ?>assets/img/profile/default.png?>" alt=""
+                                        class="testimonial-benner" width="80" height="80">
+                                <?php endif ?>
+                                <p class="customer-name">
+                                    <?= $feedback['name'] ?>
+                                </p>
+                                <p class="customer-title">
+                                    <?= $feedback['username'] ?>
+                                </p>
+                                <p class="testimonial-description">
+                                <blockquote>
+                                    <?= $feedback['message'] ?>
+                                </blockquote>
+                                </p>
+                            </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
                 <div class="special-offer-container">
-                    <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="special-offer-benner">
-                    <a href="#" class="special-offer-content">
-                        <p class="special-offer-discount">25% Discount</p>
-                        <h2 class="special-offer-title">Beats<sup>3</sup> Collection</h2>
-                        <p class="special-offer-text">starting at $230.95</p>
-                        <button class="special-offer-button">Get it Now</button>
-                    </a>
-
+                    <?php if ($special_offer): ?>
+                        <img src="<?php echo base_url() ?>assets/img/products/<?php echo $special_offer['image']; ?>"
+                            class="special-offer-benner">
+                        <a href="<?= base_url('product/detail/') . $special_offer['id'] ?>" class="special-offer-content">
+                            <p class="special-offer-discount">
+                                <?php echo "Diskon  " . $special_offer['discount']; ?>%
+                            </p>
+                            <h2 class="special-offer-title">
+                                <?php echo $special_offer['name']; ?>
+                            </h2>
+                            <p class="special-offer-text">hanya
+                                <?php echo "Rp." . number_format($special_offer['disprice']); ?>
+                            </p>
+                            <button class="special-offer-button">Dapatkan Sekarang</button>
+                        </a>
+                    <?php else: ?>
+                        <p>No special offer available.</p>
+                    <?php endif; ?>
                 </div>
                 <!-- <div class="service">
                         <h2 class="title">Our Services</h2>
@@ -1275,7 +712,7 @@
         </div>
     </section>
 
-    <section class="blog">
+    <!-- <section class="blog">
         <div class="container">
             <div class="blog-container has-scrollbar">
                 <div class="blog-card">
@@ -1284,12 +721,12 @@
                             width="300">
                     </a>
                     <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
+                        <a href="#" class="blog-category">Sayur</a>
                         <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
+                            <h3 class="blog-title">Lihat Semua</h3>
 
                             <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
                             </p>
                         </a>
                     </div>
@@ -1300,12 +737,12 @@
                             width="300">
                     </a>
                     <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
+                        <a href="#" class="blog-category">Sayur</a>
                         <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
+                            <h3 class="blog-title">Lihat Semua</h3>
 
                             <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
                             </p>
                         </a>
                     </div>
@@ -1316,44 +753,12 @@
                             width="300">
                     </a>
                     <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
+                        <a href="#" class="blog-category">Sayur</a>
                         <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
+                            <h3 class="blog-title">Lihat Semua</h3>
 
                             <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class=" blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
-                        <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
-
-                            <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class=" blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
-                        <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
-
-                            <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
                             </p>
                         </a>
                     </div>
@@ -1364,34 +769,82 @@
                             width="300">
                     </a>
                     <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
+                        <a href="#" class="blog-category">Sayur</a>
                         <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
+                            <h3 class="blog-title">Lihat Semua</h3>
 
                             <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
                             </p>
                         </a>
                     </div>
                 </div>
                 <div class="blog-card">
                     <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class=" blog-benner"
+                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
                             width="300">
                     </a>
                     <div class="blog-content">
-                        <a href="#" class="blog-category">headphone</a>
+                        <a href="#" class="blog-category">Sayur</a>
                         <a href="#">
-                            <h3 class="blog-title">Beats <sup>3</sup> Headphone </h3>
+                            <h3 class="blog-title">Lihat Semua</h3>
 
                             <p class="blog-meta">
-                                By <cite>Beats</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <a href="#">
+                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
+                            width="300">
+                    </a>
+                    <div class="blog-content">
+                        <a href="#" class="blog-category">Sayur</a>
+                        <a href="#">
+                            <h3 class="blog-title">Lihat Semua</h3>
+
+                            <p class="blog-meta">
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <a href="#">
+                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
+                            width="300">
+                    </a>
+                    <div class="blog-content">
+                        <a href="#" class="blog-category">Sayur</a>
+                        <a href="#">
+                            <h3 class="blog-title">Lihat Semua</h3>
+
+                            <p class="blog-meta">
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <a href="#">
+                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
+                            width="300">
+                    </a>
+                    <div class="blog-content">
+                        <a href="#" class="blog-category">Sayur</a>
+                        <a href="#">
+                            <h3 class="blog-title">Lihat Semua</h3>
+
+                            <p class="blog-meta">
+                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
                             </p>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </main>
 <?= $this->endSection('content') ?>

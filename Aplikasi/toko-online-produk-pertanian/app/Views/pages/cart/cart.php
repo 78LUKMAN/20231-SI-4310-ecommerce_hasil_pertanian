@@ -2,11 +2,19 @@
 
 <?= $this->section('content') ?>
 <main class="container">
-
+<?php
+if (session()->getFlashData('success')) {
+    ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= session()->getFlashData('success') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php
+}
+?>
     <div class="pagetitle">
         <h1>Shopping Cart</h1>
     </div>
-
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
@@ -14,7 +22,7 @@
                     <div class="card-body">
                         <span><br></span>
                         <!-- Table with stripped rows -->
-                        <?php form_open() ?>
+                        <?php echo form_open('cart/edit') ?>
                         <div class="table-responsive">
                             <table class="table datatable" id="example">
                                 <thead>
@@ -29,68 +37,49 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Brandon Jacob</td>
-                                        <td><img src="<?php echo base_url() ?>/assets/img/products/sayurbuah.jpg"
-                                                style="width:100px" alt=""></td>
-                                        <td>Rp. 30.000,00</td>
-                                        <td><input type="number" value="4"
-                                                style="width:50px; text-align:center; border:unset;"></td>
-                                        <td>Rp. 120.000,00</td>
-                                        <td>
-                                            <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Brandon Jacob</td>
-                                        <td><img src="<?php echo base_url() ?>/assets/img/products/sayurbuah.jpg"
-                                                style="width:100px" alt=""></td>
-                                        <td>Rp. 30.000,00</td>
-                                        <td><input type="number" value="4"
-                                                style="width:50px; text-align:center; border:unset;"></td>
-                                        <td>Rp. 120.000,00</td>
-                                        <td>
-                                            <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Brandon Jacob</td>
-                                        <td><img src="<?php echo base_url() ?>/assets/img/products/sayurbuah.jpg"
-                                                style="width:100px" alt=""></td>
-                                        <td>Rp. 30.000,00</td>
-                                        <td><input type="number" value="4"
-                                                style="width:50px; text-align:center; border:unset;"></td>
-                                        <td>Rp. 120.000,00</td>
-                                        <td>
-                                            <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Brandon indra</td>
-                                        <td><img src="<?php echo base_url() ?>/assets/img/products/sayurbuah.jpg"
-                                                style="width:100px" alt=""></td>
-                                        <td>Rp. 30.000,00</td>
-                                        <td><input type="number" value="4"
-                                                style="width:50px; text-align:center; border:unset;"></td>
-                                        <td>Rp. 120.000,00</td>
-                                        <td>
-                                            <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-                                        </td>
-                                    </tr>
+
+                                    <?php
+                                    $i = 1;
+                                    if (!empty($items)):
+                                        foreach ($items as $index => $item):
+                                            ?>
+                                            <tr>
+                                                <td>
+                                                    <?= $i ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $item['name'] ?>
+                                                </td>
+                                                <td><img src="<?php echo base_url() . "assets/img/products/" . $item['options']['image'] ?>"
+                                                        width="100px"></td>
+                                                <td>
+                                                    <?php echo "Rp.".number_format ($item['disprice']) ?>
+                                                </td>
+                                                <td><input type="number" min="1" name="qty<?php echo $i++ ?>"
+                                                        class="form-control" value="<?php echo $item['qty'] ?>"></td>
+                                                <td>
+                                                    <?php echo "Rp.".number_format($item['subtotal']) ?>
+                                                </td>
+                                                <td>
+                                                    <a href="<?php echo base_url('cart/delete/' . $item['rowid'] . '') ?>"
+                                                        class="btn btn-danger"><i class="bi bi-trash"></i>&nbsp;Hapus</a>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        endforeach;
+                                    endif;
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
+                        <div class="alert alert-info">
+                            <?php echo "Total = " . "Rp.".number_format($total) ?>
+                        </div>
                         <button type="submit" class="btn btn-primary">Perbarui Keranjang</button>
-                        <a class="btn btn-warning" href="<?php echo base_url() ?>keranjang/clear">Kosongkan
+                        <a class="btn btn-warning" href="<?php echo base_url() ?>cart/clear">Kosongkan
                             Keranjang</a>
-                        <a class="btn btn-success" href="<?php echo base_url() ?>checkout">Selesai Belanja</a>
-                        <?php form_close()?>
-                        <!-- End Table with stripped rows -->
-
+                        <a class="btn btn-success" href="<?php echo base_url() ?>cart/checkout">Selesai Belanja</a>
+                        <?php form_close() ?>
                     </div>
                 </div>
 
