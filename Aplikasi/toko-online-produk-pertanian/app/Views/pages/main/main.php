@@ -16,7 +16,7 @@
             <form action="#">
                 <div class="newsletter-header">
                     <h3 class="newsletter-title">Subscribe</h3>
-                    <p class="newsletter-desc">Subscribe the <b>Beats Store</b> to get latest product and discount
+                    <p class="newsletter-desc">Subscribe the <b>Local Farms</b> to get latest product and discount
                         update</p>
                 </div>
                 <input type="email" name="email" class="email-field" id="" placeholder="type your email" required>
@@ -199,39 +199,39 @@
 
                             <ul class="slidebar-submenu-category-list" data-accordion>
                                 <li class="slidebar-submenu-category">
-                                    <a href="<?= base_url('product/showall/kacang-tanah') ?>"
+                                    <a href="<?= base_url('product/showall/kacangtanah') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Tanah</p>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="<?= base_url('product/showall/kacang-polong') ?>"
+                                    <a href="<?= base_url('product/showall/kacangpolong') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Polong</p>
                                     </a>
                                 </li>
 
                                 <li class="slidebar-submenu-category">
-                                    <a href="<?= base_url('product/showall/kacang-mede') ?>"
+                                    <a href="<?= base_url('product/showall/kacangmete') ?>"
                                         class="slidebar-submenu-title">
-                                        <p class="product-name">Kacang Mede</p>
+                                        <p class="product-name">Kacang Mete</p>
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
-                                    <a href="<?= base_url('product/showall/kacang-arab') ?>"
+                                    <a href="<?= base_url('product/showall/kacangarab') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Arab</p>
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
-                                    <a href="<?= base_url('product/showall/kacang-panjang') ?>"
+                                    <a href="<?= base_url('product/showall/kacangpanjang') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Panjang</p>
                                     </a>
                                 </li>
                                 <li class="slidebar-submenu-category">
-                                    <a href="<?= base_url('product/showall/kacang-almond') ?>"
+                                    <a href="<?= base_url('product/showall/kacangalmond') ?>"
                                         class="slidebar-submenu-title">
                                         <p class="product-name">Kacang Almond</p>
                                     </a>
@@ -608,11 +608,12 @@
                     <div class="testimonial-wrapper has-scrollbar">
                         <?php foreach ($feedbacks as $feedback): ?>
                             <div class="testimonial-card-content">
-                                <?php if (!empty(session()->get('img'))): ?>
-                                    <img src="<?php echo base_url() ?>assets/img/profile/<?= $feedback['img']?>" alt=""
+                                <?php $session = session();
+                                if (!empty($feedback['img'])): ?>
+                                    <img src="<?php echo base_url() ?>assets/img/profile/<?= $feedback['img'] ?>" alt=""
                                         class="testimonial-benner" width="80" height="80">
                                 <?php else: ?>
-                                    <img src="<?php echo base_url() ?>assets/img/testimonial/default.png" alt=""
+                                    <img src="<?php echo base_url() ?>assets/img/profile/default.png?>" alt=""
                                         class="testimonial-benner" width="80" height="80">
                                 <?php endif ?>
                                 <p class="customer-name">

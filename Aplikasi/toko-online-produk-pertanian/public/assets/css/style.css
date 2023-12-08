@@ -2036,6 +2036,9 @@ ul {
         font-size: var(--fs-9);
         text-transform: uppercase;
     }
+    .header-tagline {
+        text-transform: capitalize;
+    }
 
     .header-alert-news b {
         font-weight: var(--weight-500);

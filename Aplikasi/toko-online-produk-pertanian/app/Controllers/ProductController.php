@@ -40,8 +40,8 @@ class ProductController extends BaseController
                 'discount' => 'required|max_length[2]|numeric',
                 'stock' => 'required|max_length[3]|numeric',
                 'description' => 'required',
-                'image' => 'uploaded[image]|max_size[image,1024]|is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
-                'label' => 'required|max_length[30]|min_length[10]',
+                'image' => 'uploaded[image]|max_size[image,3024]|is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
+                'label' => 'required|max_length[30]|min_length[6]',
             ];
             if ($this->validate($rules)) {
 
@@ -65,14 +65,14 @@ class ProductController extends BaseController
                     }
                     $randFileName = $image->getRandomName();
                     $image->move('assets/img/products/', $randFileName);
-                }
-                ;
+                };
 
                 $data['image'] = $randFileName;
                 $this->productModel->insert($data);
                 return redirect('admin/products')->with('success', 'Berhasil menambahkan produk');
 
             } else {
+                session()->setFlashdata('input_data', $this->request->getPost());
                 return redirect('admin/products')->withInput()->with('failed', $validator->getErrors());
 
             }
@@ -90,8 +90,8 @@ class ProductController extends BaseController
                 'discount' => 'required|max_length[2]|numeric',
                 'stock' => 'required|max_length[3]|numeric',
                 'description' => 'required',
-                'image' => 'max_size[image,1024]|is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
-                'label' => 'required|max_length[30]|min_length[10]',
+                'image' => 'max_size[image,3024]|is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
+                'label' => 'required|max_length[30]|min_length[6]',
             ];
 
             if ($this->validate($rules)) {

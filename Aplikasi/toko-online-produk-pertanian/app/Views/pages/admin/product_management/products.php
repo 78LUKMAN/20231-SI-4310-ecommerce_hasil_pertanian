@@ -175,30 +175,30 @@ if (session()->getFlashData('success')) {
             <div class="modal-body">
                 <div class="form-group">
                     <label for="name">Nama</label>
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Nama Barang" required>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Nama Barang" value="<?php echo session('input_data.name'); ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="name">Harga</label>
-                    <input type="text" name="price" class="form-control" id="price" placeholder="Harga Barang" required>
+                    <input type="text" name="price" class="form-control" id="price" placeholder="Harga Barang" value="<?php echo session('input_data.price'); ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="name">Diskon</label>
-                    <input type="text" name="discount" class="form-control" id="discount" placeholder="ketik angka 0 jika tidak ada diskon"
+                    <input type="text" name="discount" class="form-control" id="discount" placeholder="ketik angka 0 jika tidak ada diskon" value="<?php echo session('input_data.discount'); ?>"
                         required>
                 </div>
                 <div class="form-group">
                     <label for="name">Jumlah</label>
-                    <input type="text" name="stock" class="form-control" id="stock" placeholder="Jumlah Barang"
+                    <input type="text" name="stock" class="form-control" id="stock" placeholder="Jumlah Barang" value="<?php echo session('input_data.stock'); ?>"
                         required>
                 </div>
                 <div class="form-group">
                     <label for="label">Label</label>
-                    <input type="text" name="label" class="form-control" id="label" placeholder="format => jenis,nama,...[optional]" required>
+                    <input type="text" name="label" class="form-control" id="label" placeholder="format => jenis,nama,...[optional] misal: kacang,kacangpanjang,limited" value="<?php echo session('input_data.label'); ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="name">Keterangan</label>
                     <input type="text" name="description" class="form-control" id="description"
-                        placeholder="Keterangan Barang" required>
+                        placeholder="Keterangan Barang" value="<?php echo session('input_data.description'); ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="image">Foto</label>

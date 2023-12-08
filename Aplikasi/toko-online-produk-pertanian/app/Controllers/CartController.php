@@ -182,6 +182,7 @@ class CartController extends BaseController
             $dataForm = [
                 'order_id' => $id_order,
                 'name' => $this->request->getPost('name'),
+                'username' => $this->request->getPost('username'),
                 'total' => $this->request->getPost('price_total'),
                 'address' => $this->request->getPost('address'),
                 'email' => $this->request->getPost('email'),

@@ -8,7 +8,7 @@
         <div class="header-main">
             <div class="container" style="justify-content:center !important;">
                 <a href="/" class="header-logo">
-                    <img src="<?php echo base_url() ?>assets/img/logo/manlogo.PNG" alt="logo" width="120">
+                    <img src="<?php echo base_url() ?>assets/img/logo/logo.png" alt="logo" width="120">
                 </a>
             </div>
         </div>

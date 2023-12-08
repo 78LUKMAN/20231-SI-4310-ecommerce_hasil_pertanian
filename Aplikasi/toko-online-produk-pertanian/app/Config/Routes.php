@@ -26,12 +26,12 @@ $routes->group('auth', function ($routes) {
 
 // User Activity (cart, history, transaction)
 $routes->group('activity', function ($routes) {
-    $routes->post('statusupdate', 'PaymentController::updateStatus');
     $routes->get('cart', 'CartController::cart', ['filter' => 'auth']);
     $routes->get('profile', 'ProfileController::index', ['filter' => 'auth']);
     $routes->get('history', 'HistoryController::history', ['filter' => 'auth']);
-    $routes->get('feedback', 'FeedbackController::index');
-    $routes->post('feedback/send', 'FeedbackController::send');
+    $routes->get('feedback', 'FeedbackController::index', ['filter' => 'auth']);
+    $routes->post('feedback/send', 'FeedbackController::send', ['filter' => 'auth']);
+    $routes->post('statusupdate', 'PaymentController::updateStatus', ['filter' => 'auth']);
 
 });
 
@@ -45,11 +45,11 @@ $routes->group('profile', function ($routes) {
 // Admin (product, account management, transaction management)
 $routes->group('admin', function ($routes) {
     $routes->get('/', 'AdminController::index', ['filter' => 'auth']);
-    $routes->get('transaction', 'AdminController::showAllUsersHistory');
     $routes->get('accounts', 'AdminController::accounts', ['filter' => 'auth']);
     $routes->get('products', 'ProductController::products', ['filter' => 'auth']);
     $routes->post('account/add', 'AdminController::adduser', ['filter' => 'auth']);
     $routes->post('product/add', 'ProductController::addproduct', ['filter' => 'auth']);
+    $routes->get('transaction', 'AdminController::showAllUsersHistory', ['filter' => 'auth']);
     $routes->post('account/edit/(:num)', 'AdminController::edituser/$1', ['filter' => 'auth']);
     $routes->post('account/delete/(:num)', 'AdminController::deleteuser/$1', ['filter' => 'auth']);
     $routes->post('product/edit/(:any)', 'ProductController::editproduct/$1', ['filter' => 'auth']);

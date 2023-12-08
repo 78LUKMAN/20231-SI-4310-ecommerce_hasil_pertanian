@@ -23,21 +23,11 @@
                     </a>
                 </li>
             </ul>
+            <div class="w-50"><marquee behavior="smooth" direction="left" class="header-tagline header-alert-news">
+                <p>Ingin produk berkualitas hanya dengan ujung jari? Pekalongan Groceria solusinya!! Pekalongan Groceria - sentuhan kesegaran untuk hidup lebih ceria</p>
+            </marquee></div>
             <div class="header-alert-news">
-                <p><b>Free Shipping</b>This Week Order Over - $250</p>
-            </div>
-
-            <div class="header-top-actions">
-                <select name="currency">
-                    <option value="usd">USD &dollar;</option>
-                    <option value="usd">EUR &euro;</option>
-                </select>
-
-                <select name="language">
-                    <option value="es-US">English</option>
-                    <option value="es-ES">Espa&ntilde;ol</option>
-                    <option value="fr">Fran&ccedil;ais</option>
-                </select>
+                <p><b>Pekalongan</b> Groceria</p>
             </div>
         </div>
     </div>
@@ -45,7 +35,7 @@
     <div class="header-main">
         <div class="container">
             <a href="<?php echo base_url() ?>" class="header-logo">
-                <img src="<?php echo base_url() ?>assets/img/logo/manlogo.PNG" alt="logo" width="80">
+                <img src="<?php echo base_url() ?>assets/img/logo/logo.png" alt="logo" width="80">
             </a>
             <div class="header-search-container">
                 <?= form_open(base_url('product/search'), ['method' => 'post']); ?>
@@ -91,7 +81,7 @@
                 <a href="<?php echo base_url() ?>activity/cart" id="cart-btn" <?php echo hideButton($cartUrl); ?>>
                     <button class="action-btn">
                         <ion-icon name="cart-outline"></ion-icon>
-                        <span class="count">0</span>
+                        <!-- <span class="count">0</span> -->
                     </button>
                 </a>
                 <a href="<?php echo base_url() ?>activity/history" id="history-btn" <?php echo hideButton($historyUrl); ?>>
