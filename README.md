@@ -5,6 +5,10 @@ A web-based digital platform specifically designed to facilitate online buying a
 ## Installation
 - Clone the repository
 - Config .env file (server, database name, port, username, password)
+- Add this line in env:
+  - MIDTRANS_CLIENT = your_midtrans_client_api_key
+  - MIDTRANS_SERVER = your_midtrans_serve_api_key
+  - RAJA_ONGKIR_KEY = your_raja_ongkir_api_key
 - Install the dependencies (composer install)
 
 ## How To Run
