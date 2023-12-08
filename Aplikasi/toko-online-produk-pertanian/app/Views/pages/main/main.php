@@ -608,6 +608,13 @@
                     <div class="testimonial-wrapper has-scrollbar">
                         <?php foreach ($feedbacks as $feedback): ?>
                             <div class="testimonial-card-content">
+                                <?php if (!empty(session()->get('img'))): ?>
+                                    <img src="<?php echo base_url() ?>assets/img/profile/<?= $feedback['img']?>" alt=""
+                                        class="testimonial-benner" width="80" height="80">
+                                <?php else: ?>
+                                    <img src="<?php echo base_url() ?>assets/img/testimonial/default.png" alt=""
+                                        class="testimonial-benner" width="80" height="80">
+                                <?php endif ?>
                                 <p class="customer-name">
                                     <?= $feedback['name'] ?>
                                 </p>
@@ -627,15 +634,15 @@
                     <?php if ($special_offer): ?>
                         <img src="<?php echo base_url() ?>assets/img/products/<?php echo $special_offer['image']; ?>"
                             class="special-offer-benner">
-                        <a href="<?= base_url('product/detail/').$special_offer['id']?>" class="special-offer-content">
+                        <a href="<?= base_url('product/detail/') . $special_offer['id'] ?>" class="special-offer-content">
                             <p class="special-offer-discount">
-                                <?php echo "Diskon  ". $special_offer['discount']; ?>%
+                                <?php echo "Diskon  " . $special_offer['discount']; ?>%
                             </p>
                             <h2 class="special-offer-title">
                                 <?php echo $special_offer['name']; ?>
                             </h2>
                             <p class="special-offer-text">hanya
-                                <?php echo "Rp.".number_format($special_offer['disprice']); ?>
+                                <?php echo "Rp." . number_format($special_offer['disprice']); ?>
                             </p>
                             <button class="special-offer-button">Dapatkan Sekarang</button>
                         </a>

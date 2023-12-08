@@ -31,6 +31,7 @@ class FeedbackController extends BaseController
                 $feedData = [
                     'username' => $this->request->getPost('username'),
                     'name' => $this->request->getPost('name'),
+                    'img' => $this->request->getPost('image'),
                     'email' => $this->request->getPost('email'),
                     'message' => $this->request->getPost('message'),
                     'created_at' => date('Y-m-d H:i:s'),

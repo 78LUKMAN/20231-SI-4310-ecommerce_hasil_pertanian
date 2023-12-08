@@ -51,6 +51,7 @@
                             <form action="<?= base_url() ?>activity/feedback/send" method="post">
 
                                 <input type="hidden" name="username" value="<?= $session->get('username') ?>">
+                                <input type="hidden" name="image" value="<?= $session->get('img') ?>">
                                 <div class="row">
                                     <div class="form-outline">
                                         <label class="form-label" for="name">Nama</label>

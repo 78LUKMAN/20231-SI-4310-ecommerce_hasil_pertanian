@@ -13,7 +13,7 @@ class FeedbackModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['username','name','email','message','created_at','created_by'];
+    protected $allowedFields    = ['username','name','img','email','message','created_at','created_by'];
 
     // Dates
     protected $useTimestamps = false;
