@@ -80,8 +80,8 @@
                                                         $statusText = 'Error, klik "Update"';
                                                         break;
                                                     default:
-                                                        $statusText = 'Error text-white';
-                                                        $statusClass = 'bg-danger';
+                                                        $statusText = 'Error';
+                                                        $statusClass = 'bg-danger text-white';
                                                         break;
                                                 }
 
@@ -216,13 +216,16 @@
 </main>
 </div>
 <?= $this->section('script') ?>
-<script type="text/javascript">        
-        document.addEventListener('DOMContentLoaded', function () {
-            let payButtons = document.querySelectorAll('#snap-pay');
-            payButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                    let token = this.getAttribute('data-token');
-                        window.snap.pay(token);
+<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
+    data-client-key="<?= $client_key ?>"></script>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        let payButtons = document.querySelectorAll('#snap-pay');
+        payButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                let token = this.getAttribute('data-token');
+                window.snap.pay(token);
             })
         })
     })

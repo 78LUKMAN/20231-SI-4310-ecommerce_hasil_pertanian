@@ -10,10 +10,10 @@ class CartController extends BaseController
 {
     protected $cart;
     private $url = "https://api.rajaongkir.com/starter/";
-    private $apiKey = "36aa713f2cdcb444d9a8c92737923518";
 
     public function __construct()
     {
+        $this->apiKey = getenv("RAJA_ONGKIR_KEY");
         helper('number');
         helper('form');
         $this->cart = Services::cart();

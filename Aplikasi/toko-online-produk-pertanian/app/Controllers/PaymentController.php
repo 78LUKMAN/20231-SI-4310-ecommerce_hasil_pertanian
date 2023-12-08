@@ -15,7 +15,7 @@ class PaymentController extends BaseController
     public function snapToken($id_order, $total, $username, $email)
     {
         // Set your Merchant Server Key
-        \Midtrans\Config::$serverKey = 'SB-Mid-server-Z9WdyW2r3BEM_yboYz4vZzBz';
+        \Midtrans\Config::$serverKey = getenv('MIDTRANS_SERVER');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
         \Midtrans\Config::$isProduction = false;
         // Set sanitization on (default)
