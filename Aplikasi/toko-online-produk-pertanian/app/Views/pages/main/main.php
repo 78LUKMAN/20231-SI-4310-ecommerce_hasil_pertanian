@@ -340,7 +340,7 @@
             <div class="product-box">
                 <div class="product-minimal">
                     <div class="product-showcase">
-                        <h2 class="title">Fruits and Vegetables</h2>
+                        <h2 class="title">Buah dan Sayuran</h2>
 
                         <div class="showcase-wrapper has-scrollbar">
                             <?php
@@ -400,7 +400,7 @@
                         </div>
                     </div>
                     <div class="product-showcase">
-                        <h2 class="title">Nuts and Spices</h2>
+                        <h2 class="title">Kacang dan Rempah</h2>
 
                         <div class="showcase-wrapper has-scrollbar">
                             <?php

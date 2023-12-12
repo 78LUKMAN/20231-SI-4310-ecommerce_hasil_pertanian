@@ -26,6 +26,11 @@ class CartController extends BaseController
         return view('pages/cart/cart', $data);
     }
 
+    public function countItem() {
+        $count = count($this->cart->contents());
+        return $this->response->setJSON(['count' => $count]);
+    }
+
     public function add()
     {
         $cartData = [

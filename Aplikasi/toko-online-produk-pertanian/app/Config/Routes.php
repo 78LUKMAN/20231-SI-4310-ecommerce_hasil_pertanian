@@ -32,7 +32,6 @@ $routes->group('activity', function ($routes) {
     $routes->get('feedback', 'FeedbackController::index', ['filter' => 'auth']);
     $routes->post('feedback/send', 'FeedbackController::send', ['filter' => 'auth']);
     $routes->post('statusupdate', 'PaymentController::updateStatus', ['filter' => 'auth']);
-
 });
 
 $routes->group('profile', function ($routes) {
@@ -68,6 +67,7 @@ $routes->group('product', function ($routes) {
 
 // cart
 $routes->group('cart', function ($routes) {
+    $routes->get('counter', 'CartController::countItem');
     $routes->add('buy', 'CartController::buy', ['filter' => 'auth']);
     $routes->post('add', 'CartController::add', ['filter' => 'auth']);
     $routes->add('edit', 'CartController::edit', ['filter' => 'auth']);
