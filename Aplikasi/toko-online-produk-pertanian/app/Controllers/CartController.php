@@ -205,15 +205,13 @@ class CartController extends BaseController
 
             $transaksiModel->insert($dataForm);
 
-            $last_insert_id = $transaksiModel->getInsertID();
-
             foreach ($this->cart->contents() as $value) {
                 $dataFormDetail = [
                     'transaction_id' => $id_order,
                     'product_id' => $value['id'],
                     'quantity' => $value['qty'],
                     'discount' => 0,
-                    'subtotal' => $value['qty'] * $value['price'],
+                    'subtotal' => $value['qty'] * $value['disprice'],
                     'created_by' => $this->request->getPost('username'),
                     'created_date' => date("Y-m-d H:i:s"),
                 ];

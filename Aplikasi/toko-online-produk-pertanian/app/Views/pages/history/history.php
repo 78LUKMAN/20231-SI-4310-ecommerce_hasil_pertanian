@@ -103,12 +103,6 @@
                                                     <i class="bi bi-view-list"></i>
                                                 </button>
                                                 <?php if ($transactionData['status'] != 200): ?>
-                                                    <!-- <a
-                                                        href="https://app.sandbox.midtrans.com/snap/v2/vtweb/<?php echo $transactionData['token'] ?>">
-                                                        <button type="button" class="btn btn-warning" data-bs-toggle="collapse">
-                                                            Bayar
-                                                        </button>
-                                                    </a> -->
                                                     <button type="button" class="btn btn-warning" id="snap-pay"
                                                         data-token="<?= $transactionData['token'] ?>">Bayar</button>
 
