@@ -52,7 +52,7 @@ class PaymentController extends BaseController
     }
     public function checkStatus($id_order)
     {
-        $key = base64_encode("SB-Mid-server-Z9WdyW2r3BEM_yboYz4vZzBz:");
+        $key = base64_encode(getenv('MIDTRANS_SERVER').":");
         $endpoint = "https://api.sandbox.midtrans.com/v2/" . $id_order . "/status";
         $header = array(
             'Accept: application/json',

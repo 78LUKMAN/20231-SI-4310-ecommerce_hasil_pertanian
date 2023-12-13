@@ -43,7 +43,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($transaction as $transactionData): ?>
+                                    <?php foreach (array_reverse($transaction, true) as $transactionData): ?>
                                         <tr>
                                             <td>
                                                 <?= $transactionData['name'] ?>
