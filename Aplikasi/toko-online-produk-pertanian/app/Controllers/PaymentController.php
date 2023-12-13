@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\DetailTransactionModel;
 use App\Models\TransactionModel;
 
 class PaymentController extends BaseController
@@ -35,10 +36,10 @@ class PaymentController extends BaseController
         );
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
-        
+
         return $snapToken;
     }
-    
+
     public function updateStatus()
     {
         $orderIds = explode(',', $this->request->getPost('order_ids'));
@@ -46,13 +47,38 @@ class PaymentController extends BaseController
         foreach ($orderIds as $orderId) {
             $status = $this->checkStatus($orderId);
 
+            // Update status transaksi
             $this->transaction->update($orderId, ['status' => $status]);
+
+            if ($status == 200) {
+                $this->reduceProductStock($orderId);
+            }
         }
+
         return redirect('activity/history');
+    }
+
+    protected function reduceProductStock($orderId)
+    {
+        $transactionModel = new TransactionModel();
+        $productController = new ProductController();
+        $transaction = $transactionModel->find($orderId);
+
+        if ($transaction) {
+            $transactionDetailModel = new DetailTransactionModel();
+            $transactionDetails = $transactionDetailModel->where('transaction_id', $orderId)->findAll();
+
+            foreach ($transactionDetails as $detail) {
+                $productId = $detail['product_id'];
+                $quantity = $detail['quantity'];
+                $productController->reduceProductStockById($productId, $quantity);
+                $productController->increaseSold($productId, $quantity);
+            }
+        }
     }
     public function checkStatus($id_order)
     {
-        $key = base64_encode(getenv('MIDTRANS_SERVER').":");
+        $key = base64_encode(getenv('MIDTRANS_SERVER') . ":");
         $endpoint = "https://api.sandbox.midtrans.com/v2/" . $id_order . "/status";
         $header = array(
             'Accept: application/json',

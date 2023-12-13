@@ -50,9 +50,14 @@
                                             </div>
 
                                             <div class="mb-3">
-                                                <span class="text-muted">Stock : </span>
+                                                <span class="text-muted">Stok : </span>
                                                 <span class="text-muted">
                                                     <?= $product['stock'] ?>
+                                                </span>
+                                                <br>
+                                                <span class="text-muted">Terjual : </span>
+                                                <span class="text-muted">
+                                                    <?= $product['sold'] ?>
                                                 </span>
                                             </div>
 

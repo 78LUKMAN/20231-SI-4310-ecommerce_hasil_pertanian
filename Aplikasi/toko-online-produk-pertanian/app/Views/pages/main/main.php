@@ -9,14 +9,14 @@
         </button>
 
         <div class="newsletter-img">
-            <img src="<?php echo base_url() ?>assets/img/logo/logo.png" alt="subscribe" width="300"
-                height="300">
+            <img src="<?php echo base_url() ?>assets/img/logo/logo.png" alt="subscribe" width="300" height="300">
         </div>
         <div class="newsletter">
             <form action="#">
                 <div class="newsletter-header">
                     <h3 class="newsletter-title">Subscribe</h3>
-                    <p class="newsletter-desc">Subscribe the <b>Pekalongan Groceria</b> to get latest product and discount
+                    <p class="newsletter-desc">Subscribe the <b>Pekalongan Groceria</b> to get latest product and
+                        discount
                         update</p>
                 </div>
                 <input type="email" name="email" class="email-field" id="" placeholder="type your email" required>
@@ -494,20 +494,18 @@
                                             </a>
                                             <div class="showcase-status">
                                                 <div class="wrapper">
-                                                    <p>Sold : <b><i>35</i></b></p>
-                                                    <p>Stock : <b><i>
+                                                    <p>Terjual : <b><i><?= $product['sold']?></i></b></p>
+                                                    <p>Stok : <b><i>
                                                                 <?= $product['stock'] ?>
                                                             </i></b></p>
                                                 </div>
-
-                                                <div class="showcase-status-bar"></div>
                                             </div>
                                             <div class="countdown-box">
                                                 <p class="countdown-desc">
-                                                    Only 10 left in stock - order soon.
+                                                   Hanya tersisa <?= $product['stock']?> stok - buruan beli.
                                                 </p>
 
-                                                <div class="countdown">
+                                                <div class="countdown mt-3">
                                                     <div class="countdown-content">
                                                         <p class="display-number">5</p>
                                                         <p class="display-text">days</p>

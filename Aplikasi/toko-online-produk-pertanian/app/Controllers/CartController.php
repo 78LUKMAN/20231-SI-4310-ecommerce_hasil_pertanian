@@ -215,7 +215,7 @@ class CartController extends BaseController
                     'created_by' => $this->request->getPost('username'),
                     'created_date' => date("Y-m-d H:i:s"),
                 ];
-
+                
                 $transaksiDetailModel->insert($dataFormDetail);
             }
             $this->cart->destroy();
