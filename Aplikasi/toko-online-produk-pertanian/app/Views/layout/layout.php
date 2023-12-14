@@ -20,13 +20,13 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="<?php echo base_url() ?>assets/third-assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/third-assets/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/third-assets/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/third-assets/quill/quill.snow.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/third-assets/quill/quill.bubble.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/third-assets/remixicon/remixicon.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/third-assets/simple-datatables/style.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
@@ -49,14 +49,14 @@
     <?= $this->include('layout/components/footer') ?>
 
 
-    <script src="<?php echo base_url() ?>assets/third-assets/apexcharts/apexcharts.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/third-assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/third-assets/chart.js/chart.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/third-assets/echarts/echarts.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/third-assets/quill/quill.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/third-assets/simple-datatables/simple-datatables.js"></script>
-    <script src="<?php echo base_url() ?>assets/third-assets/tinymce/tinymce.min.js"></script>
-    <script src="<?php echo base_url() ?>assets/third-assets/php-email-form/validate.js"></script>
+    <script src="<?php echo base_url() ?>assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/vendor/chart.js/chart.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/vendor/echarts/echarts.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/vendor/quill/quill.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="<?php echo base_url() ?>assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/vendor/php-email-form/validate.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

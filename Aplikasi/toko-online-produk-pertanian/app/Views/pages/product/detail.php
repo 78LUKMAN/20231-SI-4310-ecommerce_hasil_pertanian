@@ -41,7 +41,7 @@
                                 <div class="row gx-5">
                                     <aside class="col-lg-6 d-flex justify-content-center">
                                         <img class="rounded-4 w-75 fit"
-                                            style="border-radius: 5px; max-width:200px; min-width:200px"
+                                            style="border-radius: 5px; max-width:400px; min-width:200px"
                                             src="<?= base_url() . "assets/img/products/" . $product['image'] ?>" />
                                     </aside>
                                     <main class="col-lg-6">

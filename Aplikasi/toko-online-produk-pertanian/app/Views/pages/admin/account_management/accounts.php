@@ -25,7 +25,7 @@
     </div>
 <?php endif; ?>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newUser">
-    &nbsp;<i class="bi bi-plus-square"></i>&nbsp;Tambah User&nbsp;
+    &nbsp;<i class="bi bi-plus-square"></i>&nbsp;Add New Account&nbsp;
 </button>
 
 <div class="table-responsive">
@@ -42,7 +42,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($users as $index => $user): ?>
+            <?php foreach (array_reverse($users, true) as $index => $user): ?>
                 <tr>
                     <th scope="row">
                         <?= $index + 1 ?>
@@ -159,7 +159,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Tambah User Baru</h5>
+                            <h5 class="modal-title">Add New Account</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -223,7 +223,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Tambah</button>
+                            <button type="submit" class="btn btn-primary">Add</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                         <?= form_close() ?>
