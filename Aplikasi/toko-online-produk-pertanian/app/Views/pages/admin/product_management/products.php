@@ -17,7 +17,7 @@ if (session()->getFlashData('success')) {
 <?php endif; ?>
 
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-    <i class="bi bi-plus-square"></i>&nbsp;Tambah Data
+    <i class="bi bi-plus-square"></i>&nbsp;Add Product
 </button>
 <!-- Table with stripped rows -->
 <div class="table-responsive">
@@ -25,19 +25,21 @@ if (session()->getFlashData('success')) {
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Harga</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
                 <th scope="col">Discount</th>
                 <th scope="col">Dis-Price</th>
-                <th scope="col">Jumlah</th>
+                <th scope="col">Stock</th>
                 <th scope="col">Label</th>
-                <th scope="col">Keterangan</th>
-                <th scope="col">Foto</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
                 <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($products as $index => $product): ?>
+            <?php 
+            $reverseIndex = array_reverse($products, true);
+            foreach ($reverseIndex as $index => $product): ?>
                 <tr>
                     <th scope="row">
                         <?php echo $index + 1 ?>
@@ -110,12 +112,12 @@ if (session()->getFlashData('success')) {
                                 <?= csrf_field(); ?>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <label for="name">Nama</label>
+                                        <label for="name">Name</label>
                                         <input type="text" name="name" class="form-control" id="name"
                                             value="<?= $product['name'] ?>" placeholder="Nama Barang" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="name">Harga</label>
+                                        <label for="name">Price</label>
                                         <input type="text" name="price" class="form-control" id="price"
                                             value="<?= $product['price'] ?>" placeholder="Harga Barang" required>
                                     </div>
@@ -125,7 +127,7 @@ if (session()->getFlashData('success')) {
                                             value="<?= $product['discount'] ?>" placeholder="Harga Barang" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="name">Jumlah</label>
+                                        <label for="name">Stock</label>
                                         <input type="text" name="stock" class="form-control" id="stock"
                                             value="<?= $product['stock'] ?>" placeholder="Jumlah Barang" required>
                                     </div>
@@ -135,21 +137,21 @@ if (session()->getFlashData('success')) {
                                             value="<?= $product['label'] ?>" placeholder="label barang" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="name">Keterangan</label>
+                                        <label for="name">Description</label>
                                         <input type="text" name="description" class="form-control" id="description"
                                             value="<?= $product['description'] ?>" placeholder="Keterangan Barang" required>
                                     </div>
                                     <img src="<?php echo base_url() . "/assets/img/products/" . $product['image'] ?>"
                                         width="100px" class="mt-1">
                                     <div class="form-group">
-                                        <label for="name">Foto</label>
+                                        <label for="name">Image</label>
                                         <input type="file" class="form-control" id="image" name="image"
                                             value="<?php echo base_url() . "/assets/img/products/" . $product['image'] ?>">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
                                 </div>
                             </form>
                         </div>
@@ -167,27 +169,27 @@ if (session()->getFlashData('success')) {
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Barang</h5>
+                <h5 class="modal-title">Add New Product</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <?= form_open('admin/product/add', ['method' => 'post', 'enctype' => 'multipart/form-data']) ?>
             <?= csrf_field(); ?>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="name">Nama</label>
+                    <label for="name">Name</label>
                     <input type="text" name="name" class="form-control" id="name" placeholder="Nama Barang" value="<?php echo session('input_data.name'); ?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Harga</label>
+                    <label for="name">Price</label>
                     <input type="text" name="price" class="form-control" id="price" placeholder="Harga Barang" value="<?php echo session('input_data.price'); ?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Diskon</label>
+                    <label for="name">Discount (%)</label>
                     <input type="text" name="discount" class="form-control" id="discount" placeholder="ketik angka 0 jika tidak ada diskon" value="<?php echo session('input_data.discount'); ?>"
                         required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Jumlah</label>
+                    <label for="name">Stock</label>
                     <input type="text" name="stock" class="form-control" id="stock" placeholder="Jumlah Barang" value="<?php echo session('input_data.stock'); ?>"
                         required>
                 </div>
@@ -196,18 +198,18 @@ if (session()->getFlashData('success')) {
                     <input type="text" name="label" class="form-control" id="label" placeholder="format => jenis,nama,...[optional] misal: kacang,kacangpanjang,limited" value="<?php echo session('input_data.label'); ?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Keterangan</label>
+                    <label for="name">Description</label>
                     <input type="text" name="description" class="form-control" id="description"
                         placeholder="Keterangan Barang" value="<?php echo session('input_data.description'); ?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="image">Foto</label>
+                    <label for="image">Image</label>
                     <input type="file" class="form-control" id="image" name="image" required>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Simpan</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
             <?= form_close() ?>
         </div>

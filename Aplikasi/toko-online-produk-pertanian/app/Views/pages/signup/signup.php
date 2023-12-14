@@ -16,7 +16,7 @@
         <div class="user-signup-content">
             <h1 class>Create Account</h1>
             <?= form_open('auth/signup', ['class' => 'signup-form']) ?>
-            <div class="form-content gap-3">
+            <div class="form-content column-gap-3">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="name" value="<?= set_value('name') ?>"

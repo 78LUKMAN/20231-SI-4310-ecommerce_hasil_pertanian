@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 <?php $session = session(); ?>
 <section class="">
-    <div class="px-4 py-5 px-md-5  text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+    <div class="px-4 py-5 px-md-5  text-lg-start">
         <div class="container">
             <?php if (session()->has('success')): ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
