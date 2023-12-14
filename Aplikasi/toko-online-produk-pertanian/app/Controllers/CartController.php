@@ -33,6 +33,7 @@ class CartController extends BaseController
 
     public function add()
     {
+        $productController = new ProductController();
         $cartData = [
             'id' => $this->request->getPost('id'),
             'qty' => 1,
@@ -42,8 +43,14 @@ class CartController extends BaseController
             'options' => ['image' => $this->request->getPost('image')],
         ];
 
-        $this->cart->insert($cartData);
-        session()->setFlashdata('success', 'Successfully added a product to cart');
+        $getStock = $productController->getStock($cartData['id']);
+        if ($getStock == 0) {
+            session()->setFlashdata('error', 'Stok '.strtolower($cartData['name']).' sudah habis');
+        } else {
+            $this->cart->insert($cartData);
+            session()->setFlashdata('success', 'Barang berhasil ditambahkan ke keranjang');
+        }
+
         return redirect()->back();
     }
 

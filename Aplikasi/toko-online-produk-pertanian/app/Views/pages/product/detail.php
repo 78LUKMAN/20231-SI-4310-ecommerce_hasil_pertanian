@@ -10,8 +10,14 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         <?php
-    }
-    ?>
+    } elseif (session()->getFlashData('error')) {
+        ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?= session()->getFlashData('error') ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <?php
+    } ?>
 
     <div class="pagetitle">
         <h1>Product Detail</h1>
@@ -34,7 +40,8 @@
                             <div class="container">
                                 <div class="row gx-5">
                                     <aside class="col-lg-6 d-flex justify-content-center">
-                                        <img class="rounded-4 w-75 fit" style="border-radius: 5px; max-width:200px; min-width:200px"
+                                        <img class="rounded-4 w-75 fit"
+                                            style="border-radius: 5px; max-width:200px; min-width:200px"
                                             src="<?= base_url() . "assets/img/products/" . $product['image'] ?>" />
                                     </aside>
                                     <main class="col-lg-6">
@@ -50,10 +57,17 @@
                                             </div>
 
                                             <div class="mb-3">
-                                                <span class="text-muted">Stok : </span>
-                                                <span class="text-muted">
-                                                    <?= $product['stock'] ?>
-                                                </span>
+                                                <?php if ($product['stock'] == 0) { ?>
+                                                    <span class="text-danger">Stok : </span>
+                                                    <span class="text-danger">
+                                                        <?= $product['stock'] ?>
+                                                    </span>
+                                                <?php } else { ?>
+                                                    <span class="text-muted">Stok : </span>
+                                                    <span class="text-muted">
+                                                        <?= $product['stock'] ?>
+                                                    </span>
+                                                <?php } ?>
                                                 <br>
                                                 <span class="text-muted">Terjual : </span>
                                                 <span class="text-muted">
@@ -72,7 +86,8 @@
                                             </div>
                                             <form action="<?= base_url('cart/add') ?>" method="post">
                                                 <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                                                <input type="hidden" name="disprice" value="<?= $product['disprice'] ?>">
+                                                <input type="hidden" name="disprice"
+                                                    value="<?= $product['disprice'] ?>">
                                                 <?php
                                                 echo form_hidden('id', $product['id']);
                                                 echo form_hidden('name', $product['name']);

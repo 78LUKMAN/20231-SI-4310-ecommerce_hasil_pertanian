@@ -462,11 +462,20 @@
                 </div>
 
                 <div class="product-featured">
-                    <h2 class="title">Limited Offer</h2>
+                    <h2 class="title">Promo Terbatas</h2>
                     <div class="showcase-wrapper has-scrollbar">
+                        <?php
+                        $productsLimited = array_filter($products, function ($product) {
+                            return strpos($product['label'], 'limited') !== false;
+                        });
 
-                        <?php foreach ($products as $product): ?>
-                            <?php if (strpos($product['label'], 'limited') !== false): ?>
+                        if (empty($productsLimited)) { ?>
+                            <div>
+                                <h1 class="fs-5">Belum ada promo</h1>
+                            </div>
+                            <?php
+                        } else {
+                            foreach ($productsLimited as $product): ?>
                                 <div class="showcase-container">
                                     <div class="showcase">
                                         <div class="showcase-banner">
@@ -494,7 +503,9 @@
                                             </a>
                                             <div class="showcase-status">
                                                 <div class="wrapper">
-                                                    <p>Terjual : <b><i><?= $product['sold']?></i></b></p>
+                                                    <p>Terjual : <b><i>
+                                                                <?= $product['sold'] ?>
+                                                            </i></b></p>
                                                     <p>Stok : <b><i>
                                                                 <?= $product['stock'] ?>
                                                             </i></b></p>
@@ -502,7 +513,8 @@
                                             </div>
                                             <div class="countdown-box">
                                                 <p class="countdown-desc">
-                                                   Hanya tersisa <?= $product['stock']?> stok - buruan beli.
+                                                    Hanya tersisa
+                                                    <?= $product['stock'] ?> stok - buruan beli.
                                                 </p>
 
                                                 <div class="countdown mt-3">
@@ -527,18 +539,21 @@
                                         </div>
                                     </div>
                                 </div>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="product-main">
                     <h2 class="title">Discount</h2>
                     <div class="product-grid-container">
-                        <?php foreach ($products as $product): ?>
+                        <?php
+                        $hasDiscount = false;
+                        foreach ($products as $product): ?>
                             <?php
                             $labelsArray = explode(',', $product['label']);
                             $firstLabel = trim($labelsArray[0]);
-                            if ($product['discount'] != 0): ?>
+                            if ($product['discount'] != 0):
+                                $hasDiscount = true ?>
                                 <div class="showcase">
                                     <div class="showcase-banner">
                                         <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" alt=""
@@ -584,7 +599,12 @@
                                     </div>
                                 </div>
                             <?php endif ?>
-                        <?php endforeach ?>
+                            <?php endforeach ?>
+                            <?php if ($hasDiscount == false): ?>
+                                <div>
+                                    <h1 class="fs-5">Belum ada diskon</h1>
+                                </div>
+                            <?php endif ?>
 
                     </div>
                 </div>

@@ -170,14 +170,18 @@ class ProductController extends BaseController
         return view('pages/product/search_result', $data);
     }
 
+    public function getStock($productId) {
+        $product = $this->productModel->find($productId);
+        return $product['stock'];
+
+    }
     public function reduceProductStockById($productId, $quantity)
     {
-        $productModel = new ProductModel();
-        $product = $productModel->find($productId);
+        $product = $this->productModel->find($productId);
 
         if ($product) {
             $newStock = max(0, $product['stock'] - $quantity);
-            $productModel->update($productId, ['stock' => $newStock]);
+            $this->productModel->update($productId, ['stock' => $newStock]);
         }
     }
     public function increaseSold($productId, $quantity)
@@ -190,7 +194,5 @@ class ProductController extends BaseController
             $productModel->update($productId, ['sold' => $newSold]);
         }
     }
-
-
 
 }
