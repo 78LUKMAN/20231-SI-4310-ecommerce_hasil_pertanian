@@ -9,14 +9,14 @@
         </button>
 
         <div class="newsletter-img">
-            <img src="<?php echo base_url() ?>assets/img/banner/newletter-img.png" alt="subscribe" width="300"
-                height="300">
+            <img src="<?php echo base_url() ?>assets/img/logo/logo.png" alt="subscribe" width="300" height="300">
         </div>
         <div class="newsletter">
             <form action="#">
                 <div class="newsletter-header">
                     <h3 class="newsletter-title">Subscribe</h3>
-                    <p class="newsletter-desc">Subscribe the <b>Local Farms</b> to get latest product and discount
+                    <p class="newsletter-desc">Subscribe the <b>Pekalongan Groceria</b> to get latest product and
+                        discount
                         update</p>
                 </div>
                 <input type="email" name="email" class="email-field" id="" placeholder="type your email" required>
@@ -340,7 +340,7 @@
             <div class="product-box">
                 <div class="product-minimal">
                     <div class="product-showcase">
-                        <h2 class="title">Fruits and Vegetables</h2>
+                        <h2 class="title">Buah dan Sayuran</h2>
 
                         <div class="showcase-wrapper has-scrollbar">
                             <?php
@@ -400,7 +400,7 @@
                         </div>
                     </div>
                     <div class="product-showcase">
-                        <h2 class="title">Nuts and Spices</h2>
+                        <h2 class="title">Kacang dan Rempah</h2>
 
                         <div class="showcase-wrapper has-scrollbar">
                             <?php
@@ -462,11 +462,20 @@
                 </div>
 
                 <div class="product-featured">
-                    <h2 class="title">Limited Offer</h2>
+                    <h2 class="title">Promo Terbatas</h2>
                     <div class="showcase-wrapper has-scrollbar">
+                        <?php
+                        $productsLimited = array_filter($products, function ($product) {
+                            return strpos($product['label'], 'limited') !== false;
+                        });
 
-                        <?php foreach ($products as $product): ?>
-                            <?php if (strpos($product['label'], 'limited') !== false): ?>
+                        if (empty($productsLimited)) { ?>
+                            <div>
+                                <h1 class="fs-5">Belum ada promo</h1>
+                            </div>
+                            <?php
+                        } else {
+                            foreach ($productsLimited as $product): ?>
                                 <div class="showcase-container">
                                     <div class="showcase">
                                         <div class="showcase-banner">
@@ -494,20 +503,21 @@
                                             </a>
                                             <div class="showcase-status">
                                                 <div class="wrapper">
-                                                    <p>Sold : <b><i>35</i></b></p>
-                                                    <p>Stock : <b><i>
+                                                    <p>Terjual : <b><i>
+                                                                <?= $product['sold'] ?>
+                                                            </i></b></p>
+                                                    <p>Stok : <b><i>
                                                                 <?= $product['stock'] ?>
                                                             </i></b></p>
                                                 </div>
-
-                                                <div class="showcase-status-bar"></div>
                                             </div>
                                             <div class="countdown-box">
                                                 <p class="countdown-desc">
-                                                    Only 10 left in stock - order soon.
+                                                    Hanya tersisa
+                                                    <?= $product['stock'] ?> stok - buruan beli.
                                                 </p>
 
-                                                <div class="countdown">
+                                                <div class="countdown mt-3">
                                                     <div class="countdown-content">
                                                         <p class="display-number">5</p>
                                                         <p class="display-text">days</p>
@@ -529,18 +539,21 @@
                                         </div>
                                     </div>
                                 </div>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="product-main">
                     <h2 class="title">Discount</h2>
                     <div class="product-grid-container">
-                        <?php foreach ($products as $product): ?>
+                        <?php
+                        $hasDiscount = false;
+                        foreach ($products as $product): ?>
                             <?php
                             $labelsArray = explode(',', $product['label']);
                             $firstLabel = trim($labelsArray[0]);
-                            if ($product['discount'] != 0): ?>
+                            if ($product['discount'] != 0):
+                                $hasDiscount = true ?>
                                 <div class="showcase">
                                     <div class="showcase-banner">
                                         <img src="<?php echo base_url('assets/img/products/') . $product['image'] ?>" alt=""
@@ -586,7 +599,12 @@
                                     </div>
                                 </div>
                             <?php endif ?>
-                        <?php endforeach ?>
+                            <?php endforeach ?>
+                            <?php if ($hasDiscount == false): ?>
+                                <div>
+                                    <h1 class="fs-5">Belum ada diskon</h1>
+                                </div>
+                            <?php endif ?>
 
                     </div>
                 </div>

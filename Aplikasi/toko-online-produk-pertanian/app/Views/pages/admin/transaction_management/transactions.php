@@ -19,23 +19,23 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($transaksi as $transaksiData): ?>
+            <?php foreach (array_reverse($transaksi,true) as $transactionData): ?>
 
                 <tr>
                     <td>
-                        <?= $transaksiData['name'] ?>
+                        <?= $transactionData['name'] ?>
                     </td>
                     <td>
-                        <?= "Rp." . number_format($transaksiData['total']) ?>
+                        <?= "Rp." . number_format($transactionData['total']) ?>
                     </td>
                     <td>
-                        <?= "Rp." . number_format($transaksiData['fare']) ?>
+                        <?= "Rp." . number_format($transactionData['fare']) ?>
                     </td>
                     <td>
                         <?php
                         $statusClass = '';
 
-                        switch ($transaksiData['status']) {
+                        switch ($transactionData['status']) {
                             case "200":
                                 $statusClass = 'text-white bg-success';
                                 $statusText = 'Lunas';
@@ -68,28 +68,28 @@
                     </td>
                     <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#modal<?= $transaksiData['order_id'] ?>">
+                            data-bs-target="#modal<?= $transactionData['order_id'] ?>">
                             <i class="bi bi-view-list"></i>
                         </button>
 
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                            data-bs-target="#deleteModal-<?= $transaksiData['order_id'] ?>"><i
+                            data-bs-target="#deleteModal-<?= $transactionData['order_id'] ?>"><i
                                 class="bi bi-trash"></i></button>
                     </td>
                 </tr>
                 <!-- Modal Detail Transaksi -->
-                <div class="modal fade" id="modal<?= $transaksiData['order_id'] ?>" tabindex="-1"
-                    aria-labelledby="modalTitle<?= $transaksiData['order_id'] ?>" aria-hidden="true">
+                <div class="modal fade" id="modal<?= $transactionData['order_id'] ?>" tabindex="-1"
+                    aria-labelledby="modalTitle<?= $transactionData['order_id'] ?>" aria-hidden="true">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="modalTitle<?= $transaksiData['order_id'] ?>">Detail Transaksi
+                                <h5 class="modal-title" id="modalTitle<?= $transactionData['order_id'] ?>">Detail Transaksi
                                 </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <?php foreach ($detailTransaksiData as $detailData) { ?>
-                                    <?php if ($detailData['transaction_id'] == $transaksiData['order_id']) { ?>
+                                    <?php if ($detailData['transaction_id'] == $transactionData['order_id']) { ?>
                                         <div class="row mt-3">
                                             <div class="col-4">ID Transaksi</div>
                                             <div class="col-1">:</div>
@@ -145,11 +145,11 @@
                     </div>
                 </div>
 
-                <div class="modal fade" id="deleteModal-<?= $transaksiData['order_id'] ?>" tabindex="-1"
+                <div class="modal fade" id="deleteModal-<?= $transactionData['order_id'] ?>" tabindex="-1"
                     aria-labelledby="modalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
-                            <form action="<?= site_url('admin/transaction/delete/' . $transaksiData['order_id']) ?>"
+                            <form action="<?= site_url('admin/transaction/delete/' . $transactionData['order_id']) ?>"
                                 method="post">
                                 <?= csrf_field() ?>
                                 <div class="modal-header">

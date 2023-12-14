@@ -51,7 +51,7 @@ class ProductController extends BaseController
                     'name' => $this->request->getPost('name'),
                     'price' => $price,
                     'discount' => $discount,
-                    'disprice' => $price - ($price * ($discount/100)),
+                    'disprice' => $price - ($price * ($discount / 100)),
                     'stock' => $this->request->getPost('stock'),
                     'description' => $this->request->getPost('description'),
                     'label' => $this->request->getPost('label'),
@@ -65,7 +65,8 @@ class ProductController extends BaseController
                     }
                     $randFileName = $image->getRandomName();
                     $image->move('assets/img/products/', $randFileName);
-                };
+                }
+                ;
 
                 $data['image'] = $randFileName;
                 $this->productModel->insert($data);
@@ -101,7 +102,7 @@ class ProductController extends BaseController
                     'name' => $this->request->getPost('name'),
                     'price' => $price,
                     'discount' => $discount,
-                    'disprice' => $price - ($price * ($discount/100)),
+                    'disprice' => $price - ($price * ($discount / 100)),
                     'stock' => $this->request->getPost('stock'),
                     'description' => $this->request->getPost('description'),
                     'label' => $this->request->getPost('label'),
@@ -157,16 +158,41 @@ class ProductController extends BaseController
 
         if (empty($keyword)) {
             $data = ['result'] == null;
-            return redirect()->back()->with('error','Kolom pencarian tidak boleh kosong');
+            return redirect()->back()->with('error', 'Kolom pencarian tidak boleh kosong');
         }
 
         $produkModel = new ProductModel();
         $data['products'] = $produkModel->search($keyword);
 
-         $data['null'] = empty($data['result']) ? 'Produk tidak ditemukan.' : '';
-         $data['title'] = "hasil pencarian '" . $keyword . "'";
+        $data['null'] = empty($data['result']) ? 'Produk tidak ditemukan.' : '';
+        $data['title'] = "hasil pencarian '" . $keyword . "'";
 
         return view('pages/product/search_result', $data);
+    }
+
+    public function getStock($productId) {
+        $product = $this->productModel->find($productId);
+        return $product['stock'];
+
+    }
+    public function reduceProductStockById($productId, $quantity)
+    {
+        $product = $this->productModel->find($productId);
+
+        if ($product) {
+            $newStock = max(0, $product['stock'] - $quantity);
+            $this->productModel->update($productId, ['stock' => $newStock]);
+        }
+    }
+    public function increaseSold($productId, $quantity)
+    {
+        $productModel = new ProductModel();
+        $product = $productModel->find($productId);
+
+        if ($product) {
+            $newSold = $product['sold'] + $quantity;
+            $productModel->update($productId, ['sold' => $newSold]);
+        }
     }
 
 }

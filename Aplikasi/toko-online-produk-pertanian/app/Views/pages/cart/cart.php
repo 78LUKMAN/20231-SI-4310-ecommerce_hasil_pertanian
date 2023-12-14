@@ -75,10 +75,9 @@ if (session()->getFlashData('success')) {
                         <div class="alert alert-info">
                             <?php echo "Total = " . "Rp.".number_format($total) ?>
                         </div>
-                        <button type="submit" class="btn btn-primary">Perbarui Keranjang</button>
-                        <a class="btn btn-warning" href="<?php echo base_url() ?>cart/clear">Kosongkan
-                            Keranjang</a>
-                        <a class="btn btn-success" href="<?php echo base_url() ?>cart/checkout">Selesai Belanja</a>
+                        <button type="submit" class="btn btn-primary">Perbarui</button>
+                        <a class="btn btn-warning" href="<?php echo base_url() ?>cart/clear">Kosongkan</a>
+                        <a class="btn btn-success" href="<?php echo base_url() ?>cart/checkout">Selesai</a>
                         <?php form_close() ?>
                     </div>
                 </div>

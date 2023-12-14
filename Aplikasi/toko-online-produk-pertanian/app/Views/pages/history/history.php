@@ -43,7 +43,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($transaction as $transactionData): ?>
+                                    <?php foreach (array_reverse($transaction, true) as $transactionData): ?>
                                         <tr>
                                             <td>
                                                 <?= $transactionData['name'] ?>
@@ -80,8 +80,8 @@
                                                         $statusText = 'Error, klik "Update"';
                                                         break;
                                                     default:
-                                                        $statusText = 'Error text-white';
-                                                        $statusClass = 'bg-danger';
+                                                        $statusText = 'Error';
+                                                        $statusClass = 'bg-danger text-white';
                                                         break;
                                                 }
 
@@ -103,12 +103,6 @@
                                                     <i class="bi bi-view-list"></i>
                                                 </button>
                                                 <?php if ($transactionData['status'] != 200): ?>
-                                                    <!-- <a
-                                                        href="https://app.sandbox.midtrans.com/snap/v2/vtweb/<?php echo $transactionData['token'] ?>">
-                                                        <button type="button" class="btn btn-warning" data-bs-toggle="collapse">
-                                                            Bayar
-                                                        </button>
-                                                    </a> -->
                                                     <button type="button" class="btn btn-warning" id="snap-pay"
                                                         data-token="<?= $transactionData['token'] ?>">Bayar</button>
 
@@ -216,13 +210,16 @@
 </main>
 </div>
 <?= $this->section('script') ?>
-<script type="text/javascript">        
-        document.addEventListener('DOMContentLoaded', function () {
-            let payButtons = document.querySelectorAll('#snap-pay');
-            payButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                    let token = this.getAttribute('data-token');
-                        window.snap.pay(token);
+<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
+    data-client-key="<?= $client_key ?>"></script>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        let payButtons = document.querySelectorAll('#snap-pay');
+        payButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                let token = this.getAttribute('data-token');
+                window.snap.pay(token);
             })
         })
     })

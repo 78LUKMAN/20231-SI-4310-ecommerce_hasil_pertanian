@@ -10,10 +10,10 @@ class CartController extends BaseController
 {
     protected $cart;
     private $url = "https://api.rajaongkir.com/starter/";
-    private $apiKey = "36aa713f2cdcb444d9a8c92737923518";
 
     public function __construct()
     {
+        $this->apiKey = getenv("RAJA_ONGKIR_KEY");
         helper('number');
         helper('form');
         $this->cart = Services::cart();
@@ -26,8 +26,14 @@ class CartController extends BaseController
         return view('pages/cart/cart', $data);
     }
 
+    public function countItem() {
+        $count = count($this->cart->contents());
+        return $this->response->setJSON(['count' => $count]);
+    }
+
     public function add()
     {
+        $productController = new ProductController();
         $cartData = [
             'id' => $this->request->getPost('id'),
             'qty' => 1,
@@ -37,8 +43,14 @@ class CartController extends BaseController
             'options' => ['image' => $this->request->getPost('image')],
         ];
 
-        $this->cart->insert($cartData);
-        session()->setFlashdata('success', 'Successfully added a product to cart');
+        $getStock = $productController->getStock($cartData['id']);
+        if ($getStock == 0) {
+            session()->setFlashdata('error', 'Stok '.strtolower($cartData['name']).' sudah habis');
+        } else {
+            $this->cart->insert($cartData);
+            session()->setFlashdata('success', 'Barang berhasil ditambahkan ke keranjang');
+        }
+
         return redirect()->back();
     }
 
@@ -200,19 +212,17 @@ class CartController extends BaseController
 
             $transaksiModel->insert($dataForm);
 
-            $last_insert_id = $transaksiModel->getInsertID();
-
             foreach ($this->cart->contents() as $value) {
                 $dataFormDetail = [
                     'transaction_id' => $id_order,
                     'product_id' => $value['id'],
                     'quantity' => $value['qty'],
                     'discount' => 0,
-                    'subtotal' => $value['qty'] * $value['price'],
+                    'subtotal' => $value['qty'] * $value['disprice'],
                     'created_by' => $this->request->getPost('username'),
                     'created_date' => date("Y-m-d H:i:s"),
                 ];
-
+                
                 $transaksiDetailModel->insert($dataFormDetail);
             }
             $this->cart->destroy();

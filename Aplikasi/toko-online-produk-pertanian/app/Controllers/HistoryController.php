@@ -35,7 +35,8 @@ class HistoryController extends BaseController
         $data = [
             'transaction' => $transaksi,
             'detailTransactionData' => $detailTransaksi,
-            'detailProduct' => $getDetailPoduk
+            'detailProduct' => $getDetailPoduk,
+            'client_key' => getenv('MIDTRANS_CLIENT'),
         ];
 
         return view('pages/history/history', $data);

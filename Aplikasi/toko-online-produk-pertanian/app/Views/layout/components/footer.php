@@ -6,13 +6,13 @@
                         <h2 class="nav-title">Popular Categories</h2>
                     </li>
                     <li class="nav-item flex">
-                        <a href="#" class="footer-nav-link nav-link">Headphone</a>
+                        <a href="<?= base_url('product/showall/buah') ?>" class="footer-nav-link nav-link">Buah</a>
                     </li>
                     <li class="nav-item flex">
-                        <a href="#" class="footer-nav-link nav-link">Smartphone</a>
+                        <a href="<?= base_url('product/showall/sayur') ?>" class="footer-nav-link nav-link">Syur</a>
                     </li>
                     <li class="nav-item flex">
-                        <a href="#" class="footer-nav-link nav-link">Watch</a>
+                        <a href="<?= base_url('product/showall/rempah') ?>" class="footer-nav-link nav-link">Rempah</a>
                     </li>
                 </ul>
                 <ul class="nav-list">
@@ -38,7 +38,7 @@
                         <div class="box-icon">
                             <ion-icon name="mail-outline"></ion-icon>
                         </div>
-                        <a href="mailto:fakemail@gmail.com" class="nav-link">support@gmail.com</a>
+                        <a href="mailto:fakemail@gmail.com" class="nav-link">support@pgroceria.com</a>
                     </li>
                 </ul>
                 <ul class="nav-list">
@@ -83,7 +83,7 @@
 
             </div>
             <p class="copyright">
-                Copyright &copy; <a href="#"> CornerStore </a> all right reserved.
+                Copyright &copy; <a href="#">&nbsp;Pekalongan Groceria&nbsp;</a> all right reserved.
             </p>
         </div>
         </div>

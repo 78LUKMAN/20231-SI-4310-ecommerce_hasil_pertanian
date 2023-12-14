@@ -31,7 +31,7 @@
                 echo '</div>';
             }
             ?>
-            <div class="row gx-lg-5 align-items-center">
+            <div class="row gx-lg-5">
                 <div class="col-lg-5 mb-5 mb-lg-0">
                     <h1 class="my-5 display-3 fw-bold ls-tight fs-1">
                         Halo <br />

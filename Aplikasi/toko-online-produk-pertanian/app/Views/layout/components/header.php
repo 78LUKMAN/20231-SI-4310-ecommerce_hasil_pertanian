@@ -27,7 +27,7 @@
                 <p>Ingin produk berkualitas hanya dengan ujung jari? Pekalongan Groceria solusinya!! Pekalongan Groceria - sentuhan kesegaran untuk hidup lebih ceria</p>
             </marquee></div>
             <div class="header-alert-news">
-                <p><b>Pekalongan</b> Groceria</p>
+                <p><b>- Pekalongan</b> Groceria -</p>
             </div>
         </div>
     </div>
@@ -81,7 +81,7 @@
                 <a href="<?php echo base_url() ?>activity/cart" id="cart-btn" <?php echo hideButton($cartUrl); ?>>
                     <button class="action-btn">
                         <ion-icon name="cart-outline"></ion-icon>
-                        <!-- <span class="count">0</span> -->
+                        <span class="count" id="cart-count">0</span>
                     </button>
                 </a>
                 <a href="<?php echo base_url() ?>activity/history" id="history-btn" <?php echo hideButton($historyUrl); ?>>
@@ -102,3 +102,19 @@
     </div>
 </header>
 <?= $this->include('layout/components/navigation'); ?>
+<?= $this->section('script')?>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var cartCount = document.getElementById('cart-count');
+
+        function loadCartCount() {
+            fetch('<?php echo base_url() ?>cart/counter')
+                .then(response => response.json())
+                .then(data => {
+                    cartCount.innerText = data.count;
+                });
+        }
+        loadCartCount();
+    });
+</script>
+<?= $this->endSection()?>
