@@ -21,6 +21,10 @@ class FeedbackTable extends Migration
                 "type" => "VARCHAR",
                 "constraint" => 100,
             ],
+            "img" => [
+                "type" => "VARCHAR",
+                "constraint" => 255,
+            ],
             "email" => [
                 "type" => "VARCHAR",
                 "constraint" => 255,
