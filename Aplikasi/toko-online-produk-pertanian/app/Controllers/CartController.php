@@ -26,7 +26,8 @@ class CartController extends BaseController
         return view('pages/cart/cart', $data);
     }
 
-    public function countItem() {
+    public function countItem()
+    {
         $count = count($this->cart->contents());
         return $this->response->setJSON(['count' => $count]);
     }
@@ -45,7 +46,7 @@ class CartController extends BaseController
 
         $getStock = $productController->getStock($cartData['id']);
         if ($getStock == 0) {
-            session()->setFlashdata('error', 'Stok '.strtolower($cartData['name']).' sudah habis');
+            session()->setFlashdata('error', 'Stok ' . strtolower($cartData['name']) . ' sudah habis');
         } else {
             $this->cart->insert($cartData);
             session()->setFlashdata('success', 'Barang berhasil ditambahkan ke keranjang');
@@ -63,6 +64,7 @@ class CartController extends BaseController
 
     public function edit()
     {
+        $productController = new ProductController();
         $i = 1;
         foreach ($this->cart->contents() as $item) {
             $cartData = [
@@ -70,10 +72,15 @@ class CartController extends BaseController
                 'qty' => $this->request->getPost('qty' . $i++),
             ];
 
-            $this->cart->update($cartData);
+            $getStock = $productController->getStock($item['id']);
+            if ($cartData['qty'] > $getStock) {
+                session()->setFlashdata('failed', 'Stok barang hanya tersedia ' . $getStock . ' item');
+            } else {
+                $this->cart->update($cartData);
+                session()->setFlashdata('success', 'Keranjang berhasil diperbarui');
+            }
         }
 
-        session()->setFlashdata('success', 'Cart edited successfully');
         return redirect()->to('activity/cart');
     }
 
@@ -206,8 +213,8 @@ class CartController extends BaseController
             $paymentController = new PaymentController();
             $getToken = $paymentController->snapToken($id_order, $dataForm['total'], $dataForm['username'], $dataForm['email']);
             $initialStatus = $paymentController->checkStatus($id_order);
-            $dataForm ['token'] = $getToken;
-            $dataForm ['status'] = $initialStatus;
+            $dataForm['token'] = $getToken;
+            $dataForm['status'] = $initialStatus;
 
 
             $transaksiModel->insert($dataForm);
@@ -222,7 +229,7 @@ class CartController extends BaseController
                     'created_by' => $this->request->getPost('username'),
                     'created_date' => date("Y-m-d H:i:s"),
                 ];
-                
+
                 $transaksiDetailModel->insert($dataFormDetail);
             }
             $this->cart->destroy();
