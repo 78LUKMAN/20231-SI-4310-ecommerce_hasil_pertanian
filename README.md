@@ -11,13 +11,13 @@ A web-based digital platform specifically designed to facilitate online buying a
   - RAJA_ONGKIR_KEY = your_raja_ongkir_api_key
 - Install the dependencies (composer install)
 
-## How To Run
-- Run project : php spark serve
-
 ## Database Migration 
 - Create database
 - Run php spark migrate
 - Run php spark db:seed Users
+  
+## How To Run
+- Run project : php spark serve
 
 ## Note
 If you have an error like "ErrorException
