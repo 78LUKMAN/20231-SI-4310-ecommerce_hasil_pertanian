@@ -7,6 +7,7 @@ use App\Models\UserModel;
 
 class ProfileController extends BaseController
 {
+    protected $userModel;
     public function __construct()
     {
         $this->validation = \Config\Services::validation();

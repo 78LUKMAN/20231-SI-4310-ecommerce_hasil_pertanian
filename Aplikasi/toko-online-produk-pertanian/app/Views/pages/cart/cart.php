@@ -2,16 +2,21 @@
 
 <?= $this->section('content') ?>
 <main class="container">
-<?php
-if (session()->getFlashData('success')) {
-    ?>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <?= session()->getFlashData('success') ?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
     <?php
-}
-?>
+    if (session()->getFlashData('success')) {
+        ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= session()->getFlashData('success') ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <?php
+    } elseif (session()->getFlashData('failed')) { ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?= session()->getFlashData('failed') ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php }
+    ?>
     <div class="pagetitle">
         <h1>Shopping Cart</h1>
     </div>
@@ -53,12 +58,12 @@ if (session()->getFlashData('success')) {
                                                 <td><img src="<?php echo base_url() . "assets/img/products/" . $item['options']['image'] ?>"
                                                         width="100px"></td>
                                                 <td>
-                                                    <?php echo "Rp.".number_format ($item['disprice']) ?>
+                                                    <?php echo "Rp." . number_format($item['disprice']) ?>
                                                 </td>
                                                 <td><input type="number" min="1" name="qty<?php echo $i++ ?>"
-                                                        class="form-control" value="<?php echo $item['qty'] ?>"></td>
+                                                        class="form-control <?php echo session()->getFlashData('failed') ? 'is-invalid' : ''?>" value="<?php echo $item['qty'] ?>"></td>
                                                 <td>
-                                                    <?php echo "Rp.".number_format($item['subtotal']) ?>
+                                                    <?php echo "Rp." . number_format($item['subtotal']) ?>
                                                 </td>
                                                 <td>
                                                     <a href="<?php echo base_url('cart/delete/' . $item['rowid'] . '') ?>"
@@ -73,7 +78,7 @@ if (session()->getFlashData('success')) {
                             </table>
                         </div>
                         <div class="alert alert-info">
-                            <?php echo "Total = " . "Rp.".number_format($total) ?>
+                            <?php echo "Total = " . "Rp." . number_format($total) ?>
                         </div>
                         <button type="submit" class="btn btn-primary">Perbarui</button>
                         <a class="btn btn-warning" href="<?php echo base_url() ?>cart/clear">Kosongkan</a>
