@@ -1,5 +1,6 @@
 <?= $this->extend('layout/layout'); ?>
 <?= $this->section('content') ?>
+
 <div class="main-modal" data-modal>
     <div class="main-modal-close-overlay" data-modal-overlay></div>
     <div class="main-modal-content">
@@ -465,7 +466,7 @@
                     <div class="showcase-wrapper has-scrollbar">
                         <?php
                         $productsLimited = array_filter($products, function ($product) {
-                            return strpos($product['label'], 'limited') !== false;
+                            return $product['discount'] >= 30;
                         });
 
                         if (empty($productsLimited)) { ?>
@@ -676,22 +677,17 @@
             <h1 class="title">Tranding Products</h1>
             <div class="blog-container has-scrollbar">
                 <?php foreach ($products as $product):
+                    $labelsArray = explode(',', $product['label']);
+                    $firstLabel = trim($labelsArray[1]);
                     if ($product['sold'] >= 20):
                         ?>
                         <div class="blog-card">
-                            <a href="#">
+                            <a href="<?= base_url('product/detail/') . $product['id'] ?>">
                                 <img src="<?php echo base_url() ?>assets/img/products/<?= $product['image'] ?>"
                                     class="blog-benner" width="100" style="max-width:200px">
                             </a>
                             <div class="blog-content">
-                                <a href="#" class="blog-category">Sayur</a>
-                                <a href="#">
-                                    <h3 class="blog-title">Lihat Semua</h3>
-
-                                    <p class="blog-meta">
-                                        By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                                    </p>
-                                </a>
+                                <a href="#" class="blog-category"><?=$firstLabel?></a>
                             </div>
                         </div>
                     <?php endif ?>
