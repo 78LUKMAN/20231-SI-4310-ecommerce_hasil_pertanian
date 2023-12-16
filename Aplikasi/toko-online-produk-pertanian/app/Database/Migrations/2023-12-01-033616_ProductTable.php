@@ -44,13 +44,19 @@ class ProductTable extends Migration
                     "constraint" => 6,
                 ],
                 "label" => [
-                    "type"=> "varchar",
-                    "constraint"=> "30",
+                    "type" => "varchar",
+                    "constraint" => "30",
                 ],
                 "image" => [
                     "type" => "varchar",
                     "constraint" => 255,
-                ]
+                ],
+                "created_at" => [
+                    "type" => "DATETIME",
+                ],
+                "updated_at" => [
+                    "type" => "DATETIME"
+                ],
             ]
         );
         $this->forge->addPrimaryKey("id");
@@ -60,6 +66,6 @@ class ProductTable extends Migration
     public function down()
     {
         $this->forge->dropTable("products");
-        
+
     }
 }
