@@ -24,11 +24,13 @@ class PaymentController extends BaseController
         // Set 3DS transaction for credit card to true
         \Midtrans\Config::$is3ds = true;
 
+        $fixedGrossAmount = 10000;
+
         $transactionDetails = array(
             'order_id' => $data['id_order'],
-            'gross_amount' => $data['total'],
+            'gross_amount' => $fixedGrossAmount,
         );
-
+        
         $customerDetails = array(
             'first_name' => $data['name'],
             'email' => $data['email'],
@@ -42,13 +44,30 @@ class PaymentController extends BaseController
             ),
         );
         
+        $items = array();
+        foreach ($data['items'] as $item) {
+            $items[] = array(
+                'id' => $item['product_id'],
+                'price' => $item['price'],
+                'quantity' => $item['quantity'],
+                'name' => $item['name'],
+            );
+        }
+
+        $items[] = array(
+            'id' => 'shipping',
+            'price' => $data['fare'],
+            'quantity' => 1,
+            'name' => 'Ongkir',
+        );
+        
         $params = array(
             'transaction_details' => $transactionDetails,
             'customer_details' => $customerDetails,
+            'item_details' => $items,
         );
-
+        
         $snapToken = \Midtrans\Snap::getSnapToken($params);
-
         return $snapToken;
     }
 

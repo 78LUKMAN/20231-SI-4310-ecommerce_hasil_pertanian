@@ -191,7 +191,6 @@ class CartController extends BaseController
     public function buy()
     {
         if ($this->request->getPost()) {
-            $data = $this->request->getPost();
 
             $transaksiModel = new TransactionModel();
             $transaksiDetailModel = new DetailTransactionModel();
@@ -210,39 +209,45 @@ class CartController extends BaseController
                 'created_date' => date("Y-m-d H:i:s")
             ];
 
-            $paymentData = array(
-                'id_order' => $id_order,
-                'poscode' => $this->request->getPost('poscode'),
-                'city' => $this->request->getPost('city'),
-                'total' => $dataForm['total'],
-                'name' => $dataForm['name'],
-                'email' => $dataForm['email'],
-                'address' => $dataForm['address'],
 
-            );
-
-            $paymentController = new PaymentController();
-            $getToken = $paymentController->snapToken($paymentData);
-            $initialStatus = $paymentController->checkStatus($id_order);
-            $dataForm['token'] = $getToken;
-            $dataForm['status'] = $initialStatus;
-
-
-            $transaksiModel->insert($dataForm);
-
+            $itemsData = array();
             foreach ($this->cart->contents() as $value) {
-                $dataFormDetail = [
+                $itemData = [
                     'transaction_id' => $id_order,
                     'product_id' => $value['id'],
+                    'name' => $value['name'],
                     'quantity' => $value['qty'],
                     'discount' => 0,
                     'subtotal' => $value['qty'] * $value['disprice'],
+                    'price' => $value['disprice'],
                     'created_by' => $this->request->getPost('username'),
                     'created_date' => date("Y-m-d H:i:s"),
                 ];
 
-                $transaksiDetailModel->insert($dataFormDetail);
+                $itemsData[] = $itemData;
+                $transaksiDetailModel->insert($itemData);
             }
+
+            $paymentData = [
+                'id_order' => $id_order,
+                'poscode' => $this->request->getPost('poscode'),
+                'city' => $this->request->getPost('city'),
+                'total' => $dataForm['total'],
+                'fare' => $dataForm['fare'],
+                'name' => $dataForm['name'],
+                'email' => $dataForm['email'],
+                'address' => $dataForm['address'],
+                'items' => $itemsData,
+            ];
+
+            $paymentController = new PaymentController();
+            $getToken = $paymentController->snapToken($paymentData);
+            $initialStatus = $paymentController->checkStatus($id_order);
+
+            $dataForm['token'] = $getToken;
+            $dataForm['status'] = $initialStatus;
+
+            $transaksiModel->insert($dataForm);
             $this->cart->destroy();
 
             session()->setflashdata('success', 'Pesanan berhasil dibuat');
