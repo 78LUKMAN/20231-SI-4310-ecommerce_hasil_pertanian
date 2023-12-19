@@ -54,6 +54,8 @@
 								<option>Silakan pilih Kab/Kota</option>
 							</select>
 						</div>
+						<input type="hidden" id="poscode" name="poscode">
+						<input type="hidden" id="city" name="city">
 						<div class="col-12">
 							<label for="layanan" class="form-label">Layanan</label>
 							<select class="form-select" id="service" required>
@@ -140,7 +142,6 @@
 		$("#provinsi").on('change', function () {
 			$("#kabupaten").empty();
 			var id_province = $(this).val();
-			console.log(id_province)
 			$.ajax({
 				url: "<?= site_url('cart/getcity') ?>",
 				type: 'GET',
@@ -157,6 +158,25 @@
 							text: results[i]['city_name']
 						}));
 					}
+					$("#kabupaten").on("change", function () {
+						// Get the selected city_id
+						var selectedCityId = $(this).val();
+
+						// Find the corresponding city information
+						var selectedCity = results.find(function (city) {
+							return city.city_id === selectedCityId;
+						});
+
+						// Update #poscode based on the selected city
+						if (selectedCity) {
+							$("#poscode").val(selectedCity.postal_code);
+							$("#city").val(selectedCity.city_name);
+						} else {
+							// Handle the case where the selected city is not found
+							$("#poscode").val("");
+							$("#city").val("");
+						}
+					});
 				},
 
 			});
@@ -192,9 +212,9 @@
 
 		$("#service").on('change', function () {
 			var estimasi = $('option:selected', this).attr('etd'),
-			fare = parseInt($(this).val());
+				fare = parseInt($(this).val());
 			var total = fare + <?= $total ?>;
-            $("#fare").val(fare);
+			$("#fare").val(fare);
 			$("#total").html("IDR " + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,'));
 			$("#price_total").val(total);
 		});

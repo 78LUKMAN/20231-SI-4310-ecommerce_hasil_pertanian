@@ -466,12 +466,12 @@
                     <div class="showcase-wrapper has-scrollbar">
                         <?php
                         $productsLimited = array_filter($products, function ($product) {
-                            return strpos($product['label'], 'limited') !== false;
+                            return $product['discount'] >= 30;
                         });
 
                         if (empty($productsLimited)) { ?>
                             <div>
-                                <h1 class="fs-5">Belum ada promo</h1>
+                                <p>Belum ada promo</p>
                             </div>
                             <?php
                         } else {
@@ -599,12 +599,12 @@
                                     </div>
                                 </div>
                             <?php endif ?>
-                            <?php endforeach ?>
-                            <?php if ($hasDiscount == false): ?>
-                                <div>
-                                    <h1 class="fs-5">Belum ada diskon</h1>
-                                </div>
-                            <?php endif ?>
+                        <?php endforeach ?>
+                        <?php if ($hasDiscount == false): ?>
+                            <div>
+                                <p>Belum ada diskon</p>
+                            </div>
+                        <?php endif ?>
 
                     </div>
                 </div>
@@ -666,203 +666,35 @@
                             <button class="special-offer-button">Dapatkan Sekarang</button>
                         </a>
                     <?php else: ?>
-                        <p>No special offer available.</p>
+                        <p>belum ada produk yang spesial.</p>
                     <?php endif; ?>
                 </div>
-                <!-- <div class="service">
-                        <h2 class="title">Our Services</h2>
-                        <div class="service-container">
-                            <article class="service-item-container">
-                                <a href="#" class="service-item">
-                                    <div class="service-icon">
-                                        <ion-icon name="boat-outline"></ion-icon>
-                                    </div>
-
-                                    <div class="service-item-content">
-                                        <h3 class="service-item-title">World Delivery</h3>
-                                        <p class="sevice-item-desc">For Order Over $250</p>
-                                    </div>
-                                </a>
-                                <a href="#" class="service-item">
-                                    <div class="service-icon">
-                                        <ion-icon name="rocket-outline"></ion-icon>
-                                    </div>
-
-                                    <div class="service-item-content">
-                                        <h3 class="service-item-title">Next Day Delivery</h3>
-                                        <p class="sevice-item-desc">USA Only</p>
-                                    </div>
-                                </a>
-                                <a href="#" class="service-item">
-                                    <div class="service-icon">
-                                        <ion-icon name="call-outline"></ion-icon>
-                                    </div>
-
-                                    <div class="service-item-content">
-                                        <h3 class="service-item-title">Non Stop Online Support</h3>
-                                        <p class="sevice-item-desc">getsupport.ourstore.com</p>
-                                    </div>
-                                </a>
-                                <a href="#" class="service-item">
-                                    <div class="service-icon">
-                                        <ion-icon name="ticket-outline"></ion-icon>
-                                    </div>
-
-                                    <div class="service-item-content">
-                                        <h3 class="service-item-title">30% Money Back</h3>
-                                        <p class="sevice-item-desc">For Order Over $850</p>
-                                    </div>
-                                </a>
-                                <a href="#" class="service-item">
-                                    <div class="service-icon">
-                                        <ion-icon name="arrow-undo-outline"></ion-icon>
-                                    </div>
-
-                                    <div class="service-item-content">
-                                        <h3 class="service-item-title">Return Policy</h3>
-                                        <p class="sevice-item-desc">Easy and Free for Return</p>
-                                    </div>
-                                </a>
-                            </article>
+            </div>
+        </div>
+    </section>
+    <section class="blog">
+        <div class="container">
+            <h1 class="title">Tranding Products</h1>
+            <div class="blog-container has-scrollbar">
+                <?php foreach ($products as $product):
+                    $labelsArray = explode(',', $product['label']);
+                    $firstLabel = trim($labelsArray[1]);
+                    if ($product['sold'] >= 20):
+                        ?>
+                        <div class="blog-card">
+                            <a href="<?= base_url('product/detail/') . $product['id'] ?>">
+                                <img src="<?php echo base_url() ?>assets/img/products/<?= $product['image'] ?>"
+                                    class="blog-benner" width="100" style="max-width:200px">
+                            </a>
+                            <div class="blog-content">
+                                <a href="#" class="blog-category"><?=$firstLabel?></a>
+                            </div>
                         </div>
-                    </div> -->
+                    <?php endif ?>
+                <?php endforeach ?>
             </div>
         </div>
     </section>
 
-    <!-- <section class="blog">
-        <div class="container">
-            <div class="blog-container has-scrollbar">
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">Sayur</a>
-                        <a href="#">
-                            <h3 class="blog-title">Lihat Semua</h3>
-
-                            <p class="blog-meta">
-                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">Sayur</a>
-                        <a href="#">
-                            <h3 class="blog-title">Lihat Semua</h3>
-
-                            <p class="blog-meta">
-                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">Sayur</a>
-                        <a href="#">
-                            <h3 class="blog-title">Lihat Semua</h3>
-
-                            <p class="blog-meta">
-                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">Sayur</a>
-                        <a href="#">
-                            <h3 class="blog-title">Lihat Semua</h3>
-
-                            <p class="blog-meta">
-                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">Sayur</a>
-                        <a href="#">
-                            <h3 class="blog-title">Lihat Semua</h3>
-
-                            <p class="blog-meta">
-                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">Sayur</a>
-                        <a href="#">
-                            <h3 class="blog-title">Lihat Semua</h3>
-
-                            <p class="blog-meta">
-                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">Sayur</a>
-                        <a href="#">
-                            <h3 class="blog-title">Lihat Semua</h3>
-
-                            <p class="blog-meta">
-                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <a href="#">
-                        <img src="<?php echo base_url() ?>assets/img/products/sayurbuah.jpg" class="blog-benner"
-                            width="300">
-                    </a>
-                    <div class="blog-content">
-                        <a href="#" class="blog-category">Sayur</a>
-                        <a href="#">
-                            <h3 class="blog-title">Lihat Semua</h3>
-
-                            <p class="blog-meta">
-                                By <cite>Me</cite> / <time datetime="2022-14-12">Des 14, 2022</time>
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 </main>
 <?= $this->endSection('content') ?>

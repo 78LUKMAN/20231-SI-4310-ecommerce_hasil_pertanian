@@ -55,6 +55,7 @@ class ProductController extends BaseController
                     'stock' => $this->request->getPost('stock'),
                     'description' => $this->request->getPost('description'),
                     'label' => $this->request->getPost('label'),
+                    'created_at' => date('Y-m-d H:i:s')
                 ];
 
                 $image = $this->request->getFile('image');
@@ -106,6 +107,8 @@ class ProductController extends BaseController
                     'stock' => $this->request->getPost('stock'),
                     'description' => $this->request->getPost('description'),
                     'label' => $this->request->getPost('label'),
+                    'updated_at' => date('Y-m-d H:i:s')
+
                 ];
 
                 $image = $this->request->getFile('image');

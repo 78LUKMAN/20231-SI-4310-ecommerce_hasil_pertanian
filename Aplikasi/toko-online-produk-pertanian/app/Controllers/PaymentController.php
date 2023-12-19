@@ -13,7 +13,7 @@ class PaymentController extends BaseController
         $this->transaction = new TransactionModel();
     }
 
-    public function snapToken($id_order, $total, $username, $email)
+    public function snapToken($data)
     {
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = getenv('MIDTRANS_SERVER');
@@ -24,19 +24,50 @@ class PaymentController extends BaseController
         // Set 3DS transaction for credit card to true
         \Midtrans\Config::$is3ds = true;
 
-        $params = array(
-            'transaction_details' => array(
-                'order_id' => $id_order,
-                'gross_amount' => $total,
-            ),
-            'customer_details' => array(
-                'first_name' => $username,
-                'email' => $email,
+        $fixedGrossAmount = 10000;
+
+        $transactionDetails = array(
+            'order_id' => $data['id_order'],
+            'gross_amount' => $fixedGrossAmount,
+        );
+        
+        $customerDetails = array(
+            'first_name' => $data['name'],
+            'email' => $data['email'],
+            "billing_address" => array(
+                "first_name" => $data['name'],
+                "email" => $data['email'],
+                "address" => $data['address'],
+                "city" => $data['city'],
+                "postal_code" => $data['poscode'],
+                "country_code" => "IDN"
             ),
         );
+        
+        $items = array();
+        foreach ($data['items'] as $item) {
+            $items[] = array(
+                'id' => $item['product_id'],
+                'price' => $item['price'],
+                'quantity' => $item['quantity'],
+                'name' => $item['name'],
+            );
+        }
 
+        $items[] = array(
+            'id' => 'shipping',
+            'price' => $data['fare'],
+            'quantity' => 1,
+            'name' => 'Ongkir',
+        );
+        
+        $params = array(
+            'transaction_details' => $transactionDetails,
+            'customer_details' => $customerDetails,
+            'item_details' => $items,
+        );
+        
         $snapToken = \Midtrans\Snap::getSnapToken($params);
-
         return $snapToken;
     }
 

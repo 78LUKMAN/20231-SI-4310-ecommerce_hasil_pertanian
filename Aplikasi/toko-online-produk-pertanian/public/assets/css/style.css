@@ -1559,6 +1559,7 @@ blockquote:after {
 .special-offer-benner {
     width: 100%;
     height: 100%;
+    aspect-ratio: 1/1;
 }
 
 .special-offer-content {
@@ -2682,7 +2683,7 @@ ul {
     }
 
     .blog-title {
-        font-size: var(--fs-4);
+        font-size: var(--fs-6);
     }
 
     .footer-nav .nav-list {
