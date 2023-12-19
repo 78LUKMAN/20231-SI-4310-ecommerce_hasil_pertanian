@@ -210,8 +210,19 @@ class CartController extends BaseController
                 'created_date' => date("Y-m-d H:i:s")
             ];
 
+            $paymentData = array(
+                'id_order' => $id_order,
+                'poscode' => $this->request->getPost('poscode'),
+                'city' => $this->request->getPost('city'),
+                'total' => $dataForm['total'],
+                'name' => $dataForm['name'],
+                'email' => $dataForm['email'],
+                'address' => $dataForm['address'],
+
+            );
+
             $paymentController = new PaymentController();
-            $getToken = $paymentController->snapToken($id_order, $dataForm['total'], $dataForm['username'], $dataForm['email']);
+            $getToken = $paymentController->snapToken($paymentData);
             $initialStatus = $paymentController->checkStatus($id_order);
             $dataForm['token'] = $getToken;
             $dataForm['status'] = $initialStatus;
