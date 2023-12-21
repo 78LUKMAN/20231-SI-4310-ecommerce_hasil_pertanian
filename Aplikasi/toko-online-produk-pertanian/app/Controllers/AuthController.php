@@ -18,7 +18,7 @@ class AuthController extends BaseController
         if ($this->request->is('post')) {
             $rules = [
                 'name' => 'required|min_length[4]|max_length[50]',
-                'username' => 'required|min_length[6]|max_length[10]|is_unique[users.username]',
+                'username' => 'required|min_length[6]|max_length[12]|is_unique[users.username]',
                 'email' => 'required|min_length[4]|max_length[100]|valid_email',
                 'password' => 'required|min_length[4]|max_length[50]',
                 'confirm_password' => 'required|matches[password]',
@@ -32,11 +32,12 @@ class AuthController extends BaseController
                     'email' => $this->request->getVar('email'),
                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
                     'role' => "guest",
+                    'img' => "default.png",
                     'created_at' => date('Y-m-d H:i:s')
                 ];
 
                 $userModel->save($data);
-                return redirect("auth/signin")->with("success", "horeeee");
+                return redirect("auth/signin")->with("auth-success", "Akun anda berhasil dibuat");
             } else {
                 return view('pages/signup/signup', ['validation' => $validator]);
             }
