@@ -59,25 +59,21 @@
                                                 $statusClass = '';
 
                                                 switch ($transactionData['status']) {
-                                                    case "200":
-                                                        $statusClass = 'bg-success text-white';
-                                                        $statusText = 'Lunas';
-                                                        break;
-                                                    case "201":
-                                                        $statusClass = 'bg-warning';
-                                                        $statusText = 'Menunggu';
-                                                        break;
                                                     case "404":
                                                         $statusClass = 'bg-danger text-white';
                                                         $statusText = 'Belum Bayar';
                                                         break;
-                                                    case "407":
-                                                        $statusClass = 'bg-danger text-white';
-                                                        $statusText = 'Expired';
+                                                    case "pending":
+                                                        $statusClass = 'bg-warning text-white';
+                                                        $statusText = 'Menunggu';
                                                         break;
-                                                    case "500":
+                                                    case "settlement":
+                                                        $statusClass = 'bg-success text-white';
+                                                        $statusText = 'Lunas';
+                                                        break;
+                                                    case "cancel":
                                                         $statusClass = 'bg-danger text-white';
-                                                        $statusText = 'Error, klik "Update"';
+                                                        $statusText = 'Dibatalkal';
                                                         break;
                                                     default:
                                                         $statusText = 'Error';
@@ -85,7 +81,7 @@
                                                         break;
                                                 }
 
-                                                if (($transactionData['status']) != 200) {
+                                                if (($transactionData['status']) != "settlement") {
                                                     $pendingOrders[] = $transactionData['order_id'];
                                                 }
                                                 ?>

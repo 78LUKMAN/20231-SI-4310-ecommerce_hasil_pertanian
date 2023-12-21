@@ -23,23 +23,32 @@ class PaymentController extends BaseController
         \Midtrans\Config::$isSanitized = true;
         // Set 3DS transaction for credit card to true
         \Midtrans\Config::$is3ds = true;
-
-        $fixedGrossAmount = 10000;
-
         $transactionDetails = array(
-            'order_id' => $data['id_order'],
-            'gross_amount' => $fixedGrossAmount,
+            'order_id' => $data['shipping']['id_order'],
+            'gross_amount' => $data['shipping']['total'],
         );
         
+        
+
         $customerDetails = array(
-            'first_name' => $data['name'],
-            'email' => $data['email'],
+            'first_name' => $data['user']['user_name'],
+            'email' => $data['user']['user_email'],
+            'phone' => $data['user']['user_phone'],
+            'address' => $data['user']['user_address'],
             "billing_address" => array(
-                "first_name" => $data['name'],
-                "email" => $data['email'],
-                "address" => $data['address'],
-                "city" => $data['city'],
-                "postal_code" => $data['poscode'],
+                "first_name" => $data['shipping']['shipping_name'],
+                "email" => $data['shipping']['shipping_email'],
+                "address" => $data['shipping']['shipping_address'],
+                "city" => $data['shipping']['city'],
+                "postal_code" => $data['shipping']['poscode'],
+                "country_code" => "IDN"
+            ),
+            "shipping_address" => array(
+                "first_name" => $data['shipping']['shipping_name'],
+                "email" => $data['shipping']['shipping_email'],
+                "phone" => $data['shipping']['shipping_phone'],
+                "city" => $data['shipping']['city'],
+                "postal_code" => $data['shipping']['poscode'],
                 "country_code" => "IDN"
             ),
         );
@@ -56,7 +65,7 @@ class PaymentController extends BaseController
 
         $items[] = array(
             'id' => 'shipping',
-            'price' => $data['fare'],
+            'price' => $data['shipping']['fare'],
             'quantity' => 1,
             'name' => 'Ongkir',
         );
@@ -128,7 +137,12 @@ class PaymentController extends BaseController
 
         $result = curl_exec($ch);
         $finalRes = json_decode($result, true);
-        return $finalRes['status_code'];
+
+        if (isset($finalRes['transaction_status'])) {
+            return $finalRes['transaction_status'];
+        } else {
+            return $finalRes['status_code'];
+        }
     }
 
 

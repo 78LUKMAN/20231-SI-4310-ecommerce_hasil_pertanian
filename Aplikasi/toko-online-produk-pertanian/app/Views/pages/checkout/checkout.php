@@ -1,7 +1,10 @@
 <?= $this->extend('layout/layout') ?>
 
 <?= $this->section('content') ?>
-<?php $session = session(); ?>
+<?php $session = session(); 
+
+?>
+
 <main class="container">
 
 	<div class="pagetitle">
@@ -24,18 +27,22 @@
 						<?= form_open('cart/buy', 'class="row g-3"') ?>
 						<input type="hidden" name="username" value="<?= ($session->get('username')) ?>">
 						<input type="hidden" name="price_total" id="price_total" value="">
+						<input type="hidden" name="user_phone" id="user_phone" value="<?= $session->get('phone')?>">
+						<input type="hidden" name="user_email" id="user_email" value="<?= $session->get('email')?>">
+						<input type="hidden" name="user_name" id="user_name" value="<?= $session->get('name')?>">
+						<input type="hidden" name="user_address" id="user_address" value="<?= $session->get('address')?>">
 						<div class="col-12">
 							<label for="name" class="form-label">Nama</label>
 							<input type="text" class="form-control" name="name" id="name"
-								value="<?php echo $session->get('username') ?>" required>
+								value="" required>
 						</div>
 						<div class="col-12">
 							<label for="address" class="form-label">Alamat</label>
 							<input type="text" class="form-control" id="address" name="address" required>
 						</div>
 						<div class="col-12">
-							<label for="email" class="form-label">Email</label>
-							<input type="email" class="form-control" id="email" name="email" required>
+							<label for="phone" class="form-label">Phone</label>
+							<input type="number" class="form-control" id="phone" name="phone" value="<?= $session->get('phone')?>" required>
 						</div>
 						<div class="col-12">
 							<label for="provinsi" class="form-label">Provinsi</label>

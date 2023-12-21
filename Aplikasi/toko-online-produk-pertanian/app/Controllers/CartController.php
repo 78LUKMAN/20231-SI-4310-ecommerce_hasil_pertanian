@@ -203,7 +203,7 @@ class CartController extends BaseController
                 'username' => $this->request->getPost('username'),
                 'total' => $this->request->getPost('price_total'),
                 'address' => $this->request->getPost('address'),
-                'email' => $this->request->getPost('email'),
+                'email' => $this->request->getPost('user_email'),
                 'fare' => $this->request->getPost('fare'),
                 'created_by' => $this->request->getPost('username'),
                 'created_date' => date("Y-m-d H:i:s")
@@ -228,15 +228,28 @@ class CartController extends BaseController
                 $transaksiDetailModel->insert($itemData);
             }
 
-            $paymentData = [
+            $shippingData = [
+                'shipping_name' => $this->request->getPost('name'),
+                'shipping_phone' => $this->request->getPost('phone'),
+                'shipping_email' => $this->request->getPost('user_email'),
+                'shipping_address' => $this->request->getPost('address'),
                 'id_order' => $id_order,
                 'poscode' => $this->request->getPost('poscode'),
                 'city' => $this->request->getPost('city'),
                 'total' => $dataForm['total'],
                 'fare' => $dataForm['fare'],
-                'name' => $dataForm['name'],
-                'email' => $dataForm['email'],
-                'address' => $dataForm['address'],
+            ];
+
+            $userData = [
+                'user_name' => $this->request->getPost('user_name'),
+                'user_phone' => $this->request->getPost('user_phone'),
+                'user_email' => $this->request->getPost('user_email'),
+                'user_address' => $this->request->getPost('user_address'),
+            ];
+
+            $paymentData = [
+                'user' => $userData,
+                'shipping' => $shippingData,
                 'items' => $itemsData,
             ];
 
