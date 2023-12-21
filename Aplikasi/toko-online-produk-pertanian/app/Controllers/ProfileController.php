@@ -75,7 +75,7 @@ class ProfileController extends BaseController
         $userId = session('id');
         $userData = $this->userModel->find($userId);
         $validationRules = [
-            'username' => 'required',
+            'name' => 'required',
             'email' => 'required|valid_email',
             'phone' => 'required|numeric',
             'address' => 'required',
@@ -83,7 +83,7 @@ class ProfileController extends BaseController
         ];
 
         if ($this->validate($validationRules)) {
-            $username = $this->request->getPost('username');
+            $name = $this->request->getPost('name');
             $email = $this->request->getPost('email');
             $phone = $this->request->getPost('phone');
             $address = $this->request->getPost('address');
@@ -101,23 +101,25 @@ class ProfileController extends BaseController
             if (!$userData) {
                 return redirect()->back()->with('pro-errors', 'User data not found in session.');
             }
-            
-
-            if (!$userData) {
-                return redirect()->back()->with('pro-errors', 'User not found.');
-            }
 
             $userData = [
-                'username' => $username,
+                'username' => session('username'),
+                'id' => session('id'),
+                'name' => $name,
                 'email' => $email,
                 'phone' => $phone,
                 'address' => $address,
                 'img' => $randFileName,
+                'role' => session('role'),
+                'isLogin' => session('isLogin'),
             ];
 
             $updated = $this->userModel->update($userId, $userData);
+            $Auth = new AuthController();
+            $session = $Auth->setSession($userData);
 
             if ($updated) {
+                $session;
                 return redirect()->to('activity/profile')->with('pro-success', 'Profile data successfully updated.');
             } else {
                 return redirect()->to('activity/profile')->with('pro-failed', 'Failed to update profile data.');

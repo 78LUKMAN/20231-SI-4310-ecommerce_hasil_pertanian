@@ -18,7 +18,7 @@ class AuthController extends BaseController
         if ($this->request->is('post')) {
             $rules = [
                 'name' => 'required|min_length[4]|max_length[50]',
-                'username' => 'required|min_length[6]|max_length[10]|is_unique[users.username]',
+                'username' => 'required|min_length[6]|max_length[12]|is_unique[users.username]',
                 'email' => 'required|min_length[4]|max_length[100]|valid_email',
                 'password' => 'required|min_length[4]|max_length[50]',
                 'confirm_password' => 'required|matches[password]',
@@ -32,11 +32,12 @@ class AuthController extends BaseController
                     'email' => $this->request->getVar('email'),
                     'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
                     'role' => "guest",
+                    'img' => "default.png",
                     'created_at' => date('Y-m-d H:i:s')
                 ];
 
                 $userModel->save($data);
-                return redirect("auth/signin")->with("success", "horeeee");
+                return redirect("auth/signin")->with("auth-success", "Akun anda berhasil dibuat");
             } else {
                 return view('pages/signup/signup', ['validation' => $validator]);
             }
@@ -58,16 +59,7 @@ class AuthController extends BaseController
                 $dataPassword = $user['password'];
                 $authUserPassword = password_verify($password, $dataPassword);
                 if ($authUserPassword) {
-                    $session_data = [
-                        'username' => $user['username'],
-                        'id' => $user['id'],
-                        'name' => $user['name'],
-                        'role' => $user['role'],
-                        'img' => $user['img'],
-                        'isLoggIn' => TRUE,
-                    ];
-
-                    $session->set($session_data);
+                    $this->setSession($user);
                     return redirect()->to('/');
                 } else {
                     $session->setFlashdata('feedback', 'Username or Password is incorrect.');
@@ -80,6 +72,22 @@ class AuthController extends BaseController
         }
         $data['title'] = "sign in";
         return view('pages/signin/signin', $data);
+    }
+
+    public function setSession($user) {
+        $session = session();
+        $session_data = [
+            'username' => $user['username'],
+            'id' => $user['id'],
+            'name' => $user['name'],
+            'email' => $user['email'],
+            'address' => $user['address'],
+            'phone' => $user['phone'],
+            'role' => $user['role'],
+            'img' => $user['img'],
+            'isLoggIn' => TRUE,
+        ];
+        $session->set($session_data);
     }
 
     public function logout()

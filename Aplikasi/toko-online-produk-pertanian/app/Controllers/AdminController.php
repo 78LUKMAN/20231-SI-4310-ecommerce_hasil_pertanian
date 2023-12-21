@@ -75,7 +75,7 @@ class AdminController extends BaseController
                 session()->setFlashdata('input_data', $this->request->getPost());
                 if ($this->validate($rules)) {
                     $this->userModel->update($id, $data);
-                    return redirect('admin/accounts')->with('success', 'Password berhasil di perbarui');
+                    return redirect('admin/accounts')->with('success', 'Password berhasil diperbarui');
                 } else {
                     return redirect('admin/accounts')->with('error', $this->validator->getErrors());
                 }

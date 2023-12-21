@@ -33,8 +33,8 @@ class TransactionTable extends Migration
                 "type" => "DOUBLE",
             ],
             "status" => [
-                "type" => "INT",
-                "default" => 1,
+                "type" => "varchar",
+                "constraint" => 11,
             ],
             "token" => [
                 "type" => "VARCHAR",

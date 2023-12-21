@@ -1,6 +1,5 @@
 <?= $this->extend('layout/layout'); ?>
 <?= $this->section('content') ?>
-
 <div class="main-modal" data-modal>
     <div class="main-modal-close-overlay" data-modal-overlay></div>
     <div class="main-modal-content">
@@ -626,14 +625,8 @@
                     <div class="testimonial-wrapper has-scrollbar">
                         <?php foreach ($feedbacks as $feedback): ?>
                             <div class="testimonial-card-content">
-                                <?php $session = session();
-                                if (!empty($feedback['img'])): ?>
-                                    <img src="<?php echo base_url() ?>assets/img/profile/<?= $feedback['img'] ?>" alt=""
-                                        class="testimonial-benner" width="80" height="80">
-                                <?php else: ?>
-                                    <img src="<?php echo base_url() ?>assets/img/profile/default.png?>" alt=""
-                                        class="testimonial-benner" width="80" height="80">
-                                <?php endif ?>
+                                <img src="<?php echo base_url() ?>assets/img/profile/<?= $feedback['img'] ?>" alt=""
+                                    class="testimonial-benner" width="80" height="80">
                                 <p class="customer-name">
                                     <?= $feedback['name'] ?>
                                 </p>
