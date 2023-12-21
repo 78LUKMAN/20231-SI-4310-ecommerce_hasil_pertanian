@@ -27,11 +27,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="password"
-                        class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : (($validation->getRules('password')) ? 'is-valid' : '') ?>">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="username"
+                        value="<?= set_value('username') ?>"
+                        class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : (($validation->getRules('username')) ? 'is-valid' : '') ?>">
                     <div class="invalid-feedback">
-                        <?= $validation->getError('password') ?>
+                        <?= $validation->getError('username') ?>
                     </div>
                 </div>
 
@@ -43,7 +44,16 @@
                         <?= $validation->getError('email') ?>
                     </div>
                 </div>
-
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="password"
+                    class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : (($validation->getRules('password')) ? 'is-valid' : '') ?>">
+                    <div class="invalid-feedback">
+                        <?= $validation->getError('password') ?>
+                    </div>
+                </div>
+                
                 <div class="form-group">
                     <label for="repassword">Re-Password</label>
                     <input type="password" name="confirm_password" id="confirm_password"
@@ -51,17 +61,6 @@
                         class="form-control <?= ($validation->hasError('confirm_password')) ? 'is-invalid' : (($validation->getRules('confirm_password')) ? 'is-valid' : '') ?>">
                     <div class="invalid-feedback">
                         <?= $validation->getError('confirm_password') ?>
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username" placeholder="username"
-                        value="<?= set_value('username') ?>"
-                        class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : (($validation->getRules('username')) ? 'is-valid' : '') ?>">
-                    <div class="invalid-feedback">
-                        <?= $validation->getError('username') ?>
                     </div>
                 </div>
             </div>
