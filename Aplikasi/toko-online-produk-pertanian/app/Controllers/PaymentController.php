@@ -27,8 +27,7 @@ class PaymentController extends BaseController
             'order_id' => $data['shipping']['id_order'],
             'gross_amount' => $data['shipping']['total'],
         );
-        
-        
+
 
         $customerDetails = array(
             'first_name' => $data['user']['user_name'],
@@ -144,6 +143,4 @@ class PaymentController extends BaseController
             return $finalRes['status_code'];
         }
     }
-
-
 }

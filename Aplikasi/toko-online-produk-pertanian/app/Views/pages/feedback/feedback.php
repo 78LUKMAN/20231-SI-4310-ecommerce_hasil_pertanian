@@ -1,6 +1,7 @@
 <?= $this->extend('layout/layout'); ?>
 <?= $this->section('content') ?>
-<?php $session = session(); ?>
+<?php $session = session();
+?>
 <section class="">
     <div class="px-4 py-5 px-md-5  text-lg-start">
         <div class="container">
@@ -35,7 +36,7 @@
                 <div class="col-lg-5 mb-5 mb-lg-0">
                     <h1 class="my-5 display-3 fw-bold ls-tight fs-1">
                         Halo <br />
-                        <span class="text-primary fs-3"><?= $session->get('username')?></span>
+                        <span class="text-primary fs-3"><?= $session->get('name')?></span>
                     </h1>
                     <p style="color: hsl(217, 10%, 50.8%)">
                         Terima kasih telah mengunjungi ke toko kami. Setiap pesan Anda sangat berharga bagi kami.

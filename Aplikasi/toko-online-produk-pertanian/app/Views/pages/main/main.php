@@ -1,6 +1,5 @@
 <?= $this->extend('layout/layout'); ?>
 <?= $this->section('content') ?>
-
 <div class="main-modal" data-modal>
     <div class="main-modal-close-overlay" data-modal-overlay></div>
     <div class="main-modal-content">

@@ -138,10 +138,10 @@
 
 
                                 <div class="row mb-3">
-                                    <label for="fullName" class="col-md-4 col-lg-3 profile-data-title">Username</label>
+                                    <label for="fullName" class="col-md-4 col-lg-3 profile-data-title">Name</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <input name="username" type="text" class="form-control" id="username"
-                                            value="<?= $userData['username'] ?>">
+                                        <input name="name" type="text" class="form-control" id="name"
+                                            value="<?= $userData['name'] ?>">
                                     </div>
                                 </div>
 

@@ -124,9 +124,7 @@ class CartController extends BaseController
 
     private function rajaongkircost($origin, $destination, $weight, $courier)
     {
-
         $curl = curl_init();
-
         curl_setopt_array(
             $curl,
             array(
@@ -147,9 +145,7 @@ class CartController extends BaseController
 
         $response = curl_exec($curl);
         $err = curl_error($curl);
-
         curl_close($curl);
-
         return $response;
     }
 
@@ -163,7 +159,6 @@ class CartController extends BaseController
         }
 
         $curl = curl_init();
-
         curl_setopt_array(
             $curl,
             array(
@@ -182,9 +177,7 @@ class CartController extends BaseController
 
         $response = curl_exec($curl);
         $err = curl_error($curl);
-
         curl_close($curl);
-
         return $response;
     }
 
@@ -194,7 +187,6 @@ class CartController extends BaseController
 
             $transaksiModel = new TransactionModel();
             $transaksiDetailModel = new DetailTransactionModel();
-
 
             $id_order = time();
             $dataForm = [

@@ -58,19 +58,7 @@ class AuthController extends BaseController
                 $dataPassword = $user['password'];
                 $authUserPassword = password_verify($password, $dataPassword);
                 if ($authUserPassword) {
-                    $session_data = [
-                        'username' => $user['username'],
-                        'id' => $user['id'],
-                        'name' => $user['name'],
-                        'email' => $user['email'],
-                        'address' => $user['address'],
-                        'phone' => $user['phone'],
-                        'role' => $user['role'],
-                        'img' => $user['img'],
-                        'isLoggIn' => TRUE,
-                    ];
-
-                    $session->set($session_data);
+                    $this->setSession($user);
                     return redirect()->to('/');
                 } else {
                     $session->setFlashdata('feedback', 'Username or Password is incorrect.');
@@ -83,6 +71,22 @@ class AuthController extends BaseController
         }
         $data['title'] = "sign in";
         return view('pages/signin/signin', $data);
+    }
+
+    public function setSession($user) {
+        $session = session();
+        $session_data = [
+            'username' => $user['username'],
+            'id' => $user['id'],
+            'name' => $user['name'],
+            'email' => $user['email'],
+            'address' => $user['address'],
+            'phone' => $user['phone'],
+            'role' => $user['role'],
+            'img' => $user['img'],
+            'isLoggIn' => TRUE,
+        ];
+        $session->set($session_data);
     }
 
     public function logout()
