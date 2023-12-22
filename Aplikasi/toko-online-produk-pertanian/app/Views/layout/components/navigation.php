@@ -11,7 +11,7 @@
         <a href="<?php echo base_url() ?>activity/cart" id="cart-btn" <?php echo hideButton($cartUrl); ?>>
             <button class="action-btn">
                 <ion-icon name="cart-outline"></ion-icon>
-                <span class="count">0</span>
+                <span class="count cart-count">0</span>
             </button>
         </a>
         <a href="<?php echo base_url() ?>activity/history" id="history-btn" <?php echo hideButton($historyUrl); ?>>

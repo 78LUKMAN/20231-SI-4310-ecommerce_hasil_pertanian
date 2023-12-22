@@ -23,9 +23,11 @@
                     </a>
                 </li>
             </ul>
-            <div class="w-50"><marquee behavior="smooth" direction="left" class="header-tagline header-alert-news">
+            <div class="col-sm-7">
+                <marquee behavior="smooth" direction="left" class="header-tagline header-alert-news">
                 <p>Ingin produk berkualitas hanya dengan ujung jari? Pekalongan Groceria solusinya!! Pekalongan Groceria - sentuhan kesegaran untuk hidup lebih ceria</p>
-            </marquee></div>
+            </marquee>
+        </div>
             <div class="header-alert-news">
                 <p><b>- Pekalongan</b> Groceria -</p>
             </div>
@@ -81,7 +83,7 @@
                 <a href="<?php echo base_url() ?>activity/cart" id="cart-btn" <?php echo hideButton($cartUrl); ?>>
                     <button class="action-btn">
                         <ion-icon name="cart-outline"></ion-icon>
-                        <span class="count" id="cart-count">0</span>
+                        <span class="count cart-count">0</span>
                     </button>
                 </a>
                 <a href="<?php echo base_url() ?>activity/history" id="history-btn" <?php echo hideButton($historyUrl); ?>>
@@ -105,13 +107,15 @@
 <?= $this->section('script')?>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        var cartCount = document.getElementById('cart-count');
+        var cartCount = document.querySelectorAll('.cart-count');
 
         function loadCartCount() {
             fetch('<?php echo base_url() ?>cart/counter')
                 .then(response => response.json())
                 .then(data => {
-                    cartCount.innerText = data.count;
+                    cartCount.forEach(element => {
+                        element.innerText = data.count;
+                    });
                 });
         }
         loadCartCount();

@@ -1440,7 +1440,7 @@
                 (this.wrapper = e("div", {
                   class: "dataTable-wrapper dataTable-loading",
                 })),
-                (i += "<div class='dataTable-top d-flex flex-wrap justify-content-center d-md-block'>"),
+                (i += "<div class='dataTable-top d-md-block'>"),
                 (i += s.layout.top),
                 (i += "</div>"),
                 s.scrollY.length
