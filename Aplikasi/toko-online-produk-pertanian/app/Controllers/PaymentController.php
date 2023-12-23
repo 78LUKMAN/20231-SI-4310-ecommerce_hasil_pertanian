@@ -89,7 +89,7 @@ class PaymentController extends BaseController
             // Update status transaksi
             $this->transaction->update($orderId, ['status' => $status]);
 
-            if ($status == 200) {
+            if ($status == 'settlement') {
                 $this->reduceProductStock($orderId);
             }
         }

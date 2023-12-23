@@ -36,29 +36,25 @@
                         $statusClass = '';
 
                         switch ($transactionData['status']) {
-                            case "200":
-                                $statusClass = 'text-white bg-success';
-                                $statusText = 'Lunas';
-                                break;
-                            case "201":
-                                $statusClass = 'bg-warning';
-                                $statusText = 'Menunggu';
-                                break;
                             case "404":
-                                $statusClass = 'text-white bg-danger';
+                                $statusClass = 'bg-danger text-white';
                                 $statusText = 'Belum Bayar';
                                 break;
-                            case "407":
-                                $statusClass = 'text-white bg-danger';
-                                $statusText = 'Expired';
+                            case "pending":
+                                $statusClass = 'bg-warning text-white';
+                                $statusText = 'Menunggu';
                                 break;
-                            case "500":
-                                $statusClass = 'text-white bg-danger';
-                                $statusText = 'Error, klik "Update"';
+                            case "settlement":
+                                $statusClass = 'bg-success text-white';
+                                $statusText = 'Lunas';
+                                break;
+                            case "cancel":
+                                $statusClass = 'bg-danger text-white';
+                                $statusText = 'Dibatalkan';
                                 break;
                             default:
-                                $statusText = 'text-white Error';
-                                $statusClass = 'bg-danger';
+                                $statusText = 'Error';
+                                $statusClass = 'bg-danger text-white';
                                 break;
                         }
                         ?>

@@ -157,8 +157,7 @@ class ProductController extends BaseController
 
     public function search()
     {
-        $keyword = $this->request->getPost('keyword');
-
+        $keyword = filter_var($this->request->getPost('keyword'), FILTER_SANITIZE_STRING);
         if (empty($keyword)) {
             $data = ['result'] == null;
             return redirect()->back()->with('error', 'Kolom pencarian tidak boleh kosong');

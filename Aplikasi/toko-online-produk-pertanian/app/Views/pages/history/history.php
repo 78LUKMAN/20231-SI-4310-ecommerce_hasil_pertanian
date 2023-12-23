@@ -73,7 +73,7 @@
                                                         break;
                                                     case "cancel":
                                                         $statusClass = 'bg-danger text-white';
-                                                        $statusText = 'Dibatalkal';
+                                                        $statusText = 'Dibatalkan';
                                                         break;
                                                     default:
                                                         $statusText = 'Error';
@@ -98,7 +98,7 @@
                                                     data-bs-target="#collapseOne<?= $transactionData['order_id'] ?>">
                                                     <i class="bi bi-view-list"></i>
                                                 </button>
-                                                <?php if ($transactionData['status'] != 200): ?>
+                                                <?php if ($transactionData['status'] != 'settlement'): ?>
                                                     <button type="button" class="btn btn-warning" id="snap-pay"
                                                         data-token="<?= $transactionData['token'] ?>">Bayar</button>
 
