@@ -55,7 +55,8 @@ class ProductController extends BaseController
                     'stock' => $this->request->getPost('stock'),
                     'description' => $this->request->getPost('description'),
                     'label' => $this->request->getPost('label'),
-                    'created_at' => date('Y-m-d H:i:s')
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s')
                 ];
 
                 $image = $this->request->getFile('image');
@@ -190,11 +191,16 @@ class ProductController extends BaseController
     {
         $productModel = new ProductModel();
         $product = $productModel->find($productId);
-
+        
         if ($product) {
             $newSold = $product['sold'] + $quantity;
             $productModel->update($productId, ['sold' => $newSold]);
         }
+    }
+    
+    public function discountReset($id) {
+        $product = $this->productModel->find($id);
+        $this->productModel->update($id, ['discount' => 0, 'disprice' => $product['price']]);
     }
 
 }
