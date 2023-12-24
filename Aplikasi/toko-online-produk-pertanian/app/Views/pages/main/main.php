@@ -470,10 +470,11 @@
 
                         if (empty($productsLimited)) { ?>
                             <div>
-                                <p>Belum ada promo</p>
+                                <p>Promo tidak tersedia</p>
                             </div>
                             <?php
                         } else {
+                            $productsLimited = array_reverse($productsLimited, true);
                             foreach ($productsLimited as $product): ?>
                                 <div class="showcase-container">
                                     <div class="showcase">
@@ -534,6 +535,7 @@
                                                         <p class="display-text">sec</p>
                                                     </div>
                                                 </div>
+                                                <p class="mt-3 text-danger fw-bold countdown-desc countdown-end-desc"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -547,6 +549,7 @@
                     <div class="product-grid-container">
                         <?php
                         $hasDiscount = false;
+                        $products = array_reverse($products, true);
                         foreach ($products as $product): ?>
                             <?php
                             $labelsArray = explode(',', $product['label']);
@@ -700,9 +703,7 @@
             let data = element.getAttribute('data-create');
             let id = element.getAttribute('data-id');
             let countDownDate = new Date(data);
-            console.log(countDownDate)
             countDownDate.setHours(countDownDate.getHours() + 1);
-            countDownDate.setMinutes(countDownDate.getMinutes() + 1);
             countDownDate = countDownDate.getTime();
             let x = setInterval(function () {
 
@@ -724,7 +725,7 @@
                 if (distance <= 0) {
                     clearInterval(x);
                     $.post("product/reset/" + id, function (data) {
-                        console.log("Discount reset successfully.");
+                        $(".countdown-end-desc").text("Promo berakhir dan harga kembali normal")
                     });
                 }
             }, 1000);

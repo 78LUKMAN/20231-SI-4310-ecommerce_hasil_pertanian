@@ -118,17 +118,17 @@ if (session()->getFlashData('success')) {
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Price</label>
-                                        <input type="text" name="price" class="form-control" id="price"
+                                        <input type="number" name="price" class="form-control" id="price"
                                             value="<?= $product['price'] ?>" placeholder="Harga Barang" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Discount</label>
-                                        <input type="text" name="discount" class="form-control" id="discount"
+                                        <input type="number" name="discount" class="form-control" id="discount"
                                             value="<?= $product['discount'] ?>" placeholder="Harga Barang" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Stock</label>
-                                        <input type="text" name="stock" class="form-control" id="stock"
+                                        <input type="number" name="stock" class="form-control" id="stock"
                                             value="<?= $product['stock'] ?>" placeholder="Jumlah Barang" required>
                                     </div>
                                     <div class="form-group">
