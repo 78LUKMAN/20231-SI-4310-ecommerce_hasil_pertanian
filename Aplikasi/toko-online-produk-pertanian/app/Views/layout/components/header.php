@@ -23,7 +23,7 @@
                     </a>
                 </li>
             </ul>
-            <div class="col-7">
+            <div class="col-sm-7 col-md-8">
                 <marquee behavior="smooth" direction="left" class="header-tagline header-alert-news">
                 <p>Ingin produk berkualitas hanya dengan ujung jari? Pekalongan Groceria solusinya!! Pekalongan Groceria - sentuhan kesegaran untuk hidup lebih ceria</p>
             </marquee>
