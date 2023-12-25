@@ -25,7 +25,7 @@
     </div>
 <?php endif; ?>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newUser">
-    &nbsp;<i class="bi bi-plus-square"></i>&nbsp;Add New Account&nbsp;
+    &nbsp;<i class="bi bi-plus-square"></i>&nbsp;Add Account&nbsp;
 </button>
 
 <div class="table-responsive">

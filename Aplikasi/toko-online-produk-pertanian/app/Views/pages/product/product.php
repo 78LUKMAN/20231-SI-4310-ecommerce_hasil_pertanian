@@ -4,7 +4,7 @@
 <main class="container">
 
     <div class="pagetitle">
-        <h1>
+        <h1 class="fs-6">
             <?= $title ?>
         </h1>
     </div>
