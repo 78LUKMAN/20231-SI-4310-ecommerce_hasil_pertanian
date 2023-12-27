@@ -11,8 +11,8 @@ class Users extends Seeder
         $data = [
             [
                 'name' => 'admin toko',
-                'username' => 'adminsemprul',
-                'password' => password_hash('yabegitulah', PASSWORD_DEFAULT),
+                'username' => 'admintoko',
+                'password' => password_hash('groceriapekalongan', PASSWORD_DEFAULT),
                 'role' => 'admin'
             ],
             [
