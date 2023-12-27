@@ -60,6 +60,7 @@ $routes->group('admin', function ($routes) {
 // Product
 $routes->group('product', function ($routes) {
     $routes->post('search', 'ProductController::search');
+    $routes->post('reset/(:num)', 'ProductController::discountReset/$1');
     $routes->get('showall/(:any)', 'ProductController::showByLabel/$1');
     $routes->get('detail/(:num)', 'ProductController::detailproduct/$1');
 });

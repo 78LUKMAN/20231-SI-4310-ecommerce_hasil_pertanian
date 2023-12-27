@@ -470,10 +470,11 @@
 
                         if (empty($productsLimited)) { ?>
                             <div>
-                                <p>Belum ada promo</p>
+                                <p>Promo tidak tersedia</p>
                             </div>
                             <?php
                         } else {
+                            $productsLimited = array_reverse($productsLimited, true);
                             foreach ($productsLimited as $product): ?>
                                 <div class="showcase-container">
                                     <div class="showcase">
@@ -515,25 +516,26 @@
                                                     Hanya tersisa
                                                     <?= $product['stock'] ?> stok - buruan beli.
                                                 </p>
-
-                                                <div class="countdown mt-3">
+                                                <div class="countdown mt-3" data-id="<?= $product['id'] ?>"
+                                                    data-create="<?= $product['updated_at'] ?>">
                                                     <div class="countdown-content">
-                                                        <p class="display-number">5</p>
+                                                        <p class="display-number" id="days">5</p>
                                                         <p class="display-text">days</p>
                                                     </div>
                                                     <div class="countdown-content">
-                                                        <p class="display-number">10</p>
+                                                        <p class="display-number" id="hours">10</p>
                                                         <p class="display-text">hours</p>
                                                     </div>
                                                     <div class="countdown-content">
-                                                        <p class="display-number">26</p>
+                                                        <p class="display-number" id="minutes">26</p>
                                                         <p class="display-text">min</p>
                                                     </div>
                                                     <div class="countdown-content">
-                                                        <p class="display-number">45</p>
+                                                        <p class="display-number" id="seconds">45</p>
                                                         <p class="display-text">sec</p>
                                                     </div>
                                                 </div>
+                                                <p class="mt-3 text-danger fw-bold countdown-desc countdown-end-desc"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -547,6 +549,7 @@
                     <div class="product-grid-container">
                         <?php
                         $hasDiscount = false;
+                        $products = array_reverse($products, true);
                         foreach ($products as $product): ?>
                             <?php
                             $labelsArray = explode(',', $product['label']);
@@ -680,7 +683,9 @@
                                     class="blog-benner" width="100" style="max-width:200px">
                             </a>
                             <div class="blog-content">
-                                <a href="#" class="blog-category"><?=$firstLabel?></a>
+                                <a href="#" class="blog-category">
+                                    <?= $firstLabel ?>
+                                </a>
                             </div>
                         </div>
                     <?php endif ?>
@@ -688,6 +693,45 @@
             </div>
         </div>
     </section>
-
 </main>
 <?= $this->endSection('content') ?>
+<?= $this->section('script') ?>
+<script>
+    $(document).ready(function () {
+        let dataCount = document.querySelectorAll(".countdown")
+        dataCount.forEach(element => {
+            let data = element.getAttribute('data-create');
+            let id = element.getAttribute('data-id');
+            let countDownDate = new Date(data);
+            countDownDate.setHours(countDownDate.getHours() + 1);
+            countDownDate = countDownDate.getTime();
+            let x = setInterval(function () {
+
+                let now = new Date().getTime();
+
+                let distance = countDownDate - now;
+                distance = Math.max(0, distance);
+
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                $(element).find("#days").text(days);
+                $(element).find("#hours").text(hours);
+                $(element).find("#minutes").text(minutes);
+                $(element).find("#seconds").text(seconds);
+
+                if (distance <= 0) {
+                    clearInterval(x);
+                    $.post("product/reset/" + id, function (data) {
+                        $(".countdown-end-desc").text("Promo berakhir dan harga kembali normal")
+                    });
+                }
+            }, 1000);
+
+        });
+    });
+
+</script>
+<?= $this->endSection('script') ?>

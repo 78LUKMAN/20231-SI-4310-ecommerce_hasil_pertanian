@@ -4,6 +4,7 @@
     --eerie-black: rgb(33, 33, 33);
     --royal-blue: rgb(0, 110, 255);
     --sandy-brown: rgb(246, 163, 85);
+    --red-orange: rgb(239, 82, 30);
     --rubby-red: rgb(246, 35, 35);
     --ocean-green: rgb(70, 195, 137);
     --davys-gray: rgb(116, 116, 116);
@@ -1572,6 +1573,7 @@ blockquote:after {
     width: 100%;
     height: 100%;
     aspect-ratio: 1/1;
+    object-fit: contain;
 }
 
 .special-offer-content {
@@ -3187,7 +3189,7 @@ h6 {
 .logo span {
     font-size: 26px;
     font-weight: 700;
-    color: #012970;
+    color: var(--red-orange);
     font-family: "Nunito", sans-serif;
 }
 
@@ -3496,7 +3498,7 @@ h6 {
 .sidebar-nav .nav-link ion-icon {
     font-size: 20px;
     margin-right: 10px;
-    color: var(--royal-blue);
+    color: var(--red-orange);
 }
 
 .sidebar-nav .nav-link.collapsed {

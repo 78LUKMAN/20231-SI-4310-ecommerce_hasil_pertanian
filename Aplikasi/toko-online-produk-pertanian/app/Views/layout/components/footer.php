@@ -9,10 +9,13 @@
                         <a href="<?= base_url('product/showall/buah') ?>" class="footer-nav-link nav-link">Buah</a>
                     </li>
                     <li class="nav-item flex">
-                        <a href="<?= base_url('product/showall/sayur') ?>" class="footer-nav-link nav-link">Syur</a>
+                        <a href="<?= base_url('product/showall/sayur') ?>" class="footer-nav-link nav-link">Sayur</a>
                     </li>
                     <li class="nav-item flex">
                         <a href="<?= base_url('product/showall/rempah') ?>" class="footer-nav-link nav-link">Rempah</a>
+                    </li>
+                    <li class="nav-item flex">
+                        <a href="<?= base_url('product/showall/kacang') ?>" class="footer-nav-link nav-link">Kacang</a>
                     </li>
                 </ul>
                 <ul class="nav-list">
