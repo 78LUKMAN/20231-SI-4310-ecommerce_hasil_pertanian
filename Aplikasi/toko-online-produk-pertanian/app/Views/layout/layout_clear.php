@@ -10,9 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="<?php echo base_url() ?>assets/img/favicon.png" rel="icon">
-    <link href="<?php echo base_url() ?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+    <link rel="icon" href="<?php echo base_url()?>assets/img/favicon/favicon.png">
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link
@@ -26,17 +24,19 @@
     <!-- Template Main CSS File -->
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
 
-    <title><?php echo $title ?></title>
+    <title>
+        <?php echo $title ?>
+    </title>
 </head>
 
 <body>
     <!-- RENDER SECTION -->
     <?= $this->renderSection('auth_content') ?>
-    
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <?= $this->renderSection('script') ?>
 </body>
 
