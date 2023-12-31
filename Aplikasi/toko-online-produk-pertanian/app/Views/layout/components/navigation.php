@@ -20,7 +20,7 @@
             </button>
         </a>
         <?php
-        if (current_url() !== base_url() . "index.php/") {
+        if (current_url() !== base_url()) {
             ?>
             <a href="<?php base_url() ?>/">
                 <button class="action-btn">
@@ -31,10 +31,9 @@
         } ?>
 
         <?php
-        if (current_url() === base_url() . "index.php/") {
+        if (current_url() === base_url()) {
             ?>
             <?php if (session('role') == 'admin') { ?>
-                <!-- <button class="action-btn" data-mobile-menu-open-btn> -->
                     <a href="<?php base_url()?>admin/accounts">
                         <button class="action-btn">
                             <ion-icon name="grid-outline"></ion-icon>
