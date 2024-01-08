@@ -64,7 +64,7 @@
                                                         $statusText = 'Belum Bayar';
                                                         break;
                                                     case "pending":
-                                                        $statusClass = 'bg-warning text-white';
+                                                        $statusClass = 'bg-warning text-black';
                                                         $statusText = 'Menunggu';
                                                         break;
                                                     case "settlement":
