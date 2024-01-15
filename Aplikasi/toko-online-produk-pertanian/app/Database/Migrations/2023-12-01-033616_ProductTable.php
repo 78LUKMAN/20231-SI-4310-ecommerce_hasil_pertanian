@@ -21,7 +21,7 @@ class ProductTable extends Migration
                 ],
                 "description" => [
                     "type" => "varchar",
-                    "constraint" => 255,
+                    "constraint" => 500,
                 ],
                 "price" => [
                     "type" => "varchar",
