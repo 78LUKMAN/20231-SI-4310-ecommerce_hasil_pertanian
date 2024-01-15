@@ -626,10 +626,15 @@
                     <input type="radio" name="" class="btn-slide" id="btn-slide5">
                     <input type="radio" name="" class="btn-slide" id="btn-slide6">
                     <div class="testimonial-wrapper has-scrollbar">
-                        <?php foreach ($feedbacks as $feedback): ?>
+                        <?php foreach (array_reverse($feedbacks, true) as $feedback): ?>
                             <div class="testimonial-card-content">
-                                <img src="<?php echo base_url() ?>assets/img/profile/<?= $feedback['img'] ?>" alt=""
-                                    class="testimonial-benner" width="80" height="80">
+                                <?php if (($feedback['img'])): ?>
+                                    <img src="<?php echo base_url() ?>assets/img/profile/<?= $feedback['img'] ?>" alt=""
+                                        class="testimonial-benner" width="80" height="80">
+                                <?php else: ?>
+                                    <img src="<?php echo base_url() ?>assets/img/profile/default.png" alt=""
+                                        class="testimonial-benner" width="80" height="80">
+                                <?php endif ?>
                                 <p class="customer-name">
                                     <?= $feedback['name'] ?>
                                 </p>
@@ -703,7 +708,7 @@
             let data = element.getAttribute('data-create');
             let id = element.getAttribute('data-id');
             let countDownDate = new Date(data);
-            countDownDate.setHours(countDownDate.getHours() + 1);
+            countDownDate.setDate(countDownDate.getDate() + 1);
             countDownDate = countDownDate.getTime();
             let x = setInterval(function () {
 

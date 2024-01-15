@@ -63,7 +63,7 @@ if (session()->getFlashData('success')) {
                         <?php echo $product['label'] ?>
                     </td>
                     <td>
-                        <?php echo $product['description'] ?>
+                        <?php echo character_limiter($product['description'], 20)?>
                     </td>
                     <td><img src="<?php echo base_url() . "assets/img/products/" . $product['image'] ?>" width="100px"></td>
                     <td>

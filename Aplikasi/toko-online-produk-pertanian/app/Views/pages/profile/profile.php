@@ -7,8 +7,13 @@
         <div class="col-xl-4">
             <div class="card">
                 <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                    <img src="<?php echo base_url() ?>assets/img/profile/<?= $userData['img'] ?>" alt="Profile"
-                        class="rounded-circle">
+                    <?php if ($userData['img']): ?>
+                        <img src="<?php echo base_url() ?>assets/img/profile/<?= $userData['img'] ?>" alt="Profile"
+                            class="rounded-circle">
+                    <?php else: ?>
+                        <img src="<?php echo base_url() ?>assets/img/profile/default.png" alt="Profile"
+                            class="rounded-circle">
+                    <?php endif ?>
                     <h2>
                         <?= session()->get('name') ?>
                     </h2>
@@ -44,7 +49,7 @@
                                 Password</button>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url()?>/auth/logout">
+                            <a href="<?= base_url() ?>/auth/logout">
                                 <button class="nav-link logout-button">Logout</button>
                             </a>
                         </li>
@@ -124,8 +129,13 @@
                                         class="col-md-4 col-lg-3 col-form-label profile-data-title">Profile
                                         Image</label>
                                     <div class="col-md-8 col-lg-9">
-                                        <img src="<?php echo base_url() ?>assets/img/profile/<?= $userData['img'] ?>"
-                                            alt="Profile">
+                                        <?php if ($userData['img']): ?>
+                                            <img src="<?php echo base_url() ?>assets/img/profile/<?= $userData['img'] ?>"
+                                                alt="Profile" class="rounded-circle">
+                                        <?php else: ?>
+                                            <img src="<?php echo base_url() ?>assets/img/profile/default.png" alt="Profile"
+                                                class="rounded-circle">
+                                        <?php endif ?>
                                         <div class="pt-2 input-group custom-file-button">
                                             <label class="input-group-text" for="image"><i class="bi bi-upload">
                                                 </i></label>
