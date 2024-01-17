@@ -49,11 +49,11 @@
             </div>
         </div>
     </main>
-
+    
     <!-- FOOTER -->
     <?= $this->include('pages/admin/admin_dashboard/components/footer') ?>
-
-
+    
+    
     <script src="<?php echo base_url() ?>assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo base_url() ?>assets/vendor/chart.js/chart.min.js"></script>
@@ -68,6 +68,8 @@
     <!-- Template Main JS File -->
     <script src="<?php echo base_url() ?>assets/js/main.js"></script>
     <script src="<?php echo base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
+   
+    <?= $this->renderSection('script') ?>
 </body>
 
 </html>

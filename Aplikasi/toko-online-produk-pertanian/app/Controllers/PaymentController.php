@@ -94,7 +94,7 @@ class PaymentController extends BaseController
             }
         }
 
-        return redirect('activity/history');
+        return redirect()->back();
     }
 
     protected function reduceProductStock($orderId)

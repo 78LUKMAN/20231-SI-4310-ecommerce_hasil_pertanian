@@ -6,6 +6,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php endif; ?>
+<div id="pagetitle">
+<?php
+$hasPending = false;
+$pendingOrders = [];
+?>
+</div>
 
 <div class="table-responsive">
     <table class="table datatable">
@@ -19,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach (array_reverse($transaksi,true) as $transactionData): ?>
+            <?php foreach (array_reverse($transaksi, true) as $transactionData): ?>
 
                 <tr>
                     <td>
@@ -57,8 +63,14 @@
                                 $statusClass = 'bg-danger text-white';
                                 break;
                         }
+
+                        if (($transactionData['status']) != "settlement") {
+                            $pendingOrders[] = $transactionData['order_id'];
+                        }
                         ?>
-                        <div class="rounded w-50 p-2 text-center <?= $statusClass ?>" style="min-width: 120px; max-width:fit-content;">
+                        
+                        <div class="rounded w-50 p-2 text-center <?= $statusClass ?>"
+                            style="min-width: 120px; max-width:fit-content;">
                             <?= $statusText ?>
                         </div>
                     </td>
@@ -165,11 +177,38 @@
                     </div>
                 </div>
 
-
-
             <?php endforeach; ?>
         </tbody>
     </table>
 </div>
 
-<?= $this->endSection() ?>
+<?= $this->endSection('admin_content') ?>
+<?php if (!empty($pendingOrders)): ?>
+    
+    
+<?= $this->section('script') ?>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const parent = document.getElementById('pagetitle')
+        const form = document.createElement('form');
+        form.action = '<?= base_url('activity/statusupdate') ?>';
+        form.method = 'post';
+
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'order_ids';
+        input.value = '<?= implode(',', $pendingOrders) ?>';
+
+        const button = document.createElement('button');
+        button.type = 'submit';
+        button.className = 'btn btn-primary mt-3';
+        button.textContent = 'Update Status';
+
+        form.appendChild(input);
+        form.appendChild(button);
+
+        parent.appendChild(form);
+    });
+</script>
+<?= $this->endSection('script') ?>
+<?php endif ?>

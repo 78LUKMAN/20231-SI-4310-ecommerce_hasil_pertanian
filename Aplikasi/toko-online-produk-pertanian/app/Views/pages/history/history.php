@@ -6,19 +6,9 @@
     <div class="pagetitle" id="pagetitle">
         <h1>Shopping History</h1>
         <?php
-        $hasPending = false;
-        $pendingOrders = [];
-
+            $hasPending = false;
+            $pendingOrders = [];
         ?>
-        <?php if (!empty($pendingOrders)): ?>
-            <div class="pagetitle">
-                <h1>Shopping History</h1>
-                <form action="<?= base_url('updatestatuscontroller/update_status_batch') ?>" method="post">
-                    <input type="hidden" name="order_ids" value="<?= implode(',', $pendingOrders) ?>">
-                    <button type="submit" class="btn btn-primary">Update Status</button>
-                </form>
-            </div><!-- End Page Title -->
-        <?php endif; ?>
     </div><!-- End Page Title -->
 
     <section class="section">
