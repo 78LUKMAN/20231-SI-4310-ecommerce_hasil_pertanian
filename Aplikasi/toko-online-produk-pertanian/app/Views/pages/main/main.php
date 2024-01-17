@@ -62,7 +62,7 @@
                         <p class="banner-text">
                             mulai dari Rp.<b>10.000</b>,00
                         </p>
-                        <a href="#" class="banner-btn">Belanja Sekarang</a>
+                        <a href="<?= base_url('product/showall/sayur') ?>" class="banner-btn">Belanja Sekarang</a>
 
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                         <p class="banner-text">
                             mulai dari Rp.<b>35.000</b>,00
                         </p>
-                        <a href="#" class="banner-btn">Belanja Sekarang</a>
+                        <a href="<?= base_url('product/showall/buah') ?>" class="banner-btn">Belanja Sekarang</a>
 
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                         <p class="banner-text">
                             mulai dari Rp.<b>12.000</b>,00
                         </p>
-                        <a href="#" class="banner-btn">Belanja Sekarang</a>
+                        <a href="<?= base_url('product/showall/rempah') ?>" class="banner-btn">Belanja Sekarang</a>
 
                     </div>
                 </div>
@@ -174,7 +174,7 @@
             <div class="slidebar has-scrollbar" data-mobile-menu>
                 <div class="slidebar-category">
                     <div class="slidebar-top">
-                        <h2 class="slidebar-title">Category</h2>
+                        <h2 class="slidebar-title">Kategori</h2>
 
                         <button class="slidebar-close-btn" data-mobile-menu-close-btn>
                             <ion-icon name="close-outline"></ion-icon>
@@ -545,7 +545,7 @@
                     </div>
                 </div>
                 <div class="product-main">
-                    <h2 class="title">Discount</h2>
+                    <h2 class="title">Diskon</h2>
                     <div class="product-grid-container">
                         <?php
                         $hasDiscount = false;
@@ -618,7 +618,7 @@
         <div class="container">
             <div class="customers-testimonials-box">
                 <div class="testimonials-content">
-                    <h2 class="title">Customers Testimonial</h2>
+                    <h2 class="title">Testimoni Pelanggan</h2>
                     <input type="radio" name="" class="btn-slide" id="btn-slide1">
                     <input type="radio" name="" class="btn-slide" id="btn-slide2">
                     <input type="radio" name="" class="btn-slide" id="btn-slide3">
@@ -675,7 +675,7 @@
     </section>
     <section class="blog">
         <div class="container">
-            <h1 class="title">Tranding Products</h1>
+            <h1 class="title">Tranding Produk</h1>
             <div class="blog-container has-scrollbar">
                 <?php foreach ($products as $product):
                     $labelsArray = explode(',', $product['label']);

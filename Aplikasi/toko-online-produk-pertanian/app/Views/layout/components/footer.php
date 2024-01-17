@@ -3,7 +3,7 @@
             <div class="container">
                 <ul class="nav-list">
                     <li class="nav-item flex">
-                        <h2 class="nav-title">Popular Categories</h2>
+                        <h2 class="nav-title">Kategori Popular</h2>
                     </li>
                     <li class="nav-item flex">
                         <a href="<?= base_url('product/showall/buah') ?>" class="footer-nav-link nav-link">Buah</a>
@@ -20,7 +20,7 @@
                 </ul>
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <h2 class="nav-title">Contact</h2>
+                        <h2 class="nav-title">Kontak</h2>
                     </li>
                     <li class="nav-item flex">
                         <div class="box-icon">
@@ -46,7 +46,7 @@
                 </ul>
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <h2 class="nav-title">Follow Us</h2>
+                        <h2 class="nav-title">Ikuti Kami</h2>
                     </li>
 
                     <li>
@@ -80,7 +80,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="payment">
-                    <h4>Payment Method</h4>
+                    <h4>Metode Pembayaran</h4>
                     <img src="<?php echo base_url() ?>assets/img/sponsor/payment.png" alt="payment method" class="payment-img">
                 </div>
 
