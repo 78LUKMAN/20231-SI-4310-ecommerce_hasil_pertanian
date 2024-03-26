@@ -1,4 +1,5 @@
 # Local Farm Products Online Store - Pekalongan Groceria
+## copyright registration number : 000582764
 ## Description
 A web-based digital platform specifically designed to facilitate online buying and selling of local agricultural products. This platform provides various types of agricultural products such as vegetables, fruits, grains and other processed products. 
 
